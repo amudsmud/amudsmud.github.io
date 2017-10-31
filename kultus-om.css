@@ -1,0 +1,233 @@
+html {
+
+background-color: #c9c9c9;
+background-repeat: repeat;
+opacity: 1.0;
+
+
+
+
+}
+
+#kultus {
+
+font-size: 100px;
+font-family: Arial black;
+color: #51caf2;
+text-align: center;
+width: 40%;
+margin: 0% 30% 3% 30%;
+border: 0px solid black;
+text-outline: 2px 2px solid black;
+text-shadow: 1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000,
+    -1px 0px 0 #000,
+    1px 0px 0 #000,
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000,
+    0px 2px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 0px 0 #000,
+    1px 2px 0 #000,
+    -1px 2px 0 #000,
+    1px -2px 0 #000,
+    -1px -2px 0 #000,
+    2px 1px 0 #000,
+    -2px 1px 0 #000,
+    2px -1px 0 #000,
+    -2px -1px 0 #000;
+}
+
+
+#contact {
+
+font-size: 500%;
+font-family: Arial black;
+color: #26b0dd;
+text-align: center;
+width: 40%;
+margin: 0% 30% 3% 30%;
+text-shadow: 1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000,
+    -1px 0px 0 #000,
+    1px 0px 0 #000,
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000,
+    0px 2px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 0px 0 #000,
+    1px 2px 0 #000,
+    -1px 2px 0 #000,
+    1px -2px 0 #000,
+    -1px -2px 0 #000,
+    2px 1px 0 #000,
+    -2px 1px 0 #000,
+    2px -1px 0 #000,
+    -2px -1px 0 #000;
+}
+
+
+#bilde {
+
+width: 80%;
+border: 2px solid black;
+position: relative;
+margin-rigth: 10%;
+margin-left: 10%;
+margin-bottom: 700px;
+box-shadow: 12px 22px 35px black ;
+}
+
+
+#contact-bilde {
+
+width: 40%;
+border: 2px solid black;
+position: relative;
+margin-rigth: 20%;
+margin-top: 2%;
+box-shadow: 15px 10px 35px black;
+float: right;
+}
+
+
+
+#contact-graboks {
+
+width: 40%;
+border: 0.1px solid black;
+position: relative;
+margin-left: 10%;
+margin-top: 2%;
+margin-bottom: 7%;
+box-shadow: 7px 5px 25px black;
+float: left;
+height: 1000px;
+background-color: #26b0dd;
+
+}
+
+#contact-boks {
+
+width: 64%;
+border: 0px solid black;
+position: relative;
+margin-left: 3%;
+margin-top: 10%;
+margin-bottom: 7%;
+padding-left: 30%;
+box-shadow: 2px 2px 10px black;
+float: left;
+height: 80%;
+background-color: white;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+div.navi {
+
+width: 100%;
+background-color: black;
+transform: translateX(-8px);
+background-color: #c9c9c9;
+position: static;
+
+}
+
+
+
+
+/* baren der alr ligger*/
+#naviul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #444444;
+  transform: translateY(-8px);
+  padding-bottom: 0px;
+
+
+}
+ 
+
+/* hvert enkelt page*/
+#navia {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: Arial;
+  float: left;
+}
+
+
+/* hvert enkelt page når pusepekeren er over den*/
+#navia:hover {
+background-color: #60f900;
+color: #424242;
+}
+
+
+
+/* hvordan den aktive siden du er på ser ut*/
+
+#navia.active {
+  background-color: #07ab1a;
+  color: white;
+
+}
+
+
+/* hvordan den aktive siden du er på ser ut når du har musepekeren på den*/
+#navia:hover.active {
+ background-color: #297c33;
+ color: white;
+}
+
+
+
+
+
+
+
+
+
+
+

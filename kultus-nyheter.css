@@ -1,0 +1,168 @@
+html {
+
+background-color: #c9c9c9;
+background-repeat: repeat;
+opacity: 1.0;                                                                                             
+}
+
+#Nyheter {
+
+font-size: 100px;
+font-family: Arial black;
+color: #51caf2;
+text-align: center;
+width: 40%;
+margin: 0% 30% 3% 30%;
+border: 0px solid black;
+text-outline: 2px 2px solid black;
+text-shadow: 1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000,
+    -1px 0px 0 #000,
+    1px 0px 0 #000,
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000,
+    0px 2px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 0px 0 #000,
+    1px 2px 0 #000,
+    -1px 2px 0 #000,
+    1px -2px 0 #000,
+    -1px -2px 0 #000,
+    2px 1px 0 #000,
+    -2px 1px 0 #000,
+    2px -1px 0 #000,
+    -2px -1px 0 #000;
+}
+
+
+
+
+
+
+
+#Nyheter-venstre  {
+
+width: 400px;
+height: 300px;
+left: 50px;
+position: relative;
+animation: fremogtilbake 2s infinite;
+animation-direction: lternate;
+}
+
+
+@keyframes fremogtilbake { 
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+div.navi {
+
+width: 100%;
+background-color: black;
+transform: translateX(-8px);
+background-color: #c9c9c9;
+position: static;
+
+}
+
+
+
+
+/* baren der alr ligger*/
+#naviul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #444444;
+  transform: translateY(-8px);
+  padding-bottom: 0px;
+
+
+}
+ 
+
+/* hvert enkelt page*/
+#navia {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: Arial;
+  float: left;
+}
+
+
+/* hvert enkelt page når pusepekeren er over den*/
+#navia:hover {
+background-color: #60f900;
+color: #424242;
+}
+
+
+
+/* hvordan den aktive siden du er på ser ut*/
+
+#navia.active {
+  background-color: #07ab1a;
+  color: white;
+
+}
+
+
+/* hvordan den aktive siden du er på ser ut når du har musepekeren på den*/
+#navia:hover.active {
+ background-color: #297c33;
+ color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
