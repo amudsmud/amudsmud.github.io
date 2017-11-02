@@ -137,32 +137,23 @@ margin-rigth: 20px;
 
 
 
-
-
 div.navi {
 
 width: 100%;
 background-color: black;
-transform: translateX(-8px);
 background-color: #c9c9c9;
 position: static;
-
 }
 
 
-
-
-/* baren der alr ligger*/
+/* baren der alt ligger */
 #naviul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #444444;
-  transform: translateY(-8px);
-  padding-bottom: 0px;
 
-
+list-style-type: none;
+overflow: hidden;
+background-color: #444444;
+padding: 00px;
+margin: -8px;
 }
  
 
@@ -179,7 +170,7 @@ position: static;
 }
 
 
-/* hvert enkelt page når pusepekeren er over den*/
+/* hvert enkelt page når pusepekeren er over den */
 #navia:hover {
 background-color: #60f900;
 color: #424242;
@@ -192,7 +183,6 @@ color: #424242;
 #navia.active {
   background-color: #07ab1a;
   color: white;
-
 }
 
 
@@ -201,14 +191,3 @@ color: #424242;
  background-color: #297c33;
  color: white;
 }
-
-
-
-
-
-
-
-
-
-
-
