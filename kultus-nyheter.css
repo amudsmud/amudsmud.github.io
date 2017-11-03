@@ -7,14 +7,12 @@ opacity: 1.0;
 
 #Nyheter {
 
-font-size: 100px;
+font-size: 80px;
 font-family: Arial black;
 color: #51caf2;
 text-align: center;
 width: 40%;
-margin: 0% 30% 3% 30%;
-border: 0px solid black;
-text-outline: 2px 2px solid black;
+margin: 30px 30% 80px 30%;
 text-shadow: 1px 1px 0 #000,
     -1px 1px 0 #000,
     1px -1px 0 #000,
@@ -61,7 +59,25 @@ animation-direction: lternate;
 @keyframes fremogtilbake { 
 
 
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -88,7 +104,7 @@ position: static;
 list-style-type: none;
 overflow: hidden;
 background-color: #444444;
-padding: 00px;
+padding: 0px;
 margin: -8px;
 }
  
@@ -127,10 +143,3 @@ color: #424242;
  background-color: #297c33;
  color: white;
 }
-
-
-
-
-
-
-
