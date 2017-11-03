@@ -2,7 +2,6 @@ html {
 
 background-color: #c9c9c9;
 background-repeat: repeat;
-opacity: 1.0;
 
 
 }
@@ -46,12 +45,12 @@ text-shadow: 1px 1px 0 #000,
 
 #bilde {
 
-width: 80%;
+width: 70%;
 border: 2px solid black;
 position: relative;
-margin-rigth: 10%;
-margin-left: 10%;
-margin-bottom: 700px;
+margin-rigth: 15%;
+margin-left: 15%;
+margin-bottom: 500px;
 box-shadow: 12px 22px 35px black ;
 }
 
