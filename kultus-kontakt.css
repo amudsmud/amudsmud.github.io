@@ -1,5 +1,4 @@
 html {
-
 background-color: #c9c9c9;
 background-repeat: repeat;
 
@@ -7,16 +6,13 @@ background-repeat: repeat;
 
 
 
-
-
 #kontakt {
 
-font-size: 500%;
+font-size: 80px;
 font-family: Arial black;
 color: #51caf2;
 text-align: center;
-width: 40%;
-margin: 0% 30% 3% 30%;
+margin: 30px 30% 80px 30%;
 text-shadow: 1px 1px 0 #000,
     -1px 1px 0 #000,
     1px -1px 0 #000,
@@ -44,6 +40,16 @@ text-shadow: 1px 1px 0 #000,
 }
 
 
+#kontakt-oss-tekst  {
+
+font-family: exo, arial;
+font-size: 40px;
+margin-left: 20%;
+margin-right: 20%;
+text-align: center;
+}
+
+
 
 
 #kontakt-bilde {
@@ -52,9 +58,9 @@ width: 40%;
 border: 2px solid black;
 position: relative;
 margin-rigth: 20%;
-margin-top: 2%;
 box-shadow: 15px 10px 35px black;
 float: right;
+position: relative;
 }
 
 
@@ -65,23 +71,19 @@ width: 40%;
 border: 0.1px solid black;
 position: relative;
 margin-left: 10%;
-margin-top: 2%;
 margin-bottom: 7%;
 box-shadow: 7px 5px 25px black;
 float: left;
-height: 1000px;
+height: 1020px;
 background-color: #51caf2;
 
 }
 
 #kontakt-boks1 {
 
-width: 94%;
+width: 90%;
 height: 450px;
-margin-left: 3%;
-margin-right: 3%;
-margin-top: 5%;
-margin-bottom: 5%;
+margin: 5% 5%2% 5%;
 box-shadow: 2px 2px 10px black;
 float: left;
 background-color: white;
@@ -91,12 +93,21 @@ position: relative;
 
 #kontakt-boks2 {
 
-width: 94%;
-height: 400px;
-margin-left: 3%;
-margin-right: 3%;
-margin-top: 5%;
-margin-bottom: 5%;
+width: 90%;
+height: 80px;
+margin: 1% 5% 2% 5%;
+box-shadow: 2px 2px 10px black;
+float: left;
+background-color: white;
+border: 1px solid black;
+position: relative;
+}
+
+#kontakt-boks3 {
+
+width: 90%;
+height: 80px;
+margin: 1% 5% 2% 5%;
 box-shadow: 2px 2px 10px black;
 float: left;
 background-color: white;
@@ -105,21 +116,12 @@ position: relative;
 }
 
 
-#kontakt-oss-tekst  {
 
-font-family: Allerta, tahoma;
-font-size: 40px;
-padding-left: 0%;
-padding-right: 0%;
-margin-left: 30%;
-margin-right: 10%;
-
-}
 
 
 form {
-padding-top: 8%;
-font-family: Arial;
+margin-top: 5%;
+font-family: exo;
 font-size: 20px;
 margin-left: 30px;
 
@@ -128,14 +130,19 @@ margin-left: 30px;
 
 #feil  {
 
-font-family: Allerta, tahoma;
-font-size: 10px;
-margin-top: 30px;
-margin-rigth: 20px;
-padding-bottom: 60px;
-margin-bottom: 100px;
-margin-left: 30px;
+font-family: exo, tahoma;
+font-size: 12px;
+margin: 30px 10px 30px 30px;
 }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -148,53 +155,56 @@ margin-left: 30px;
 
 div.navi {
 
-width: 100%;
-background-color: black;
-background-color: #c9c9c9;
-position: static;
+ width: 100%;
+ background-color: black;
+ background-color: #c9c9c9;
+ position: static;
+ margin-left: 0px;
+
 }
 
 
-/* baren der alt ligger */
+                                    /* baren der alt ligger */
 #naviul {
 
-list-style-type: none;
-overflow: hidden;
-background-color: #444444;
-margin: -8px;
+ list-style-type: none;
+ overflow: hidden;
+ background-color: #444444;
+ margin: -8px;
+ padding: 0px;
 }
  
 
-/* hvert enkelt page*/
+                                  /* hvert enkelt page*/
 #navia {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  text-decoration: none;
-  font-size: 20px;
-  font-family: Arial;
-  float: left;
+ display: block;
+ color: white;
+ text-align: center;
+ padding: 15px;
+ text-decoration: none;
+ font-size: 20px;
+ font-family: Arial;
+ float: left;
 }
 
 
-/* hvert enkelt page når pusepekeren er over den */
+                                /* hvert enkelt page når pusepekeren er over den */
 #navia:hover {
-background-color: #60f900;
-color: #424242;
+ background-color: #60f900;
+ color: #424242;
 }
 
 
 
-/* hvordan den aktive siden du er på ser ut*/
+                               /* hvordan den aktive siden du er på ser ut*/
 
 #navia.active {
-  background-color: #07ab1a;
-  color: white;
+ background-color: #07ab1a;
+ color: white;
 }
 
 
-/* hvordan den aktive siden du er på ser ut når du har musepekeren på den*/
+                             /* hvordan den aktive siden du er på ser ut når du har musepekeren på den*/
 #navia:hover.active {
  background-color: #297c33;
  color: white;
