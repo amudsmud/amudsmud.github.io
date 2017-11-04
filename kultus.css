@@ -3,17 +3,16 @@ html {
 background-color: #c9c9c9;
 background-repeat: repeat;
 
-
 }
 
 #kultus {
 
-font-size: 100px;
+font-size: 90px;
 font-family: Arial black;
 color: #51caf2;
 text-align: center;
 width: 40%;
-margin: 0% 30% 3% 30%;
+margin: 30px 30% 80px 30%;
 border: 0px solid black;
 text-outline: 2px 2px solid black;
 text-shadow: 1px 1px 0 #000,
@@ -50,9 +49,14 @@ border: 2px solid black;
 position: relative;
 margin-rigth: 15%;
 margin-left: 15%;
-margin-bottom: 500px;
+margin-bottom: 700px;
 box-shadow: 12px 22px 35px black ;
 }
+
+
+
+
+
 
 
 
@@ -117,8 +121,3 @@ color: #424242;
  background-color: #297c33;
  color: white;
 }
-
-
-
-
-
