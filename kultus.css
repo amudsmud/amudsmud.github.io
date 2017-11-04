@@ -7,11 +7,10 @@ background-repeat: repeat;
 
 #kultus {
 
-font-size: 40px;
+font-size: 50px;
 font-family: Arial black;
 color: #51caf2;
-
-    text-align: center;
+text-align: center;
 width: 40%;
 margin: 30px 30% 80px 30%;
 border: 0px solid black;
@@ -49,6 +48,17 @@ h1:lang(en) {
 } 
 
 
+h1:lang(nb) { 
+    background: yellow;
+    font-size: 150px;
+    color: yellow;
+} 
+
+h1:lang(no) { 
+    background: yellow;
+    font-size: 150px;
+    color: yellow;
+} 
 
 
 #bilde {
