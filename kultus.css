@@ -41,6 +41,13 @@ text-shadow: 1px 1px 0 #000,
     -2px -1px 0 #000;
 }
 
+h1:lang(en) { 
+    background: yellow;
+    font-size:200px
+} 
+
+
+
 
 #bilde {
 
