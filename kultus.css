@@ -10,7 +10,8 @@ background-repeat: repeat;
 font-size: 9px;
 font-family: Arial black;
 color: #51caf2;
-text-align: center;
+
+    text-align: center;
 width: 40%;
 margin: 30px 30% 80px 30%;
 border: 0px solid black;
@@ -43,7 +44,8 @@ text-shadow: 1px 1px 0 #000,
 
 h1:lang(en) { 
     background: yellow;
-    font-size:200px
+    font-size:200px;
+    color: yellow;
 } 
 
 
