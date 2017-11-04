@@ -45,7 +45,7 @@ text-shadow: 1px 1px 0 #000,
 img.antall-besøkende {
 
  text-align: center;
- margin: 20px 6% 100px 16%;
+ margin: 20px 7.3% 100px 14.7%;
  box-shadow: 3px 3px 30px black ;
  float: rigth;
  width: 8%;
@@ -53,15 +53,15 @@ img.antall-besøkende {
 
 p.antall-besøkende {
 
- margin: 50px 0% 0px 84%;
+ text-align: center;
+ margin: 50px 12% 0px 80%;
  order: 2px solid black;
- float: rigth;
  font-size: 30px;
  padding: 0px;
  font-family: exo, arial;
- width: 240px;
+ width: 18%;
+ float: rigth;
 }
-
 
 
 
