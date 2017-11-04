@@ -7,7 +7,7 @@ background-repeat: repeat;
 
 #kultus {
 
-font-size: 9px;
+font-size: 40px;
 font-family: Arial black;
 color: #51caf2;
 
@@ -44,7 +44,7 @@ text-shadow: 1px 1px 0 #000,
 
 h1:lang(en) { 
     background: yellow;
-    font-size:200px;
+    font-size: 150px;
     color: yellow;
 } 
 
