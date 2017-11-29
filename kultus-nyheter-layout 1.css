@@ -245,21 +245,13 @@ height: auto;
 }
 .primary-nav.open li {
 display: block;
-border-top-color: transparent;
+order-top-color: transparent;
 }
 
 
 body {
-padding-top: 50px;
-}      
-
-
-
-
-
-
-
-
+padding-top: 60px;
+}      
 
 
 
