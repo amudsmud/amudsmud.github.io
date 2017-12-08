@@ -1,10 +1,9 @@
-﻿html {
+html {
 
 background-color: #c9c9c9;
 background-repeat: repeat;
 height: 1300px;
 }
-
 
 
 #kultus-logo {
@@ -44,8 +43,6 @@ text-shadow: 0px 0px 0 #000,
     1px -1px 0 #000,
     -1px -1px 0 #000;
 }
-
-
 
 .lay-out {
 margin: 90px 25% 400px 25%;
@@ -114,30 +111,6 @@ display: none;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* 620  */
 @media only screen and (max-width:720px) {
 
@@ -147,14 +120,14 @@ width: 30%;
 margin-top: 8px;
 font-size: 60px;
 height: 70px;
-
 top: 0;
+
 }
 
 .lay-out {
 margin: 50px 5% 100px 5%;
 width: 90%;
-background-color: white;
+background-color: green;
 } 
 
 
@@ -245,19 +218,12 @@ height: auto;
 }
 .primary-nav.open li {
 display: block;
-order-top-color: transparent;
+border-top-color: transparent;
 }
 
 
 body {
-padding-top: 60px;
-}      
-
-
-
-
-
-
-
+padding-top: 50px;
+}      
 
 }
