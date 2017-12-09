@@ -111,7 +111,7 @@ color: white;
 
 
 /* 620  */
-@media only screen and (max-width:740px) {
+@media only screen and (max-width:750px) {
 
 
 #kultus-logo {  
@@ -150,10 +150,14 @@ width: 100%;
 float: none !important;
 }
 
+.primary-nav #navia:hover:not(.A) {
+background-color: rgba(0,0,0,.4);
+color: white;
+}
 
 .primary-nav.open { height: auto; }
 
-.primary-nav.open li { display: block; }
+.primary-nav.open li { display: block;}
 
 #navia {
 display: block;
@@ -202,6 +206,7 @@ animation-duration: 0.5s;
 }
 
 .menu-button-mobile:hover { background-color: rgba(0,0,0,.1); }
+.menu-button-mobile.open:hover { background-color: rgba(0,0,0,.2); }
 
 .menu-button-mobile.open {
 background: url('../bilder/close-icon-large.png'), linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.0));
@@ -216,11 +221,6 @@ animation-duration: 0.5;
 0% { background-size: 0px;  }
 100% { background-size: 40px;   }
 }
-
-.menu-button-mobile.open:hover { background-color: rgba(0,0,0,.2); }
-
-
-
 
 
 
@@ -252,7 +252,6 @@ border-bottom: 1px solid rgba(0,0,0,.2);
 border-top: 1px solid rgba(255,255,255,.1);
 }
 
-
 .primary-nav li:hover ul {
 display: block;
 }
@@ -261,13 +260,6 @@ display: block;
 .primary-nav li a:hover {
 background-color: rgba(0,0,0,.2);
 }
-
-
-
-
-
-
-
 
 
 
