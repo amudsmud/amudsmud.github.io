@@ -3,6 +3,7 @@ html {
 background-color: #c9c9c9;
 background-repeat: repeat;
 height: 1300px;
+width: 100%;
 }
 
 #kultus-logo {
@@ -116,8 +117,8 @@ display: none;
 
 
 #kultus-logo {  
-margin-left: 35%;
-margin-right: 35%;
+margin-left: 30%;
+margin-right: 30%;
 width: 150px;
 margin-top: 8px;
 font-size: 60px;
