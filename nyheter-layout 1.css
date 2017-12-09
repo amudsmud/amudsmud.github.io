@@ -49,7 +49,6 @@ margin: 90px 20% 400px 20%;
 background-color: white;
 width: 60%;
 height: 1000px;
-
 }
 
 
@@ -104,7 +103,7 @@ color: white;
 background-color: #297c33;
 color: white;
 }
-.menu-button-mobile {
+.menu-button-mobile, #navia.A {
 display: none;
 }
 
@@ -129,7 +128,7 @@ text-align: center;
 
 .lay-out {
 margin: 0px 50% 100px 50%; /* 5 ikke 50 */
-width: 10%; /* 90 */
+width: 1%; /* 90 */
 background-color: white;
 } 
 
@@ -154,6 +153,30 @@ font-family: Bangers;
 float: none !important;
 }
 
+
+.primary-nav li a:hover {
+background-color: rgba(0,0,0,.5);
+border-top-color: transparent;
+font-family: Bangers;
+}
+
+.primary-nav > li:first-child {
+border-top: 1px solid rgba(0,0,0,.2);
+font-family: Bangers;
+}
+
+.primary-nav.open {
+height: auto;
+}
+
+
+.primary-nav.open li {
+display: block;
+}
+
+
+
+
 #navia {
 display: block;
 width: 88%;
@@ -167,17 +190,11 @@ border-top: 1px solid rgba(255,255,255,.1);
 margin-left: 2%;
 margin-rigth: 12%;
 }
-
-.primary-nav li a:hover {
-background-color: rgba(0,0,0,.5);
-border-top-color: transparent;
-font-family: Bangers;
-}
-
-.primary-nav > li:first-child {
-border-top: 1px solid rgba(0,0,0,.2);
-font-family: Bangers;
-
+#navia.A, #navia.a:hover {
+display: block;
+text-indent: -9999px;
+border-top: 0px;
+background-color: transparent;
 }
 
 .menu-button-mobile {
@@ -228,17 +245,6 @@ animation-duration: 1s;
 .menu-button-mobile.open:hover {
 background-color: rgba(0,0,0,.2);
 }
-
-
-.primary-nav.open {
-height: auto;
-
-}
-.primary-nav.open li {
-display: block;
-}
-
-
 
 
 }
