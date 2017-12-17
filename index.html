@@ -33,12 +33,6 @@
 
 </script>
 
-
-<script>
-var dag = new Date();
-document.getElementById("dag").innerHTML = dag.getDate();
-</script>
-
 </head>
 <body>
 
@@ -77,19 +71,30 @@ document.getElementById("dag").innerHTML = dag.getDate();
 
 <img src="bilder/cheating-student.jpg" id="bilde" alt="Hovedbilde">
 
-<p id="dag">nigger</p>
-
 
 <div class="footer">
  <p class="copyright">© Smud Productions 2017</p>
  <p>Kultus - Alt som er kult</p>
- <p>sist oppdatert: <br>16.12.2017 <br> <i>21:28</i></p>
+ <p>sist oppdatert: <br> <span id="dagensDato">error</span> <br><i><time id="klokkeslett">error</time></i></p>
  <p>Kontakt informasjon: <a href="mailto:max1231@live.no">
-  max1231@live.no</a></p>
- <p>DDD oppdatering: <br> 3/<a id="dag">12</a></p>
+  m******@****.no</a></p>
+ <p>DDD oppdatering: <br> 4/<span id="dag">error</span></p>
 </div>
+
+<script>
+var dag = new Date();
+document.getElementById("dag").innerHTML = dag.getDate();
+
+var dato = new Date();
+document.getElementById("dagensDato").innerHTML = dato.getDate() +'.'+ (dato.getMonth()+1) +'.'+ dato.getFullYear();
+
+
+var klokkeslett = new Date();
+document.getElementById("klokkeslett").innerHTML = klokkeslett.getHours() +':'+ (klokkeslett.getMinutes()+1);
+
+
+</script>
 
 
 </body>
 </html>
-
