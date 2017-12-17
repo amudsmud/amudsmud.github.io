@@ -8,7 +8,6 @@ margin: 0px;
 }
 
 
-
 #kultus {
 font-size: 5vw;
 font-family: Arial black;
@@ -94,7 +93,7 @@ float: left;
 z-index: 1;
 }
 
-img.antall-besøkende {
+img.antall-besÃ¸kende {
  position:relative
  overflow: visible;
  text-align: center;
@@ -107,7 +106,7 @@ z-index: 1;
 }
 
 
-p.antall-besøkende {
+p.antall-besÃ¸kende {
 
 text-align: center;
 margin: 0px 0% 0px 8%;
@@ -211,17 +210,17 @@ text-decoration: none;
 font-size: 20px;
 float: left;
 }
-/* hvert enkelt page når pusepekeren er over den */
+/* hvert enkelt page nÃ¥r pusepekeren er over den */
 #navia:hover {
 background-color: #60f900;
 color: #424242;
 }
-/* hvordan den aktive siden du er på ser ut*/
+/* hvordan den aktive siden du er pÃ¥ ser ut*/
 #navia.active {
 background-color: #07ab1a;
 color: white;
 }
-/* hvordan den aktive siden du er på ser ut når du har musepekeren på den*/
+/* hvordan den aktive siden du er pÃ¥ ser ut nÃ¥r du har musepekeren pÃ¥ den*/
 #navia:hover.active {
 background-color: #297c33;
 color: white;
@@ -262,12 +261,12 @@ text-align: center;
 }
 
 
-img.antall-besøkende {
+img.antall-besÃ¸kende {
 
 }
 
 
-p.antall-besøkende {
+p.antall-besÃ¸kende {
 font-size: 10px;
 
 }
