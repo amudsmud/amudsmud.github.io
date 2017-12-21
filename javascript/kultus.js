@@ -33,8 +33,3 @@ document.getElementById("klokkeslett").innerHTML = klokkeslett.getHours() +':0'+
 }
 
 
-
-
-
-
-
