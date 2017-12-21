@@ -87,23 +87,12 @@
  <p>sist oppdatert: <br> <span id="dagensDato">error</span> <br><i><time id="klokkeslett">error</time></i></p>
  <p>Kontakt informasjon: <a href="mailto:max1231@live.no">
   m******@****.no</a></p>
- <p>DDD oppdatering: <br> 4/<span id="dag">error</span></p>
+ <p>DDD oppdatering: <br> 1/<span id="dag">error</span></p>
 </div>
 
-<script>
-var dag = new Date();
-document.getElementById("dag").innerHTML = dag.getDate();
-
-var dato = new Date();
-document.getElementById("dagensDato").innerHTML = dato.getDate() +'.'+ (dato.getMonth()+1) +'.'+ dato.getFullYear();
 
 
-var klokkeslett = new Date();
-document.getElementById("klokkeslett").innerHTML = klokkeslett.getHours() +':'+ klokkeslett.getMinutes();
 
-
-</script>
-
-
+<script src="javascript/kultus.js"></script>
 </body>
 </html>
