@@ -1,4 +1,3 @@
-
 /* dagens dato uten år og mnd  */
 var dag = new Date();
 document.getElementById("dag").innerHTML = dag.getDate();
