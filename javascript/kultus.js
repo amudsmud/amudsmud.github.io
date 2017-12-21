@@ -1,10 +1,3 @@
-  $(document).ready(function(){
-	  $(".menu-button-mobile").click(function () {
-	  $(".menu-button-mobile, .primary-nav").toggleClass("open");
-	  });    
-  });
-
-
 
 /* dagens dato uten år og mnd  */
 var dag = new Date();
