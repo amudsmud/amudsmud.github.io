@@ -238,7 +238,11 @@ header {
 }
 
 .nav-opp {
-    top: -80px;
+    top: -70px;
+}
+
+.nav-opp:hover {
+    top: 0px;
 }
 
 
