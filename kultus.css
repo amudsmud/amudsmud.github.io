@@ -245,7 +245,9 @@ header {
     top: 0px;
 }
 
-
+.nav-opp:focus {
+    top: 0px;
+}
 
 div.navi {
 z-index: 10;
