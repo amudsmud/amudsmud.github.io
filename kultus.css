@@ -8,14 +8,16 @@ margin: 0px;
 }
 
 
+
 #kultus {
+position: relative;
 font-size: 5vw;
 font-family: Arial black;
 color: #51caf2;
 text-align: center;
-margin: 60px 0% 10px 35%;
-width: 30%;
-padding: 0px 0px 0px 0px;
+margin: 60px 10% 10px 10%;
+width: 80%;
+padding: 0px;
 float: left;
 z-index: 1;
 text-shadow: 1px 1px 0 #000,
@@ -46,7 +48,7 @@ text-shadow: 1px 1px 0 #000,
 
 #kultus-logo {
 z-index: 100;
-position: fixed;
+position: absolute; /*fixed*/
 text-decoration: none;
 top: 2px;
 font-size: 50px;
@@ -83,42 +85,88 @@ text-shadow: 0px 0px 0 #000,
 }
 
 #kultus-slagord {
+position: relative;
 font-size: 15px;
 font-family: Arial black;
 color: black;
-text-align: center;
-margin: 0px 0% 80px 42.5%; /* 35 */
-width: 15%;
+margin: 0px 30% 80px 30%;
+width: 40%;
 float: left;
 z-index: 1;
 }
 
 img.antall-besøkende {
- position:relative
- overflow: visible;
- text-align: center;
- margin: 20px 0% 30px 13%;
- box-shadow: 3px 3px 30px black ;
- float: left;
- width: 8%;
+position: relative;
+overflow: visible;
+text-align: center;
+margin: 20px 30% 30px 30%;
+box-shadow: 3px 3px 30px black ;
 float: left;
-z-index: 1;
+width: 40%;
+float: left;
+z-index: 3;
 }
 
 
 p.antall-besøkende {
-
+position: relative;
 text-align: center;
-margin: 0px 0% 0px 8%;
-order: 2px solid black;
+margin: 0px 0px 0px 0px;
+/* border: 2px solid black; */
 font-size: 30px;
 padding: 0px;
 font-family: exo, arial;
-width: 18%;
+width: 100%;
 float: left;
-z-index: 1;
+z-index: 3;
+float: left;
 }
 
+#kultus-div {
+margin: 50px 0% 0px 40%;
+/* background-color: #b8c2d3; */
+height: auto;
+width: 20%;
+float: left;
+text-align: center;
+}
+
+#antall-besøkende-div {
+margin: 120px 0px 0px 120px;
+/* background-color: #9da5b2; */
+height: auto;
+width: 20%;
+float: left;
+}
+
+
+#boks1 {
+margin: 112px 3% 40px 3%;
+background-color: #b8c2d3;
+border: 1px solid black;
+height: 300px;
+width: 25%;
+float: right;
+}
+
+
+#boks2 {
+margin: 60px 3% 40px 3%;
+background-color: #b8c2d3;
+border: 1px solid black;
+height: 300px;
+width: 25%;
+float: right;
+}
+
+#boks3 {
+margin: 60px 3% 40px 3%;
+background-color: #b8c2d3;
+border: 1px solid black;
+height: 300px;
+width: 25%;
+float: right;
+}
 
 
 
@@ -128,9 +176,7 @@ z-index: 1;
 width: 60%;
 border: 2px solid black;
 position: relative;
-margin-rigth: 20%;
-margin-left: 20%;
-margin-bottom: 300px;
+margin: 40px 20% 300px 20%;
 box-shadow: 12px 22px 35px black;
 }
 
@@ -179,10 +225,27 @@ bottom:0;
 
 /*--------------------------------------------menu bar start-------------------------------------*/
 
+
+
+header {
+	z-index: 100;
+    background: #f5b335;
+    height: 53px;
+    position: fixed;
+    top: 0;
+    transition: top 0.2s ease-in-out;
+    width: 100%;
+}
+
+.nav-opp {
+    top: -60px;
+}
+
+
+
 div.navi {
 z-index: 10;
 width: 100%;
-margin-bottom: 30px;
 }
 
 /* baren der alt ligger */
@@ -193,12 +256,15 @@ overflow: hidden;
 background-color: #444444;
 padding: 0px;
 margin: 0px;
-position: fixed;
+position: absolute; /*fixed*/
 top: 0;
 right: 0;
 width: 100%;
 box-shadow: 0 1px 2px rgba(0,0,0,.5);
 background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.2));
+top: 0px;
+transition: top 0.3s;
+
 }
 /* hvert enkelt page*/
 #navia {
@@ -234,7 +300,7 @@ color: white;
 @media only screen and (max-width:1000px) {
 
 #kultus {
-font-size: 70px;
+font-size: 60px;
 }
 
 }
