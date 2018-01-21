@@ -8,11 +8,11 @@ var dag = new Date();
 document.getElementById("dag").innerHTML = dag.getDate();
 
 /* Sette Dagens dato */
-var dato = new Date("january 18, 2018");
+var dato = new Date("january 21, 2018");
 document.getElementById("dagensDato").innerHTML = dato.getDate() +'.'+ (dato.getMonth()+1) +'.'+ dato.getFullYear();
 
 /* Sette klokkeslett  ("October 13, 2018 20:23:00") akkurat nå så finner den deagens klokkelsett men kan gjøre sånn at jeg skriver det selv siden det er "sist oppdatert" */
-var klokkeslett = new Date("October 13, 2017 19:15:00");
+var klokkeslett = new Date("October 13, 2017 01:30:00");
 document.getElementById("klokkeslett").innerHTML = klokkeslett.getHours() +':'+ klokkeslett.getMinutes();
 
 
