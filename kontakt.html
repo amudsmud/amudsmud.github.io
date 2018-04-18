@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title> kultus - Kontakt</title>
+<link rel="stylesheet" type="text/css" href="css/kontakt.css">
+<link href="https://fonts.googleapis.com/css?family=Bangers|Damion|Exo" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="icon" href="favicon" type="image/x-icon">
+<meta name="keywords" content="kultus">
+<meta name="description" content="Kontakt - Kultus">
+<meta name="author" content="Smud productions">
+<meta name="viewport" content="initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+	  $(".menu-button-mobile").click(function () {
+	  $(".menu-button-mobile, .primary-nav").toggleClass("open");
+	  });    
+  });
+</script>
+
+
+
+
+</head>
+<body>
+
+
+
+<div class="navi" style="font-family: arial;">
+  <ul id="naviul" class="primary-nav">
+     <button class="menu-button-mobile">Toggle Navigation</button>
+   <li><a id="navia" class="A"style="">A</a></li>
+   <li><a id="navia" href="index.html">Hjem</a></li>
+   <li><a id="navia" class="parent" href="nyheter.html">Nyheter</a>
+       <ul>
+               <li class="child"><a href="#">biler</a></li>
+               <li class="child"><a href="#">båter</a></li>
+               <li class="child"><a href="#">fly</a></li>
+     </ul>
+   </li>
+   <li><a id="navia" class="active" href="kontakt.html">Kontakt</a></li>
+   <li style="float:right"><a id="navia" href="om.html">Om</a></li>
+ </ul>
+<a href="index.html" id="kultus-logo" title="Klikk for å gå hjem">Kultus</a>
+</div>
+
+
+
+
+<h1 id="kontakt">Kontakt</h1>
+
+
+<img id="kontakt-bilde" src="bilder/contact.jpg">
+
+
+<div id="kontakt-blåboks">
+<div id="kontakt-boks1">
+
+<h1 id="kontakt-oss-tekst">Kontakt oss</h1>
+
+<form action="mailto: max1231@live.no" method="post" enctype="text/plain">
+Navn:<br>
+<input type="text" name="Navn" size="20" style="margin-bottom:10px; margin-top: 3px;" ><br>
+E-mail:<br>
+<input type="text" name="E-mail" size="30" style="margin-bottom:10px; margin-top: 3px;" ><br>
+Kommentar:<br>
+<input type="text" name="Kommentar" size="40" autocomplete="off"  style="margin-bottom:10px; margin-top: 3px;" ><br><br>
+<input type="submit" value="Send">
+<input type="reset" value="Reset">
+</form>
+
+<p id="feil" > Dette vil bare funke omtimalt på chrome foreløpig </p>
+
+</div>
+
+
+<div id="kontakt-boks2">
+<h2 id="email"> Email-adresse: Am*****@gmail.com</h2>
+</div>
+
+
+
+
+<div id="kontakt-boks3">
+<h2 id="email"> Telefon-nummer: (+47) 4069****</h2>
+</div>
+
+
+</div>
+
+
+
+<div class="footer">
+ <p class="copyright">© Smud Productions 2017</p>
+ <p>Kultus - Alt som er kult</p>
+ <p>sist oppdatert: <br> <span id="dagensDato">error</span><br><i><time id="klokkeslett">error</time></i></p>
+ <p>Kontakt informasjon: <a href="mailto:max1231@live.no">
+  m******@****.no</a></p>
+ <p>DDD oppdatering: <br> 1/<span id="dag">error</span></p>
+</div>
+
+
+
+<script src="javascript/kultus.js"></script>
+</body>
+</html>
+
