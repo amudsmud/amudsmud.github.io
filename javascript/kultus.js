@@ -1,18 +1,16 @@
 // kultus scripts
-//all rights served 2018
+// all rights served 2018
 /*------------------------------start tid og dato------------------------------*/
 
 
-/* dagens dato uten år og mnd  */
-var dag = new Date();
-document.getElementById("dag").innerHTML = dag.getDate();
+
 
 /* Sette Dagens dato */
-var dato = new Date("january 21, 2018");
+var dato = new Date("April 20, 2018");
 document.getElementById("dagensDato").innerHTML = dato.getDate() +'.'+ (dato.getMonth()+1) +'.'+ dato.getFullYear();
 
-/* Sette klokkeslett  ("October 13, 2018 20:23:00") akkurat nå så finner den deagens klokkelsett men kan gjøre sånn at jeg skriver det selv siden det er "sist oppdatert" */
-var klokkeslett = new Date("October 13, 2017 01:30:00");
+/* Sette klokkeslett  ("April 20, 2018 17:23:00") akkurat nå så finner den deagens klokkelsett men kan gjøre sånn at jeg skriver det selv siden det er "sist oppdatert" */
+var klokkeslett = new Date("April 20, 2018 18:10:00");
 document.getElementById("klokkeslett").innerHTML = klokkeslett.getHours() +':'+ klokkeslett.getMinutes();
 
 
