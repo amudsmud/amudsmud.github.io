@@ -20,7 +20,7 @@ width: 80%;
 padding: 0px;
 float: left;
 z-index: 1;
-text-shadow: 1px 1px 0 #000,
+#text-shadow: 1px 1px 0 #000,
     -1px 1px 0 #000,
     1px -1px 0 #000,
     -1px -1px 0 #000,
