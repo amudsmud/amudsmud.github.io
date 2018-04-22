@@ -13,14 +13,14 @@ margin: 0px;
 position: relative;
 font-size: 5vw;
 font-family: Arial black, Arial;
-/* color: #51caf2; */
+color: #51caf2;
 text-align: center;
 margin: 60px 10% 10px 10%;
 width: 80%;
 padding: 0px;
 float: left;
 z-index: 1;
-#text-shadow: 1px 1px 0 #000,
+text-shadow: 1px 1px 0 #000,
     -1px 1px 0 #000,
     1px -1px 0 #000,
     -1px -1px 0 #000,
@@ -83,6 +83,14 @@ text-shadow: 0px 0px 0 #000,
     1px -1px 0 #000,
     -1px -1px 0 #000;
 }
+#kultus-div {
+margin: 50px 0% 0px 40%;
+/* background-color: #b8c2d3; */
+height: auto;
+width: 20%;
+float: left;
+text-align: center;
+}
 
 #kultus-slagord {
 position: relative;
@@ -93,6 +101,15 @@ margin: 0px 30% 80px 30%;
 width: 40%;
 float: left;
 z-index: 1;
+}
+
+
+#antall-besøkende-div {
+margin: 120px 0px 110px 120px;
+/* background-color: #9da5b2; */
+height: auto;
+width: 20%;
+float: left;
 }
 
 img.antall-besøkende {
@@ -122,51 +139,32 @@ z-index: 3;
 float: left;
 }
 
-#kultus-div {
-margin: 50px 0% 0px 40%;
-/* background-color: #b8c2d3; */
-height: auto;
-width: 20%;
+
+div.boks {
+margin: 60px 4% 100px 4%;
+background-color: #b8c2d3;
+border: 1px solid black;
+height: 300px;
+width: 25%;
 float: left;
+box-shadow: 4px 8px 15px #6f6f6f;
+}
+
+h1,a.boks {
+padding: 10px 10% 10px 10%;
+font-family: exo, arial;
 text-align: center;
+font-size: 30px;
 }
 
-#antall-besøkende-div {
-margin: 120px 0px 0px 120px;
-/* background-color: #9da5b2; */
-height: auto;
-width: 20%;
-float: left;
+p.boks {
+padding: 10px 10% 10px 10%;
+width: 80%;
+font-family: arial;
+text-align: center;
+font-size: 16px;
 }
 
-
-#boks1 {
-margin: 112px 3% 40px 3%;
-background-color: #b8c2d3;
-border: 1px solid black;
-height: 300px;
-width: 25%;
-float: right;
-}
-
-
-#boks2 {
-margin: 60px 3% 40px 3%;
-background-color: #b8c2d3;
-border: 1px solid black;
-height: 300px;
-width: 25%;
-float: right;
-}
-
-#boks3 {
-margin: 60px 3% 40px 3%;
-background-color: #b8c2d3;
-border: 1px solid black;
-height: 300px;
-width: 25%;
-float: right;
-}
 
 
 
@@ -238,7 +236,7 @@ header {
 }
 
 .nav-opp {
-    top: -70px;
+    top: -80px;
 }
 
 .nav-opp:hover {
@@ -282,17 +280,17 @@ text-decoration: none;
 font-size: 20px;
 float: left;
 }
-/* hvert enkelt page når pusepekeren er over den */
+/* hvert enkelt page nÃ¥r pusepekeren er over den */
 #navia:hover {
 background-color: #60f900;
 color: #424242;
 }
-/* hvordan den aktive siden du er på ser ut*/
+/* hvordan den aktive siden du er pÃ¥ ser ut*/
 #navia.active {
 background-color: #07ab1a;
 color: white;
 }
-/* hvordan den aktive siden du er på ser ut når du har musepekeren på den*/
+/* hvordan den aktive siden du er pÃ¥ ser ut nÃ¥r du har musepekeren pÃ¥ den*/
 #navia:hover.active {
 background-color: #297c33;
 color: white;
@@ -315,14 +313,8 @@ font-size: 60px;
 /* 620  */
 @media only screen and (max-width:620px) {
 
-#kultus {
-margin-left: 30%;
-width: 40%;
-font-size: 60px;
-}
-
-#kultus-logo {  
-margin-left: 30%;
+#kultus-logo {
+margin-left: 35%;
 margin-right: 30%;
 margin-top: 8px;
 width: 150px;
@@ -332,16 +324,86 @@ top: 0;
 text-align: center;
 }
 
+#kultus {
+font-size: 60px;
+margin: 60px 10% 10px 10%;
+width: 80%;
+}
+
+#kultus-div {
+margin: 50px 10% 20px 10%;
+width: 80%;
+}
+
+
+#kultus-slagord {
+position: relative;
+font-size: 15px;
+font-family: Arial black;
+color: black;
+margin: 0px 25% 40px 25%;
+width: 50%;
+float: left;
+z-index: 1;
+}
+
+
+#antall-besøkende-div {
+margin: 60px 20% 100px 20%;
+/* background-color: #9da5b2; */
+height: auto;
+width: 60%;
+float: left;
+}
+
 
 img.antall-besøkende {
-
+margin: 20px 15% 30px 15%;
+box-shadow: 3px 3px 30px black ;
+float: left;
+width: 70%;
+float: left;
+z-index: 3;
 }
-
 
 p.antall-besøkende {
-font-size: 10px;
-
+font-size: 20px;
 }
+
+
+
+#bilde {
+width: 80%;
+margin: 40px 10% 60px 10%;
+}
+
+div.boks {
+margin: 60px 10% 50px 10%;
+border: 2px solid black;
+width: 80%;
+}
+
+h1,a.boks {
+padding: 10px 10% 10px 10%;
+font-family: exo, arial;
+text-align: center;
+font-size: 27px;
+}
+
+p.boks {
+padding: 30px 10% 20px 10%;
+width: 80%;
+font-family: arial;
+text-align: center;
+font-size: 16px;
+}
+
+
+
+
+
+
+
 
 .primary-nav {
 width: 100%;
@@ -374,7 +436,7 @@ color: white;
 #navia {
 display: block;
 width: 88%;
-font-size: 23px; 
+font-size: 23px;
 font-wight: bold;
 text-shadow: -1px -1px 0 rgba(0,0,0,.15);
 color: white;
