@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>kenneth's hypotenus greie</title>
+  <style media="screen">
+    body {
+      margin: 0
+    }
+  </style>
+</head>
+
+<body>
+  <div id="output"></div>
+
+  <!-- <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
+  <!-- <script src="https://rawgit.com/NeetishRaj/b809fdf064e98f8f601595136be72e5f/raw/1ba409a3d3d9004037808734eda2b6373ed1f851/canvas-maker-lib.js"></script> -->
+  <script type="text/javascript">
+    var CanvasMaker = (function() {
+
+      var W = window.innerWidth;
+      var H = window.innerHeight;
+      var canvasCount = 0;
+      var zIndexVar = 100;
+
+      var basicOverlayCSS = {
+        position: "absolute",
+        background: "transparent",
+        zIndex: "100",
+        left: "0",
+        top: "0",
+        bottom: "auto",
+        right: "auto",
+        width: W,
+        height: H
+      };
+
+      var requestAnimationFrame = window.requestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function(f) {
+          return setTimeout(f, 1000 / 60)
+        } // simulate calling code 60 ;
+      var cancelAnimationFrame = window.cancelAnimationFrame ||
+        window.mozCancelAnimationFrame ||
+        function(requestID) {
+          clearTimeout(requestID)
+        }; //fall back;
+
+
+      var getCanvasCount = function() {
+        return canvasCount;
+      }
+
+      var Canvas = function(id = undefined, canvasCSS = {}) {
+
+        this.canvas = document.createElement('canvas');
+        if (!this.canvas.getContext) {
+          console.error("Error: Your browser does not support Canvas 2D context");
+          return 0;
+        }
+
+        canvasCount++;
+        zIndexVar++;
+
+        this.id = id ? id : "canvas" + zIndexVar;
+
+        //over write the custom CSS over basic CSS if any and apply zIndex too
+        this.canvasCSS = Object.assign({},
+          basicOverlayCSS, {
+            zIndex: zIndexVar
+          },
+          canvasCSS
+        );
+
+        this.canvas.setAttribute("id", this.id);
+        document.body.appendChild(this.canvas);
+        this.ctx = this.canvas.getContext('2d');
+        CSS.applyStyles(this.canvas, this.canvasCSS);
+        this.canvas.width = this.canvasCSS.width;
+        this.canvas.height = this.canvasCSS.height;
+      };
+
+      Canvas.prototype.removeCanvas = function() {
+        canvasCount--;
+        document.body.removeChild(document.getElementById(this.id));
+      }
+
+      return {
+        Canvas: Canvas,
+        getCanvasCount: getCanvasCount,
+        startAnimation: requestAnimationFrame,
+        endAnimation: cancelAnimationFrame
+      }
+    })();
+
+    var CSS = (function() {
+      var applyStyles = function(element, styleObject) {
+        for (var i in styleObject) {
+          element.style[i] = styleObject[i];
+        }
+      };
+
+      return {
+        applyStyles: applyStyles
+      }
+    })();
+
+
+    var W = window.innerWidth;
+    var H = window.innerHeight;
+    var aRatio = W / H;
+    var baseX = 20;
+    var innerBaseX = baseX / 5;
+    var gap = 10;
+    var fps = 50;
+    var speed = 1;
+    var canvasBg = new CanvasMaker.Canvas("canvasBg", {
+      position: "static",
+      background: "black"
+    });
+    var c = canvasBg.ctx;
+    var cx = W / 2;
+    var cy = H / 2;
+    var rectArr = [];
+
+    function Rect(x, y, w, h) {
+      this.x = x;
+      this.y = y;
+      this.w = w;
+      this.h = h;
+    }
+    Rect.prototype.draw = function() {
+      c.lineWidth = 3.0;
+      c,strokeStyle = "white";
+      c.strokeRect(this.x, this.y, this.w, this.h);
+    }
+
+    Rect.prototype.update = function() {
+      if (this.x === 0) {
+        this.x = cx - baseX;
+        this.w = 2 * baseX;
+      }
+      this.x = this.x - speed;
+      this.y = (this.x - speed) / aRatio;
+      this.w = this.w + (2 * speed);
+      this.h = (this.w + (2 * speed)) / aRatio;
+      this.draw();
+    }
+
+    Rect.prototype.setPerspective = function(x, y) {
+      //modify (x,y) to point at corresponding center
+      // var rx = x - (this.w / 2);
+      // var ry = y - (this.h / 2);
+      // // this.x = rx;
+      // // this.y = ry;
+      // x < cx ? this.x -= 2 * (this.x - rx) : this.x += rx;
+      // y < cy ? this.y -= 2 * (this.y - ry) : this.y += ry;
+      cx = x;
+      cy = y;
+    }
+
+    c.fillStyle = "white";
+    c.strokeStyle = "white";
+    c.lineWidth = 3.0;
+    c.strokeRect(0, 0, W, H);
+
+
+    //create our background
+    for (var i = baseX, j = 0; i + j < W / 2; i += gap, j += 2) {
+      i = i + j;
+      rectArr.push(new Rect(
+        cx - i,
+        cy - i / aRatio,
+        2 * i,
+        (2 * i) / aRatio
+      ));
+    }
+
+    function baseLayer() {
+      // c.clearRect(0,0,W,H);
+      c.fillStyle = "rgba(0,0,0, 0.2)";
+      c.fillRect(0, 0, W, H);
+      c.fillStyle = "white";
+      c.strokeStyle = "white";
+      c.fillRect(cx - baseX, cy - (baseX / aRatio), baseX * 2, 2 * (baseX / aRatio));
+      c.strokeRect(0, 0, W, H);
+
+      //perspective plus based
+      var gapRatio = baseX / W;
+      var iw = innerBaseX;  //inner half-width of dash in plus
+      var ow = innerBaseX / gapRatio;  //outer half-width of dash in plus
+      var ih = innerBaseX / aRatio;  //inner half-height of dash in plus
+      var oh = innerBaseX / (gapRatio * aRatio);  //outer half-height of dash in plus
+      c.globalAlpha = 0.3;
+      c.strokeStyle = "lightgrey";
+      c.beginPath();
+      c.moveTo(cx - baseX, cy - ih);
+      c.lineTo(cx - baseX, cy + ih);
+      c.lineTo(0, cy + oh);
+      c.lineTo(0, cy - oh);
+      c.lineTo(cx - baseX, cy - ih);
+
+      c.moveTo(cx + iw, cy - baseX / aRatio);
+      c.lineTo(cx - iw, cy - baseX / aRatio);
+      c.lineTo(cx - ow, 0);
+      c.lineTo(cx + ow, 0);
+      c.lineTo(cx + iw, cy - baseX / aRatio);
+
+      c.moveTo(cx + baseX, cy + ih);
+      c.lineTo(cx + baseX, cy - ih);
+      c.lineTo(W, cy - oh);
+      c.lineTo(W, cy + oh);
+      c.lineTo(cx + baseX, cy + ih);
+
+      c.moveTo(cx - iw, cy + baseX / aRatio);
+      c.lineTo(cx + iw, cy + baseX / aRatio);
+      c.lineTo(cx + ow, H);
+      c.lineTo(cx - ow, H);
+      c.lineTo(cx - iw, cy + baseX / aRatio);
+
+      c.stroke();
+      // c.fill();
+
+      //plus grid
+      c.beginPath();
+      c.moveTo(cx, 0);
+      c.lineTo(cx, cy - baseX / aRatio);
+      c.moveTo(0, cy);
+      c.lineTo(cx - baseX, cy);
+      c.moveTo(W, cy);
+      c.lineTo(cx + baseX, cy);
+      c.moveTo(cx, H);
+      c.lineTo(cx, cy + baseX / aRatio);
+      c.stroke();
+
+      //cross grid
+      c.beginPath();
+      c.moveTo(0,0);
+      c.lineTo(cx - baseX, cy - baseX/aRatio );
+      c.moveTo(W,0);
+      c.lineTo(cx + baseX, cy - baseX/aRatio );
+      c.moveTo(0,H);
+      c.lineTo(cx - baseX, cy + baseX/aRatio );
+      c.moveTo(W,H);
+      c.lineTo(cx + baseX, cy + baseX/aRatio );
+      c.stroke();
+      c.strokeStyle = "white";
+      c.globalAlpha = "1.0";
+    }
+
+    //Animation loop here
+    setInterval(function() {
+      baseLayer();
+      rectArr.forEach(function(item) {
+        item.update();
+      });
+    }, fps);
+
+
+    window.addEventListener('click', function(evt) {
+      rectArr.forEach(function(item) {
+        item.setPerspective(evt.pageX, evt.pageY);
+      });
+    })
+  </script>
+
+</body>
+
+</html>
