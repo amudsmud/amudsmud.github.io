@@ -144,7 +144,8 @@ div.boks {
 margin: 60px 4% 100px 4%;
 background-color: #b8c2d3;
 border: 1px solid black;
-height: 300px;
+height: auto;
+/* min-height: 300px;  */
 width: 25%;
 float: left;
 box-shadow: 4px 8px 15px #6f6f6f;
@@ -154,7 +155,7 @@ h1,a.boks {
 padding: 10px 10% 10px 10%;
 font-family: exo, arial;
 text-align: center;
-font-size: 30px;
+font-size: 28px;
 }
 
 p.boks {
@@ -163,6 +164,7 @@ width: 80%;
 font-family: arial;
 text-align: center;
 font-size: 16px;
+line-height: 20px;
 }
 
 
