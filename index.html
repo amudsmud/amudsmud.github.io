@@ -22,7 +22,7 @@
 </script>
 
 
-<!--amudsmud.github.io Global site tag (gtag.js) - Google Analytics -->
+<!-- amudsmud.github.io Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109185175-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -47,7 +47,6 @@
 
 <body>
 
-
 <header class="nav-down">
 <div class="navi" style="font-family: arial;">
   <ul id="naviul" class="primary-nav">
@@ -68,8 +67,6 @@
 </div>
 </header>
 
-
-
 <div id="kultus-div">
  <h1 id="kultus">Kultus</h1>
  <h3 id="kultus-slagord">- alt som er kult</h3>
@@ -80,58 +77,54 @@
  <img class="antall-besøkende" src="http://www.reliablecounter.com/count.php?page=amudsmud.github.io/&digit=style/big/3/&reloads=0" alt="Antall besøkende" title="Kultus">
 </div>
 
-<div class="bytte-rekkefølge">
-    <div class="boks" id="a"> <!--Link til å logge inn på Hellerasten-siden-->
-        <h1 class="boks">
-        <a class="boks" href="hellerasten-login.html" target="_blank" style="padding: 0">Klikk her</a>
-        for å logge inn på Hellerasten sin side</h1>
-        <p class="boks">Hellerasten siden er ikke oppe for øyeblikket. <br><br> Kommer i løpet av våren 2018</p>
-    </div>
-
-    <div class="boks" id="b"> <!--Link til å laste ned tilfeldig setegenerator-->
-        <h1 class="boks">
-        <a class="boks" href="https://github.com/amudsmud/amudsmud.github.io/releases/download/untagged-9e8cde5e8ad20dabc4ec/classroomV1.0.exe" target="_blank" style="padding: 0">Klikk her</a>
-        for å laste ned programmet mitt</h1>
-        <p class="boks">Tilfeldig setegenerator®.
-        <br><br><i> V 1.0 <br> Sist oppdatert: 24. April 2018 </i> </p>
-    </div>
-
-    <div class="boks" id="c"> <!--Link til å laste ned spillet mitt-->
-        <h1 class="boks">
-        <a class="boks" href="https://github.com/amudsmud/amudsmud.github.io/releases/download/V1.0-beta/SHUMPEXE.EXE" style="padding: 0">Klikk her</a>
-        for å Laste ned spillet mitt</h1>
-        <p class="boks">Noen Virus-program vil se på dette som et virus, men det er det ikke.
-            <br><br><i> V 1.0 <br> Sist oppdatert: 23. April 2018 </i> </p>
-    </div>
-
-    <div class="boks" id="d"> <!--Link til Kenneth's side-->
-        <h1 class="boks">
-        <a class="boks" href="kenneth.html" target="_blank" style="padding: 0">Klikk her Kenneth</a>
-        for å åpne siden jeg lagde til deg</h1>
-        <p class="boks"> takk meg senere for hypotenus-siden. <br><br> -Amud 7'er elev </p>
-    </div>
-
-    <div class="boks" id="e"> <!--Link til Kenneth's side 2.0-->
-        <h1 class="boks">
-        <a class="boks" href="kenneth2.0.html" target="_blank" style="padding: 0">Klikk her</a>
-        for å åpne de fete loading sirklene dine Noing</h1>
-        <p class="boks"> Stillinga er 5-5 <br><br> -Amud 7'er elev </p>
-    </div>
-
-
+<div class="bytte-rekkefølge" id="idbytte-rekkefølge">
     <img src="bilder/cheating-student.jpg" id="bilde" alt="Hovedbilde">
 </div>
 
-
-<div class="footer">
- <p class="copyright">&copy; Smud Productions 2017</p>
- <p>Kultus - Alt som er kult</p>
- <p>sist oppdatert: <br> <span id="dagensDato">error</span><br><i><time id="klokkeslett">error</time></i></p>
- <p>Kontakt informasjon: <a href="mailto:amudsmud@gmail.com">
-  A*****@****.com</a></p>
- <!-- <p>DDD oppdatering: <br> 1/<span id="dag">error</span></p> -->
+<div id="idbytte-rekkefølg">
+    Id: <input type="text" id="id">
+    Redirect teksten: <input type="text" id="ateksten">
+    Redirect til: <input type="text" id="href" value="http://">
+    resten av overskriften: <input type="text" id="h1teksten">
+    Liten tekst: <input type="text" id="ptekstenover">
+    Liten tekst under: <input type="text" id="ptekstenunder">
+    <br>
+    <button onclick="myFunction()"> Lag boks </button>
+    <button onclick="nyboks()"> Ny boks </button>
+    <button onclick="mangebokser()"> Ny bokser </button>
 </div>
 
+<frame>
+    <body>
+
+    farge: <input type="text" id="aa" value="valg farge">
+    <br>
+    <button onclick="qmyFunction()">bytt farge</button>
+
+
+    <script>
+    function qmyFunction() {
+    	var farge = document.getElementById("aa").value;
+        document.getElementById("aa").style.color = farge;
+    }
+    </script>
+    </body>
+</frame>
+
+<div class="footer">
+    <p class="copyright">&copy; Smud Productions 2017</p>
+    <p>Kultus - Alt som er kult</p>
+    <p>Sist oppdatert: <br> <span id="dagensDato">error</span><br><i><time id="klokkeslett">error</time></i></p>
+    <p>Kontakt informasjon: <a href="mailto:amudsmud@gmail.com">
+        A*****@****.com</a></p>
+    <p><a href="privacypolicy-amudsmud.htm" style="color:#000072;">Klikk her</a> <br>for å lese privacy policy</p>
+    <!-- <p>DDD oppdatering: <br> 1/<span id="dag">error</span></p> -->
+</div>
 <script src="javascript/kultus.js"></script>
+<script src="javascript/index.js"></script>
+<script>
+mangebokser()
+// nyboks(id, ateksten, href, h1teksten, ptekstenover, ptekstenunder) legg til en boks
+</script>
 </body>
 </html>
