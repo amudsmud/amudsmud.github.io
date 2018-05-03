@@ -2,22 +2,21 @@
 <html>
 <head>
 
-<title> Kultus - Kontakt</title>
+<title> kultus - Kontakt</title>
 <link rel="stylesheet" type="text/css" href="kontakt.css">
 <link href="https://fonts.googleapis.com/css?family=Bangers|Damion|Exo" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="icon" href="favicon" type="image/x-icon">
-<meta charset="ISO-8859-1">
-<meta name="keywords" content="kultus">
+<meta name="keywords" content="amud, smud, de som vet de vet">
 <meta name="description" content="Kontakt - Kultus">
 <meta name="author" content="Smud productions">
 <meta name="viewport" content="initial-scale=1.0">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
   $(document).ready(function(){
 	  $(".menu-button-mobile").click(function () {
 	  $(".menu-button-mobile, .primary-nav").toggleClass("open");
-	  });    
+	  });
   });
 </script>
 
@@ -29,81 +28,77 @@
 
 
 
+<header class="nav-down">
 <div class="navi" style="font-family: arial;">
   <ul id="naviul" class="primary-nav">
      <button class="menu-button-mobile">Toggle Navigation</button>
-   <li><a id="navia" class="A"style="">A</a></li>
-   <li><a id="navia" href="index.html">Hjem</a></li>
+   <li><a id="navia" class="A" style="">A</a></li>
+   <li><a id="navia"  href="index.html">Hjem</a></li>
    <li><a id="navia" class="parent" href="nyheter.html">Nyheter</a>
        <ul>
                <li class="child"><a href="#">biler</a></li>
                <li class="child"><a href="#">båter</a></li>
                <li class="child"><a href="#">fly</a></li>
-     </ul>
+       </ul>
    </li>
    <li><a id="navia" class="active" href="kontakt.html">Kontakt</a></li>
    <li style="float:right"><a id="navia" href="om.html">Om</a></li>
  </ul>
-<a href="index.html" id="kultus-logo" title="Klikk for å gå hjem">Kultus</a>
+ <a href="index.html" id="kultus-logo" title="Klikk for å gå hjem">Kultus</a>
 </div>
+</header>
 
 
 
 
-<h1 id="kontakt">Kontakt</h1>
+<h1 id="kontakt-overskrift">Kontakt</h1>
 
 
-<img id="kontakt-bilde" src="bilder/contact.jpg">
 
 
-<div id="kontakt-blaaboks">
-<div id="kontakt-boks1">
+<div class="bytte-rekkefølge">
+    <div id="kontakt-blåboks">
 
-<h1 id="kontakt-oss-tekst">Kontakt oss</h1>
+        <div id="kontakt-boks1">
+        <h1 id="kontakt-oss-tekst">Kontakt oss</h1>
+        <form action="mailto: max1231@live.no" method="post" enctype="text/plain">
+            <span>Navn:</span><br>
+            <input id="navn-felt" type="text" name="Navn " size="20" style="margin-bottom:10px; margin-top: 3px;"><br>
+            <span>E-mail:</span><br>
+            <input id="epost-felt" type="text" name="E-mail " size="25" style="margin-bottom:10px; margin-top: 3px;"><br>
+            <span>Kommentar:</span><br>
+            <textarea id="Kommentar-felt" type="text" name="Kommentar "></textarea><br><br> <!-- rows="5" cols="40" -->
 
-<form action="mailto: max1231@live.no" method="post" enctype="text/plain">
-Navn:<br>
-<input type="text" name="Navn" size="20" style="margin-bottom:10px; margin-top: 3px;" ><br>
-E-mail:<br>
-<input type="text" name="E-mail" size="30" style="margin-bottom:10px; margin-top: 3px;" ><br>
-Kommentar:<br>
-<input type="text" name="Kommentar" size="40" autocomplete="off"  style="margin-bottom:10px; margin-top: 3px;" ><br><br>
-<input type="submit" value="Send">
-<input type="reset" value="Reset">
-</form>
+            <button id="knapp" type="submit"><span>Send</span></button>
+            <button id="knapp" class="reset" type="reset"><span>Reset</span></button>
+        </form>
+        <p id="feil"> Dette vil bare funke omtimalt på chrome foreløpig </p>
+        </div>
 
-<p id="feil" > Dette vil bare funke omtimalt på chrome foreløpig </p>
+        <div id="kontakt-boks2">
+            <h2 id="kontaktinfo-e"> Email-adresse: Amudsmud@gmail.com</h2>
+        </div>
 
+        <div id="kontakt-boks3">
+            <h2 id="kontaktinfo-t"> Telefon-nummer: (+47) 40696438</h2>
+        </div>
+    </div>
+    <img id="kontakt-bilde" src="bilder/contact.jpg">
 </div>
-
-
-<div id="kontakt-boks2">
-<h2 id="email"> Email-adresse: Amudsmud@gmail.com</h2>
-</div>
-
-
-
-
-<div id="kontakt-boks3">
-<h2 id="email"> Telefon-nummer: (+47) 40696438</h2>
-</div>
-
-
-</div>
-
 
 
 <div class="footer">
- <p class="copyright">© Smud Productions 2017</p>
+ <p class="copyright">&copy; Smud Productions 2017</p>
  <p>Kultus - Alt som er kult</p>
  <p>sist oppdatert: <br> <span id="dagensDato">error</span><br><i><time id="klokkeslett">error</time></i></p>
- <p>Kontakt informasjon: <a href="mailto:amudsmud@gmail.com">
-  amudsmud@gmail.com</a></p>
- <p>DDD oppdatering: <br> 1/<span id="dag">error</span></p>
+ <p>Kontakt informasjon: <a href="mailto:Amudsmud@gmail.com">
+  Amudsmud@gmail.com</a></p>
+ <!-- <p>DDD oppdatering: <br> 1/<span id="dag">error</span></p> -->
 </div>
 
 
 
 <script src="javascript/kultus.js"></script>
+<script src="javascript/kontakt.js"></script>
 </body>
 </html>
