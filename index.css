@@ -326,7 +326,6 @@ div.navi {
     div.boks#b{ order: 3; }
     div.boks#c{ order: 4; }
     div.boks#d{ order: 5; }
-    div.boks#e{ order: 6; }
 
     div.boks {
         margin: 60px 10% 50px 10%;
@@ -450,7 +449,7 @@ div.navi {
         display: block;
         width: 88%;
         font-size: 23px;
-        font-wight: bold;
+        font-weight: bold; /**************************lage alle sidene bold*********************************/
         text-shadow: -1px -1px 0 rgba(0,0,0,.15);
         color: white;
         text-decoration: none;
