@@ -11,7 +11,7 @@ html,body {
 
 #om-overskrift {
     font-size: 4vw;
-    font-family: Arial black;
+    font-family: Arial black, Arial;
     color: #51caf2;
     text-align: center;
     margin: 100px 30% 1000px 30%; /* bottom margin skal være 10, men er 1000 for at footer skal funke */
