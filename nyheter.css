@@ -10,7 +10,7 @@ html,body {
 
 #Nyheter {
     font-size: 4vw;
-    font-family: Arial black;
+    font-family: Arial black, Arial;
     color: #51caf2;
     text-align: center;
     margin: 100px 20% 1000px 20%; /* bottom margin skal være 10, men er 1000 for at footer skal funke */
@@ -231,7 +231,7 @@ div.navi {
 #Nyheter {
     margin-left: 30%;
     width: 40%;
-    font-size: 40px;
+    font-size: 50px;
     margin-top: 100px;
 }
 
