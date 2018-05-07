@@ -1,0 +1,20 @@
+#overskrift {
+    font-size: 4vw;
+    margin: 100px 10% 1000px 10%; /* bottom margin skal være 10, men er 1000 for at footer skal funke */
+}
+
+#Nyheter-venstre  {
+    width: 400px;
+    height: 300px;
+    left: 50px;
+    position: relative;
+}
+
+
+/*-------------------responsiv css start-------------------*/
+@media only screen and (max-width:1370px) {
+    #overskrift { font-size: 50px; }
+}
+
+@media only screen and (max-width:620px) {
+}

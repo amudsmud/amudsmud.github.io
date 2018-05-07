@@ -1,130 +1,145 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<title> kultus </title>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
-<link rel="stylesheet" type="text/css" href="index.css">
-<link href="https://fonts.googleapis.com/css?family=Bangers|Damion|Exo" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="icon" href="favicon" type="image/x-icon">
-<meta name="keywords" content="amud, smud, amud smud, amudsmud">
-<meta name="description" content="Hjemmesiden til kultus">
-<meta name="author" content="Smud productions">
-<meta name="viewport" content="initial-scale=1.0">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script>
-  $(document).ready(function(){
-	  $(".menu-button-mobile").click(function () {
-	  $(".menu-button-mobile, .primary-nav").toggleClass("open");
-	  });
-  });
-</script>
-
-
-<!-- amudsmud.github.io Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109185175-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-109185175-1');
-</script>
-
-<!-- amudsmud.github.io -->
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-5676721672733974",
-    enable_page_level_ads: true
-  });
-</script>
-
-
-
-</head>
-
-<body>
-
-<header class="nav-down">
-<div class="navi" style="font-family: arial;">
-  <ul id="naviul" class="primary-nav">
-     <button class="menu-button-mobile">Toggle Navigation</button>
-   <li><a id="navia" class="A" style="">A</a></li>
-   <li><a id="navia" class="active" href="index.html">Hjem</a></li>
-   <li><a id="navia" class="parent" href="nyheter.html">Nyheter</a>
-       <ul>
-               <li class="child"><a href="#">biler</a></li>
-               <li class="child"><a href="#">bÃ¥ter</a></li>
-               <li class="child"><a href="#">fly</a></li>
-       </ul>
-   </li>
-   <li><a id="navia" href="kontakt.html">Kontakt</a></li>
-   <li style="float:right"><a id="navia" href="om.html">Om</a></li>
- </ul>
- <a href="index.html" id="kultus-logo" title="Klikk for Ã¥ gÃ¥ hjem">Kultus</a>
-</div>
-</header>
-
-<div id="kultus-div">
- <h1 id="kultus">Kultus</h1>
- <h3 id="kultus-slagord">- alt som er kult</h3>
-</div>
-
-<div id="antall-besÃ¸kende-div">
- <p class="antall-besÃ¸kende">Antall besÃ¸kende</p>
- <img class="antall-besÃ¸kende" src="http://www.reliablecounter.com/count.php?page=amudsmud.github.io/&digit=style/big/3/&reloads=0" alt="Antall besÃ¸kende" title="Kultus">
-</div>
-
-<div class="bytte-rekkefÃ¸lge" id="idbytte-rekkefÃ¸lge">
-    <img src="bilder/cheating-student.jpg" id="bilde" alt="Hovedbilde">
-</div>
-
-<div>
-    Id: <input type="text" id="id">
-    Redirect teksten: <input type="text" id="ateksten">
-    Redirect til: <input type="text" id="href" value="http://">
-    resten av overskriften: <input type="text" id="h1teksten">
-    Liten tekst: <input type="text" id="ptekstenover">
-    Liten tekst under: <input type="text" id="ptekstenunder">
-    <br>
-    <button onclick="myFunction()"> Lag boks </button>
-    <button onclick="nyboks()"> Ny boks </button>
-    <button onclick="mangebokser()"> Ny bokser </button>
-</div>
-
-<frame>
-    <body>
-
-    farge: <input type="text" id="aa" value="valg farge">
-    <br>
-    <button onclick="qmyFunction()">bytt farge</button>
-
-
+    <title> kultus </title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Damion|Exo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="bilder/smud.ico" type="image/x-icon">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+    <meta name="keywords" content="amud, smud, de som vet de vet">
+    <meta name="description" content="hjemmeside - Kultus">
+    <meta name="author" content="Smud productions">
+    <meta name="viewport" content="initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script>
-    function qmyFunction() {
-    	var farge = document.getElementById("aa").value;
-        document.getElementById("aa").style.color = farge;
-    }
+      $(document).ready(function(){
+    	  $(".menu-button-mobile").click(function () {
+    	  $(".menu-button-mobile, .primary-nav").toggleClass("open");
+    	  });
+      });
     </script>
-    </body>
-</frame>
 
-<div class="footer">
-    <p class="copyright">&copy; Smud Productions 2017</p>
-    <p>Kultus - Alt som er kult</p>
-    <p>Sist oppdatert: <br> <span id="dagensDato">error</span><br><i><time id="klokkeslett">error</time></i></p>
-    <p>Kontakt informasjon: <a href="mailto:amudsmud@gmail.com">
-        A*****@****.com</a></p>
-    <p><a href="privacypolicy-amudsmud.htm" style="color:#000072;">Klikk her</a> <br>for Ã¥ lese privacy policy</p>
-    <!-- <p>DDD oppdatering: <br> 1/<span id="dag">error</span></p> -->
-</div>
-<script src="javascript/kultus.js"></script>
-<script src="javascript/index.js"></script>
-<script>
-mangebokser()
-// nyboks(id, ateksten, href, h1teksten, ptekstenover, ptekstenunder) legg til en boks
-</script>
+
+    <!--amudsmud.github.io Global site tag (gtag.js) - Google Analytics ->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109185175-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-109185175-1');
+    </script>
+
+    <!-- amudsmud.github.io
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-2933540462411076",
+        enable_page_level_ads: true
+      });
+    </script>
+    -->
+
+    <!-- smud.ga Global site tag (gtag.js) - Google Analytics ->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109185175-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-109185175-2');
+    </script>
+    <!- smud.ga ->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-5676721672733974",
+        enable_page_level_ads: true
+      });
+    </script>
+    -->
+</head>
+<body>
+    <header class="nav-down">
+        <div class="navi" style="font-family: arial;">
+            <ul id="naviul" class="primary-nav">
+                <button class="menu-button-mobile">Toggle Navigation</button>
+                <li><a id="navia" class="A" style="">A</a></li>
+                <li><a id="navia" class="active" href="index.html">Hjem</a></li>
+                <li><a id="navia" class="parent" href="nyheter.html">Nyheter</a>
+                    <ul>
+                        <li class="child"><a href="#">biler</a></li>
+                        <li class="child"><a href="#">bÃ¥ter</a></li>
+                        <li class="child"><a href="#">fly</a></li>
+                    </ul>
+                </li>
+                <li><a id="navia" href="kontakt.html">Kontakt</a></li>
+                <li style="float:right"><a id="navia" href="om.html">Om</a></li>
+            </ul>
+            <a href="index.html" id="kultus-logo" title="Klikk for Ã¥ gÃ¥ hjem">Kultus</a>
+        </div>
+    </header>
+
+    <div id="kultus-div">
+        <h1 id="overskrift">Kultus</h1>
+        <h3 id="kultus-slagord">- alt som er kult</h3>
+    </div>
+
+    <div id="antall-besøkende-div">
+        <p class="antall-besøkende">Antall besøkende</p>
+        <img class="antall-besøkende" src="http://www.reliablecounter.com/count.php?page=amudsmud.github.io/&digit=style/big/3/&reloads=0" alt="Antall besøkende" title="Kultus">
+    </div>
+
+    <div class="bytte-rekkefølge" id="idbytte-rekkefølge">
+        <img src="bilder/cheating-student.jpg" id="bilde" alt="Hovedbilde">
+    </div>
+
+    <div>
+        Id: <input type="text" id="id">
+        Redirect teksten: <input type="text" id="ateksten">
+        Redirect til: <input type="text" id="href" value="http://">
+        resten av overskriften: <input type="text" id="h1teksten">
+        Liten tekst: <input type="text" id="ptekstenover">
+        Liten tekst under: <input type="text" id="ptekstenunder">
+        <br>
+        <button onclick="myFunction()"> Lag boks </button>
+        <button onclick="nyboks()"> Ny boks </button>
+        <button onclick="mangebokser()"> Ny bokser </button>
+    </div>
+
+    <frame>
+        <body>
+
+        farge: <input type="text" id="aa" value="valg farge">
+        <br>
+        <button onclick="qmyFunction()">bytt farge</button>
+
+
+        <script>
+        function qmyFunction() {
+        	var farge = document.getElementById("aa").value;
+            document.getElementById("aa").style.color = farge;
+        }
+        </script>
+        </body>
+    </frame>
+
+    <div class="footer">
+        <p class="copyright">&copy; Smud Productions 2017</p>
+        <p>Kultus - Alt som er kult</p>
+        <p>Sist oppdatert: <br> <span id="dagensDato">error</span><br><i><time id="klokkeslett">error</time></i></p>
+        <p>Kontakt informasjon: <a href="mailto:Amudsmud@gmail.com">
+            Amudsmud@gmail.com</a></p>
+        <p><a href="privacypolicy-amudsmud.htm" style="color:#000072;">Klikk her</a> <br>for å lese privacy policy</p>
+        <!-- <p>DDD oppdatering: <br> 1/<span id="dag">error</span></p> -->
+    </div>
+    <script src="javascript/kultus.js"></script>
+    <script src="javascript/index.js"></script>
+    <script>
+    mangebokser()
+    // nyboks(id, ateksten, href, h1teksten, ptekstenover, ptekstenunder) legg til en boks
+    </script>
 </body>
 </html>

@@ -1,0 +1,222 @@
+#overskrift {
+    font-size: 4vw;
+    margin: 100px 10% 80px 10%;
+}
+
+#kontakt-oss-overskrift  {
+    font-family: exo, arial;
+    font-size: 40px;
+    margin-left: 18%;
+    margin-right: 18%;
+    text-align: center;
+}
+
+#kontakt-bilde {
+    width: 40%;
+    border: 2px solid black;
+    position: relative;
+    margin: 20px 3% 40px 6%;
+    box-shadow: 15px 10px 35px black;
+    float: left;
+    position: relative;
+    align-self: flex-start; /* hvis det er to ulike ting, hvor skal denne stå iforhold til den*/
+}
+
+.bytte-rekkefølge{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    float: left;
+    justify-content:flex-start;
+}
+
+#kontakt-blåboks {
+    width: 40%;
+    height: 870px;
+    border: 0.1px solid black;
+    position: relative;
+    margin-left: 10%;
+    box-shadow: 7px 5px 25px black;
+    float: left;
+    background-color: #51caf2;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+#kontakt-boks1 {
+    width: 90%;
+    height: 580px;
+    margin: 5% 5% 2% 5%;
+    box-shadow: 2px 2px 10px black;
+    float: left;
+    background-color: white;
+    border: 1px solid black;
+    position: relative;
+}
+
+#kontakt-boks2, #kontakt-boks3 {
+    width: 90%;
+    height: 80px;
+    margin: 1% 5% 2% 5%;
+    box-shadow: 2px 2px 10px black;
+    float: left;
+    background-color: white;
+    border: 1px solid black;
+    position: relative;
+}
+
+form {
+    margin-top: 50px;
+    font-family: exo;
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+#navn-felt {
+    border: 1px solid black;
+    padding: 4px;
+    font-family: arial;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+#epost-felt {
+    border: 1px solid black;
+    padding: 4px;
+    font-family: arial;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+#Kommentar-felt {
+    border: 1px solid black;
+    resize: none;
+    width: 400px;
+    height: 100px;
+    margin-top: 6px;
+    padding: 6px;
+    font-family: arial;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+#knapp {
+    width: 90px;
+    padding: 10px;
+    margin: 5px 15px 5px 0;
+    border-radius: 10px;
+    background-color: #00ff00;
+    border: 1px solid darkgreen;
+    color: #000000;
+    font-family: arial;
+    font-size: 18px;
+    text-align: center;
+    transition: all 0.1s;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 6px #999;
+}
+#knapp:hover {background-color: #00b900;}
+#knapp:active {
+    background-color: #00b900;
+    box-shadow: 0 2px #999;
+    transform: translateY(4px);
+}
+
+#knapp.reset {background-color: #e93403; color: #FFFFFF;}
+#knapp.reset:hover {background-color: #be1b1b;}
+#knapp.reset:active {background-color: #be1b1b;}
+
+#feil  {
+    font-family: exo, tahoma;
+    font-size: 13px;
+    margin: 30px 10px 30px 30px;
+}
+
+#kontaktinfo-t, #kontaktinfo-e  {
+    font-family: exo, tahoma;
+    font-size: 20px;
+    margin: 26px 30px 30px 30px;
+}
+
+
+/*-------------------responsiv css start-------------------*/
+@media only screen and (max-width:1370px) {
+    #navn-felt {width: calc(25% + 100px);}
+    #epost-felt {width: calc(30% + 100px);}
+    #Kommentar-felt {width: 90%;}
+    #overskrift { font-size: 50px; }
+}
+
+@media only screen and (max-width:1000px) {
+    #kontakt-blåboks {height: 900px;}
+    #kontakt-boks1 {height: 630px;}
+}
+
+@media only screen and (max-width:800px) {
+    #kontakt-bilde {
+        box-shadow: 4px 4px 15px black;
+        width: calc(50% + 150px);
+        margin-left: calc(25% - 75px);
+        margin-right: calc(25% - 75px);
+    }
+
+    #kontakt-bilde {
+        width: calc(50% + 150px);
+        margin: 0 calc(25% - 75px) 100px calc(25% - 75px);
+        order: 1;
+    }
+
+    #kontakt-blåboks {
+        box-shadow: 1px 4px 15px black;
+        width: calc(50% + 150px);
+        margin-left: calc(25% - 75px);
+        margin-right: calc(25% - 75px);
+        height: 900px;
+        order: 2;
+    }
+}
+
+
+/* 620  */
+@media only screen and (max-width:620px) {
+    #overskrift {
+        margin: 100px 10% 60px 10%;
+    }
+
+    #kontakt-bilde {
+        width: calc(60% + 130px);
+        margin: 0 calc(20% - 65px) 100px calc(20% - 65px);
+        order: 1;
+    }
+
+    #kontakt-blåboks {
+        width: calc(60% + 130px);
+        margin-left: calc(20% - 65px);
+        margin-right: calc(20% - 65px);
+        height: 900px;
+    }
+
+    #navn-felt {
+        font-size: 20px;
+        padding: 5px;
+        width: calc(20% + 150px);
+    }
+
+    #epost-felt {
+        font-size: 20px;
+        padding: 5px;
+        width: calc(30% + 150px);
+    }
+
+    #Kommentar-felt {
+        font-size: 16px;
+        width: 90%;
+    }
+
+    #kontakt-boks2, #kontakt-boks3 {height: 100px;}
+    #kontaktinfo-t {margin-top: 50px;}
+    #kontaktinfo-t {margin-top: 37px;}
+
+}

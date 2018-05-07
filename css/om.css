@@ -1,0 +1,76 @@
+#overskrift {
+    font-size: 4vw;
+    margin: 100px 10% 80px 10%;
+}
+
+#om-meg-boks {
+    width: 70%;
+    margin: 20px 15% 50px 15%;
+    height: 1000px;
+    border: 0.1px solid black;
+    box-shadow: 7px 5px 25px black;
+    float: left;
+    background-color: #51caf2;
+}
+
+#om-meg-boks2 {
+    width: 94%;
+    height: 94%;
+    margin: 3%;
+    box-shadow: 1px 1px 5px black;
+    background-color: white;
+    border: 1px solid black;
+}
+
+#om-meg-overskrift {
+    width: 50%;
+    margin: 50px 25%;
+    font-family: exo, arial;
+    font-size: 35px;
+    text-align: center;
+}
+
+#mitt-bilde {
+    width: 40%;
+    margin: 40px 5%;
+    box-shadow: 1px 1px 5px black;
+    border: 1px solid black;
+    float: left;
+}
+
+#om-meg-tekst {
+    width: 40%;
+    margin: 60px 3% 40px 5%;
+    font-family: exo, arial;
+    font-size: 20px;
+    float: left;
+}
+#om-meg-tekst span::before {
+    content: "";
+    padding-left: 15px;
+}
+
+#om-meg-tekst h3 {
+    margin-top: 10px;
+
+}
+
+
+
+
+
+/*-------------------responsiv css start-------------------*/
+@media only screen and (max-width:1370px) {
+    #navn-felt {width: calc(25% + 100px);}
+    #epost-felt {width: calc(30% + 100px);}
+    #Kommentar-felt {width: 90%;}
+    #overskrift { font-size: 50px; }
+}
+
+@media only screen and (max-width:1000px) {
+    #kontakt-blåboks {height: 900px;}
+    #kontakt-boks1 {height: 630px;}
+}
+
+@media only screen and (max-width:620px) {
+}
