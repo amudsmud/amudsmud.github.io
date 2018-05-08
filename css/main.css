@@ -179,7 +179,7 @@ div.navi {
     background-color: #07ab1a;
     color: white;
 }
-/* hvordan den aktive siden du er på ser ut når du har musepekeren på den*/
+/* hvordan den aktive siden du er på ser ut nÃ¥r du har musepekeren på den*/
 #navia:hover.active {
     background-color: #297c33;
     color: white;
@@ -316,18 +316,16 @@ div.navi {
     }
 
     .primary-nav li ul a {
-        margin-left: 20%;
+        margin-left: 15%;
         margin-right: 20%;
-        padding-left: 5%;
-        padding-right: 5%;
         display: block;
         color: white;
         text-align: center;
-        padding: 12px;
+        padding: 12px 5% 12px 5%;
         text-decoration: none;
         font-size: 20px;
         width: 50%;
-        float:left;
+        float: left;
         border-bottom: 1px solid rgba(0,0,0,.2);
         border-top: 1px solid rgba(255,255,255,.1);
     }
