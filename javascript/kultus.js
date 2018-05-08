@@ -1,31 +1,31 @@
 // kultus scripts
 // all rights served 2018
 /*------------------------------start tid og dato------------------------------*/
-var år = "2018"
-var måned = "may"
+var Ã¥r = "2018"
+var mÃ¥ned = "may"
 var datonummer = "04"
 var time = "22"
 var minutt = "18"
 /* Sette Dagens dato */
-var dato = new Date(måned + datonummer + "," + år);
+var dato = new Date(mÃ¥ned + datonummer + "," + Ã¥r);
 document.getElementById("dagensDato").innerHTML = dato.getDate() +'.'+ (dato.getMonth()+1) +'.'+ dato.getFullYear();
 
 /* Hvis dato er mindre en 10, vis en 0 foran datoen */
 if (dato.getDate() < 10) {
 document.getElementById("dagensDato").innerHTML = "0" + dato.getDate() +'.'+ (dato.getMonth()+1) +'.'+ dato.getFullYear();
 }
-/* Hvis måned er mindre en 10, vis en 0 foran måneden */
+/* Hvis mÃ¥ned er mindre en 10, vis en 0 foran mÃ¥neden */
 if (dato.getMonth() < 10) {
 document.getElementById("dagensDato").innerHTML = dato.getDate() +'.0'+ (dato.getMonth()+1) +'.'+ dato.getFullYear();
 }
-/* Hvis både dato og måned er mindre en 10, vis en 0 foran datoen og måneden */
+/* Hvis bÃ¥de dato og mÃ¥ned er mindre en 10, vis en 0 foran datoen og mÃ¥neden */
 if (dato.getDate() < 10 && dato.getMonth() < 10) {
 document.getElementById("dagensDato").innerHTML = "0" + dato.getDate() +'.0'+ (dato.getMonth()+1) +'.'+ dato.getFullYear();
 }
 
 /*--------------------------------------------------------------------------------------------------------------*/
 
-/* Sette klokkeslett  ("April 20, 2018 17:23:00") akkurat nå så finner den deagens klokkelsett men kan gjøre sånn at jeg skriver det selv siden det er "sist oppdatert" */
+/* Sette klokkeslett  ("April 20, 2018 17:23:00") akkurat nÃ¥ sÃ¥ finner den deagens klokkelsett men kan gjÃ¸re sÃ¥nn at jeg skriver det selv siden det er "sist oppdatert" */
 var klokkeslett = new Date("april 20, 2018 " + time + ":" + minutt + ":00");
 
 ("April 20, 2018 22:05:00");
@@ -43,7 +43,7 @@ if ( klokkeslett.getHours() < 10) {
 document.getElementById("klokkeslett").innerHTML = '0' + klokkeslett.getHours() +':'+ klokkeslett.getMinutes();
 }
 
-/* Hvis både timer og minutter er mindre en 10, vis en 0 foran begge */
+/* Hvis bÃ¥de timer og minutter er mindre en 10, vis en 0 foran begge */
 if ( klokkeslett.getHours() && klokkeslett.getMinutes() < 10) {
 document.getElementById("klokkeslett").innerHTML = '0' + klokkeslett.getHours() +':0'+ klokkeslett.getMinutes();
 }
@@ -58,7 +58,7 @@ document.getElementById("klokkeslett").innerHTML = klokkeslett.getHours() +':0'+
 
 
 
-// Gjem header når du scroller ned
+// Gjem header nÃ¥r du scroller ned
 var didScroll;
 var lastScrollTop = 0;
 var delta = 10;
@@ -78,12 +78,12 @@ setInterval(function() {
 function hasScrolled() {
     var st = $(this).scrollTop();
 
-    // pass på å scolle mer enn delta
+    // pass pÃ¥ Ã¥ scolle mer enn delta
     if(Math.abs(lastScrollTop - st) <= delta)
         return;
 
-    // Når du scroller ned og er forbi header høyden, legg til classen .nav-up.
-    // Dette er viktig så du aldri saer "bak" header
+    // NÃ¥r du scroller ned og er forbi header hÃ¸yden, legg til classen .nav-up.
+    // Dette er viktig sÃ¥ du aldri saer "bak" header
     if (st > lastScrollTop && st > navbarHeight){
         // Scroll ned
         $('header').removeClass('nav-down').addClass('nav-opp');
@@ -96,3 +96,4 @@ function hasScrolled() {
 
     lastScrollTop = st;
 }
+
