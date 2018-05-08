@@ -44,18 +44,18 @@ function nyboks(id, ateksten, href, h1teksten, ptekstenover, ptekstenunder) {
 
 
 
-    // finne bytte-rekkefølge diven og plassere boksen før bildet
-    var divrekkefølge = document.getElementById("idbytte-rekkefølge");
+    // finne bytte-rekkefÃ¸lge diven og plassere boksen fÃ¸r bildet
+    var divrekkefÃ¸lge = document.getElementById("idbytte-rekkefÃ¸lge");
     var bildet = document.getElementById("bilde");
-    divrekkefølge.insertBefore(divboks,bildet);
+    divrekkefÃ¸lge.insertBefore(divboks,bildet);
 }
 
 function mangebokser() {
     // nyboks(id, ateksten, href, h1teksten, ptekstenover, ptekstenunder)
-    nyboks("b", "Klikk her", "hellerasten-login.html", "for å logge inn på Hellerasten siden", "Hellerasten siden er ikke oppe for øyeblikket. ", "Kommer i løpet av våren 2018")
-    nyboks("a", "Klikk her", "https://github.com/amudsmud/amudsmud.github.io/releases/download/untagged-9e8cde5e8ad20dabc4ec/classroomV1.0.exe", "for å laste ned programmet mitt", "Tilfeldig setegenerator®.", "<i> V 0.3.0-beta <br> Sist oppdatert: 24. April 2018 </i>")
-    nyboks("a", "Klikk her", "https://github.com/amudsmud/amudsmud.github.io/releases/download/V1.0-beta/SHUMPEXE.EXE", "for å laste ned spillet mitt", "Noen Virus-program vil se på dette som et virus, men det er det ikke.", "<i> V 0.1.0-beta <br> Sist oppdatert: 23. April 2018 </i>")
-    nyboks("a", "Klikk her", "kenneth2.0.html", "for å åpne noing's fete sirkler", "Laget til: Noing", "laget av: en random kar")
+    nyboks("b", "Klikk her", "hellerasten-login.html", "for Ã¥ logge inn pÃ¥ Hellerasten siden", "Hellerasten siden er ikke oppe for Ã¸yeblikket. ", "Kommer i lÃ¸pet av vÃ¥ren 2018")
+    nyboks("a", "Klikk her", "https://github.com/amudsmud/amudsmud.github.io/releases/download/untagged-9e8cde5e8ad20dabc4ec/classroomV1.0.exe", "for Ã¥ laste ned programmet mitt", "Tilfeldig setegeneratorÂ®.", "<i> V 0.3.0-beta <br> Sist oppdatert: 24. April 2018 </i>")
+    nyboks("a", "Klikk her", "https://github.com/amudsmud/amudsmud.github.io/releases/download/V1.0-beta/SHUMPEXE.EXE", "for Ã¥ laste ned spillet mitt", "Noen Virus-program vil se pÃ¥ dette som et virus, men det er det ikke.", "<i> V 0.1.0-beta <br> Sist oppdatert: 23. April 2018 </i>")
+    nyboks("a", "Klikk her", "kenneth2.0.html", "for Ã¥ Ã¥pne noing's fete sirkler", "Laget til: Noing", "laget av: en random kar")
 }
 
 
@@ -65,5 +65,6 @@ document.getElementById("");
 document.getElementsByClassName("")
 h1.innerHTML = "bruh";
 h1.setAttribute("class", "boks");
-divrekkefølge.appendChild(divboks);
+divrekkefÃ¸lge.appendChild(divboks);
 */
+
