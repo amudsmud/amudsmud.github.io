@@ -20,7 +20,7 @@
 }
 
 
-#antall-besøkende-div {
+#antall-besÃ¸kende-div {
     margin: 120px 12% 110px 8%; /* 12 */
     /* background-color: #9da5b2; */
     height: auto;
@@ -28,7 +28,7 @@
     float: left;
 }
 
-img.antall-besøkende {
+img.antall-besÃ¸kende {
     position: relative;
     overflow: visible;
     text-align: center;
@@ -41,7 +41,7 @@ img.antall-besøkende {
 }
 
 
-p.antall-besøkende {
+p.antall-besÃ¸kende {
     position: relative;
     text-align: center;
     margin: 0px 0px 0px 0px;
@@ -56,13 +56,13 @@ p.antall-besøkende {
 }
 
 
-.bytte-rekkefølge{
+.bytte-rekkefÃ¸lge{
     display: -webkit-flex;
     display: flex;
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
     float: left;
-    justify-content: center; /* flex-start for å stokke dem fra høyre til venstre */
+    justify-content: center; /* flex-start for Ã¥ stokke dem fra hÃ¸yre til venstre */
 }
 
 
@@ -140,7 +140,7 @@ p.boks {
         width: 40%;
     }
 
-    #antall-besøkende-div {
+    #antall-besÃ¸kende-div {
         margin: 120px 5% 50px 5%;
         height: auto;
         width: 30%;
@@ -161,18 +161,18 @@ p.boks {
         width: 50%;
     }
 
-    #antall-besøkende-div {
+    #antall-besÃ¸kende-div {
         margin: 60px 20% 100px 20%;
         /* background-color: #9da5b2; */
         width: 60%;
     }
 
-    img.antall-besøkende {
+    img.antall-besÃ¸kende {
         margin: 20px 15% 30px 15%;
         width: 70%;
     }
 
-    p.antall-besøkende { font-size: 20px; }
+    p.antall-besÃ¸kende { font-size: 20px; }
 
     h1,a.boks { font-size: 26px; }
 
@@ -183,3 +183,4 @@ p.boks {
         margin: 40px 10% 60px 10%;
     }
 }
+
