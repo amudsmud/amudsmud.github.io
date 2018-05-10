@@ -6,7 +6,7 @@
 #om-meg-boks {
     width: 70%;
     margin: 20px 15% 50px 15%;
-    height: 1000px;
+    height: 1300px;
     border: 0.1px solid black;
     box-shadow: 7px 5px 25px black;
     float: left;
@@ -39,8 +39,8 @@
 }
 
 #om-meg-tekst {
-    width: 40%;
-    margin: 60px 3% 40px 5%;
+    width: 46%;
+    margin: 40px 3% 40px 0;
     font-family: exo, arial;
     font-size: 20px;
     float: left;
@@ -51,12 +51,61 @@
 }
 
 #om-meg-tekst h3 {
-    margin-top: 10px;
-
+    margin: 30px 20px 0;
+    padding-bottom: 4px;
+    border-bottom: 2px solid rgba(0,0,0,.2);
 }
 
 
+#om-meg-tekst h3 ul {
+    list-style-type: circle;
+}
 
+#om-meg-tekst h3 ul li:not(.ulnr2) {
+    font-size: 18px;
+    padding: 6px;
+}
+
+
+.ulnr2 li {padding: 10px !important;}
+.gråbar {
+    margin: 10px;
+    background-color: #f1f1f1;
+    width: 100%;
+    text-align: center;
+    border: 2px solid rgba(40, 40, 40, 0.7);
+    border-radius: 10px;
+    color: white;
+}
+
+
+.htmlbar {
+    background-color: #525eff;
+    width: 90%;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.cssbar {
+    background-color: #ffc81f;
+    width: 80%;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.pybar {
+    background-color: #ff37ce;
+    width: 60%;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.jsbar {
+    background-color: #ff2626;
+    width: 40%;
+    text-align: center;
+    border-radius: 8px;
+}
 
 
 /*-------------------responsiv css start-------------------*/
