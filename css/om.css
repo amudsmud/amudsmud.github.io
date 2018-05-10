@@ -110,16 +110,5 @@
 
 /*-------------------responsiv css start-------------------*/
 @media only screen and (max-width:1370px) {
-    #navn-felt {width: calc(25% + 100px);}
-    #epost-felt {width: calc(30% + 100px);}
-    #Kommentar-felt {width: 90%;}
     #overskrift { font-size: 50px; }
-}
-
-@media only screen and (max-width:1000px) {
-    #kontakt-blåboks {height: 900px;}
-    #kontakt-boks1 {height: 630px;}
-}
-
-@media only screen and (max-width:620px) {
 }
