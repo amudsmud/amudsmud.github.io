@@ -4,24 +4,58 @@
     float: none;
 }
 
-#Nyhet-vindu  {
-    background-color: #e0e0e0;
-    width: 80%;
+#Nyhet-vindu {
+    /*background-color: #e0e0e0;
+    box-shadow: 0 0 2px 2px #e0e0e0; */
+    width: 90%;
     height: 1200px;
-    margin: 20px 10%;
-    box-shadow: 0 0 2px 2px #e0e0e0;
+    margin: 20px 5%;
     border-radius: 15px;
 }
 
-.nyhet-boks{
+.nyhet-boks {
     float: left;
     background-color: white;
-    width: 25%;
-    height: 500px;
-    margin: 60px 4% 0 4%;
-    box-shadow: 0 0 2px 2px #e0e0e0;
+    width: 27%;
+    height: 700px;
+    margin: 60px 3% 0 3%;
+    box-shadow: 0 0 1px 1px #c9c9c9; /* #e0e0e0 */
     border-radius: 5px;
+    border: 2px solid black;
 }
+
+.bakgrunn-wrapper{
+    width: 100%;
+    background-color: black;
+    height: auto;
+    border-bottom-right-radius: 20px;
+    margin-bottom: 15px;
+}
+
+.mini-bilde {
+    width: 98%;
+    margin: 1% 1% 0 1%;
+    border-bottom-right-radius: 20px;
+}
+
+.nyhet-boks-tittel {
+    width: 100%;
+    text-align: center;
+}
+
+.nyhet-boks-dato {
+    width: 90%;
+    text-align: left;
+    margin: 0 5% 30px 4%;
+    padding-left: 1%;
+    padding-right: 5%;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-image:
+      linear-gradient(to right, black, white)5%;
+}
+
+
 
 
 /*-------------------responsiv css start-------------------*/
