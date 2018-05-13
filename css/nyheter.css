@@ -62,6 +62,13 @@ background-image:
 /*-------------------responsiv css start-------------------*/
 @media only screen and (max-width:1370px) {
     #overskrift { font-size: 50px; }
+
+.nyhet-boks {
+    width: 90%;
+    height: 600px;
+    margin: 60px 4% 0 4%;
+}
+
 }
 
 @media only screen and (max-width:620px) {
