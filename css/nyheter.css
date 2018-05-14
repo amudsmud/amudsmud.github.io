@@ -53,8 +53,9 @@
     border-bottom-width: 3px;
     border-image:
       linear-gradient(to right, black, white)5%;
-background-image:
--webkit-linear-gradient(to right, black, white)5%;}
+    border-image:
+    -webkit-linear-gradient(to right, black, white)5%;
+}
 
 
 
