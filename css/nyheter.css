@@ -19,7 +19,8 @@
     width: 27%;
     height: 700px;
     margin: 60px 3% 0 3%;
-    box-shadow: 0 0 1px 1px #c9c9c9; /* #e0e0e0 */
+    -webkit-box-shadow: 0 0 1px 1px #c9c9c9;
+            box-shadow: 0 0 1px 1px #c9c9c9; /* #e0e0e0 */
     border-radius: 5px;
     border: 2px solid black;
 }
@@ -51,8 +52,11 @@
     padding-right: 5%;
     border-bottom-style: solid;
     border-bottom-width: 3px;
-    border-image: linear-gradient(to right, black, white)5%;
-    /*border-image: -webkit-linear-gradient(to right, black, white)5%;*/
+    -webkit-border-image: -webkit-gradient(linear, left top, right top, from(black), to(white))5%;
+    -webkit-border-image: -webkit-linear-gradient(left, black, white)5%;
+         -o-border-image: -o-linear-gradient(left, black, white)5%;
+            border-image: -webkit-gradient(linear, left top, right top, from(black), to(white))5%;
+            border-image: linear-gradient(to right, black, white)5%;
 }
 
 
