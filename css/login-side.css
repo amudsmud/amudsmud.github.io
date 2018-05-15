@@ -1,5 +1,6 @@
 #overskrift {
-  margin-bottom: 1000px;
+    font-size: 4vw;
+    margin: 100px 10% 1000px 10%;
 }
 
 #overlay {
@@ -10,6 +11,15 @@
     background-color: rgba(0,0,0,0.75);
     z-index: 101;
     cursor: pointer;
+    bottom: 0;
+    transition: bottom 3s;
+    -webkit-transition: bottom 3s;
+}
+
+.opp{
+    bottom: 1500px !important;
+    transition: all 5s;
+    -webkit-transition: all 5s;
 }
 
 #input-div {
@@ -45,4 +55,11 @@
     font-size: 25px;
     content: "Passord:";
     padding-right: 56px;
+}
+
+#feil {
+    margin: 0 0 15px 0;
+    font-size: 20px;
+    color: red;
+
 }
