@@ -61,8 +61,8 @@
     </script>
     -->
 </head>
-<body onload="on()">
-    <div id="overlay" onclick="off()"></div>
+<body onload="overlay-på()">
+    <div id="overlay" onclick="overlay-av()"></div>
     <header class="nav-down">
         <div class="navi" style="font-family: arial;">
             <ul id="naviul" class="primary-nav">
@@ -96,11 +96,11 @@
     </div>
     <script src="javascript/kultus.js"></script>
     <script>
-        function on() {
+        function overlay-på() {
         document.getElementById("overlay").style.display = "block";
     }
 
-    function off() {
+    function overlay-av() {
         document.getElementById("overlay").style.display = "none";
     }
     </script>
