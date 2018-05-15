@@ -62,7 +62,6 @@
     -->
 </head>
 <body>
-    <div id="overlay" onclick="overlayav()"></div>
     <header class="nav-down">
         <div class="navi" style="font-family: arial;">
             <ul id="naviul" class="primary-nav">
@@ -82,6 +81,21 @@
             <a href="index.html" id="kultus-logo" title="Klikk for Ã¥ gÃ¥ hjem">Kultus</a>
         </div>
     </header>
+    
+    <div id="overlay" onclick="overlayav()">
+        <div>
+        Id: <input type="text" id="id">
+        Redirect teksten: <input type="text" id="ateksten">
+        Redirect til: <input type="text" id="href" value="http://">
+        resten av overskriften: <input type="text" id="h1teksten">
+        Liten tekst: <input type="text" id="ptekstenover">
+        Liten tekst under: <input type="text" id="ptekstenunder">
+        <br>
+        <button onclick="myFunction()"> Lag boks </button>
+        <button onclick="nyboks()"> Ny boks </button>
+        <button onclick="mangebokser()"> Ny bokser </button>
+        </div>
+    </div>
 
     <h1 id="overskrift">Velkommen</h1>
 
