@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css?family=Bangers|Damion|Exo" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="favicon" type="image/x-icon">
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
     <meta name="keywords" content="Login, kultus">
     <meta name="description" content="Login - Kultus">
     <meta name="author" content="Smud productions">
@@ -22,7 +21,6 @@
     </script>
 
 
-    <!--amudsmud.github.io Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109185175-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -32,7 +30,6 @@
       gtag('config', 'UA-109185175-1');
     </script>
 
-    <!-- amudsmud.github.io -->
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({
@@ -40,26 +37,8 @@
         enable_page_level_ads: true
       });
     </script>
-    <!--a-->
 
-    <!-- smud.ga Global site tag (gtag.js) - Google Analytics ->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109185175-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'UA-109185175-2');
-    </script>
-    <!- smud.ga ->
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-5676721672733974",
-        enable_page_level_ads: true
-      });
-    </script>
-    -->
 </head>
 <body>
     <header class="nav-down">
@@ -71,24 +50,24 @@
                 <li><a id="navia" class="parent" href="nyheter.html">Nyheter</a>
                     <ul>
                         <li class="child"><a href="#">biler</a></li>
-                        <li class="child"><a href="#">bÃ¥ter</a></li>
+                        <li class="child"><a href="#">båter</a></li>
                         <li class="child"><a href="#">fly</a></li>
                     </ul>
                 </li>
                 <li><a id="navia" href="kontakt.html">Kontakt</a></li>
                 <li style="float:right"><a id="navia" href="om.html">Om</a></li>
             </ul>
-            <a href="index.html" id="kultus-logo" title="Klikk for Ã¥ gÃ¥ hjem">Kultus</a>
+            <a href="index.html" id="kultus-logo" title="Klikk for å gå hjem">Kultus</a>
         </div>
     </header>
-    
+
     <div id="overlay" onclick="overlaya()">
-        <div>
-        Brukernavn: <input type="brukernavn" id="brukernavn-input">
+        <div id="input-div">
+        <span id="brukernavn-tekst"></span><input type="brukernavn" id="brukernavn-input" placeholder="Brukernavn">
         <br>
-        Passord: <input type="password" id="passord-input">
+        <span id="passord-tekst"></span><input type="password" id="passord-input" placeholder="Passord">
         <br>
-        <button onclick="overlayav()"> Login inn </button>
+        <button onclick="overlayav()" id="knapp"style="text-align: center;"> Logg inn </button>
         </div>
     </div>
 
@@ -104,11 +83,7 @@
         <!-- <p>DDD oppdatering: <br> 1/<span id="dag">error</span></p> -->
     </div>
     <script src="javascript/kultus.js"></script>
-    <script>
-    function overlayav() {
-        document.getElementById("overlay").style.display = "none";
-    }
-    </script>
+    <script src="javascript/login-side.js"></script>
 
 </body>
 </html>
