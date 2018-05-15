@@ -61,8 +61,8 @@
     </script>
     -->
 </head>
-<body>
-    <div id="overlay"></div>
+<body onload="on()">
+    <div id="overlay" onclick="off()"></div>
     <header class="nav-down">
         <div class="navi" style="font-family: arial;">
             <ul id="naviul" class="primary-nav">
@@ -95,5 +95,15 @@
         <!-- <p>DDD oppdatering: <br> 1/<span id="dag">error</span></p> -->
     </div>
     <script src="javascript/kultus.js"></script>
+    <script>
+        function on() {
+        document.getElementById("overlay").style.display = "block";
+    }
+
+    function off() {
+        document.getElementById("overlay").style.display = "none";
+    }
+    </script>
+
 </body>
 </html>
