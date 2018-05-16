@@ -14,6 +14,7 @@ function getCookie(cookienavn) {
     return "";
 }
 
+
 function lagcookie() {
     document.cookie = "gammelbruker=nei; expires=Thu, 14 jun 2018 12:00:00 UTC";
 }
