@@ -15,23 +15,78 @@ function getCookie(cookienavn) {
 }
 
 function lagcookie() {
-    document.cookie = "gammelbruker=nei; expires=Thu, 14 jun 2018 12:00:00 UTC";
+    document.cookie = "gammelbruker=ja; expires=Thu, 14 jun 2018 12:00:00 UTC";
 }
+
+/*document.cookie = "gammelbruker=lokol; expires=Thu, 14 jun 2018 12:00:00 UTC";*/
+
 
 function checkCookie() {
     var gbruker = getCookie("gammelbruker");
     console.log(gbruker);
 
-    if (gbruker == "nei") {
-        console.log("du ikke har vært her før");
+    if (gbruker == "ja") {
+        console.log("du har vært her før");
+        $(document).ready(function(){
+            $("#overlay").toggleClass("opp");
+        });
+        var Brukernavn = document.getElementById("brukernavn-input").value;
+        document.getElementById("overskrift").innerHTML = "Velkommen " + Brukernavn;
+        return;
     }
 
-    else {
-        lagcookie();
-        console.log("d har vært her før");
+    console.log("du har ikke vært her før");
+    function overlayav() {
+        console.log("SYYYYYYYYYYYYYYYYYY");
+        var Brukernavn = document.getElementById("brukernavn-input").value;
+        var Passord = document.getElementById("passord-input").value;
 
+        if (Brukernavn == "Amud" && Passord == "Smud"){
+            $(document).ready(function(){
+                $("#overlay").toggleClass("opp");
+            });
+                document.getElementById("overskrift").innerHTML = "Velkommen " + Brukernavn;
+                lagcookie();
+                console.log(gbruker);
+        }
+
+        else{
+            var feilmld = document.createElement("h3");
+            feilmld.setAttribute("id", "feil");
+            feilmld.innerHTML = "Brukernavn eller passord er feil";
+            var inputdiv = document.getElementById("input-div")
+            var knapp = document.getElementById("knapp")
+            inputdiv.insertBefore(feilmld,knapp);
+        }
     }
 }
+
+
+/*
+function overlayav() {
+    var Brukernavn = document.getElementById("brukernavn-input").value;
+    var Passord = document.getElementById("passord-input").value;
+
+    if (Brukernavn == "Amud" && Passord == "Smud"){
+        $(document).ready(function(){
+            $("#overlay").toggleClass("opp");
+        });
+            document.getElementById("overskrift").innerHTML = "Velkommen " + Brukernavn;
+            document.cookie = "gammelbruker=ja; expires=Thu, 14 jun 2018 12:00:00 UTC";
+            var gbruker = getCookie("gammelbruker");
+            console.log(gbruker);
+    }
+
+    else{
+        var feilmld = document.createElement("h3");
+        feilmld.setAttribute("id", "feil");
+        feilmld.innerHTML = "Brukernavn eller passord er feil";
+        var inputdiv = document.getElementById("input-div")
+        var knapp = document.getElementById("knapp")
+        inputdiv.insertBefore(feilmld,knapp);
+    }
+}
+*/
 
 
 $(document).ready(function(){
