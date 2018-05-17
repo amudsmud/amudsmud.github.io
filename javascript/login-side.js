@@ -14,30 +14,31 @@ function getCookie(cookienavn) {
     return "";
 }
 
+
+
 function lagcookie() {
-    document.cookie = "gammelbruker=ja; expires=Thu, 14 jun 2018 12:00:00 UTC";
+    document.cookie = "gammelbruker=ja; expires=Thu, 18 may 2018 12:00:00 UTC";
 }
 
-/*document.cookie = "gammelbruker=lokol; expires=Thu, 14 jun 2018 12:00:00 UTC";*/
+/*document.cookie = "gammelbruker=nei; expires=Thu, 18 may 2018 12:00:00 UTC";*/
 
+var gamlbruker = "nei";
 
 function checkCookie() {
     var gbruker = getCookie("gammelbruker");
-    console.log(gbruker);
-
     if (gbruker == "ja") {
-        console.log("du har vært her før");
+        console.log("else if i overlayav funker");
         $(document).ready(function(){
             $("#overlay").toggleClass("opp");
         });
-        var Brukernavn = document.getElementById("brukernavn-input").value;
-        document.getElementById("overskrift").innerHTML = "Velkommen " + Brukernavn;
-        return;
     }
+}
 
-    console.log("du har ikke vært her før");
-    function overlayav() {
-        console.log("SYYYYYYYYYYYYYYYYYY");
+
+function overlayav() {
+    console.log("overlayav starter");
+    if (gamlbruker == "nei") {
+        console.log("SYYYYYYY");
         var Brukernavn = document.getElementById("brukernavn-input").value;
         var Passord = document.getElementById("passord-input").value;
 
@@ -60,6 +61,18 @@ function checkCookie() {
         }
     }
 }
+
+$(document).ready(function(){
+    $('#brukernavn-input, #passord-input').keypress(function(e){
+      if(e.keyCode==13)
+      $('#knapp').click();
+    });
+});
+
+
+
+
+
 
 
 /*
@@ -87,11 +100,3 @@ function overlayav() {
     }
 }
 */
-
-
-$(document).ready(function(){
-    $('#brukernavn-input, #passord-input').keypress(function(e){
-      if(e.keyCode==13)
-      $('#knapp').click();
-    });
-});
