@@ -17,7 +17,7 @@ function getCookie(cookienavn) {
 
 
 function lagcookie() {
-    document.cookie = "gammelbruker=ja; expires=Thu, 18 may 2018 12:00:00 UTC";
+    document.cookie = "gammelbruker=ja; expires=Thu, 19 may 2018 12:00:00 UTC";
 }
 
 /*document.cookie = "gammelbruker=nei; expires=Thu, 18 may 2018 12:00:00 UTC";*/
