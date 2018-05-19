@@ -102,7 +102,7 @@ function overlayav() {
                 nyboks("Hallo Amud", '');
         }
 
-        else if (Brukernavn == "h" && Passord == "1"){
+        else if (Brukernavn == "hellerasten" && Passord == "10b"){
             $(document).ready(function(){
                 $("#overlay").toggleClass("opp");
             });
