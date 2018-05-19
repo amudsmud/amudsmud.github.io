@@ -1,7 +1,8 @@
 #overskrift {
     float: none;
     font-size: 4vw;
-    margin: 100px 10% 80px 10%;
+    width: 50%;
+    margin: 100px 0% 1180px 25%; /*80px*/
 }
 
 #overlay {
@@ -11,7 +12,6 @@
     height: 100%;
     background-color: rgba(0,0,0,0.75);
     z-index: 101;
-    cursor: pointer;
     bottom: 0;
     transition: bottom 3s;
     -webkit-transition: bottom 3s;
@@ -68,15 +68,15 @@
 .hovedvindu {
     background-color: white;
     width: 80%;
-    height: 600px;
-    margin: 20px 10% 60px 10%;
+    height: 800px;
+    margin: 40px 10% 60px 10%;
 }
 
 #hovedvindu-overskrift {
     position: absolute;
-    width: 80%;
+    width: 50%;
     text-align: center;
-    margin: 40px 0;
+    margin: 60px 15%;
 }
 
 #hovedvindu-tekst {
@@ -86,4 +86,90 @@
     text-align: center;
     font-size: 20px;
     line-height: 24px;
+}
+
+#knapp {
+    width: 120px;
+    padding: 7px;
+    margin: 20px 0;
+    border-radius: 10px;
+    background-color: #51caf2;
+    border: 1px solid blue;
+    color: #000000;
+    font-family: arial;
+    font-size: 18px;
+    transition: all .1s;
+    -webkit-transition: all .1s;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 4px #999;
+}
+#knapp:hover {background-color: #0fabdf;}
+#knapp:active {
+    box-shadow: 0 2px #999;
+    transform: translateY(4px);
+}
+
+#loggut-knapp {
+    width: 10%;
+    padding: 9px;
+    margin: 30px 4% 30px 86%;
+    border-radius: 10px;
+    background-color: #51caf2;
+    border: 1px solid blue;
+    color: #000000;
+    font-family: arial;
+    font-size: 22px;
+    transition: all .1s;
+    -webkit-transition: all .1s;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 4px #999;
+}
+#loggut-knapp:hover {background-color: #0fabdf;}
+#loggut-knapp:active {
+    box-shadow: 0 2px #999;
+    transform: translateY(4px);
+}
+
+
+/*-------------------responsiv css start-------------------*/
+@media only screen and (max-width:1370px) {
+    #overskrift {font-size: 50px;}
+}
+@media only screen and (max-width:1200px) {
+    #input-div {width: 44%; margin-left: 32%;}
+    #loggut-knapp {width: 12%; margin: 30px 4% 30px 84%;}
+}
+
+@media only screen and (max-width:1000px) {
+    #loggut-knapp {width: 16%;margin: 30px 4% 30px 80%;}
+    #overskrift {width: 70%; margin-left: 15%;}
+}
+
+@media only screen and (max-width:800px) {
+    #input-div {width: 56%; margin-left: 28%; margin-top: 25%;}
+    #loggut-knapp {width: 20%; margin: 30px 4% 30px 76%;}
+}
+
+@media only screen and (max-width:620px) {
+    #input-div {width: 70%; margin-left: 15%; margin-top: 40%;}
+    #knapp {width: 50%; margin-left: 15%;}
+    #overskrift {width: 80%; margin-left: 10%; letter-spacing: 1px;}
+    #loggut-knapp {width: 40%; margin: 900px 30% 30px 30%;}
+    #hovedvindu-overskrift {width: 60%;}
+    #hovedvindu-tekst {font-size: 18px; line-height: 30px; width: 70%;}
+    .hovedvindu{height: 1000px; width: 90%; margin: 20px 5% 80px 5%;}
+}
+
+@media only screen and (max-width:500px) {
+    #input-div {width: 84%; margin-left: 12%;}
+}
+
+@media only screen and (max-width:400px) {
+    #input-div {width: 90%; margin-left: 5%;}
+    #brukernavn-input {margin-right: 5px;}
+    #passord-input {margin-right: 5px;}
+    #brukernavn-tekst::before {padding-right: 10px;}
+    #passord-tekst::before {padding-right: 46px;}
 }
