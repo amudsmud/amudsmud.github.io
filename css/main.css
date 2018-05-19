@@ -11,15 +11,16 @@ html,body {
 @font-face {font-family: arialblack; src: url(arial-black/ArialBlack.ttf);}
 #overskrift {
     position: relative;
-    font-size: 5vw;
-    font-family: Arial black, arialblack, Arial;
-    color: #51caf2;
-    text-align: center;
     margin: 60px 10% 10px 10%;
     width: 80%;
     padding: 0;
     float: left;
     z-index: 1;
+    font-size: 5vw;
+    font-family: Arial black, arialblack, Arial;
+    color: #51caf2;
+    text-align: center;
+    letter-spacing: 1px;
     text-shadow: 1px 1px 0 #000,
         -1px 1px 0 #000,
         1px -1px 0 #000,
@@ -48,16 +49,16 @@ html,body {
 
 #kultus-logo {
     z-index: 100;
-    position: absolute; /*fixed*/
-    text-decoration: none;
+    position: absolute;
+    width: 14%;
+    margin: 0 43% 0 43%;
     top: 2px;
     font-size: 50px;
+    text-decoration: none;
     font-family: bangers;
     letter-spacing: 3px;
     color: #51caf2;
     text-align: center;
-    width: 14%;
-    margin: 0 43% 0 43%;
     text-shadow: 0px 0px 0 #000,
         -1px 1px 0 #000,
         1px -1px 0 #000,
@@ -95,8 +96,7 @@ html,body {
     color: white;
     text-align: center;
     overflow: hidden;
-    -ms-transform: translateY(20px);
-        transform: translateY(20px);
+    transform: translateY(20px);
      -webkit-transform: translateY(20px);
      -moz-transform: translateY(20px);
      -o-transform: translateY(20px);
@@ -130,7 +130,6 @@ header {
     height: 53px;
     position: fixed;
     top: 0;
-    -o-transition: top 0.3s ease-in-out;
     transition: top 0.3s ease-in-out;
     -webkit-transition: top 0.3s ease-in-out;
     width: 100%;
@@ -157,14 +156,9 @@ div.navi {
     top: 0;
     right: 0;
     width: 100%;
-    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.5);
-            box-shadow: 0 1px 2px rgba(0,0,0,.5);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(rgba(0,0,0,.2)));
-    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.2));
-    background-image: -o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.2));
+    box-shadow: 0 1px 2px rgba(0,0,0,.5);
     background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.2));
     top: 0;
-    -o-transition: top 0.3s;
     transition: top 0.3s;
     -webkit-transition: top 0.3s;
 }
@@ -230,9 +224,6 @@ div.navi {
     .primary-nav {
         width: 100%;
         float: none;
-        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(rgba(0,0,0,.2)));
-        background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.2));
-        background-image: -o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.2));
         background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.2));
         display: block;
         height: 80px;
@@ -284,9 +275,6 @@ div.navi {
         padding: 30px;
         text-decoration: none;
         font-size: 20px;
-        background: url('../bilder/menu-icon-large.png'), -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(rgba(0,0,0,.2)));
-        background: url('../bilder/menu-icon-large.png'), -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.2));
-        background: url('../bilder/menu-icon-large.png'), -o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.2));
         background: url('../bilder/menu-icon-large.png'), linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.2));
         background-position: center center;
         background-repeat: no-repeat;
@@ -297,15 +285,8 @@ div.navi {
         cursor: pointer;
         width: 80px;
         border: 0 none;
-        -webkit-animation-name: snu-menu;
-                animation-name: snu-menu;
-        -webkit-animation-duration: 0.5s;
-                animation-duration: 0.5s;
-    }
-
-    @-webkit-keyframes snu-menu{
-        0% { background-size: 0;}
-        100% { background-size: 36px;}
+        animation-name: snu-menu;
+        animation-duration: 0.5s;
     }
 
     @keyframes snu-menu{
@@ -320,15 +301,8 @@ div.navi {
         background-position: center center;
         background-repeat: no-repeat;
         background-size: 40px, 100%;
-        -webkit-animation-name: snu;
-                animation-name: snu;
-        -webkit-animation-duration: 0.5;
-                animation-duration: 0.5;
-    }
-
-    @-webkit-keyframes snu{
-        0% { background-size: 0;  }
-        100% { background-size: 40px;   }
+        animation-name: snu;
+        animation-duration: 0.5;
     }
 
     @keyframes snu{
