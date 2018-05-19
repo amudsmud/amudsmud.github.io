@@ -29,7 +29,9 @@ function loggut() {
 
 /*document.cookie = "gammelbruker=nei; expires=Thu, 18 may 2018 12:00:00 UTC";*/
 
-function nyboks(h1teksten, pteksten, knappteksten) {
+function nyboks(h1teksten, pteksten) {
+    // få bottom-margin på overskrift til å bli 80px
+    var overskrift = document.getElementById("overskrift").style.marginBottom = "80px";
     // lage en ny boks med class="hovedvindu" og id="a"
     var divboks = document.createElement("div");
     divboks.setAttribute("class", "hovedvindu");
@@ -48,14 +50,12 @@ function nyboks(h1teksten, pteksten, knappteksten) {
 
     // lage en ny button med id knapp
     var knapp = document.createElement("button");
-    knapp.setAttribute("id", "knapp");
+    knapp.setAttribute("id", "loggut-knapp");
     knapp.setAttribute("onclick", "loggut()");
-    knapp.innerHTML = knappteksten;
+    knapp.innerHTML = "Logg ut";
     divboks.appendChild(knapp);
 
-
-
-    // finne bytte-rekkefølge diven og plassere boksen før bildet
+    // plassere divboksen i conatineren
     var container = document.getElementById("container");
     container.appendChild(divboks);
 }
@@ -70,6 +70,7 @@ function sjekkcookie() {
             $("#overlay").toggleClass("opp");
         });
         document.getElementById("overskrift").innerHTML = "Velkommen " + gbruker;
+        nyboks("Hallo igjen, Amud", '');
     }
     if (gbruker == "10B") {
         console.log("gbruker er ja");
@@ -77,7 +78,7 @@ function sjekkcookie() {
             $("#overlay").toggleClass("opp");
         });
         document.getElementById("overskrift").innerHTML = "Velkommen " + gbruker;
-        nyboks("Hallo 10B", 'Her kan du laste ned "Tilfeldig setegenerator" programmet som jeg har utviklet. <br><br> For å starte å bruke programmet mitt, åpner du .exe filen og venter til programmet åpner seg. Deretter velger du 10B som klasse. Programmet tegner da opp et klassekart med samme oppstilling som det i vårt klasserom. elevenes navn blir tilfeldig skrevet i ett av pultene der eleven skal sitte. <br><br> Denne som ligger her er laget spessielt til 10B med alle navene ferdig skrevet inn i programmet.', "Logg ut");
+        nyboks("Hallo igjen, 10B", 'Her kan du laste ned "Tilfeldig setegenerator" programmet som jeg har utviklet. <br><br> For å starte å bruke programmet mitt, åpner du .exe filen og venter til programmet åpner seg. Deretter velger du 10B som klasse. Programmet tegner da opp et klassekart med samme oppstilling som det i vårt klasserom. elevenes navn blir tilfeldig skrevet i ett av pultene der eleven skal sitte. <br><br> Denne som ligger her er laget spessielt til 10B med alle navene ferdig skrevet inn i programmet.');
     }
 }
 
@@ -98,15 +99,16 @@ function overlayav() {
             });
                 document.getElementById("overskrift").innerHTML = "Velkommen " + Brukernavn;
                 lagcookie("Amud");
+                nyboks("Hallo Amud", '');
         }
 
-        else if (Brukernavn == "hellerasten" && Passord == "10b"){
+        else if (Brukernavn == "h" && Passord == "1"){
             $(document).ready(function(){
                 $("#overlay").toggleClass("opp");
             });
                 document.getElementById("overskrift").innerHTML = "Velkommen 10B";
                 lagcookie("10B");
-                nyboks("Hallo 10B", 'Her kan du laste ned "Tilfeldig setegenerator" programmet som jeg har utviklet. <br><br> For å starte å bruke programmet mitt, åpner du .exe filen og venter til programmet åpner seg. Deretter velger du 10B som klasse. Programmet tegner da opp et klassekart med samme oppstilling som det i vårt klasserom. elevenes navn blir tilfeldig skrevet i ett av pultene der eleven skal sitte. <br><br> Denne som ligger her er laget spessielt til 10B med alle navene ferdig skrevet inn i programmet.', "Logg ut");
+                nyboks("Hallo 10B", 'Her kan du laste ned "Tilfeldig setegenerator" programmet som jeg har utviklet. <br><br> For å starte å bruke programmet mitt, åpner du .exe filen og venter til programmet åpner seg. Deretter velger du 10B som klasse. Programmet tegner da opp et klassekart med samme oppstilling som det i vårt klasserom. elevenes navn blir tilfeldig skrevet i ett av pultene der eleven skal sitte. <br><br> Denne som ligger her er laget spessielt til 10B med alle navene ferdig skrevet inn i programmet.');
         }
 
         else{
@@ -126,3 +128,5 @@ $(document).ready(function(){
       $("#knapp").click();
     });
 });
+
+
