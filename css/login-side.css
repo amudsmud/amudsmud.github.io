@@ -155,7 +155,7 @@
 @media only screen and (max-width:620px) {
     #input-div {width: 70%; margin-left: 15%; margin-top: 40%;}
     #knapp {width: 50%; margin-left: 15%;}
-    #overskrift {width: 80%; margin-left: 10%; letter-spacing: 1px;}
+    #overskrift {width: 80%; margin-left: 10%;}
     #loggut-knapp {width: 40%; margin: 900px 30% 30px 30%;}
     #hovedvindu-overskrift {width: 60%;}
     #hovedvindu-tekst {font-size: 18px; line-height: 30px; width: 70%;}
@@ -172,4 +172,5 @@
     #passord-input {margin-right: 5px;}
     #brukernavn-tekst::before {padding-right: 10px;}
     #passord-tekst::before {padding-right: 46px;}
+    #overskrift {width: 90%; margin-left: 5%;}
 }
