@@ -14,31 +14,81 @@ function getCookie(cookienavn) {
     return "";
 }
 
+function lagcookie(cookievalue) {
+    var idag = new Date();
+    idag.setTime(idag.getTime() + (7*24*60*60*1000+7200000));/*7 står for hvor mange dager, +7200000 for å legge til 2 timer*/
+    console.log(idag.toGMTString());
+    var utloper = "expires=" + idag.toGMTString();
+    document.cookie = "gammelbruker=" + cookievalue + ";" + utloper + "";
+}
 
-
-function lagcookie() {
-    document.cookie = "gammelbruker=ja; expires=Thu, 19 may 2018 12:00:00 UTC";
+function loggut() {
+    document.cookie = "gammelbruker=expirenu; expires=mon, 01 january 1970 12:00:00 UTC";
+    location.reload();
 }
 
 /*document.cookie = "gammelbruker=nei; expires=Thu, 18 may 2018 12:00:00 UTC";*/
 
-var gamlbruker = "nei";
+function nyboks(h1teksten, pteksten, knappteksten) {
+    // lage en ny boks med class="hovedvindu" og id="a"
+    var divboks = document.createElement("div");
+    divboks.setAttribute("class", "hovedvindu");
 
-function checkCookie() {
+    // lage en ny h1 med class boks
+    var h1 = document.createElement("h1");
+    h1.setAttribute("id", "hovedvindu-overskrift");
+    h1.innerHTML = h1teksten;
+    divboks.appendChild(h1);
+
+    // lage en ny h1 med id hovedvindu-tekst
+    var p = document.createElement("p");
+    p.setAttribute("id", "hovedvindu-tekst");
+    p.innerHTML = pteksten;
+    divboks.appendChild(p);
+
+    // lage en ny button med id knapp
+    var knapp = document.createElement("button");
+    knapp.setAttribute("id", "knapp");
+    knapp.setAttribute("onclick", "loggut()");
+    knapp.innerHTML = knappteksten;
+    divboks.appendChild(knapp);
+
+
+
+    // finne bytte-rekkefølge diven og plassere boksen før bildet
+    var container = document.getElementById("container");
+    container.appendChild(divboks);
+}
+
+
+function sjekkcookie() {
     var gbruker = getCookie("gammelbruker");
-    if (gbruker == "ja") {
-        console.log("else if i overlayav funker");
+    console.log(gbruker);
+    if (gbruker == "Amud") {
+        console.log("gbruker er ja");
         $(document).ready(function(){
             $("#overlay").toggleClass("opp");
         });
+        document.getElementById("overskrift").innerHTML = "Velkommen " + gbruker;
+    }
+    if (gbruker == "10B") {
+        console.log("gbruker er ja");
+        $(document).ready(function(){
+            $("#overlay").toggleClass("opp");
+        });
+        document.getElementById("overskrift").innerHTML = "Velkommen " + gbruker;
+        nyboks("Hallo 10B", 'Her kan du laste ned "Tilfeldig setegenerator" programmet som jeg har utviklet. <br><br> For å starte å bruke programmet mitt, åpner du .exe filen og venter til programmet åpner seg. Deretter velger du 10B som klasse. Programmet tegner da opp et klassekart med samme oppstilling som det i vårt klasserom. elevenes navn blir tilfeldig skrevet i ett av pultene der eleven skal sitte. <br><br> Denne som ligger her er laget spessielt til 10B med alle navene ferdig skrevet inn i programmet.', "Logg ut");
     }
 }
 
 
+
+
+var gamlbruker = "nei";
+
 function overlayav() {
     console.log("overlayav starter");
     if (gamlbruker == "nei") {
-        console.log("SYYYYYYY");
         var Brukernavn = document.getElementById("brukernavn-input").value;
         var Passord = document.getElementById("passord-input").value;
 
@@ -47,8 +97,16 @@ function overlayav() {
                 $("#overlay").toggleClass("opp");
             });
                 document.getElementById("overskrift").innerHTML = "Velkommen " + Brukernavn;
-                lagcookie();
-                console.log(gbruker);
+                lagcookie("Amud");
+        }
+
+        else if (Brukernavn == "hellerasten" && Passord == "10b"){
+            $(document).ready(function(){
+                $("#overlay").toggleClass("opp");
+            });
+                document.getElementById("overskrift").innerHTML = "Velkommen 10B";
+                lagcookie("10B");
+                nyboks("Hallo 10B", 'Her kan du laste ned "Tilfeldig setegenerator" programmet som jeg har utviklet. <br><br> For å starte å bruke programmet mitt, åpner du .exe filen og venter til programmet åpner seg. Deretter velger du 10B som klasse. Programmet tegner da opp et klassekart med samme oppstilling som det i vårt klasserom. elevenes navn blir tilfeldig skrevet i ett av pultene der eleven skal sitte. <br><br> Denne som ligger her er laget spessielt til 10B med alle navene ferdig skrevet inn i programmet.', "Logg ut");
         }
 
         else{
@@ -63,40 +121,8 @@ function overlayav() {
 }
 
 $(document).ready(function(){
-    $('#brukernavn-input, #passord-input').keypress(function(e){
+    $("#brukernavn-input, #passord-input").keypress(function(e){
       if(e.keyCode==13)
-      $('#knapp').click();
+      $("#knapp").click();
     });
 });
-
-
-
-
-
-
-
-/*
-function overlayav() {
-    var Brukernavn = document.getElementById("brukernavn-input").value;
-    var Passord = document.getElementById("passord-input").value;
-
-    if (Brukernavn == "Amud" && Passord == "Smud"){
-        $(document).ready(function(){
-            $("#overlay").toggleClass("opp");
-        });
-            document.getElementById("overskrift").innerHTML = "Velkommen " + Brukernavn;
-            document.cookie = "gammelbruker=ja; expires=Thu, 14 jun 2018 12:00:00 UTC";
-            var gbruker = getCookie("gammelbruker");
-            console.log(gbruker);
-    }
-
-    else{
-        var feilmld = document.createElement("h3");
-        feilmld.setAttribute("id", "feil");
-        feilmld.innerHTML = "Brukernavn eller passord er feil";
-        var inputdiv = document.getElementById("input-div")
-        var knapp = document.getElementById("knapp")
-        inputdiv.insertBefore(feilmld,knapp);
-    }
-}
-*/
