@@ -3,12 +3,12 @@
 /*------------------------------start tid og dato------------------------------*/
 var år = "2018"
 var måned = "may"
-var datonummer = "04"
-var time = "22"
-var minutt = "18"
+var datonummer = "20"
+var time = "15"
+var minutt = "14"
 /* Sette Dagens dato */
 var dato = new Date(måned + datonummer + "," + år);
-document.getElementById("dagensDato").innerHTML = dato.getDate() +'.'+ (dato.getMonth()+1) +'.'+ dato.getFullYear();
+document.getElementById("dagensDato").innerHTML = dato.getDate() + "." + (dato.getMonth()+1) + "." + dato.getFullYear();
 
 /* Hvis dato er mindre en 10, vis en 0 foran datoen */
 if (dato.getDate() < 10) {
@@ -57,7 +57,6 @@ document.getElementById("klokkeslett").innerHTML = klokkeslett.getHours() +':0'+
 /*------------------------------slutt tid og dato------------------------------start header script------------------------------*/
 
 
-
 // Gjem header når du scroller ned
 var didScroll;
 var lastScrollTop = 0;
@@ -96,4 +95,3 @@ function hasScrolled() {
 
     lastScrollTop = st;
 }
-
