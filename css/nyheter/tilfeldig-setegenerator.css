@@ -2,19 +2,76 @@
     float: left;
     width: 60%;
     margin: 90px 20% 50px 20%;
-    height: 1200px;
+    min-height: 1200px;
+    height: auto;
     background-color: white;
 }
 
 .tittel {
     float: left;
     width: 60%;
-    margin: 60px 20% 80px 20%;
+    margin: 60px 20% 40px 20%;
     font-size: 32px;
     text-align: center;
 }
 
+.bilde {
+    float: left;
+    width: 80%;
+    margin: 5px 10% 10px 10%;
+    border-radius: 5px;
+    border: 5px solid black
+}
 
+.nyhet-dato {
+    float: left;
+    width: 20%;
+    text-align: left;
+    margin: 5px 10% 30px 10%;
+    padding-left: 1%;
+    padding-right: 5%;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image:
+      linear-gradient(to right, black, white)5%;
+}
+
+.hovedinnhold {
+    float: left;
+    width: 80%;
+    min-height: 400px;
+    height: auto;
+    margin: 50px 10% 40px 10%;
+    /*border: 1px solid black;  for testing */
+}
+
+.nyhet-innledning {
+    float: left;
+    width: 100%;
+    margin: 10px 0 60px 0;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.nyhet-hovedtekst {
+    float: left;
+    width: 100%;
+    margin: 10px 0 30px 0;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.bilde-utklipp {
+    float: left;
+    width: 25%;
+    margin: 5px 2% 10px 2%;
+    border: 1px solid black
+}
+
+.nyhet-hovedtekst.ht2 {margin: 30px 0 30px 0;}
+.bilde-utklipp.b1 {margin: 5px 2% 10px 8%;}
+.bilde-utklipp.b2 {margin: 5px 8% 10px 2%;}
+.bilde-utklipp.b3 {width: 70%; margin: 20px 15% 20px 15%;}
 
 
 /*-------------------responsiv css start-------------------*/
