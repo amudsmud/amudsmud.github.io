@@ -123,14 +123,13 @@ form {
 }
 #knapp:hover {background-color: #00b900;}
 #knapp:active {
-    background-color: #00b900;
     box-shadow: 0 2px #999;
     transform: translateY(4px);
 }
 
 #knapp.reset {background-color: #e93403; color: #FFFFFF;}
 #knapp.reset:hover {background-color: #be1b1b;}
-#knapp.reset:active {background-color: #be1b1b;}
+
 
 #feil  {
     font-family: exo, tahoma;
