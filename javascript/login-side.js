@@ -42,18 +42,18 @@ function nyboks(h1teksten, pteksten, iteksten, h3teksten) {
     h1.innerHTML = h1teksten;
     divboks.appendChild(h1);
 
-    // lage en ny p med id hovedvindu-tekst
-    var p = document.createElement("p");
-    p.setAttribute("id", "hovedvindu-tekst");
-    p.innerHTML = pteksten;
-    divboks.appendChild(p);
-
     // lage en ny button med id loggut-knapp
     var knapp = document.createElement("button");
     knapp.setAttribute("id", "loggut-knapp");
     knapp.setAttribute("onclick", "loggut()");
     knapp.innerHTML = "Logg ut";
     divboks.appendChild(knapp);
+
+    // lage en ny p med id hovedvindu-tekst
+    var p = document.createElement("p");
+    p.setAttribute("id", "hovedvindu-tekst");
+    p.innerHTML = pteksten;
+    divboks.appendChild(p);
 
     // lage en ny button med id lastned-knapp
     var lastned = document.createElement("button");
@@ -172,3 +172,35 @@ $(document).ready(function(){
       $("#knapp").click();
     });
 });
+
+
+
+
+
+
+
+/*
+function overlayav() {
+    var Brukernavn = document.getElementById("brukernavn-input").value;
+    var Passord = document.getElementById("passord-input").value;
+
+    if (Brukernavn == "Amud" && Passord == "Smud"){
+        $(document).ready(function(){
+            $("#overlay").toggleClass("opp");
+        });
+            document.getElementById("overskrift").innerHTML = "Velkommen " + Brukernavn;
+            document.cookie = "gammelbruker=ja; expires=Thu, 14 jun 2018 12:00:00 UTC";
+            var gbruker = getCookie("gammelbruker");
+            console.log(gbruker);
+    }
+
+    else{
+        var feilmld = document.createElement("h3");
+        feilmld.setAttribute("id", "feil");
+        feilmld.innerHTML = "Brukernavn eller passord er feil";
+        var inputdiv = document.getElementById("input-div")
+        var knapp = document.getElementById("knapp")
+        inputdiv.insertBefore(feilmld,knapp);
+    }
+}
+*/
