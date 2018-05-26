@@ -1,0 +1,57 @@
+#overskrift {
+    font-size: 4vw;
+    margin: 100px 10% 80px 10%;
+}
+
+#container{
+    float: left;
+    width: 80%;
+    margin: 50px 10%;
+    position: relative;
+}
+
+#canvasid {
+    display: none;
+    z-index: 0;
+    background-color: white;
+    width: 100%;
+    margin: 20px 0;
+}
+
+#menudiv {
+    z-index: 101;
+    background-color: #8d8d8d;
+    width: 100%;
+    min-height: 500px;
+}
+
+.knapp {
+    width: 20%;
+    padding: 10px;
+    margin: 80px 40% 20px 40%;
+    border-radius: 10px;
+    background-color: #00ff00;
+    border: 1px solid darkgreen;
+    color: #2b2b2b;
+    font-family: arial;
+    font-size: 30px;
+    text-align: center;
+    transition: all .1s;
+    -webkit-transition: all .1s;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 6px #999;
+}
+.knapp:hover {background-color: #00b900;}
+.knapp:active {
+    box-shadow: 0 2px #999;
+    transform: translateY(4px);
+}
+
+#innstillingerknapp {
+    margin: 20px 40%;
+    background-color: #e93403;
+    border: 1px solid #942000;
+    color: #FFFFFF;
+}
+#innstillingerknapp:hover {background-color: #be1b1b;}
