@@ -1,0 +1,312 @@
+<html>
+<head>
+<title> Kenneth sin analog klokke </title>
+
+
+<h1> <center> <font color="white"> Kenneths fete stoppeklokke </center> </h1> </font>
+
+<style type="text/css">
+
+body {
+
+background-color: cdcdb1;
+}
+.aklokke{
+
+width: 630px;
+height: 600px;
+background-color: grey;
+display:inline-block;
+border-radius: 70%;
+margin-left: 25%;
+border-style: solid;
+position: relative;
+top: 110px;
+
+}
+
+#sekunder{
+
+height: 40%;
+width: 1%;
+background-color: green;
+border-radius: 15%;
+margin-left: 50%;
+margin-top: 60px; 
+z-index: 2;
+transform-origin: bottom;
+
+}
+
+
+#minutter{
+height: 40%;
+background-color: blue;
+width: 1.5%;
+border-radius: 15%;
+margin-left: 50%;
+margin-top: 60px;
+position: relative;
+bottom: 50%;
+z-index: 3;
+transform-origin: bottom;
+}
+
+#timer{
+height: 30%;
+background-color: yellow;
+width: 2%;
+border-radius: 15%;
+margin-left: 50%;
+position: relative;
+bottom: 80%;
+z-index: 4;
+transform-origin: bottom;
+}
+
+.tall1{
+position: relative;
+bottom: 770px;
+left: 100px;
+z-index: 1;
+font-size: 40px;
+text-align: center;
+
+}
+
+.tall12{
+position: relative;
+bottom: 770px;
+z-index: 1;
+font-size: 40px;
+text-align: center;
+}
+
+.tall2{
+position: relative;
+bottom: 730px;
+left: 200px;
+z-index: 1;
+font-size: 40px;
+text-align: center;
+}
+
+.tall3{
+position: relative;
+bottom: 660px;
+left: 250px;
+z-index: 1;
+font-size: 40px;
+text-align: center;
+}
+
+.tall4{
+position: relative;
+bottom: 590px;
+left: 200px;
+z-index: 1;
+font-size: 40px;
+text-align: center;
+}
+
+.tall5{
+position: relative;
+bottom: 560px;
+left: 120px;
+z-index: 1;
+font-size: 40px;
+text-align: center;
+}
+
+.tall6{
+position: relative;
+bottom: 570px;
+z-index: 1;
+font-size: 40px;
+text-align: center;
+}
+
+
+.tall7{
+position: relative;
+bottom: 650px;
+right: 120px;
+z-index: 1;
+font-size: 40px;
+text-align: center;
+}
+
+.tall8{
+position: relative;
+bottom: 775px;
+right: 200px;
+z-index: 1;
+font-size: 40px;
+text-align: center;
+}
+
+.tall9{
+position: relative;
+bottom: 925px;
+right: 250px;
+z-index: 1;
+font-size: 40px;
+text-align: center;
+}
+
+.tall10{
+position: relative;
+bottom: 1100px;
+right: 230px;
+z-index: 1;
+font-size: 40px;
+text-align: center;
+}
+
+.tall11{
+position: relative;
+bottom: 1230px;
+right: 150px;
+z-index: 1;
+font-size: 40px;
+text-align: center;
+}
+
+
+@keyframes bevegelse {
+    from {transform: rotate(0deg)}
+    to {transform: rotate(360deg)}
+}
+
+#stoppknapp {
+
+width: 100px;
+height: 40px;
+background-color: red;
+border-radius: 20px;
+color: white;
+border: 1px solid black;
+text-align: center;
+padding: 5px;
+position: relative;
+bottom: 1450px;
+left: 350px;
+box-shadow: 2px 5px #a6a6a6;
+
+}
+
+#stoppknapp:hover {
+background-color: #ff704d;
+}
+
+
+#startknapp {
+
+width: 100px;
+height: 40px;
+background-color: #18F70C;
+border-radius: 20px;
+color: black;
+border: 1px solid black;
+text-align: center;
+padding: 5px;
+position: relative;
+bottom: 1450px;
+left: 80px;
+box-shadow: 2px 5px #a6a6a6;
+
+}
+
+#startknapp:hover{
+background-color: #80ff80;
+}
+
+</style>
+
+ 
+
+
+</head>
+
+<body>
+
+
+<div class="aklokke">
+
+<div id="sekunder"> </div>
+
+<div id="minutter"> </div>
+
+<div id="timer"> </div>
+
+<div class="tall12">XII</div>
+
+<div class="tall1">I</div>
+
+<div class="tall2">II</div>
+
+<div class="tall3">III</div>
+
+<div class="tall4">IV</div>
+
+<div class="tall5">V</div>
+
+<div class="tall6">VI</div>
+
+<div class="tall7">VII</div>
+
+<div class="tall8">VIII</div>
+
+<div class="tall9">IX</div>
+
+<div class="tall10">X</div>
+
+<div class="tall11">XI</div>
+
+<button id="stoppknapp">Reset</button>
+
+<button id="startknapp">Start</button>
+
+
+</div>
+
+<script>
+
+startknapp.addEventListener("click", function () {
+
+sekunder.style.animation = "bevegelse 60s linear infinite";
+
+});
+
+stoppknapp.addEventListener("click", function () {
+
+sekunder.style.animation = "";
+
+});
+
+startknapp.addEventListener("click", function () {
+
+minutter.style.animation = "bevegelse 3600s linear infinite";
+
+});
+
+stoppknapp.addEventListener("click", function () {
+minutter.style.animation = "";
+
+});
+
+startknapp.addEventListener("click", function () {
+
+timer.style.animation = "bevegelse 216000s linear infinite";
+
+});
+stoppknapp.addEventListener("click", function () {
+
+timer.style.animation = "";
+
+});
+
+</script>
+
+</body>
+</html>
