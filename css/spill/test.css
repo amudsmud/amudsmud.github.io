@@ -6,7 +6,8 @@
 #container{
     float: left;
     width: 80%;
-    margin: 50px 10%;
+    height: 800px;
+    margin: 50px 10% 1000px 10%;
     position: relative;
 }
 
@@ -22,7 +23,7 @@
     z-index: 101;
     background-color: #8d8d8d;
     width: 100%;
-    min-height: 500px;
+    min-height: 700px;
 }
 
 .knapp {
@@ -55,3 +56,26 @@
     color: #FFFFFF;
 }
 #innstillingerknapp:hover {background-color: #be1b1b;}
+
+/*______________responsiv css start______________*/
+@media only screen and (max-width:1370px) {
+    #container {height: 600px;}
+    #menudiv {height: 600px;}
+}
+
+@media only screen and (max-width:1000px) {
+    #container {height: 500px;}
+    #menudiv {height: 500px;}
+    #innstillingerknapp {font-size: 20px}
+    #startknapp {font-size: 20px}
+}
+@media only screen and (max-width:700px) {
+    #container{width: 100%; margin: 50px 0 1000px 0; height: 600px;}
+    #menudiv {height: 600px;}
+    .knapp {width: 50%;
+        padding: 12px;
+        margin: 60px 25% 20px 25%;
+        border-radius: 15px;
+        font-size: 30px;}
+    #innstillingerknapp {margin: 20px 25% 20px 25%;}
+}
