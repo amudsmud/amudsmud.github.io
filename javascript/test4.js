@@ -1,4 +1,7 @@
 function start_spill() {
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+        alert("bruuuuuuuuuuuuuh telefon")
+    }
     menu.start();
     menu.startknapp_func();
     menu.innstillingerknapp_func();
