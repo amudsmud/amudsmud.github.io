@@ -122,6 +122,7 @@ var platform = {
                     && platform.y > ting.y - ting.høyde / 2
                     && platform.y < ting.y + ting.høyde / 2){
                     console.log(ting.type + " er klikket på");
+                    alert("du klikket på bil")
                 }
             }
             //Hvis firekanten er tekst
@@ -136,6 +137,7 @@ var platform = {
                     && platform.y > ting.y - 1.3 * ting.bredde2
                     && platform.y < ting.y + ting.bredde2 / 4){
                     console.log(ting.type + " er klikket på");
+                    alert("du klikket på ting")
                 }
             }
         });
