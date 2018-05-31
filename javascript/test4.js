@@ -1,6 +1,7 @@
 function start_spill() {
+    var er_telefon = false;
     if (/Mobi|Android/i.test(navigator.userAgent)) {
-        alert("bruuuuuuuuuuuuuh telefon")
+        if (confirm("Du bruker telefon, rigth?")){er_telefon = true;};
     }
     menu.start();
     menu.startknapp_func();
