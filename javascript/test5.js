@@ -7,7 +7,6 @@ function start_spill() {
     menu.startknapp_func();
     menu.innstillingerknapp_func();
     //platform.start();
-    //knapp.start();
     //bil = new firekant(50, 100, "grey", 1000, 900);
     //fartometer = new firekant ("25px", "Arial", "black", 1880, 980, "text");
 
@@ -177,7 +176,7 @@ var platform = {
                     console.log(ting.type + " er klikket på");
                 }
             }
-            //Hvis firekanten er tekst
+            //Hvis firekanten er knapp
             if (ting.type == "knapp"){
                 if (platform.x > ting.x
                     && platform.x < ting.x + ting.bredde
@@ -192,21 +191,6 @@ var platform = {
         });
     }
 }
-
-var knapp = {
-    knapp : document.createElement("button"),
-    start : function() {
-        this.knapp.addEventListener('click', function() {
-            console.log("ok");
-        });
-        this.knapp.width = 100;
-        this.knapp.height = 50;
-        this.knapp.x = 50;
-        this.knapp.y = 100;
-        this.knapp.setAttribute("id", "start-knapp");
-        container.appendChild(this.knapp);
-
-}}
 
 
 function firekant(bredde, høyde, farge, x, y, type) {
@@ -355,6 +339,7 @@ function firekant(bredde, høyde, farge, x, y, type) {
             if (this.fart < 0) {this.fart += 0.3 / 8} else {this.fart = 0;}
             if (this.fart < this.maksfart) {this.fart = this.maksfart;};
         }
+        /*gange vinkelen bilen snur på i forholde til farta, jo saktere, desto kraftigere sving*/
         if (this.fart / this.maksfart < 0.1) {this.moveAngle *= 1.9}
         else if (this.fart / this.maksfart < 0.3) {this.moveAngle *= 1.7}
         else if (this.fart / this.maksfart < 0.5) {this.moveAngle *= 1.5}
@@ -364,19 +349,6 @@ function firekant(bredde, høyde, farge, x, y, type) {
     }
 }
 
-
-function knapp(størrelse, font, farge, x, y, tekst) {
-    this.størrelse = størrelse;
-    this.font = font;
-    this.x = x;
-    this.y = y;
-    this.tekst = tekst;
-    this.oppdater_knapp = function(){
-      noe.font = this.størrelse + " " + this.font;
-      noe.fillStyle = farge;
-      noe.fillText(this.tekst, this.x, this.y);
-    }
-}
 
 
 function stop_bil() {bil.fart = 0;}
