@@ -17,8 +17,10 @@ function start_spill1() {
     platform.start();
     bil = new firekant(50, 105, "../bilder/spill/sedan1_turkis.png", container.offsetWidth * 0.5, container.offsetHeight * 0.6, "bil");
     bakgrunn = new firekant(3456 * 1.5, 2688 * 1.5, "../bilder/spill/map_bilder/map1.png", container.offsetWidth * 0.5 + 2680, 2688 / 3, "bakgrunn");
-    knapp = new firekant(40, 40, "black", container.offsetWidth * 0.5, container.offsetHeight * 0.2 , "knapp");
+    fullskjerm_knapp = new firekant(40, 40, "../bilder/spill/fullskjerm.png", container.offsetWidth * 0.94, container.offsetHeight * 0.02 , "knapp");
     platform.trykketpå(bil);
+    platform.trykketpå(fullskjerm_knapp);
+
     if (window.innerWidth > 700){
         fartometer = new firekant ("15px", "Arial", "black", container.offsetWidth * 0.92, container.offsetHeight * 0.97, "tekst");
         gira = new firekant ("16px", "Arial", "black", container.offsetWidth * 0.86, container.offsetHeight * 0.97, "tekst");
@@ -109,10 +111,25 @@ var platform = {
     resize1 : function() {
         this.canvas.width = container.offsetWidth;
         this.canvas.height = container.offsetHeight;
-        fartometer.x = container.offsetWidth * 0.92;
+        fullskjerm_knapp.y = container.offsetHeight * 0.02
         fartometer.y = container.offsetHeight * 0.97;
-        gira.x = container.offsetWidth * 0.86;
         gira.y = container.offsetHeight * 0.97;
+
+        if (window.innerWidth < 450){
+            fullskjerm_knapp.x = container.offsetWidth * 0.85;
+            fartometer.x = container.offsetWidth * 0.85;
+            gira.x = container.offsetWidth * 0.7;
+        }
+        else if (window.innerWidth < 900){
+            fullskjerm_knapp.x = container.offsetWidth * 0.9;
+            fartometer.x = container.offsetWidth * 0.9;
+            gira.x = container.offsetWidth * 0.8;
+        }
+        else{
+            fullskjerm_knapp.x = container.offsetWidth * 0.94;
+            fartometer.x = container.offsetWidth * 0.92;
+            gira.x = container.offsetWidth * 0.86;
+        }
     },
     resetalt : function() {
         bakgrunn.x = container.offsetWidth * 0.5 + 2680
@@ -160,6 +177,18 @@ var platform = {
                     console.log(ting.type + " er klikket på");
                 }
             }
+            //Hvis firekanten er tekst
+            if (ting.type == "knapp"){
+                if (platform.x > ting.x
+                    && platform.x < ting.x + ting.bredde
+                    && platform.y > ting.y
+                    && platform.y < ting.y + ting.høyde){
+                    if (ting == fullskjerm_knapp){
+                        console.log("Fullskjerm knapp er klikket på");
+                        platform.fullskjerm()
+                    }
+                }
+            }
         });
     }
 }
@@ -182,26 +211,25 @@ var knapp = {
 
 function firekant(bredde, høyde, farge, x, y, type) {
     this.type = type;
-    if (type == "bil") {
+    this.farge = farge;
+    if (this.type == "bil") {
         this.bilde_bil = new Image();
-        this.bilde_bil.src = farge;
+        this.bilde_bil.src = this.farge;
         this.bilde_lys1 = new Image();
         this.bilde_lys1.src = "../bilder/spill/lys1.png";
         this.bilde_sticker = new Image();
         this.bilde_sticker.src = stickersrc1[0];
     }
-    if (type == "bakgrunn") {
+    if (this.type == "bakgrunn") {
         this.bilde_bakgrunn = new Image();
-        this.bilde_bakgrunn.src = farge;
+        this.bilde_bakgrunn.src = this.farge;
     }
-    if (type == "knapp" && farge != "black") {
-        console.log("knapp ikke black");
+    if (this.type == "knapp" && this.farge.startsWith("../bilder")) {
         this.bilde_knapp = new Image();
-        this.bilde_knapp.src = farge;
+        this.bilde_knapp.src = this.farge;
     }
     this.bredde = bredde;
     this.høyde = høyde;
-    this.farge = farge;
     this.gir = 1;
     this.lysbool = false;
     this.angle = 0;
@@ -257,7 +285,7 @@ function firekant(bredde, høyde, farge, x, y, type) {
             if (this.bilde_sticker.src == stickersrc1[1]){console.log("apple");}
         }
         else if (this.type == "knapp"){
-            if (farge != "black"){
+            if (this.farge.startsWith("../bilder")){
                 noe.drawImage(this.bilde_knapp, this.x, this.y, this.bredde, this.høyde);
             }
             else {
@@ -269,7 +297,6 @@ function firekant(bredde, høyde, farge, x, y, type) {
             console.log("ERROR: ingen type valgt på new firekant");
         }
     }
-
 
     this.ny_posisjon = function(){
         this.angle += this.moveAngle * Math.PI / 180;
@@ -297,10 +324,8 @@ function firekant(bredde, høyde, farge, x, y, type) {
             this.maksfart = 38 / 8;
             if (platform.keys && platform.keys[38] && this.fart > 35 / 8) {this.gir += 1;}/*Opp pil*/
             if (platform.keys && platform.keys[40] && this.fart < 25 / 8) {this.gir -= 1;}/*Ned pil*/
-            if (platform.keys && platform.keys[65] && this.fart < 15 / 8) {this.moveAngle = -3 * (this.fart / 4);}/*a*/
-            if (platform.keys && platform.keys[65] && this.fart > 15 / 8) {this.moveAngle = -3 * (this.fart / 8);}/*a*/
-            if (platform.keys && platform.keys[68] && this.fart < 15 / 8) {this.moveAngle = 3 * (this.fart / 4);}/*d*/
-            if (platform.keys && platform.keys[68] && this.fart > 15 / 8) {this.moveAngle = 3 * (this.fart / 8);}/*d*/
+            if (platform.keys && platform.keys[65]) {this.moveAngle = -3 * (this.fart / 8);}/*a*/
+            if (platform.keys && platform.keys[68]) {this.moveAngle = 3 * (this.fart / 8);}/*d*/
             if (platform.keys && platform.keys[87] && this.fart < 18 / 8) {this.fart += 0.3 / 8;}/*w*/
             else if (platform.keys && platform.keys[87] && this.fart < 25 / 8) {this.fart += 0.5 / 8;}/*w*/
             else if (platform.keys && platform.keys[87]) {this.fart += 0.6 / 8;}/*w*/
@@ -311,10 +336,8 @@ function firekant(bredde, høyde, farge, x, y, type) {
             this.maksfart = 22 / 8;
             if (platform.keys && platform.keys[38] && this.fart > 15 / 8) {this.gir += 1;}/*Opp pil*/
             if (platform.keys && platform.keys[40] && this.fart == 0) {this.gir -= 1;}/*Ned pil*/
-            if (platform.keys && platform.keys[65] && this.fart < 15 / 8) {this.moveAngle = -3 * (this.fart / 4);}/*a*/
-            if (platform.keys && platform.keys[65] && this.fart > 15 / 8) {this.moveAngle = -3 * (this.fart / 8);}/*a*/
-            if (platform.keys && platform.keys[68] && this.fart < 15 / 8) {this.moveAngle = 3 * (this.fart / 4);}/*d*/
-            if (platform.keys && platform.keys[68] && this.fart > 15 / 8) {this.moveAngle = 3 * (this.fart / 8);}/*d*/
+            if (platform.keys && platform.keys[65]) {this.moveAngle = -3 * (this.fart / 8);}/*a*/
+            if (platform.keys && platform.keys[68]) {this.moveAngle = 3 * (this.fart / 8);}/*d*/
             if (platform.keys && platform.keys[87]) {this.fart += 0.7 / 8;}/*w*/
             if (platform.keys && platform.keys[83]) {this.fart -= 0.4 / 8;}/*s*/
             if (this.fart > 0) {this.fart -= 0.20 / 8} else {this.fart = 0;}
@@ -332,6 +355,12 @@ function firekant(bredde, høyde, farge, x, y, type) {
             if (this.fart < 0) {this.fart += 0.3 / 8} else {this.fart = 0;}
             if (this.fart < this.maksfart) {this.fart = this.maksfart;};
         }
+        if (this.fart / this.maksfart < 0.1) {this.moveAngle *= 1.9}
+        else if (this.fart / this.maksfart < 0.3) {this.moveAngle *= 1.7}
+        else if (this.fart / this.maksfart < 0.5) {this.moveAngle *= 1.5}
+        else if (this.fart / this.maksfart < 0.7) {this.moveAngle *= 1.3}
+        else if (this.fart / this.maksfart < 0.9) {this.moveAngle *= 1}
+        else {this.moveAngle *= 0.8}
     }
 }
 
@@ -379,5 +408,5 @@ function oppdater_spill() {
     bil.oppdater_firekant();
     fartometer.oppdater_firekant();
     gira.oppdater_firekant();
-    knapp.oppdater_firekant();
+    fullskjerm_knapp.oppdater_firekant();
 }
