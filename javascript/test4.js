@@ -3,7 +3,6 @@ function start_spill() {
     if (/Mobi|Android/i.test(navigator.userAgent)) {
         if (confirm("Du bruker telefon, rigth?")){er_telefon = true;};
     }
-    
     menu.start();
     menu.startknapp_func();
     menu.innstillingerknapp_func();
@@ -16,12 +15,16 @@ function start_spill() {
 
 function start_spill1() {
     platform.start();
-    $("platform").attr("contentEditable", "true")
-    bil = new firekant(30, 67, "../bilder/spill/Tesla-Model-S-mini.jpg", container.offsetWidth * 0.5, container.offsetHeight * 0.8, "bil");
-    fartometer = new firekant ("15px", "Arial", "black", container.offsetWidth * 0.92, container.offsetHeight * 0.97, "tekst");
-    gira = new firekant ("16px", "Arial", "black", container.offsetWidth * 0.86, container.offsetHeight * 0.97, "tekst");
+    bil = new firekant(50, 105, "../bilder/spill/sedan1_turkis.png", container.offsetWidth * 0.5, container.offsetHeight * 0.8, "bil");
     platform.trykketpå(bil);
-    console.log(bil);
+    if (window.innerWidth > 700){
+        fartometer = new firekant ("15px", "Arial", "black", container.offsetWidth * 0.92, container.offsetHeight * 0.97, "tekst");
+        gira = new firekant ("16px", "Arial", "black", container.offsetWidth * 0.86, container.offsetHeight * 0.97, "tekst");
+    }
+    else {
+        fartometer = new firekant ("15px", "Arial", "black", container.offsetWidth * 0.9, container.offsetHeight * 0.97, "tekst");
+        gira = new firekant ("16px", "Arial", "black", container.offsetWidth * 0.8, container.offsetHeight * 0.97, "tekst");
+    }
     if (window.innerWidth < 900){
         for_liten_vindu_advarsel = new firekant ("14px", "Arial", "red", container.offsetWidth * 0.05, container.offsetHeight * 0.06, "tekst");
     }
@@ -69,6 +72,7 @@ var platform = {
         var container = document.getElementById("container");
         this.canvas.width = container.offsetWidth;
         this.canvas.height = container.offsetHeight;
+        this.canvas.style.backgroundColor = "grey"
         this.context = this.canvas.getContext("2d");
         var menu = document.getElementById("menudiv");
         menu.appendChild(this.canvas);
@@ -100,6 +104,15 @@ var platform = {
             platform.keys[e.keyCode] = false;
         });
     },
+    resize1 : function() {
+        this.canvas.width = container.offsetWidth;
+        this.canvas.height = container.offsetHeight;
+        fartometer.x = container.offsetWidth * 0.92;
+        fartometer.y = container.offsetHeight * 0.97;
+        gira.x = container.offsetWidth * 0.86;
+        gira.y = container.offsetHeight * 0.97;
+        bil.y = bil.y
+    },
     tøm : function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     },
@@ -122,7 +135,6 @@ var platform = {
                     && platform.y > ting.y - ting.høyde / 2
                     && platform.y < ting.y + ting.høyde / 2){
                     console.log(ting.type + " er klikket på");
-                    alert("du klikket på bil")
                 }
             }
             //Hvis firekanten er tekst
@@ -137,7 +149,6 @@ var platform = {
                     && platform.y > ting.y - 1.3 * ting.bredde2
                     && platform.y < ting.y + ting.bredde2 / 4){
                     console.log(ting.type + " er klikket på");
-                    alert("du klikket på ting")
                 }
             }
         });
@@ -164,13 +175,16 @@ var knapp = {
 function firekant(bredde, høyde, farge, x, y, type) {
     this.type = type;
     if (type == "bil") {
-        this.bilde = new Image();
-        this.bilde.src = farge;
+        this.bilde_bil = new Image();
+        this.bilde_bil.src = farge;
+        this.bilde_lys1 = new Image();
+        this.bilde_lys1.src = "../bilder/spill/lys1.png";
     }
     this.bredde = bredde;
     this.høyde = høyde;
     this.farge = farge;
     this.gir = 1;
+    this.lysbool = false;
     this.angle = 0;
     this.moveAngle = 0;
     this.fart = 0;
@@ -180,41 +194,48 @@ function firekant(bredde, høyde, farge, x, y, type) {
     this.y = y;
     this.oppdater_firekant = function(){
         noe = platform.context;
+        lys1 = platform.context;
         if (this.type == "tekst") {
-          noe.font = this.bredde + " " + this.høyde;
-          noe.fillStyle = this.farge;
-          noe.fillText(this.tekst, this.x, this.y);
+            noe.font = this.bredde + " " + this.høyde;
+            noe.fillStyle = this.farge;
+            noe.fillText(this.tekst, this.x, this.y);
         }
 
         else if (this.type == "bil"){
-        noe.save();
-        noe.translate(this.x, this.y);
-        noe.rotate(this.angle);
-        //noe.fillRect(this.bredde / -2, this.høyde / -2, this.bredde, this.høyde);
-        noe.drawImage(this.bilde, this.bredde / -2, this.høyde / -1.4, this.bredde, this.høyde);
-        //noe.fillRect(this.x, this.y, this.bredde, this.høyde);
-        noe.restore();
+            if (platform.keys && platform.keys[88] || this.lysbool) {
+                if (!this.lysbool){
+                    this.lysbool = true;
+                }
+                lys1.save();
+                lys1.translate(this.x, this.y);
+                lys1.rotate(this.angle);
+                lys1.drawImage(this.bilde_lys1, this.bredde / -1.3, this.høyde * -1.74, this.bredde + 5, this.høyde + 20);
+                lys1.drawImage(this.bilde_lys1, this.bredde / -3.1, this.høyde * -1.74, this.bredde + 5, this.høyde + 20);
+                lys1.restore();
+
+            }
+                if (platform.keys && platform.keys[88]){console.log("qweqwe");}
+            noe.save();
+            noe.translate(this.x, this.y);
+            noe.rotate(this.angle);
+            noe.drawImage(this.bilde_bil, this.bredde / -2, this.høyde / -1.4, this.bredde, this.høyde);
+            //noe.fillRect(this.x, this.y, this.bredde, this.høyde);
+            noe.restore();
         }
+
         else if (this.type == "knapp"){
-        noe.fillStyle = this.farge;
-        noe.fillRect(this.x, this.y, this.bredde, this.høyde);
+            noe.fillStyle = this.farge;
+            noe.fillRect(this.x, this.y, this.bredde, this.høyde);
         }
         else {
             console.log("ERROR: ingen type valgt på new firekant");
         }
     }
+
     this.ny_posisjon = function(){
         this.angle += this.moveAngle * Math.PI / 180;
         this.x += this.fart * Math.sin(this.angle);
         this.y -= this.fart * Math.cos(this.angle);
-    }
-    this.klikk = function(){
-        this.bilde.onclick = function(){
-            console.log("åk");
-        }
-        if (this.bilde.clicked == true){
-            console.log("ok");
-        }
     }
 
     this.kjøra = function(){
@@ -272,6 +293,7 @@ function firekant(bredde, høyde, farge, x, y, type) {
 
 }
 
+
 function knapp(størrelse, font, farge, x, y, tekst) {
     this.størrelse = størrelse;
     this.font = font;
@@ -290,13 +312,11 @@ function stop_bil() {bil.fart = 0;}
 
 function oppdater_spill() {
     platform.tøm();
+    platform.resize1();
     if (typeof for_liten_vindu_advarsel !== 'undefined') {
         for_liten_vindu_advarsel.tekst = "Vennligst bruk større skjerm for bedre spill-opplevelse";
         for_liten_vindu_advarsel.oppdater_firekant();
     }
-    platform.width = container.offsetWidth;
-    platform.height = container.offsetHeight;
-    bil.klikk();
     bil.moveAngle = 0;
     //console.log(localStorage.getItem("kroner"));
     bil.fartometer = Math.floor((bil.fart * 100) / 100 * 8 + 0.4);
@@ -307,6 +327,7 @@ function oppdater_spill() {
     else {
         gira.tekst = "Gir:" + bil.gir;
     }
+
     bil.kjøra();
     bil.ny_posisjon();
     bil.oppdater_firekant();
