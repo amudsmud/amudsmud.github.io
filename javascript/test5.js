@@ -115,7 +115,7 @@ var platform = {
         gira.y = container.offsetHeight * 0.97;
 
         if (window.innerWidth < 450){
-            fullskjerm_knapp.x = container.offsetWidth * 0.85;
+            fullskjerm_knapp.x = container.offsetWidth * 0.5;
             fartometer.x = container.offsetWidth * 0.85;
             gira.x = container.offsetWidth * 0.7;
         }
