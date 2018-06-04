@@ -214,7 +214,7 @@ function firekant(bredde, høyde, farge, x, y, type) {
     }
     this.bredde = bredde;
     this.høyde = høyde;
-    this.gir = 1;
+    this.gir = 2;
     this.lysbool = false;
     this.angle = 0;
     this.moveAngle = 0;
