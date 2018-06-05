@@ -11,11 +11,12 @@ function start_spill() {
     //fartometer = new firekant ("25px", "Arial", "black", 1880, 980, "text");
 
 }
-var stickersrc1 = ["../bilder/spill/stickers/supreme.png", "../bilder/spill/stickers/apple.png"];
+var stickersrc1 = ["amudsmud.github.io/bilder/spill/stickers/supreme.png", "amudsmud.github.io/bilder/spill/stickers/apple.png"];
 function start_spill1() {
     platform.start();
     bil = new firekant(50, 105, "../bilder/spill/sedan1_turkis.png", container.offsetWidth * 0.5, container.offsetHeight * 0.6, "bil");
     bakgrunn = new firekant(3456 * 1.5, 2688 * 1.5, "../bilder/spill/map_bilder/map1.png", container.offsetWidth * 0.5 + 2680, 2688 / 3, "bakgrunn");
+    overlag = new firekant(2000, 2000, "black", 0, 0, "overlay");
     fullskjerm_knapp = new firekant(40, 40, "../bilder/spill/fullskjerm.png", container.offsetWidth * 0.94, container.offsetHeight * 0.02 , "knapp");
     platform.trykketpå(bil);
     platform.trykketpå(fullskjerm_knapp);
@@ -115,7 +116,7 @@ var platform = {
         gira.y = container.offsetHeight * 0.97;
 
         if (window.innerWidth < 450){
-            fullskjerm_knapp.x = container.offsetWidth * 0.5;
+            fullskjerm_knapp.x = container.offsetWidth * 0.85;
             fartometer.x = container.offsetWidth * 0.85;
             gira.x = container.offsetWidth * 0.7;
         }
@@ -214,7 +215,7 @@ function firekant(bredde, høyde, farge, x, y, type) {
     }
     this.bredde = bredde;
     this.høyde = høyde;
-    this.gir = 2;
+    this.gir = 1;
     this.lysbool = false;
     this.angle = 0;
     this.moveAngle = 0;
@@ -256,6 +257,7 @@ function firekant(bredde, høyde, farge, x, y, type) {
             noe.translate(this.x, this.y);
             noe.rotate(this.angle);
             noe.drawImage(this.bilde_bil, this.bredde / -2, this.høyde / -1.4, this.bredde, this.høyde);
+
             //noe.fillRect(this.x, this.y, this.bredde, this.høyde);
             noe.restore();
 
@@ -277,6 +279,12 @@ function firekant(bredde, høyde, farge, x, y, type) {
                 noe.fillRect(this.x, this.y, this.bredde, this.høyde);
             }
         }
+        else if (this.type == "overlay"){
+            noe.globalAlpha = 0.8;
+            //noe.globalCompositeOperation = "overlay";
+            noe.fillStyle = this.farge;
+            noe.fillRect(this.x, this.y, this.bredde, this.høyde);
+        }
         else {
             console.log("ERROR: ingen type valgt på new firekant");
         }
@@ -292,10 +300,24 @@ function firekant(bredde, høyde, farge, x, y, type) {
         this.y += bil.fart * Math.cos(bil.angle);
     }
 
+
     this.kjøra = function(){
+        if (this.gir == 4){
+            this.maksfart = 78 / 8;
+            if (platform.keys && platform.keys[40] && this.fart * 8 < 74) {this.gir -= 1;}/*Ned pil*/
+            if (platform.keys && platform.keys[65]) {this.moveAngle = -3 * (this.fart / 8);}/*a*/
+            if (platform.keys && platform.keys[68]) {this.moveAngle = 3 * (this.fart / 8);}/*d*/
+            if (platform.keys && platform.keys[87] && this.fart * 8 < 20) {this.fart += 0.27 / 8;}/*w*/
+            else if (platform.keys && platform.keys[87] && this.fart * 8 < 35) {this.fart += 0.32 / 8;}/*w*/
+            else if (platform.keys && platform.keys[87] && this.fart * 8 < 50) {this.fart += 0.4 / 8;}/*w*/
+            else if (platform.keys && platform.keys[87]) {this.fart += 0.5 / 8;}/*w*/
+            if (platform.keys && platform.keys[83]) {this.fart -= 0.4 / 8;}/*s*/
+            if (this.fart > 0) {this.fart -= 0.25 / 8} else {this.fart = 0;}
+        }
         if (this.gir == 3){
             this.maksfart = 56 / 8;
-            if (platform.keys && platform.keys[40] && this.fart < 45 / 8) {this.gir -= 1;}/*Ned pil*/
+            if (platform.keys && platform.keys[38] && this.fart * 8 > 52) {this.gir += 1;}/*Opp pil*/
+            if (platform.keys && platform.keys[40] && this.fart * 8 < 45) {this.gir -= 1;}/*Ned pil*/
             if (platform.keys && platform.keys[65]) {this.moveAngle = -3 * (this.fart / 8);}/*a*/
             if (platform.keys && platform.keys[68]) {this.moveAngle = 3 * (this.fart / 8);}/*d*/
             if (platform.keys && platform.keys[87] && this.fart < 20 / 8) {this.fart += 0.28 / 8;}/*w*/
@@ -313,7 +335,7 @@ function firekant(bredde, høyde, farge, x, y, type) {
             if (platform.keys && platform.keys[87] && this.fart < 18 / 8) {this.fart += 0.3 / 8;}/*w*/
             else if (platform.keys && platform.keys[87] && this.fart < 25 / 8) {this.fart += 0.5 / 8;}/*w*/
             else if (platform.keys && platform.keys[87]) {this.fart += 0.6 / 8;}/*w*/
-            if (platform.keys && platform.keys[83]) {this.fart -= 0.3 / 8;}/*s*/
+            if (platform.keys && platform.keys[83]) {this.fart -= 0.4 / 8;}/*s*/
             if (this.fart > 0) {this.fart -= 0.25 / 8} else {this.fart = 0;}
         }
         if (this.gir == 1){
@@ -330,22 +352,36 @@ function firekant(bredde, høyde, farge, x, y, type) {
         if (this.gir == 0){
             this.maksfart = -25 / 8;
             if (platform.keys && platform.keys[38] && this.fart == 0) {this.gir += 1;}/*Opp pil*/
-            if (platform.keys && platform.keys[65] && this.fart < 15 / 8) {this.moveAngle = -3 * (this.fart / 4);}/*a*/
-            if (platform.keys && platform.keys[65] && this.fart > 15 / 8) {this.moveAngle = -3 * (this.fart / 8);}/*a*/
-            if (platform.keys && platform.keys[68] && this.fart < 15 / 8) {this.moveAngle = 3 * (this.fart / 4);}/*d*/
-            if (platform.keys && platform.keys[68] && this.fart > 15 / 8) {this.moveAngle = 3 * (this.fart / 8);}/*d*/
+            if (platform.keys && platform.keys[65]) {this.moveAngle = -2 * (this.fart / 4);}/*a*/
+            if (platform.keys && platform.keys[68]) {this.moveAngle = 2 * (this.fart / 4);}/*d*/
             if (platform.keys && platform.keys[87]) {this.fart -= 0.8 / 8;}/*w*/
             if (platform.keys && platform.keys[83]) {this.fart += 0.4 / 8;}/*s*/
             if (this.fart < 0) {this.fart += 0.3 / 8} else {this.fart = 0;}
             if (this.fart < this.maksfart) {this.fart = this.maksfart;};
         }
         /*gange vinkelen bilen snur på i forholde til farta, jo saktere, desto kraftigere sving*/
-        if (this.fart / this.maksfart < 0.1) {this.moveAngle *= 1.9}
+        /*if (this.fart / this.maksfart < 0.1) {this.moveAngle *= 1.9}
         else if (this.fart / this.maksfart < 0.3) {this.moveAngle *= 1.7}
         else if (this.fart / this.maksfart < 0.5) {this.moveAngle *= 1.5}
         else if (this.fart / this.maksfart < 0.7) {this.moveAngle *= 1.3}
         else if (this.fart / this.maksfart < 0.9) {this.moveAngle *= 1}
-        else {this.moveAngle *= 0.8}
+        else {this.moveAngle *= 0.8}*/
+        if (this.fart * 8 < 5) {this.moveAngle *= 2}
+        else if (this.fart * 8 < 15) {this.moveAngle *= 1.8}
+        else if (this.fart * 8 < 25) {this.moveAngle *= 1.6}
+        else if (this.fart * 8 < 35) {this.moveAngle *= 1.5}
+        else if (this.fart * 8 < 42) {this.moveAngle *= 1.2}
+        else if (this.fart * 8 < 50) {this.moveAngle *= 1}
+        else if (this.fart * 8 < 60) {this.moveAngle *= 0.9}
+        else if (this.fart * 8 < 70) {this.moveAngle *= 0.8}
+        else if (this.fart * 8 < 80) {this.moveAngle *= 0.7}
+        else if (this.fart * 8 < 100) {this.moveAngle *= 0.6}
+        else if (this.fart * 8 < 125) {this.moveAngle *= 0.5}
+        else if (this.fart * 8 < 150) {this.moveAngle *= 0.45}
+        else if (this.fart * 8 < 175) {this.moveAngle *= 0.4}
+        else if (this.fart * 8 < 200) {this.moveAngle *= 0.35}
+        else {this.moveAngle *= 0.3}
+
     }
 }
 
@@ -378,6 +414,7 @@ function oppdater_spill() {
     bil.ny_posisjon();
     bakgrunn.oppdater_firekant();
     bil.oppdater_firekant();
+    //overlag.oppdater_firekant()
     fartometer.oppdater_firekant();
     gira.oppdater_firekant();
     fullskjerm_knapp.oppdater_firekant();
