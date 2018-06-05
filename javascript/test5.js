@@ -9,9 +9,8 @@ function start_spill() {
     //platform.start();
     //bil = new firekant(50, 100, "grey", 1000, 900);
     //fartometer = new firekant ("25px", "Arial", "black", 1880, 980, "text");
-
 }
-var stickersrc1 = ["https://amudsmud.github.io/bilder/spill/stickers/supreme.png", "https://amudsmud.github.io/bilder/spill/stickers/apple.png"];
+var stickersrc1 = ["file:///G:/kultus/bilder/spill/stickers/supreme.png", "../bilder/spill/stickers/apple.png"];
 function start_spill1() {
     platform.start();
     bil = new firekant(50, 105, "../bilder/spill/sedan1_turkis.png", container.offsetWidth * 0.5, container.offsetHeight * 0.6, "bil");
@@ -202,6 +201,10 @@ function firekant(bredde, høyde, farge, x, y, type) {
         this.bilde_bil.src = this.farge;
         this.bilde_lys1 = new Image();
         this.bilde_lys1.src = "../bilder/spill/lys1.png";
+        this.bilde_lys2 = new Image();
+        this.bilde_lys2.src = "../bilder/spill/lys2.png";
+        this.bilde_lys3 = new Image();
+        this.bilde_lys3.src = "../bilder/spill/lys3.png";
         this.bilde_sticker = new Image();
         this.bilde_sticker.src = stickersrc1[0];
     }
@@ -227,6 +230,8 @@ function firekant(bredde, høyde, farge, x, y, type) {
     this.oppdater_firekant = function(){
         noe = platform.context;
         lys1 = platform.context;
+        lys2 = platform.context;
+        lys3 = platform.context;
         sticker1 = platform.context;
         if (this.type == "tekst") {
             noe.font = this.bredde + " " + this.høyde;
@@ -241,10 +246,19 @@ function firekant(bredde, høyde, farge, x, y, type) {
             noe.restore();
         }
         else if (this.type == "bil"){
-            if (platform.keys && platform.keys[88] || this.lysbool) {
-                if (!this.lysbool){
-                    this.lysbool = true;
+            if (this.lysbool) {
+                if (platform.keys && platform.keys[88]) {
+                    this.lysbool = false;
+                    console.log(this.lysbool);
                 }
+            }
+            else {
+                if (platform.keys && platform.keys[88]) {
+                    this.lysbool = true;
+                    console.log(this.lysbool);
+                }
+            }
+            if (this.lysbool){
                 lys1.save();
                 lys1.translate(this.x, this.y);
                 lys1.rotate(this.angle);
@@ -252,14 +266,29 @@ function firekant(bredde, høyde, farge, x, y, type) {
                 lys1.drawImage(this.bilde_lys1, this.bredde / -3.1, this.høyde * -1.74, this.bredde + 5, this.høyde + 20);
                 lys1.restore();
             }
-
+            if (this.gir == 0){
+                lys3.save();
+                lys3.translate(this.x, this.y);
+                lys3.rotate(this.angle);
+                lys3.drawImage(this.bilde_lys3, this.bredde - this.bredde * 1.43, this.høyde / 10.4, 15, 15);/*-2.3*/
+                lys3.drawImage(this.bilde_lys3, this.bredde - this.bredde * 0.86, this.høyde / 10.4, 15, 15);
+                lys3.restore();
+            }
+            if (platform.keys && platform.keys[83]){
+                lys2.save();
+                lys2.translate(this.x, this.y);
+                lys2.rotate(this.angle);
+                lys2.drawImage(this.bilde_lys2, this.bredde - this.bredde * 1.43, this.høyde / 10.4, 15, 15);/*-2.3*/
+                lys2.drawImage(this.bilde_lys2, this.bredde - this.bredde * 0.86, this.høyde / 10.4, 15, 15);
+                lys2.restore();
+            }
             noe.save();
             noe.translate(this.x, this.y);
             noe.rotate(this.angle);
             noe.drawImage(this.bilde_bil, this.bredde / -2, this.høyde / -1.4, this.bredde, this.høyde);
-
             //noe.fillRect(this.x, this.y, this.bredde, this.høyde);
             noe.restore();
+
 
             sticker1.save();
             sticker1.translate(this.x, this.y);
@@ -267,8 +296,8 @@ function firekant(bredde, høyde, farge, x, y, type) {
             sticker1.drawImage(this.bilde_sticker, 30 / -2, this.høyde / -1.8, 30, 10);
             sticker1.restore();
 
-            if (this.bilde_sticker.src == stickersrc1[0]){console.log("supreme");}
-            if (this.bilde_sticker.src == stickersrc1[1]){console.log("apple");}
+            //if (this.bilde_sticker.src == stickersrc1[0]){console.log("supreme");}
+            //if (this.bilde_sticker.src == stickersrc1[1]){console.log("apple");}
         }
         else if (this.type == "knapp"){
             if (this.farge.startsWith("../bilder")){
@@ -360,13 +389,11 @@ function firekant(bredde, høyde, farge, x, y, type) {
             if (this.fart < this.maksfart) {this.fart = this.maksfart;};
         }
         /*gange vinkelen bilen snur på i forholde til farta, jo saktere, desto kraftigere sving*/
-        /*if (this.fart / this.maksfart < 0.1) {this.moveAngle *= 1.9}
-        else if (this.fart / this.maksfart < 0.3) {this.moveAngle *= 1.7}
-        else if (this.fart / this.maksfart < 0.5) {this.moveAngle *= 1.5}
-        else if (this.fart / this.maksfart < 0.7) {this.moveAngle *= 1.3}
-        else if (this.fart / this.maksfart < 0.9) {this.moveAngle *= 1}
-        else {this.moveAngle *= 0.8}*/
-        if (this.fart * 8 < 5) {this.moveAngle *= 2}
+        if (this.fart * 8 < -25) {this.moveAngle *= 1.2}
+        else if (this.fart * 8 < -15) {this.moveAngle *= 1.4}
+        else if (this.fart * 8 < -10) {this.moveAngle *= 1.6}
+        else if (this.fart * 8 < -5) {this.moveAngle *= 1.8}
+        else if (this.fart * 8 < 5) {this.moveAngle *= 2}
         else if (this.fart * 8 < 15) {this.moveAngle *= 1.8}
         else if (this.fart * 8 < 25) {this.moveAngle *= 1.6}
         else if (this.fart * 8 < 35) {this.moveAngle *= 1.5}
@@ -407,6 +434,7 @@ function oppdater_spill() {
     else {
         gira.tekst = "Gir:" + bil.gir;
     }
+
 
     bakgrunn.kjøra()
     bakgrunn.ny_posisjon_map();
