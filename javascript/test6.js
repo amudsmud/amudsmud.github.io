@@ -1,4 +1,4 @@
-var er_telefon = true;
+var er_telefon = false;
 function start_spill() {
     if (/Mobi|Android/i.test(navigator.userAgent)) {
         if (confirm("Du bruker telefon, rigth?")){er_telefon = true;};
