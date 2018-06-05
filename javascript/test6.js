@@ -116,29 +116,37 @@ var platform = {
         this.canvas.width = container.offsetWidth;
         this.canvas.height = container.offsetHeight;
         fullskjerm_knapp.y = container.offsetHeight * 0.02;
-        gas_pedal.y = container.offsetHeight * 0.75;
-        brems_pedal.y = container.offsetHeight * 0.75 + 11;
+        if (er_telefon){
+            gas_pedal.y = container.offsetHeight * 0.75;
+            brems_pedal.y = container.offsetHeight * 0.75 + 11;
+        }
         fartometer.y = container.offsetHeight * 0.97;
         gira.y = container.offsetHeight * 0.97;
 
         if (window.innerWidth < 450){
             fullskjerm_knapp.x = container.offsetWidth * 0.85;
-            gas_pedal.x = container.offsetWidth * 0.6;
-            brems_pedal.x = container.offsetWidth * 0.8;
+            if (er_telefon){
+                gas_pedal.x = container.offsetWidth * 0.6;
+                brems_pedal.x = container.offsetWidth * 0.8;
+            }
             fartometer.x = container.offsetWidth * 0.85;
             gira.x = container.offsetWidth * 0.7;
         }
         else if (window.innerWidth < 900){
             fullskjerm_knapp.x = container.offsetWidth * 0.9;
-            gas_pedal.x = container.offsetWidth * 0.7;
-            brems_pedal.x = container.offsetWidth * 0.85;
+            if (er_telefon){
+                gas_pedal.x = container.offsetWidth * 0.7;
+                brems_pedal.x = container.offsetWidth * 0.85;
+            }
             fartometer.x = container.offsetWidth * 0.9;
             gira.x = container.offsetWidth * 0.8;
         }
         else{
             fullskjerm_knapp.x = container.offsetWidth * 0.94;
-            gas_pedal.x = container.offsetWidth * 0.8;
-            brems_pedal.x = container.offsetWidth * 0.9;
+            if (er_telefon){
+                gas_pedal.x = container.offsetWidth * 0.8;
+                brems_pedal.x = container.offsetWidth * 0.9;
+            }
             fartometer.x = container.offsetWidth * 0.92;
             gira.x = container.offsetWidth * 0.86;
         }
