@@ -226,7 +226,7 @@ var platform = {
                 }
             }
         });
-        this.canvas.addEventListener("mousedown", function(){
+        this.canvas.addEventListener("mousedown touchstart", function(){
             if (ting.type == "knapp"){
                 if (platform.x > ting.x
                     && platform.x < ting.x + ting.bredde
@@ -243,7 +243,7 @@ var platform = {
                 }
             }
         });
-        this.canvas.addEventListener("mouseup", function(){
+        this.canvas.addEventListener("mouseup touchend", function(){
             if (ting.type == "knapp"){
                 if (platform.x > ting.x
                     && platform.x < ting.x + ting.bredde
