@@ -1,4 +1,6 @@
 var er_telefon = false;
+var gas_pedal_active = false;
+var er_fullskjerm = false;
 function start_spill() {
     if (/Mobi|Android/i.test(navigator.userAgent)) {
         if (confirm("Du bruker telefon, rigth?")){er_telefon = true;};
@@ -21,8 +23,8 @@ function start_spill1() {
     platform.trykketpå(fullskjerm_knapp);
 
     if (er_telefon) {
-        gas_pedal = new firekant(55, 96, "../bilder/spill/car_controls/gas_pedal.png", container.offsetWidth * 0.8, container.offsetHeight * 0.75, "knapp");
-        brems_pedal = new firekant(55, 85, "../bilder/spill/car_controls/brems_pedal.png", container.offsetWidth * 0.9, container.offsetHeight * 0.75 + 11, "knapp");
+        gas_pedal = new firekant(55, 96, "../bilder/spill/car_controls/gas_pedal.png", container.offsetWidth * 0.9, container.offsetHeight * 0.75, "knapp");
+        brems_pedal = new firekant(55, 85, "../bilder/spill/car_controls/brems_pedal.png", container.offsetWidth * 0.8, container.offsetHeight * 0.75 + 11, "knapp");
     }
 
     if (window.innerWidth > 700){
@@ -90,12 +92,18 @@ var platform = {
         var overskrift = document.getElementById("overskrift")
         var style_overskrift = overskrift.currentStyle || window.getComputedStyle(overskrift);
         window.addEventListener('mousemove', function (e) {
+            if (er_fullskjerm == true){
+                platform.x = e.pageX
+                platform.y = e.pageY
+            }
+            else{
             var margin_left = style.marginLeft;
             margin_left = margin_left.replace("px", "")
             var margin_top = style_overskrift.height;
             margin_top = margin_top.replace("px", "")
             platform.x = e.pageX - margin_left;
             platform.y = e.pageY - 200 - 50 - margin_top;
+        }
         });
         /*______________*/
         /*_______sjekke om du trykker på bilen_______*/
@@ -126,8 +134,8 @@ var platform = {
         if (window.innerWidth < 450){
             fullskjerm_knapp.x = container.offsetWidth * 0.85;
             if (er_telefon){
-                gas_pedal.x = container.offsetWidth * 0.6;
-                brems_pedal.x = container.offsetWidth * 0.8;
+                gas_pedal.x = container.offsetWidth * 0.8;
+                brems_pedal.x = container.offsetWidth * 0.6;
             }
             fartometer.x = container.offsetWidth * 0.85;
             gira.x = container.offsetWidth * 0.7;
@@ -135,8 +143,8 @@ var platform = {
         else if (window.innerWidth < 900){
             fullskjerm_knapp.x = container.offsetWidth * 0.9;
             if (er_telefon){
-                gas_pedal.x = container.offsetWidth * 0.7;
-                brems_pedal.x = container.offsetWidth * 0.85;
+                gas_pedal.x = container.offsetWidth * 0.85;
+                brems_pedal.x = container.offsetWidth * 0.7;
             }
             fartometer.x = container.offsetWidth * 0.9;
             gira.x = container.offsetWidth * 0.8;
@@ -144,8 +152,8 @@ var platform = {
         else{
             fullskjerm_knapp.x = container.offsetWidth * 0.94;
             if (er_telefon){
-                gas_pedal.x = container.offsetWidth * 0.8;
-                brems_pedal.x = container.offsetWidth * 0.9;
+                gas_pedal.x = container.offsetWidth * 0.9;
+                brems_pedal.x = container.offsetWidth * 0.8;
             }
             fartometer.x = container.offsetWidth * 0.92;
             gira.x = container.offsetWidth * 0.86;
@@ -178,6 +186,7 @@ var platform = {
             this.canvas.msRequestFullscreen();
             this.canvas.requestFullscreen();
         }
+        er_fullskjerm = true
     },
     trykketpå : function(ting) {
         this.canvas.addEventListener("click", function(){
@@ -213,6 +222,30 @@ var platform = {
                         console.log("Fullskjerm knapp er klikket på");
                         platform.fullskjerm()
                     }
+                }
+            }
+        });
+        this.canvas.addEventListener("mousedown", function(){
+            if (ting.type == "knapp"){
+                if (platform.x > ting.x
+                    && platform.x < ting.x + ting.bredde
+                    && platform.y > ting.y
+                    && platform.y < ting.y + ting.høyde){
+                        if (ting == gas_pedal){
+                            gas_pedal_active = true
+                        }
+                }
+            }
+        });
+        this.canvas.addEventListener("mouseup", function(){
+            if (ting.type == "knapp"){
+                if (platform.x > ting.x
+                    && platform.x < ting.x + ting.bredde
+                    && platform.y > ting.y
+                    && platform.y < ting.y + ting.høyde){
+                        if (ting == gas_pedal){
+                            gas_pedal_active = false
+                        }
                 }
             }
         });
@@ -363,10 +396,10 @@ function firekant(bredde, høyde, farge, x, y, type) {
             if (platform.keys && platform.keys[40] && this.fart * 8 < 74) {this.gir -= 1;}/*Ned pil*/
             if (platform.keys && platform.keys[65]) {this.moveAngle = -3 * (this.fart / 8);}/*a*/
             if (platform.keys && platform.keys[68]) {this.moveAngle = 3 * (this.fart / 8);}/*d*/
-            if (platform.keys && platform.keys[87] && this.fart * 8 < 20) {this.fart += 0.27 / 8;}/*w*/
-            else if (platform.keys && platform.keys[87] && this.fart * 8 < 35) {this.fart += 0.32 / 8;}/*w*/
-            else if (platform.keys && platform.keys[87] && this.fart * 8 < 50) {this.fart += 0.4 / 8;}/*w*/
-            else if (platform.keys && platform.keys[87]) {this.fart += 0.5 / 8;}/*w*/
+            if (platform.keys && platform.keys[87] && this.fart * 8 < 20 || gas_pedal_active == true && this.fart * 8 < 20 ) {this.fart += 0.27 / 8;}/*w*/
+            else if (platform.keys && platform.keys[87] && this.fart * 8 < 35 || gas_pedal_active == true && this.fart * 8 < 35) {this.fart += 0.32 / 8;}/*w*/
+            else if (platform.keys && platform.keys[87] && this.fart * 8 < 50 || gas_pedal_active == true && this.fart * 8 < 50) {this.fart += 0.4 / 8;}/*w*/
+            else if (platform.keys && platform.keys[87] || gas_pedal_active == true) {this.fart += 0.5 / 8;}/*w*/
             if (platform.keys && platform.keys[83]) {this.fart -= 0.4 / 8;}/*s*/
             if (this.fart > 0) {this.fart -= 0.25 / 8} else {this.fart = 0;}
         }
@@ -376,9 +409,9 @@ function firekant(bredde, høyde, farge, x, y, type) {
             if (platform.keys && platform.keys[40] && this.fart * 8 < 45) {this.gir -= 1;}/*Ned pil*/
             if (platform.keys && platform.keys[65]) {this.moveAngle = -3 * (this.fart / 8);}/*a*/
             if (platform.keys && platform.keys[68]) {this.moveAngle = 3 * (this.fart / 8);}/*d*/
-            if (platform.keys && platform.keys[87] && this.fart < 20 / 8) {this.fart += 0.28 / 8;}/*w*/
-            else if (platform.keys && platform.keys[87] && this.fart < 35 / 8) {this.fart += 0.34 / 8;}/*w*/
-            else if (platform.keys && platform.keys[87]) {this.fart += 0.5 / 8;}/*w*/
+            if (platform.keys && platform.keys[87] && this.fart * 8 < 20 || gas_pedal_active == true && this.fart * 8 < 20) {this.fart += 0.28 / 8;}/*w*/
+            else if (platform.keys && platform.keys[87] && this.fart * 8 < 35 || gas_pedal_active == true && this.fart * 8 < 35) {this.fart += 0.34 / 8;}/*w*/
+            else if (platform.keys && platform.keys[87] || gas_pedal_active == true) {this.fart += 0.5 / 8;}/*w*/
             if (platform.keys && platform.keys[83]) {this.fart -= 0.4 / 8;}/*s*/
             if (this.fart > 0) {this.fart -= 0.25 / 8} else {this.fart = 0;}
         }
@@ -388,9 +421,9 @@ function firekant(bredde, høyde, farge, x, y, type) {
             if (platform.keys && platform.keys[40] && this.fart < 25 / 8) {this.gir -= 1;}/*Ned pil*/
             if (platform.keys && platform.keys[65]) {this.moveAngle = -3 * (this.fart / 8);}/*a*/
             if (platform.keys && platform.keys[68]) {this.moveAngle = 3 * (this.fart / 8);}/*d*/
-            if (platform.keys && platform.keys[87] && this.fart < 18 / 8) {this.fart += 0.3 / 8;}/*w*/
-            else if (platform.keys && platform.keys[87] && this.fart < 25 / 8) {this.fart += 0.5 / 8;}/*w*/
-            else if (platform.keys && platform.keys[87]) {this.fart += 0.6 / 8;}/*w*/
+            if (platform.keys && platform.keys[87] && this.fart * 8 < 18 || gas_pedal_active == true && this.fart * 8 < 18) {this.fart += 0.3 / 8;}/*w*/
+            else if (platform.keys && platform.keys[87] && this.fart * 8 < 25 || gas_pedal_active == true && this.fart * 8 < 25) {this.fart += 0.5 / 8;}/*w*/
+            else if (platform.keys && platform.keys[87] || gas_pedal_active == true) {this.fart += 0.6 / 8;}/*w*/
             if (platform.keys && platform.keys[83]) {this.fart -= 0.4 / 8;}/*s*/
             if (this.fart > 0) {this.fart -= 0.25 / 8} else {this.fart = 0;}
         }
@@ -400,7 +433,7 @@ function firekant(bredde, høyde, farge, x, y, type) {
             if (platform.keys && platform.keys[40] && this.fart == 0) {this.gir -= 1;}/*Ned pil*/
             if (platform.keys && platform.keys[65]) {this.moveAngle = -3 * (this.fart / 8);}/*a*/
             if (platform.keys && platform.keys[68]) {this.moveAngle = 3 * (this.fart / 8);}/*d*/
-            if (platform.keys && platform.keys[87]) {this.fart += 0.7 / 8;}/*w*/
+            if (platform.keys && platform.keys[87] || gas_pedal_active == true) {this.fart += 0.7 / 8;}/*w*/
             if (platform.keys && platform.keys[83]) {this.fart -= 0.4 / 8;}/*s*/
             if (this.fart > 0) {this.fart -= 0.20 / 8} else {this.fart = 0;}
         }
@@ -410,7 +443,7 @@ function firekant(bredde, høyde, farge, x, y, type) {
             if (platform.keys && platform.keys[38] && this.fart == 0) {this.gir += 1;}/*Opp pil*/
             if (platform.keys && platform.keys[65]) {this.moveAngle = -2 * (this.fart / 4);}/*a*/
             if (platform.keys && platform.keys[68]) {this.moveAngle = 2 * (this.fart / 4);}/*d*/
-            if (platform.keys && platform.keys[87]) {this.fart -= 0.8 / 8;}/*w*/
+            if (platform.keys && platform.keys[87] || gas_pedal_active == true) {this.fart -= 0.8 / 8;}/*w*/
             if (platform.keys && platform.keys[83]) {this.fart += 0.4 / 8;}/*s*/
             if (this.fart < 0) {this.fart += 0.3 / 8} else {this.fart = 0;}
             if (this.fart < this.maksfart) {this.fart = this.maksfart;};
@@ -446,6 +479,7 @@ function stop_bil() {bil.fart = 0;}
 function oppdater_spill() {
     platform.tøm();
     platform.resize1();
+    platform.trykketpå(gas_pedal)
     if (typeof for_liten_vindu_advarsel !== 'undefined') {
         for_liten_vindu_advarsel.tekst = "Vennligst bruk større skjerm for bedre spill-opplevelse";
         for_liten_vindu_advarsel.oppdater_firekant();
