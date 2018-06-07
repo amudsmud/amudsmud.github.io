@@ -226,7 +226,24 @@ var platform = {
                 }
             }
         });
-        this.canvas.addEventListener("mousedown click", function(){
+        this.canvas.addEventListener("mouseup touchend", function(){
+            if (ting.type == "knapp"){
+                if (platform.x > ting.x
+                    && platform.x < ting.x + ting.bredde
+                    && platform.y > ting.y
+                    && platform.y < ting.y + ting.høyde){
+                        if (er_telefon == true){
+                            if (ting == gas_pedal){
+                                gas_pedal_active = false
+                            }
+                            if (ting == brems_pedal){
+                                brems_pedal_active = false
+                            }
+                        }
+                }
+            }
+        });
+        this.canvas.addEventListener("mousedown touchstart", function(){
             if (ting.type == "knapp"){
                 if (platform.x > ting.x
                     && platform.x < ting.x + ting.bredde
