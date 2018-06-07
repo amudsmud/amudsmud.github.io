@@ -243,23 +243,6 @@ var platform = {
                 }
             }
         });
-        this.canvas.addEventListener("mouseup click", function(){
-            if (ting.type == "knapp"){
-                if (platform.x > ting.x
-                    && platform.x < ting.x + ting.bredde
-                    && platform.y > ting.y
-                    && platform.y < ting.y + ting.høyde){
-                        if (er_telefon == true){
-                            if (ting == gas_pedal){
-                                gas_pedal_active = false
-                            }
-                            if (ting == brems_pedal){
-                                brems_pedal_active = false
-                            }
-                        }
-                }
-            }
-        });
     }
 }
 
