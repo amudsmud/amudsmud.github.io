@@ -242,7 +242,7 @@ var platform = {
                         }
                 }
             }
-        });
+        }, false);
         this.canvas.addEventListener("click touchend", function(){
             if (ting.type == "knapp"){
                 if (platform.x > ting.x
@@ -259,7 +259,7 @@ var platform = {
                         }
                 }
             }
-        });
+        }, false);
     }
 }
 
