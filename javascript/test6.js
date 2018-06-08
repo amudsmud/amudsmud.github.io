@@ -226,7 +226,7 @@ var platform = {
                 }
             }
         });
-        this.canvas.addEventListener("click touchstart", function(event){
+        this.canvas.addEventListener("touchstart", function(event){
             event.preventDefault();
             if (ting.type == "knapp"){
                 if (platform.x > ting.x
@@ -244,7 +244,7 @@ var platform = {
                 }
             }
         }, false);
-        this.canvas.addEventListener("click touchend", function(event){
+        this.canvas.addEventListener("touchend", function(event){
             event.preventDefault();
             if (ting.type == "knapp"){
                 if (platform.x > ting.x
