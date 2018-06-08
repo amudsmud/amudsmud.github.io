@@ -1,4 +1,4 @@
-*{-webkit-touch-callout: none; -webkit-user-select:none;}
+*{-webkit-touch-callout: none; -webkit-user-select:none; -webkit-user-drag: none;}
 #overskrift {
     font-size: 4vw;
     margin: 100px 10% 80px 10%;
