@@ -16,13 +16,13 @@ function start_spill() {
 var stickersrc1 = ["https://amudsmud.github.io/bilder/spill/stickers/supreme.png", "https://amudsmud.github.io/bilder/spill/stickers/apple.png"];
 function start_spill1() {
     platform.start();
-    bil = new firekant(50, 105, "../bilder/spill/sedan1_turkis.png", container.offsetWidth * 0.5, container.offsetHeight * 0.6, "bil");
+    bil = new firekant(50, 105, shop.biler[localStorage.bil_nr], container.offsetWidth * 0.5, container.offsetHeight * 0.6, "bil");
     bakgrunn = new firekant(3456 * 1.5, 2688 * 1.5, "../bilder/spill/map_bilder/map1.png", container.offsetWidth * 0.5 + 2680, 2688 / 3, "bakgrunn");
     overlag = new firekant(2000, 2000, "black", 0, 0, "overlay");
     fullskjerm_knapp = new firekant(40, 40, "../bilder/spill/fullskjerm.png", container.offsetWidth * 0.94, container.offsetHeight * 0.02 , "knapp");
     platform.trykketpå(bil);
     platform.trykketpå(fullskjerm_knapp);
-
+    //"../bilder/spill/sedan1_turkis.png"
     if (er_telefon) {
         gas_pedal = new firekant(55, 96, "../bilder/spill/car_controls/gas_pedal.png", container.offsetWidth * 0.9, container.offsetHeight * 0.75, "knapp");
         brems_pedal = new firekant(55, 85, "../bilder/spill/car_controls/brems_pedal.png", container.offsetWidth * 0.8, container.offsetHeight * 0.75 + 11, "knapp");
@@ -53,14 +53,12 @@ var container = document.getElementById("container");
 var menu = {
     menu : document.createElement("div"),
     start : function() {
-        this.menu.width = 100;
-        this.menu.height = 100;
         this.menu.setAttribute("id", "menudiv");
         container.appendChild(this.menu);
     },
     startknapp : document.createElement("button"),
     startknapp_func : function() {
-        this.startknapp.innerHTML = "Start spill";
+        this.startknapp.innerHTML = "Free roam";
         this.startknapp.setAttribute("id", "startknapp");
         this.startknapp.setAttribute("class", "knapp");
         this.startknapp.setAttribute("onclick", "platform.vis(); start_spill1()");
@@ -68,11 +66,139 @@ var menu = {
     },
     innstillingerknapp : document.createElement("button"),
     innstillingerknapp_func : function() {
-        this.innstillingerknapp.innerHTML = "Innstillinger";
+        this.innstillingerknapp.innerHTML = "Shop";
         this.innstillingerknapp.setAttribute("id", "innstillingerknapp");
         this.innstillingerknapp.setAttribute("class", "knapp");
-        this.innstillingerknapp.setAttribute("onclick", "platform.fullskjerm();");
+        this.innstillingerknapp.setAttribute("onclick", "shop.start('tittet'); menu.skjul_menu();");
         this.menu.appendChild(this.innstillingerknapp);
+    },
+    skjul_menu : function() {
+        this.menu.style.display = "none";
+    }
+}
+
+var shop = {
+    shop : document.createElement("div"),
+    shop_menu : document.createElement("div"),
+    shop_menu_list1 : document.createElement("button"),
+    produktdiv : document.createElement("div"),
+    prikkbeholder : document.createElement("div"),
+    gå_tilbake_knapp : document.createElement("div"),
+    bilde : [],
+    produkt : [],
+    prikker : [],
+    velg_knapp : [],
+    kjøp_knapp : [],
+    biler : ["../bilder/spill/kjøretøy/biler/sedan1_blå.png",
+    "../bilder/spill/kjøretøy/biler/sedan1_kraftig_blå.png",
+    "../bilder/spill/kjøretøy/biler/sedan1_grønn.png",
+    "../bilder/spill/kjøretøy/biler/sedan1_gul.png",
+    "../bilder/spill/kjøretøy/biler/sedan1_lilla.png",
+    "../bilder/spill/kjøretøy/biler/sedan1_neon_grønn.png",
+    "../bilder/spill/kjøretøy/biler/sedan1_oransje.png",
+    "../bilder/spill/kjøretøy/biler/sedan1_rosa.png",
+    "../bilder/spill/kjøretøy/biler/sedan1_rød.png",
+    "../bilder/spill/kjøretøy/biler/sedan1_turkis.png",
+    "../bilder/spill/kjøretøy/biler/sedan1_svart.png",
+    "../bilder/spill/kjøretøy/biler/Tesla-Model-S-mini.jpg"],
+    start : function(tst) {
+        this.shop.setAttribute("id", "shopdiv");
+        this.shop.style.display = "block";
+        container.appendChild(this.shop);
+        /*__*/
+        this.shop_menu.setAttribute("id", "shop_menu");
+        this.shop.appendChild(this.shop_menu);
+        /*__*/
+        this.shop_menu_list1.innerHTML = "Cars"
+        this.shop_menu_list1.setAttribute("class", "shop_menu_list");
+        this.shop_menu_list1.setAttribute("onclick", "shop.mange_produkter("+this.biler.length+")");
+        this.shop_menu.appendChild(this.shop_menu_list1);
+        /*__*/
+        this.produktdiv.setAttribute("id", "produktdiv");
+        this.shop.appendChild(this.produktdiv);
+        /*__*/
+        this.gå_tilbake_knapp.innerHTML = "Gå tilbake";
+        this.gå_tilbake_knapp.setAttribute("class", "gå_tilbake_knapp knapp");
+        this.gå_tilbake_knapp.setAttribute("onclick", "shop.gå_tilbake();");
+        this.produktdiv.appendChild(this.gå_tilbake_knapp);
+
+    },
+    gå_tilbake : function() {
+        this.shop.style.display = "none"
+        menu.menu.style.display = "block";
+        for (i = 0; i < this.produkt.length; i++){
+            this.produkt[i].style.display = "none"
+            this.prikker[i].style.display = "none"
+            this.velg_knapp[i].style.display = "none"
+            this.kjøp_knapp[i].style.display = "none"
+        }
+    },
+    mange_produkter : function(numb) {
+        for (i = 0; i < numb; i++){
+            this.produkt[i] = document.createElement("div");
+            this.produkt[i].innerHTML = "Car " + (i + 1);
+            this.produkt[i].style.display = "none";
+            this.produkt[i].setAttribute("class", "produkt");
+            //this.produkt2[i].appendChild(this.produkt);
+            this.produktdiv.appendChild(this.produkt[i]);
+
+            this.bilde[i] = document.createElement("img");
+            this.bilde[i].src = this.biler[i]
+            //this.bilde[i].style.display = "none";
+            this.bilde[i].setAttribute("class", "produkt_bilde");
+            //this.produkt2[i].appendChild(this.produkt);
+            this.produkt[i].appendChild(this.bilde[i]);
+        }
+
+        this.produkt[0].style.display = "block";
+
+        this.produktdiv.appendChild(this.prikkbeholder);
+        for (i = 0; i < numb; i++){
+            this.prikker[i] = document.createElement("span");
+            this.prikker[i].setAttribute("class", "navi_prikk");
+            this.prikkbeholder.appendChild(this.prikker[i]);
+            this.prikker[i].setAttribute("onclick", "shop.hvilken_produkt("+i+");");
+        }
+
+        for (i = 0; i < numb; i++){
+            this.kjøp_knapp[i] = document.createElement("button");
+            this.kjøp_knapp[i].innerHTML = "Kjøp";
+            this.kjøp_knapp[i].style.display = "none";
+            this.kjøp_knapp[i].setAttribute("class", "kjøp_knapp knapp");
+            this.produktdiv.appendChild(this.kjøp_knapp[i]);
+            this.kjøp_knapp[i].setAttribute("onclick", "console.log('det funker d avel nape eller v apete rosløbegr');");
+        }
+
+        for (i = 0; i < numb; i++){
+            this.velg_knapp[i] = document.createElement("button");
+            this.velg_knapp[i].innerHTML = "Velg";
+            this.velg_knapp[i].style.display = "none";
+            this.velg_knapp[i].setAttribute("class", "velg_knapp knapp");
+            this.produktdiv.appendChild(this.velg_knapp[i]);
+            this.velg_knapp[i].setAttribute("onclick", "shop.velg_knapp_func("+i+");");
+        }
+
+        this.shop_menu_list1.removeAttribute("onclick");
+    },
+    hvilken_produkt : function(m) {
+        for (i = 0; i < this.produkt.length; i++){
+            this.produkt[i].style.display = "none"
+            this.velg_knapp[i].style.display = "none"
+            this.kjøp_knapp[i].style.display = "none"
+            this.prikker[i].style.backgroundColor = "rgb(75,75,75)";
+        }
+        this.velg_knapp[m].style.display = "block"
+        this.kjøp_knapp[m].style.display = "block"
+        this.produkt[m].style.display = "block";
+        this.prikker[m].style.backgroundColor = "rgb(40,40,40)";
+    },
+    velg_knapp_func : function(m) {
+        console.log(this.bilde[m].src);
+        if (typeof(Storage) !== "undefined") {
+            localStorage.setItem("bil_nr", m);
+        } else {
+            console.log("Local Storgate is not supported!");
+        }
     }
 }
 
@@ -226,8 +352,7 @@ var platform = {
                 }
             }
         });
-        this.canvas.addEventListener("touchstart", function(event){
-            event.preventDefault();
+        this.canvas.addEventListener("touchstart", function(){
             if (ting.type == "knapp"){
                 if (platform.x > ting.x
                     && platform.x < ting.x + ting.bredde
@@ -244,8 +369,7 @@ var platform = {
                 }
             }
         }, false);
-        this.canvas.addEventListener("touchend", function(event){
-            event.preventDefault();
+        this.canvas.addEventListener("touchend", function(){
             if (ting.type == "knapp"){
                 if (platform.x > ting.x
                     && platform.x < ting.x + ting.bredde
@@ -492,7 +616,7 @@ function stop_bil() {bil.fart = 0;}
 function oppdater_spill() {
     platform.tøm();
     platform.resize1();
-    if (typeof for_liten_vindu_advarsel !== 'undefined') {
+    if (typeof for_liten_vindu_advarsel !== "undefined") {
         for_liten_vindu_advarsel.tekst = "Vennligst bruk større skjerm for bedre spill-opplevelse";
         for_liten_vindu_advarsel.oppdater_firekant();
     }
