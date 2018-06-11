@@ -45,6 +45,19 @@
     text-align: center;
 }
 
+#produktdiv {
+    width: 69%;
+    height: 700px;
+    float: left;
+    border-radius: 5px;
+    background-color: #878787;
+    border: 1px solid grey;
+    color: #2b2b2b;
+    font-family: arial;
+    font-size: 30px;
+    text-align: center;
+}
+
 .shop_menu_list {
     width: 100%;
     height: 60px;
@@ -69,26 +82,13 @@
     background-color: rgba(50,50,50,.6);
 }
 
-
-#produktdiv {
-    width: 69%;
-    height: 700px;
-    float: left;
-    border-radius: 5px;
-    background-color: #878787;
-    border: 1px solid grey;
-    color: #2b2b2b;
-    font-family: arial;
-    font-size: 30px;
-    text-align: center;
-}
-
 .produkt {
-    padding-top: 30px;
     width: 60%;
     height: 350px;
-    background-color: rgb(85,85,85);
     margin: 20px 20%;
+    padding-top: 30px;
+    background-color: rgb(85,85,85);
+    border-radius: 15px;
 }
 
 .produkt_bilde {
@@ -202,12 +202,14 @@
     #container {height: 700px;}
     #menudiv {height: 600px;}
     #produktdiv {height: 600px;}
+    #shop_menu {height: 600px;}
 }
 
 @media only screen and (max-width:1000px) {
     #container {height: 600px;}
     #menudiv {height: 500px;}
     #produktdiv {height: 500px;}
+    #shop_menu {height: 500px;}
     #innstillingerknapp {font-size: 20px}
     #startknapp {font-size: 20px}
 }
@@ -215,6 +217,7 @@
     #container{width: 100%; margin: 50px 0 1000px 0; height: 500px;}
     #menudiv {height: 300px;}
     #produktdiv {height: 300px;}
+    #shop_menu {height: 300px;}
     .knapp {width: 50%;
         padding: 12px;
         margin: 60px 25% 20px 25%;
