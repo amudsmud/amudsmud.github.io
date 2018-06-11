@@ -13,7 +13,7 @@ function start_spill() {
     //bil = new firekant(50, 100, "grey", 1000, 900);
     //fartometer = new firekant ("25px", "Arial", "black", 1880, 980, "text");
 }
-var stickersrc1 = ["file:///G:/kultus/bilder/spill/stickers/supreme.png", "../bilder/spill/stickers/apple.png"];
+var stickersrc1 = ["https://amudsmud.github.io/bilder/spill/stickers/supreme.png", "https://amudsmud.github.io/bilder/spill/stickers/apple.png"];
 function start_spill1() {
     platform.start();
     if (typeof(Storage) !== "undefined" && !localStorage.bil_nr) {
