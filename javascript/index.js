@@ -58,6 +58,8 @@ function mangebokser() {
     nyboks("a", "Klikk her", "kenneth2.0.html", "for å åpne noing's fete sirkler", "Laget til: Noing", "laget av: en random kar")
 	nyboks("a", "Klikk her", "noings-fete-klokke.html", "for å åpne noing's fete stoppeklokke", "Laget til: Gymlærern", "laget av: Kenneth Noing")
 	nyboks("a", "Klikk her", "spill/car-town.html", "for å åpne Car Town", "", "<i> V 0.7-beta <br> Sist oppdatert: 14. Juli 2018 </i>")
+	nyboks("a", "Klikk her", "key-generator.html", "for å åpne encryption siden", "encrypt et ord", "eller decrypt en kode")
+
 }
 
 
