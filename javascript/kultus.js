@@ -2,10 +2,10 @@
 // all rights served 2018
 /*------------------------------start tid og dato------------------------------*/
 var år = "2018"
-var måned = "may"
-var datonummer = "20"
-var time = "15"
-var minutt = "14"
+var måned = "juli"
+var datonummer = "22"
+var time = "01"
+var minutt = "24"
 /* Sette Dagens dato */
 var dato = new Date(måned + datonummer + "," + år);
 document.getElementById("dagensDato").innerHTML = dato.getDate() + "." + (dato.getMonth()+1) + "." + dato.getFullYear();

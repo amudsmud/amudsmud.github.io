@@ -208,7 +208,7 @@ div.navi {
     background-color: #07ab1a;
     color: white;
 }
-/* hvordan den aktive siden du er på ser ut nÃ¥r du har musepekeren på den*/
+/* hvordan den aktive siden du er på ser ut når du har musepekeren på den*/
 #navia:hover.active {
     background-color: #297c33;
     color: white;
@@ -220,7 +220,7 @@ div.navi {
 
 /*______________responsiv css start______________*/
 @media only screen and (max-width:1370px) {
-    #overskrift { font-size: 60px; }
+    #overskrift {font-size: 60px;}
 }
 
 @media only screen and (max-width:900px) {

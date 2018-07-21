@@ -149,7 +149,7 @@ form {
     #navn-felt {width: calc(25% + 100px);}
     #epost-felt {width: calc(30% + 100px);}
     #Kommentar-felt {width: 90%;}
-    #overskrift { font-size: 50px; }
+    #overskrift {font-size: 50px;}
 }
 
 @media only screen and (max-width:1000px) {

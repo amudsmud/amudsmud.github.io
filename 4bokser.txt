@@ -1,0 +1,33 @@
+
+
+<!-- id på alle boksene er a fordi a har order 2, da blir order automatisk, hvis id er b blir order 3, altså helt til slutt -->
+<div class="boks" id="a"> <!--Link til å logge inn på Hellerasten-siden-->
+    <h1 class="boks">
+    <a class="boks" href="hellerasten-login.html" target="_blank" style="padding: 0">Klikk her</a>
+    for å logge inn på Hellerasten siden</h1>
+    <p class="boks">Hellerasten siden er ikke oppe for øyeblikket. <br><br> Kommer i løpet av våren 2018</p>
+</div>
+
+<div class="boks" id="a"> <!--Link til å laste ned tilfeldig setegenerator-->
+    <h1 class="boks">
+    <a class="boks" href="https://github.com/amudsmud/amudsmud.github.io/releases/download/untagged-9e8cde5e8ad20dabc4ec/classroomV1.0.exe" target="_blank" style="padding: 0">Klikk her</a>
+    for å laste ned programmet mitt</h1>
+    <p class="boks">Tilfeldig setegenerator®.
+    <br><br><i> V 0.3.0-beta <br> Sist oppdatert: 24. April 2018 </i> </p>
+</div>
+
+<div class="boks" id="a"> <!--Link til å laste ned spillet mitt-->
+    <h1 class="boks">
+    <a class="boks" href="https://github.com/amudsmud/amudsmud.github.io/releases/download/V1.0-beta/SHUMPEXE.EXE" style="padding: 0">Klikk her</a>
+    for å Laste ned spillet mitt</h1>
+    <p class="boks">Noen Virus-program vil se på dette som et virus, men det er det ikke.
+        <br><br><i> V 0.1.0-beta <br> Sist oppdatert: 23. April 2018 </i> </p>
+</div>
+
+
+<div class="boks" id="a"> <!--Link til Kenneth's side 2.0-->
+    <h1 class="boks">
+    <a class="boks" href="kenneth2.0.html" target="_blank" style="padding: 0">Klikk her</a>
+    for å åpne de fete loading sirklene dine Noing</h1>
+    <p class="boks"> Stillinga er 5-5 <br><br> -Amud 7'er elev </p>
+</div>

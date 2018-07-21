@@ -1,0 +1,17 @@
+
+    /*if (Number.isInteger(nonencrypted)){
+        for (i=0; i < nonencrypted.toString().length; i++){
+            for (o=0; o < list_tall.length; o++){
+                if (list_tall[o] == nonencrypted.toString()[i]){
+                    if (jane == 0) {
+                        encry = encry + list_tall[o+2]
+                    }
+                    if (jane == 1) {
+                        encry = encry + list_tall[o-1]
+                    }
+                }
+            }
+        }
+        //var z = parseInt(encry)
+        var z = encry
+    }*/

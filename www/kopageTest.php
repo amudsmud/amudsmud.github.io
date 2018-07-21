@@ -1,0 +1,1 @@
+<?php echo "FTPdirOK|".realpath(dirname(__FILE__)); ?>

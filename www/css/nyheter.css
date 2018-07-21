@@ -1,0 +1,401 @@
+html,body {
+background-color: #c9c9c9;
+background-repeat: repeat;
+width: 100%;
+font-family: arial;
+padding: 0px;
+margin: 0px;
+}
+
+
+#Nyheter {
+font-size: 4vw;
+font-family: Arial black;
+color: #51caf2;
+text-align: center;
+margin: 100px 20% 1000px 20%; /* bottom margin skal være 10, men er 1000 for at footer skal funke */
+width: 60%;
+padding: 0px;
+float: left;
+z-index: 1;
+text-shadow: 1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000,
+    -1px 0px 0 #000,
+    1px 0px 0 #000,
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000,
+    0px 2px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 0px 0 #000,
+    1px 2px 0 #000,
+    -1px 2px 0 #000,
+    1px -2px 0 #000,
+    -1px -2px 0 #000,
+    2px 1px 0 #000,
+    -2px 1px 0 #000,
+    2px -1px 0 #000,
+    -2px -1px 0 #000;
+}
+
+#kultus-logo {
+z-index: 100;
+position: absolute; /*fixed*/
+text-decoration: none;
+top: 2px;
+font-size: 50px;
+font-family: bangers;
+letter-spacing: 3px;
+color: #51caf2;
+text-align: center;
+width: 8%;
+margin: 0px 46% 0px 46%;
+text-shadow: 0px 0px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000,
+    -1px 0px 0 #000,
+    1px 0px 0 #000,
+    0px 0px 0 #000,
+    -0px 1px 0 #000,
+    0px -1px 0 #000,
+    -0px -1px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000,
+    -1px 0px 0 #000,
+    1px 0px 0 #000,
+    1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
+}|
+
+
+
+
+
+#Nyheter-venstre  {
+
+width: 400px;
+height: 300px;
+left: 50px;
+position: relative;
+}
+
+
+
+
+.footer {
+position: relative;
+height: 100px;
+margin: 100px 0px 0px 0px;
+padding: 20px 0 20px 0;
+width: 100%;
+background-color: #5e5e5e;
+color: white;
+text-align: center;
+overflow: hidden;
+transform: translateY(20px);
+ -webkit-transform: translateY(20px);
+ -moz-transform: translateY(20px);
+ -o-transform: translateY(20px);
+}
+
+
+.footer p:not(.copyright) {
+float: left;
+display: inline;
+margin: 0px ;
+ /* border: 2px solid #313131; */
+width: 15%;
+padding: 20px 5% 20px 5%;
+height: 50px;
+font-size: 1.0em;
+}
+
+
+.footer p.copyright {
+position: absolute;
+width: 100%;
+color: #fff;
+line-height: 40px;
+font-size: 0.8em;
+text-align: center;
+bottom:0;
+}
+
+
+
+
+/*--------------------------------------------menu bar start-------------------------------------*/
+
+header {
+	z-index: 100;
+    background: #f5b335;
+    height: 53px;
+    position: fixed;
+    top: 0;
+    transition: top 0.3s ease-in-out;
+    width: 100%;
+}
+
+.nav-opp {
+    top: -80px;
+}
+
+.nav-opp:hover {
+    top: 0px;
+}
+
+.nav-opp:focus {
+    top: 0px;
+}
+
+div.navi {
+z-index: 10;
+width: 100%;
+}
+
+/* baren der alt ligger */
+#naviul {
+z-index: 10;
+list-style-type: none;
+overflow: hidden;
+background-color: #444444;
+padding: 0px;
+margin: 0px;
+position: absolute; /*fixed*/
+top: 0;
+right: 0;
+width: 100%;
+box-shadow: 0 1px 2px rgba(0,0,0,.5);
+background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.2));
+top: 0px;
+transition: top 0.3s;
+
+}
+/* hvert enkelt page*/
+#navia {
+display: block;
+color: white;
+text-align: center;
+padding: 15px;
+text-decoration: none;
+font-size: 20px;
+float: left;
+}
+/* hvert enkelt page når pusepekeren er over den */
+#navia:hover {
+background-color: #60f900;
+color: #424242;
+}
+/* hvordan den aktive siden du er på ser ut*/
+#navia.active {
+background-color: #07ab1a;
+color: white;
+}
+/* hvordan den aktive siden du er på ser ut når du har musepekeren på den*/
+#navia:hover.active {
+background-color: #297c33;
+color: white;
+}
+.menu-button-mobile, #navia.A { display: none; }
+
+.primary-nav li ul, #navia i.material-icons { display: none; }
+
+/*-------------------------------------------menu bar end-----------------------------------------*/
+
+@media only screen and (max-width:1000px) {
+
+#Nyheter {
+font-size: 60px;
+}
+
+}
+
+
+/* 620  */
+@media only screen and (max-width:620px) {
+
+#Nyheter {
+margin-left: 30%;
+width: 40%;
+font-size: 40px;
+margin-top: 100px;
+}
+
+#kultus-logo {
+margin-left: 30%;
+margin-right: 30%;
+margin-top: 8px;
+width: 150px;
+font-size: 60px;
+height: 70px;
+top: 0;
+text-align: center;
+}
+
+
+.primary-nav {
+width: 100%;
+float: none;
+background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.2));
+display: block;
+height: 80px;
+overflow: hidden;
+position: absolute;
+z-index: 98; /************************/
+clear: both;
+}
+
+
+.primary-nav li {
+display: none;
+width: 100%;
+float: none !important;
+}
+
+.primary-nav #navia:hover:not(.A) {
+background-color: rgba(0,0,0,.4);
+color: white;
+}
+
+.primary-nav.open { height: auto; }
+
+.primary-nav.open li { display: block;}
+
+#navia {
+display: block;
+width: 88%;
+font-size: 23px;
+font-wight: bold;
+text-shadow: -1px -1px 0 rgba(0,0,0,.15);
+color: white;
+text-decoration: none;
+border-bottom: 1px solid rgba(0,0,0,.2);
+border-top: 1px solid rgba(255,255,255,.1);
+margin-left: 2%;
+}
+
+
+#navia.A {
+display: block;
+text-indent: -9999px;
+border-top: 0px;
+background-color: transparent;
+}
+
+.menu-button-mobile {
+display: block;
+color: white;
+text-align: center;
+padding: 30px;
+text-decoration: none;
+font-size: 20px;
+background: url('../bilder/menu-icon-large.png'), linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.2));
+background-position: center center;
+background-repeat: no-repeat;
+background-size: 36px, 100%;
+border-radius: 30px;
+text-indent: -9999px;
+border-radius: 2px;
+cursor: pointer;
+width: 80px;
+border: 0 none;
+animation-name: snu-menu;
+animation-duration: 0.5s;
+}
+
+@keyframes snu-menu{
+0% { background-size: 0px;}
+100% { background-size: 36px;}
+}
+
+.menu-button-mobile:hover { background-color: rgba(0,0,0,.1); }
+.menu-button-mobile.open:hover { background-color: rgba(0,0,0,.2); }
+
+.menu-button-mobile.open {
+background: url('../bilder/close-icon-large.png'), linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.0));
+background-position: center center;
+background-repeat: no-repeat;
+background-size: 40px, 100%;
+animation-name: snu;
+animation-duration: 0.5;
+}
+
+@keyframes snu{
+0% { background-size: 0px;  }
+100% { background-size: 40px;   }
+}
+
+
+
+
+.primary-nav li.parent > a:hover { background-color: rgba(0,0,0,.2); }
+
+.primary-nav li .parent {width:}
+
+.primary-nav li ul {
+display: none;
+background: rgba(0,0,0,.5);
+border-top: 0;
+}
+
+
+.primary-nav li ul a {
+margin-left: 20%;
+margin-right: 20%;
+padding-left: 5%;
+padding-right: 5%;
+display: block;
+color: white;
+text-align: center;
+padding: 12px;
+text-decoration: none;
+font-size: 20px;
+width: 50%;
+float:left;
+border-bottom: 1px solid rgba(0,0,0,.2);
+border-top: 1px solid rgba(255,255,255,.1);
+}
+
+.primary-nav li:hover ul { display: block; }
+.primary-nav li a:hover { background-color: rgba(0,0,0,.2); }
+#navia i.material-icons { display: inline; margin-right: 0px; }
+
+
+
+
+.footer {
+height: 250px;
+
+}
+
+.footer p:not(.copyright) {
+float: left;
+display: inline;
+margin: 0px ;
+ /* border: 2px solid #313131; */
+width: 40%;
+padding: 20px 5% 20px 5%;
+height: 50px;
+font-size: 1.0em;
+}
+
+
+
+
+
+}
