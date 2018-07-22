@@ -1,3 +1,5 @@
+// Kultus car town V0.2 scripts
+// all rights served 2018
 function start_spill() {
     menu.start();
     menu.startknapp_func();

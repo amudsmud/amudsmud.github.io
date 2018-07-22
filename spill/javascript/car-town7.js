@@ -1,3 +1,5 @@
+// Kultus car town V0.7 scripts
+// all rights served 2018
 var er_telefon = false;
 var gas_pedal_active = false;
 var brems_pedal_active = false;
@@ -6,7 +8,7 @@ var load_bakgrunn = new Image();
 function start_spill() {
     if (/Mobi|Android/i.test(navigator.userAgent)) {
         if (confirm("Du bruker telefon, rigth?")){er_telefon = true;};
-    }     
+    }
     //load images før spillet starter
     load_bakgrunn.src = "bilder/map_bilder/map1.png";
     load_bakgrunn.onload = function(){console.log(load_bakgrunn.src + " loaded");};

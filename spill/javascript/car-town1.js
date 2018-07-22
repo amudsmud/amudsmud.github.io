@@ -1,3 +1,5 @@
+// Kultus car town V0.1 scripts
+// all rights served 2018
 var bil;
 
 function start_spill() {
