@@ -44,7 +44,7 @@ Car Town 0.6-beta
 
 Car Town 0.7-beta
     -All images will load BEFORE you start the game.
-    -Your car will now log how much you have driven in meters, and save it(The track is 700 meters).
+    -Your car will now log how much you have driven in meters, and save it (the track is 700 meters).
     -You need to buy a car in the shop before you can select it.
     -The shop menu is now much more responsive.
     -All the cars you have bought is saved, and you do not need the repurchase it.
@@ -56,5 +56,7 @@ Car Town 0.7-beta
     -Improved performance significantly.
     -simplified/shortened some codes.
 
-    Car Town 0.8-beta
-        -
+Car Town 0.8-beta
+    -The second car will now drive unlimited rounds.
+    -The second car gives you money for every time it passes the finish-line.
+    -The money will be saved as a encrypted code.

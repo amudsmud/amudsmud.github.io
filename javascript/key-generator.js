@@ -18,7 +18,7 @@ function nykey(nonencrypted, jane) {
                 }
             }
         }
-        if (Number.isInteger(parseInt(encry))){var z = parseInt(encry)}
+        if (Number.isInteger(Number(encry))){var z = Number(encry)}
         else {var z = encry}
     return z
 }
