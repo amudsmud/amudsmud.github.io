@@ -20,15 +20,6 @@
       });
     </script>
 
-    <script>
-    window.onload = function() {
-        $(document).ready(function(){
-            $( ".foter" ).load("foter.html", function() {
-            });
-        });
-    }
-    </script>
-
 
 
 
@@ -117,6 +108,13 @@
         <p><a href="privacypolicy-amudsmud.htm" style="color:#000072;" target="_blank">Klikk her</a> <br>for å lese privacy policy</p>
         <!-- <p>DDD oppdatering: <br> 1/<span id="dag">error</span></p> -->
     </div>
+    
+    <script>
+    const clickable = document.querySelector("#k1");
+    clickable.addEventListener('click', () => selectText('svar'));
+    const clickable2 = document.querySelector("#k2");
+    clickable2.addEventListener('click', () => selectText('svar'));
+    </script>
     <script src="javascript/kultus.js"></script>
     <script src="javascript/key-generator.js"></script>
 

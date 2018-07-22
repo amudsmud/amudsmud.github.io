@@ -6,7 +6,7 @@ var load_bakgrunn = new Image();
 function start_spill() {
     if (/Mobi|Android/i.test(navigator.userAgent)) {
         if (confirm("Du bruker telefon, rigth?")){er_telefon = true;};
-    }     
+    }
     //load images før spillet starter
     load_bakgrunn.src = "bilder/map_bilder/map1.png";
     load_bakgrunn.onload = function(){console.log(load_bakgrunn.src + " loaded");};
@@ -45,7 +45,7 @@ function start_spill1() {
         localStorage.setItem("bil_nr", 0);
     }
     if (typeof(Storage) !== "undefined" && !localStorage.kroner) {
-        localStorage.setItem("kroner", 0);
+        localStorage.setItem("kroner", nykey("0", 0));
     }
     min_bil = new firekant(50, 105, shop.biler[localStorage.bil_nr], container.offsetWidth * 0.5, container.offsetHeight * 0.6, "bil");
     bil1 = new firekant(50, 105, shop.biler[0], container.offsetWidth * 0.52, container.offsetHeight * 0.4, "bil");

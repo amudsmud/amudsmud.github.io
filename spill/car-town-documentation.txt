@@ -26,7 +26,7 @@ Car Town 0.4-beta
 Car Town 0.5-beta
     -The car does not move now, instead, the map moves and make it look like its the car.
     -Made the game even more responsive and compatible with all type of screens.
-    -Added a reset function that moves the car to its starting position
+    -Added a reset function that moves the car to its starting position.
     -The headlights can now be turned off.
     -Improvements in the code.
     -Improved turning mechanism to a more dynamic and realistic feeling.
@@ -38,20 +38,21 @@ Car Town 0.5-beta
 
 Car Town 0.6-beta
     -Added gas and brake pedals if you are using a phone.
-    -The biggest change in this update: added a shop button in the menu
-    -opening the shop you will see 12 new cars that you can either buy or select
+    -The biggest change in this update: added a shop button in the menu.
+    -opening the shop you will see 12 new cars that you can either buy or select.
     -The car you have selected will be saved and always show up when you visit the site.
 
 Car Town 0.7-beta
     -All images will load BEFORE you start the game.
     -Your car will now log how much you have driven in meters, and save it(The track is 700 meters).
     -You need to buy a car in the shop before you can select it.
+    -The shop menu is now much more responsive.
     -All the cars you have bought is saved, and you do not need the repurchase it.
     -Added a second car.
-    -The car can drive autonomous
+    -The car can drive autonomous.
     -The car can drive at the speed you want, without going off-track.
     -Added a finish/start-line.
-    -Added crash-detection between the two cars
+    -Added crash-detection between the two cars.
     -Improved performance significantly.
     -simplified/shortened some codes.
 

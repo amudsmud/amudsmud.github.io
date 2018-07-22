@@ -40,10 +40,6 @@ function selectText(node) {
         console.warn("Could not select text in node: Unsupported browser.");
     }
 }
-const clickable = document.querySelector("#k1");
-clickable.addEventListener('click', () => selectText('svar'));
-const clickable2 = document.querySelector("#k2");
-clickable2.addEventListener('click', () => selectText('svar'));
 
 
 function nykeytokeygenerator(jane){
