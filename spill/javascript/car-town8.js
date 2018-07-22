@@ -1,3 +1,5 @@
+// Kultus car town V0.8 scripts
+// all rights served 2018
 var er_telefon = false;
 var gas_pedal_active = false;
 var brems_pedal_active = false;
@@ -45,7 +47,7 @@ function start_spill1() {
         localStorage.setItem("bil_nr", 0);
     }
     if (typeof(Storage) !== "undefined" && !localStorage.kroner) {
-        localStorage.setItem("kroner", nykey("0", 0));
+        localStorage.setItem("kroner", nykey("50", 0));
     }
     min_bil = new firekant(50, 105, shop.biler[localStorage.bil_nr], container.offsetWidth * 0.5, container.offsetHeight * 0.6, "bil");
     bil1 = new firekant(50, 105, shop.biler[0], container.offsetWidth * 0.52, container.offsetHeight * 0.4, "bil");
@@ -721,23 +723,43 @@ function firekant(bredde, høyde, farge, x, y, type) {
     this.dsa = 0;
     this.auto_kjør = function(){
         this.runder = 1;
-        this.kjørefart = 3;
+        this.kjørefart = 10;
         this.fart = this.kjørefart;
         //90 graders sving
         this.sving1 = 113;
         if (this.asd>330/this.kjørefart && this.dsa<this.sving1) {this.dsa++; this.fart = 1; this.angle += 0.8 * Math.PI / 180;}
         if (this.asd>2090/this.kjørefart && this.dsa<this.sving1*2) {this.dsa++; this.fart = 1; this.angle += 0.8 * Math.PI / 180;}
-        if (this.asd>2670/this.kjørefart && this.dsa<this.sving1*3) {this.dsa++; this.fart = 1; this.angle += 0.8 * Math.PI / 180;}
-        if (this.asd>2750/this.kjørefart && this.dsa<this.sving1*4) {this.dsa++; this.fart = 1; this.angle += 0.8 * Math.PI / 180;}
-        if (this.asd>2970/this.kjørefart && this.dsa<this.sving1*5) {this.dsa++; this.fart = 1; this.angle -= 0.8 * Math.PI / 180;}
-        if (this.asd>4240/this.kjørefart && this.dsa<this.sving1*6) {this.dsa++; this.fart = 1; this.angle -= 0.8 * Math.PI / 180;}
-        if (this.asd>4520/this.kjørefart && this.dsa<this.sving1*7) {this.dsa++; this.fart = 1; this.angle += 0.8 * Math.PI / 180;}
-        if (this.asd>4644/this.kjørefart && this.dsa<this.sving1*8) {this.dsa++; this.fart = 1; this.angle += 0.8 * Math.PI / 180;}
+        if (this.asd>2690/this.kjørefart && this.dsa<this.sving1*3) {this.dsa++; this.fart = 1; this.angle += 0.8 * Math.PI / 180;}
+        if (this.asd>2770/this.kjørefart && this.dsa<this.sving1*4) {this.dsa++; this.fart = 1; this.angle += 0.8 * Math.PI / 180;}
+        if (this.asd>2990/this.kjørefart && this.dsa<this.sving1*5) {this.dsa++; this.fart = 1; this.angle -= 0.8 * Math.PI / 180;}
+        if (this.asd>4270/this.kjørefart && this.dsa<this.sving1*6) {this.dsa++; this.fart = 1; this.angle -= 0.8 * Math.PI / 180;}
+        if (this.asd>4540/this.kjørefart && this.dsa<this.sving1*7) {this.dsa++; this.fart = 1; this.angle += 0.8 * Math.PI / 180;}
+        if (this.asd>4664/this.kjørefart && this.dsa<this.sving1*8) {this.dsa++; this.fart = 1; this.angle += 0.8 * Math.PI / 180;}
+        if (this.asd>4946/this.kjørefart && this.dsa<this.sving1*8+1) {this.dsa++; this.auto_kjør_restart();}
+
         if (this.fart == this.kjørefart) {this.asd++;}
         //bil1 sin x posisjon, uavhengig av hovedbilen sin x posisjon
-        //console.log(bakgrunn.x - bil1.x);
-        //console.log(bakgrunn.y - bil1.y);
         //if (bakgrunn.x - bil1.x<2635 || bakgrunn.x - bil1.x>2725){console.log("PETTER  SOLBERG");}
+    }
+    this.auto_kjør_restart = function(){
+        this.lønnperrunde = 20;
+        if (bakgrunn.x - this.x !== 2664){
+            this.x = bakgrunn.x - 2664
+        }
+        if (bakgrunn.y - this.y !== 616){
+            this.y = bakgrunn.y - 616
+        }
+        this.fart = 0;
+        this.angle = 0;
+        this.asd = 0;
+        this.dsa = 0;
+
+
+        var z = nykey(localStorage.getItem("kroner"), 1)
+        z += this.lønnperrunde;
+        localStorage.setItem("kroner", nykey(z.toString(), 0));
+        console.log(nykey(localStorage.getItem("kroner"), 1));
+
     }
     this.kjøra = function(){
         if (this.gir == 4){
@@ -813,7 +835,6 @@ function oppdater_spill() {
     min_bil.moveAngle = 0;
     bil1.moveAngle = 0;
     bakgrunn.moveAngle = 0;
-    //console.log(localStorage.getItem("kroner"));
     min_bil.fartometer = Math.floor((min_bil.fart * 100) / 100 * 8 + 0.4);
     fartometer.tekst = min_bil.fartometer + "KM/T";
     if (min_bil.gir == 0){

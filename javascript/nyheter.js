@@ -1,4 +1,4 @@
-// kultus hjem scripts
+// kultus nyheter scripts
 // all rights served 2018
 /*------------------------------start tid og dato------------------------------*/
 function myFunction() {
@@ -12,7 +12,6 @@ function myFunction() {
     nynyhet(id, ateksten, href, h1teksten, ptekstenover, ptekstenunder)
     //document.getElementById("farge").style.color = farge;
 }
-
 
 function nynyhet(id, ateksten, href, h1teksten, ptekstenover, ptekstenunder) {
     // lage en ny boks med class="boks" og id="a"
