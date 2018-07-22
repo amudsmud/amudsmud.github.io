@@ -719,7 +719,7 @@ function firekant(bredde, høyde, farge, x, y, type) {
     this.dsa = 0;
     this.auto_kjør = function(){
         this.runder = 1;
-        this.kjørefart = 10;
+        this.kjørefart = 3;
         this.fart = this.kjørefart;
         //90 graders sving
         this.sving1 = 113;
@@ -808,10 +808,6 @@ function få_hele_tall(x) {y = Math.floor((x * 10) / 10); return y}
 function oppdater_spill() {
     platform.tøm();
     platform.resize1();
-    if (typeof for_liten_vindu_advarsel !== "undefined") {
-        for_liten_vindu_advarsel.tekst = "Vennligst bruk større skjerm for bedre spill-opplevelse";
-        for_liten_vindu_advarsel.oppdater_firekant_tekst();
-    }
     min_bil.moveAngle = 0;
     bil1.moveAngle = 0;
     bakgrunn.moveAngle = 0;
@@ -835,6 +831,10 @@ function oppdater_spill() {
     min_bil.mstand_func();
     bakgrunn.oppdater_firekant_bakgrunn();
     målstrek.oppdater_firekant_knapp();
+    if (typeof for_liten_vindu_advarsel !== "undefined") {
+        for_liten_vindu_advarsel.tekst = "Vennligst bruk større skjerm for bedre spill-opplevelse";
+        for_liten_vindu_advarsel.oppdater_firekant_tekst();
+    }
 
     bil1.auto_kjør();
     bil1.oppdater_firekant_bil();
