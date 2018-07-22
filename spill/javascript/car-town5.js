@@ -212,7 +212,7 @@ function firekant(bredde, høyde, farge, x, y, type) {
         this.bilde_bakgrunn = new Image();
         this.bilde_bakgrunn.src = this.farge;
     }
-    if (this.type == "knapp" && this.farge.startsWith("../bilder")) {
+    if (this.type == "knapp" && this.farge.startsWith("bilder")) {
         this.bilde_knapp = new Image();
         this.bilde_knapp.src = this.farge;
     }
@@ -300,7 +300,7 @@ function firekant(bredde, høyde, farge, x, y, type) {
             //if (this.bilde_sticker.src == stickersrc1[1]){console.log("apple");}
         }
         else if (this.type == "knapp"){
-            if (this.farge.startsWith("../bilder")){
+            if (this.farge.startsWith("bilder")){
                 noe.drawImage(this.bilde_knapp, this.x, this.y, this.bredde, this.høyde);
             }
             else {

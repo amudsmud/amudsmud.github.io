@@ -2,12 +2,12 @@ var er_telefon = false;
 var gas_pedal_active = false;
 var brems_pedal_active = false;
 var er_fullskjerm = false;
+var load_bakgrunn = new Image();
 function start_spill() {
     if (/Mobi|Android/i.test(navigator.userAgent)) {
         if (confirm("Du bruker telefon, rigth?")){er_telefon = true;};
     }
     //load images før spillet starter
-    var load_bakgrunn = new Image();
     load_bakgrunn.src = "bilder/map_bilder/map1.png";
     load_bakgrunn.onload = function(){console.log(load_bakgrunn.src + " loaded");};
 
@@ -49,7 +49,7 @@ function start_spill1() {
     }
     min_bil = new firekant(50, 105, shop.biler[localStorage.bil_nr], container.offsetWidth * 0.5, container.offsetHeight * 0.6, "bil");
     bil1 = new firekant(50, 105, shop.biler[0], container.offsetWidth * 0.52, container.offsetHeight * 0.4, "bil");
-    bakgrunn = new firekant(3456 * 1.5, 2688 * 1.5, "bilder/map_bilder/map1.png", container.offsetWidth * 0.5 + 2680, 2688 / 3, "bakgrunn");
+    bakgrunn = new firekant(3456 * 1.5, 2688 * 1.5, load_bakgrunn.src, container.offsetWidth * 0.5 + 2680, 2688 / 3, "bakgrunn");
     overlag = new firekant(2000, 2000, "black", 0, 0, "overlay");
     fullskjerm_knapp = new firekant(40, 40, "bilder/fullskjerm.png", container.offsetWidth * 0.94, container.offsetHeight * 0.02 , "knapp");
     målstrek = new firekant(110, 10, "white", container.offsetWidth * 0.5-55, container.offsetHeight * 0.28 , "knapp");
