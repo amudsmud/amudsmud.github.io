@@ -20,7 +20,7 @@ Car Town 4
     -Updated to a blue car.
     -Added mobile detection.
     -Made the game responsive to the most screen sizes.
-    -The game now detects mouseclicks on any object you want.
+    -The game now detects mouse-clicks on any object you want.
     -Press on "x"-key to turn on headlights.
 
 Car Town 5
