@@ -12,7 +12,7 @@ function start_spill() {
 function start_spill1() {
     platform.start();
     $("platform").attr("contentEditable", "true")
-    bil = new firekant(30, 67, "/bilder/kjøretøy/biler/Tesla-Model-S-mini.jpg", container.offsetWidth * 0.5, container.offsetHeight * 0.8, "bil");
+    bil = new firekant(30, 67, "bilder/kjøretøy/biler/Tesla-Model-S-mini.jpg", container.offsetWidth * 0.5, container.offsetHeight * 0.8, "bil");
     fartometer = new firekant ("15px", "Arial", "black", container.offsetWidth * 0.92, container.offsetHeight * 0.97, "text");
     gira = new firekant ("16px", "Arial", "black", container.offsetWidth * 0.86, container.offsetHeight * 0.97, "text");
 }

@@ -10,13 +10,13 @@ function start_spill() {
     //bil = new firekant(50, 100, "grey", 1000, 900);
     //fartometer = new firekant ("25px", "Arial", "black", 1880, 980, "text");
 }
-var stickersrc1 = ["file:///G:/kultus/bilder/spill/stickers/supreme.png", "../bilder/spill/stickers/apple.png"];
+var stickersrc1 = ["bilder/stickers/supreme.png", "bilder/stickers/apple.png"];
 function start_spill1() {
     platform.start();
-    bil = new firekant(50, 105, "../bilder/spill/kjøretøy/biler/sedan1_turkis.png", container.offsetWidth * 0.5, container.offsetHeight * 0.6, "bil");
-    bakgrunn = new firekant(3456 * 1.5, 2688 * 1.5, "../bilder/spill/map_bilder/map1.png", container.offsetWidth * 0.5 + 2680, 2688 / 3, "bakgrunn");
+    bil = new firekant(50, 105, "bilder/kjøretøy/biler/sedan1_turkis.png", container.offsetWidth * 0.5, container.offsetHeight * 0.6, "bil");
+    bakgrunn = new firekant(3456 * 1.5, 2688 * 1.5, "bilder/map_bilder/map1.png", container.offsetWidth * 0.5 + 2680, 2688 / 3, "bakgrunn");
     overlag = new firekant(2000, 2000, "black", 0, 0, "overlay");
-    fullskjerm_knapp = new firekant(40, 40, "../bilder/spill/fullskjerm.png", container.offsetWidth * 0.94, container.offsetHeight * 0.02 , "knapp");
+    fullskjerm_knapp = new firekant(40, 40, "bilder/fullskjerm.png", container.offsetWidth * 0.94, container.offsetHeight * 0.02 , "knapp");
     platform.trykketpå(bil);
     platform.trykketpå(fullskjerm_knapp);
 
@@ -200,11 +200,11 @@ function firekant(bredde, høyde, farge, x, y, type) {
         this.bilde_bil = new Image();
         this.bilde_bil.src = this.farge;
         this.bilde_lys1 = new Image();
-        this.bilde_lys1.src = "../bilder/spill/lys1.png";
+        this.bilde_lys1.src = "bilder/lys1.png";
         this.bilde_lys2 = new Image();
-        this.bilde_lys2.src = "../bilder/spill/lys2.png";
+        this.bilde_lys2.src = "bilder/lys2.png";
         this.bilde_lys3 = new Image();
-        this.bilde_lys3.src = "../bilder/spill/lys3.png";
+        this.bilde_lys3.src = "bilder/lys3.png";
         this.bilde_sticker = new Image();
         this.bilde_sticker.src = stickersrc1[0];
     }

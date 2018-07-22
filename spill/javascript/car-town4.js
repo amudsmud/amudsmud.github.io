@@ -15,7 +15,7 @@ function start_spill() {
 
 function start_spill1() {
     platform.start();
-    bil = new firekant(50, 105, "../bilder/spill/kjøretøy/biler/sedan1_turkis.png", container.offsetWidth * 0.5, container.offsetHeight * 0.8, "bil");
+    bil = new firekant(50, 105, "bilder/kjøretøy/biler/sedan1_turkis.png", container.offsetWidth * 0.5, container.offsetHeight * 0.8, "bil");
     platform.trykketpå(bil);
     if (window.innerWidth > 700){
         fartometer = new firekant ("15px", "Arial", "black", container.offsetWidth * 0.92, container.offsetHeight * 0.97, "tekst");
@@ -178,7 +178,7 @@ function firekant(bredde, høyde, farge, x, y, type) {
         this.bilde_bil = new Image();
         this.bilde_bil.src = farge;
         this.bilde_lys1 = new Image();
-        this.bilde_lys1.src = "../bilder/spill/lys1.png";
+        this.bilde_lys1.src = "bilder/lys1.png";
     }
     this.bredde = bredde;
     this.høyde = høyde;

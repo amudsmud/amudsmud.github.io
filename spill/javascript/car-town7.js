@@ -57,7 +57,6 @@ function start_spill1() {
     platform.trykketpå(min_bil);
     min_bil.mstand_func_engang();
     platform.trykketpå(fullskjerm_knapp);
-    //"bilder/sedan1_turkis.png"
     if (er_telefon) {
         gas_pedal = new firekant(55, 96, "bilder/car_controls/gas_pedal.png", container.offsetWidth * 0.9, container.offsetHeight * 0.75, "knapp");
         brems_pedal = new firekant(55, 85, "bilder/car_controls/brems_pedal.png", container.offsetWidth * 0.8, container.offsetHeight * 0.75 + 11, "knapp");
@@ -797,25 +796,6 @@ function firekant(bredde, høyde, farge, x, y, type) {
             if (this.fart < this.maksfart) {this.fart = this.maksfart;};
         }
         /*gange vinkelen bilen snur på i forholde til farta, jo saktere, desto kraftigere sving*/
-        /*if (this.fart * 8 < -25) {this.moveAngle *= 1.2}
-        else if (this.fart * 8 < -15) {this.moveAngle *= 1.4}
-        else if (this.fart * 8 < -10) {this.moveAngle *= 1.6}
-        else if (this.fart * 8 < -5) {this.moveAngle *= 1.8}
-        else if (this.fart * 8 < 5) {this.moveAngle *= 2}
-        else if (this.fart * 8 < 15) {this.moveAngle *= 1.8}
-        else if (this.fart * 8 < 25) {this.moveAngle *= 1.6}
-        else if (this.fart * 8 < 35) {this.moveAngle *= 1.35}
-        else if (this.fart * 8 < 42) {this.moveAngle *= 1.2}
-        else if (this.fart * 8 < 50) {this.moveAngle *= 1}
-        else if (this.fart * 8 < 60) {this.moveAngle *= 0.9}
-        else if (this.fart * 8 < 70) {this.moveAngle *= 0.8}
-        else if (this.fart * 8 < 80) {this.moveAngle *= 0.7}
-        else if (this.fart * 8 < 100) {this.moveAngle *= 0.6}
-        else if (this.fart * 8 < 125) {this.moveAngle *= 0.5}
-        else if (this.fart * 8 < 150) {this.moveAngle *= 0.45}
-        else if (this.fart * 8 < 175) {this.moveAngle *= 0.4}
-        else if (this.fart * 8 < 200) {this.moveAngle *= 0.35}
-        else {this.moveAngle *= 0.3}*/
         if (this.fart * 8 < 2000) {this.moveAngle *= this.finnx(this.fart * 8)}
     }
 }

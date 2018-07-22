@@ -13,7 +13,9 @@ function start_spill() {
     //bil = new firekant(50, 100, "grey", 1000, 900);
     //fartometer = new firekant ("25px", "Arial", "black", 1880, 980, "text");
 }
-var stickersrc1 = ["file:///G:/kultus/spill/bilder/stickers/supreme.png", "bilder/stickers/apple.png"];
+//var stickersrc1 = ["file:///G:/kultus/spill/bilder/stickers/supreme.png", "bilder/stickers/apple.png"];
+var stickersrc1 = ["bilder/stickers/supreme.png", "bilder/stickers/apple.png"];
+
 function start_spill1() {
     platform.start();
     bil = new firekant(50, 105, shop.biler[localStorage.bil_nr], container.offsetWidth * 0.5, container.offsetHeight * 0.6, "bil");
@@ -162,16 +164,16 @@ var shop = {
 
         for (i = 0; i < numb; i++){
             this.kjøp_knapp[i] = document.createElement("button");
-            this.kjøp_knapp[i].innerHTML = "Kjøp";
+            this.kjøp_knapp[i].innerHTML = "Buy";
             this.kjøp_knapp[i].style.display = "none";
             this.kjøp_knapp[i].setAttribute("class", "kjøp_knapp knapp");
             this.produktdiv.appendChild(this.kjøp_knapp[i]);
-            this.kjøp_knapp[i].setAttribute("onclick", "console.log('det funker d avel nape eller v apete rosløbegr');");
+            this.kjøp_knapp[i].setAttribute("onclick", "console.log('det funker');");
         }
 
         for (i = 0; i < numb; i++){
             this.velg_knapp[i] = document.createElement("button");
-            this.velg_knapp[i].innerHTML = "Velg";
+            this.velg_knapp[i].innerHTML = "Select";
             this.velg_knapp[i].style.display = "none";
             this.velg_knapp[i].setAttribute("class", "velg_knapp knapp");
             this.produktdiv.appendChild(this.velg_knapp[i]);
