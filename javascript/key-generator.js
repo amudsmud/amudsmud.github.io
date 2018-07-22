@@ -1,8 +1,9 @@
 //key generator
 function nykey(nonencrypted, jane) {
-    var list_bokstaver = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d",
-    "e", "f", "g", "h", "i", "j", "k","l", "m", "n","o", "p", "q", "r","s", "t", "u", "v", "w",
-    "x", "y", "z", "æ", "ø", "å", " ", "!", "#", "$", "%", "&", "/", "=", "®", "¥", "‰"]
+    var list_bokstaver = ["O", "9", "E", "L", "C", "1", "r", "R", "j", "q", "0", "4", "i", "æ", "t", "8", "y", "h", "c",
+    "A", "X", "T", "ø", "K", "3", "W", "N", "z", "5", "å", "v", "6", "Z", "7", "2", " ", "u", "M", "U",
+    "o", "g", "S", "b", "k", "I", "G", "x", "s", "Ø", "Æ", "n", "Q", "Y", "F", "a", "p", "l", "P", "f",
+    "e", "V", "B", "d", "Å", "H", "m", "w", "J", "D", "!", "#", "$", "%", "&", "/", "=", "®", "¥", "‰"]
     var list_tall= [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     var encry = ""
         for (i=0; i < nonencrypted.length; i++){
@@ -21,8 +22,6 @@ function nykey(nonencrypted, jane) {
         else {var z = encry}
     return z
 }
-
-
 
 function selectText(node) {
     node = document.getElementById(node);
@@ -52,3 +51,75 @@ function nykeytokeygenerator(jane){
     var svar_felt = document.getElementById("svar");
     svar_felt.innerHTML = svaret;
 }
+
+/*
+"0",
+"1",
+"2",
+"3",
+"4",
+"5",
+"6",
+"7",
+"8",
+"9",
+"a",
+"b",
+"c",
+"d",
+"e",
+"f",
+"g",
+"h",
+"i",
+"j",
+"k",
+"l",
+"m",
+"n",
+"o",
+"p",
+"q",
+"r",
+"s",
+"t",
+"u",
+"v",
+"w",
+"x",
+"y",
+"z",
+"æ",
+"ø",
+"å",
+"A",
+"B",
+"C",
+"D",
+"E",
+"F",
+"G",
+"H",
+"I",
+"J",
+"K",
+"L",
+"M",
+"N",
+"O",
+"P",
+"Q",
+"R",
+"S",
+"T",
+"U",
+"V",
+"W",
+"X",
+"Y",
+"Z",
+"Æ",
+"Ø",
+"Å",
+" ",
+*/
