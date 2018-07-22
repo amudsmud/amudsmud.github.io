@@ -813,7 +813,7 @@ function oppdater_spill() {
     min_bil.moveAngle = 0;
     bil1.moveAngle = 0;
     bakgrunn.moveAngle = 0;
-    //console.log(localStorage.getItem("kroner"));
+    console.log(localStorage.getItem("kroner"));
     min_bil.fartometer = Math.floor((min_bil.fart * 100) / 100 * 8 + 0.4);
     fartometer.tekst = min_bil.fartometer + "KM/T";
     if (min_bil.gir == 0){
