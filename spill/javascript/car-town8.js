@@ -15,6 +15,7 @@ function start_spill() {
     load_bakgrunn.onload = function(){console.log(load_bakgrunn.src + " loaded");};
 
     var load_biler_list = ["bilder/kjøretøy/biler/sedan1_default.png",
+    "bilder/kjøretøy/biler/sedan1_grå.png",
     "bilder/kjøretøy/biler/sedan1_blå.png",
     "bilder/kjøretøy/biler/sedan1_kraftig_blå.png",
     "bilder/kjøretøy/biler/sedan1_grønn.png",
@@ -31,8 +32,8 @@ function start_spill() {
         load_biler[i] = new Image();
         load_biler[i].src = load_biler_list[i];
         //load_biler[i].onload = function(){console.log(load_biler[i].src + " loaded");};
-        if (load_biler[i].src.startsWith("file:///")){
-            console.log(load_biler[i].src.substring(59) + " loaded");
+        if (load_biler[i].src.startsWith("https://amudsmud.github.ioww")){
+            console.log(load_biler[i].src.substring(32) + " loaded");
         }
         else {
             console.log(load_biler[i].src.substring(59) + " loaded");
