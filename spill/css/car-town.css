@@ -11,13 +11,14 @@
     position: relative;
 }
 
+body{overflow: hidden;}
+
 #canvasid {
     display: block;
     z-index: 0;
     background-color: white;
     width: 100%;
     margin: 20px 0;
-    overflow: hidden;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
 }
