@@ -1,10 +1,11 @@
 // Kultus car town V0.8 scripts
-// all rights served 2018
+// all rights reserved 2018
 var er_telefon = false;
 var gas_pedal_active = false;
 var brems_pedal_active = false;
 var er_fullskjerm = false;
 var load_bakgrunn = new Image();
+var load_biler = []
 function start_spill() {
     if (/Mobi|Android/i.test(navigator.userAgent)) {
         if (confirm("Du bruker telefon, rigth?")){er_telefon = true;};
@@ -27,9 +28,15 @@ function start_spill() {
     "bilder/kjøretøy/biler/sedan1_svart.png",
     "bilder/kjøretøy/biler/Tesla-Model-S-mini.jpg"]
     for (i=0; i < load_biler_list.length; i++){
-        var load_biler = new Image();
-        load_biler.src = load_biler_list[i];
-        load_biler.onload = function(){console.log(load_biler.src + " loaded");};
+        load_biler[i] = new Image();
+        load_biler[i].src = load_biler_list[i];
+        //load_biler[i].onload = function(){console.log(load_biler[i].src + " loaded");};
+        if (load_biler[i].src.startsWith("file:///")){
+            console.log(load_biler[i].src.substring(59) + " loaded");
+        }
+        else {
+            console.log(load_biler[i].src.substring(59) + " loaded");
+        }
     }
 
     menu.start();
