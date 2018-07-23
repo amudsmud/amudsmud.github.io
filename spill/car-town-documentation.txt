@@ -60,3 +60,6 @@ Car Town V0.8-beta
     -The second car will now drive unlimited rounds.
     -The second car gives you money for every time it passes the finish-line.
     -The money will be saved as a encrypted code.
+    -Added a dark grey car.
+    -The loading now work even smoother.
+    

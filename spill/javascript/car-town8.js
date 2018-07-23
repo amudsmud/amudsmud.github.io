@@ -6,6 +6,20 @@ var brems_pedal_active = false;
 var er_fullskjerm = false;
 var load_bakgrunn = new Image();
 var load_biler = []
+var load_biler_list = ["bilder/kjøretøy/biler/sedan1_default.png",
+"bilder/kjøretøy/biler/sedan1_grå.png",
+"bilder/kjøretøy/biler/sedan1_blå.png",
+"bilder/kjøretøy/biler/sedan1_kraftig_blå.png",
+"bilder/kjøretøy/biler/sedan1_grønn.png",
+"bilder/kjøretøy/biler/sedan1_gul.png",
+"bilder/kjøretøy/biler/sedan1_lilla.png",
+"bilder/kjøretøy/biler/sedan1_neon_grønn.png",
+"bilder/kjøretøy/biler/sedan1_oransje.png",
+"bilder/kjøretøy/biler/sedan1_rosa.png",
+"bilder/kjøretøy/biler/sedan1_rød.png",
+"bilder/kjøretøy/biler/sedan1_turkis.png",
+"bilder/kjøretøy/biler/sedan1_svart.png",
+"bilder/kjøretøy/biler/Tesla-Model-S-mini.jpg"]
 function start_spill() {
     if (/Mobi|Android/i.test(navigator.userAgent)) {
         if (confirm("Du bruker telefon, rigth?")){er_telefon = true;};
@@ -14,25 +28,11 @@ function start_spill() {
     load_bakgrunn.src = "bilder/map_bilder/map1.png";
     load_bakgrunn.onload = function(){console.log(load_bakgrunn.src + " loaded");};
 
-    var load_biler_list = ["bilder/kjøretøy/biler/sedan1_default.png",
-    "bilder/kjøretøy/biler/sedan1_grå.png",
-    "bilder/kjøretøy/biler/sedan1_blå.png",
-    "bilder/kjøretøy/biler/sedan1_kraftig_blå.png",
-    "bilder/kjøretøy/biler/sedan1_grønn.png",
-    "bilder/kjøretøy/biler/sedan1_gul.png",
-    "bilder/kjøretøy/biler/sedan1_lilla.png",
-    "bilder/kjøretøy/biler/sedan1_neon_grønn.png",
-    "bilder/kjøretøy/biler/sedan1_oransje.png",
-    "bilder/kjøretøy/biler/sedan1_rosa.png",
-    "bilder/kjøretøy/biler/sedan1_rød.png",
-    "bilder/kjøretøy/biler/sedan1_turkis.png",
-    "bilder/kjøretøy/biler/sedan1_svart.png",
-    "bilder/kjøretøy/biler/Tesla-Model-S-mini.jpg"]
     for (i=0; i < load_biler_list.length; i++){
         load_biler[i] = new Image();
         load_biler[i].src = load_biler_list[i];
         //load_biler[i].onload = function(){console.log(load_biler[i].src + " loaded");};
-        if (load_biler[i].src.startsWith("https://amudsmud.github.ioww")){
+        if (load_biler[i].src.startsWith("https://amudsmud.github.io")){
             console.log(load_biler[i].src.substring(32) + " loaded");
         }
         else {
@@ -57,8 +57,8 @@ function start_spill1() {
     if (typeof(Storage) !== "undefined" && !localStorage.kroner) {
         localStorage.setItem("kroner", nykey("50", 0));
     }
-    min_bil = new firekant(50, 105, shop.biler[localStorage.bil_nr], container.offsetWidth * 0.5, container.offsetHeight * 0.6, "bil");
-    bil1 = new firekant(50, 105, shop.biler[0], container.offsetWidth * 0.52, container.offsetHeight * 0.4, "bil");
+    min_bil = new firekant(50, 105, load_biler[localStorage.bil_nr].src, container.offsetWidth * 0.5, container.offsetHeight * 0.6, "bil");
+    bil1 = new firekant(50, 105, load_biler[1].src, container.offsetWidth * 0.52, container.offsetHeight * 0.4, "bil");
     bakgrunn = new firekant(3456 * 1.5, 2688 * 1.5, load_bakgrunn.src, container.offsetWidth * 0.5 + 2680, 2688 / 3, "bakgrunn");
     overlag = new firekant(2000, 2000, "black", 0, 0, "overlay");
     fullskjerm_knapp = new firekant(40, 40, "bilder/fullskjerm.png", container.offsetWidth * 0.94, container.offsetHeight * 0.02 , "knapp");
@@ -136,19 +136,6 @@ var shop = {
     prikker : [],
     velg_knapp : [],
     kjøp_knapp : [],
-    biler : ["bilder/kjøretøy/biler/sedan1_default.png",
-    "bilder/kjøretøy/biler/sedan1_blå.png",
-    "bilder/kjøretøy/biler/sedan1_kraftig_blå.png",
-    "bilder/kjøretøy/biler/sedan1_grønn.png",
-    "bilder/kjøretøy/biler/sedan1_gul.png",
-    "bilder/kjøretøy/biler/sedan1_lilla.png",
-    "bilder/kjøretøy/biler/sedan1_neon_grønn.png",
-    "bilder/kjøretøy/biler/sedan1_oransje.png",
-    "bilder/kjøretøy/biler/sedan1_rosa.png",
-    "bilder/kjøretøy/biler/sedan1_rød.png",
-    "bilder/kjøretøy/biler/sedan1_turkis.png",
-    "bilder/kjøretøy/biler/sedan1_svart.png",
-    "bilder/kjøretøy/biler/Tesla-Model-S-mini.jpg"],
     start : function() {
         this.shop.setAttribute("id", "shopdiv");
         this.shop.style.display = "block";
@@ -159,7 +146,7 @@ var shop = {
         /*__*/
         this.shop_menu_list1.innerHTML = "Cars"
         this.shop_menu_list1.setAttribute("class", "shop_menu_list");
-        this.shop_menu_list1.setAttribute("onclick", "shop.mange_produkter("+this.biler.length+")");
+        this.shop_menu_list1.setAttribute("onclick", "shop.mange_produkter("+load_biler.length+")");
         this.shop_menu.appendChild(this.shop_menu_list1);
         /*__*/
         this.produktdiv.setAttribute("id", "produktdiv");
@@ -201,7 +188,7 @@ var shop = {
             this.produktdiv.appendChild(this.produkt[i]);
 
             this.bilde[i] = document.createElement("img");
-            this.bilde[i].src = this.biler[i]
+            this.bilde[i].src = load_biler[i].src
             //this.bilde[i].style.display = "none";
             this.bilde[i].setAttribute("class", "produkt_bilde");
             //this.produkt2[i].appendChild(this.produkt);
