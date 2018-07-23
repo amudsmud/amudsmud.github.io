@@ -26,18 +26,17 @@ function start_spill() {
     }
     //load images før spillet starter
     load_bakgrunn.src = "bilder/map_bilder/map1.png";
-    load_bakgrunn.onload = function(){console.log(load_bakgrunn.src + " loaded");};
+    load_bakgrunn.onload = function(){
+        if (load_bakgrunn.src.startsWith("https://amudsmud.github.io")){console.log(load_bakgrunn.src.substring(32) + " loaded");}
+        else {console.log(load_bakgrunn.src.substring(59) + " loaded");}
+    };
 
     for (i=0; i < load_biler_list.length; i++){
         load_biler[i] = new Image();
         load_biler[i].src = load_biler_list[i];
         //load_biler[i].onload = function(){console.log(load_biler[i].src + " loaded");};
-        if (load_biler[i].src.startsWith("https://amudsmud.github.io")){
-            console.log(load_biler[i].src.substring(32) + " loaded");
-        }
-        else {
-            console.log(load_biler[i].src.substring(59) + " loaded");
-        }
+        if (load_biler[i].src.startsWith("https://amudsmud.github.io")){console.log(load_biler[i].src.substring(32) + " loaded");}
+        else {console.log(load_biler[i].src.substring(59) + " loaded");}
     }
 
     menu.start();
