@@ -10,7 +10,7 @@ Car Town V0.2-beta
     -New menu before the actual game starts.
 
 Car Town V0.3-beta
-    -Added gearbox with gear: 1, 2, 3 and R(reverse).
+    -Added gearbox with gear: 1, 2, 3 and R (reverse).
     -The car looks like a Tesla now instead of a grey box.
     -The car won't turn when speed is zero.
     -Added a fullscreen function.
@@ -62,4 +62,8 @@ Car Town V0.8-beta
     -The money will be saved as a encrypted code.
     -Added a dark grey car.
     -The loading now work even smoother.
-    
+    -Reverse acceleration and turning is now improved.
+    -Added a shop platform.
+    -Added race number sticker pack.
+    -Added race number "0" to our first autonomous car.
+    -Added security measures

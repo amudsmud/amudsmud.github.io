@@ -86,6 +86,12 @@ html,body {
         -1px -1px 0 #000;
 }
 
+.center{
+    text-align: center;
+    width: auto;
+    margin: auto;
+}
+
 
 /*______________scrollbar start______________*/
 

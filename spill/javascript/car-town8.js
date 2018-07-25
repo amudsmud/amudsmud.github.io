@@ -4,6 +4,17 @@ var er_telefon = false;
 var gas_pedal_active = false;
 var brems_pedal_active = false;
 var er_fullskjerm = false;
+var stickersrc = ["bilder/stickers/supreme.png", "bilder/stickers/apple.png"];
+var stickersrc1 = ["bilder/car-number-0.png",
+"bilder/car-number-1.png",
+"bilder/car-number-2.png",
+"bilder/car-number-3.png",
+"bilder/car-number-4.png",
+"bilder/car-number-5.png",
+"bilder/car-number-6.png",
+"bilder/car-number-7.png",
+"bilder/car-number-8.png",
+"bilder/car-number-9.png"];
 var load_bakgrunn = new Image();
 var load_biler = []
 var load_biler_list = ["bilder/kjøretøy/biler/sedan1_default.png",
@@ -47,7 +58,6 @@ function start_spill() {
     //min_bil = new firekant(50, 100, "grey", 1000, 900);
     //fartometer = new firekant ("25px", "Arial", "black", 1880, 980, "text");
 }
-var stickersrc1 = ["bilder/stickers/supreme.png", "bilder/stickers/apple.png"];
 function start_spill1() {
     platform.start();
     if (typeof(Storage) !== "undefined" && !localStorage.bil_nr) {
@@ -61,7 +71,13 @@ function start_spill1() {
     bakgrunn = new firekant(3456 * 1.5, 2688 * 1.5, load_bakgrunn.src, container.offsetWidth * 0.5 + 2680, 2688 / 3, "bakgrunn");
     overlag = new firekant(2000, 2000, "black", 0, 0, "overlay");
     fullskjerm_knapp = new firekant(40, 40, "bilder/fullskjerm.png", container.offsetWidth * 0.94, container.offsetHeight * 0.02 , "knapp");
-    målstrek = new firekant(110, 10, "white", container.offsetWidth * 0.5-55, container.offsetHeight * 0.28 , "knapp");
+    målstrek = new firekant(110, 10, "white", container.offsetWidth * 0.5-55, container.offsetHeight * 0.28, "knapp");
+    shop_platform = new firekant(108, 100, "grey", container.offsetWidth * 0.5+70, container.offsetHeight * 0.68, "knapp");
+    shop_platform1 = new firekant(100, 130, "grey", container.offsetWidth * 0.5+400, container.offsetHeight * -0.083, "knapp");
+    shop_platform_tekst = new firekant ("22px", "Arial", "white", container.offsetWidth * 0.5+420, container.offsetHeight * 0, "tekst");
+    shop_platform_tekst.tekst = "SHOP";
+
+    //platform will do: shop.start(); menu.skjul_menu();
 
     platform.trykketpå(min_bil);
     min_bil.mstand_func_engang();
@@ -515,7 +531,7 @@ function firekant(bredde, høyde, farge, x, y, type) {
         this.bilde_lys3 = new Image();
         this.bilde_lys3.src = "bilder/lys3.png";
         this.bilde_sticker = new Image();
-        this.bilde_sticker.src = stickersrc1[0];
+        this.bilde_sticker.src = stickersrc[0];
     }
     if (this.type == "bakgrunn") {
         this.bilde_bakgrunn = new Image();
@@ -537,44 +553,34 @@ function firekant(bredde, høyde, farge, x, y, type) {
     this.x = x;
     this.y = y;
     this.mstand = 0;
+    noe = platform.context;
 
     this.oppdater_firekant_bakgrunn = function(){
-        noe = platform.context;
-        if (this.type == "bakgrunn"){
-            noe.save();
-            noe.translate(this.x, this.y);
-            noe.rotate(this.angle);
-            noe.drawImage(this.bilde_bakgrunn, this.bredde / -1.2, this.høyde / -2, this.bredde, this.høyde);
-            noe.restore();
-        }
+        noe.save();
+        noe.translate(this.x, this.y);
+        noe.rotate(this.angle);
+        noe.drawImage(this.bilde_bakgrunn, this.bredde / -1.2, this.høyde / -2, this.bredde, this.høyde);
+        noe.restore();
     }
 
     this.oppdater_firekant_tekst = function(){
-        noe = platform.context;
-        if (this.type == "tekst") {
-            noe.font = this.bredde + " " + this.høyde;
-            noe.fillStyle = this.farge;
-            noe.fillText(this.tekst, this.x, this.y);
-        }
+        noe.font = this.bredde + " " + this.høyde;
+        noe.fillStyle = this.farge;
+        noe.fillText(this.tekst, this.x, this.y);
     }
 
 
     this.oppdater_firekant_knapp = function(){
-        noe = platform.context;
-
-        if (this.type == "knapp"){
-            if (this.farge.startsWith("bilder")){
-                noe.drawImage(this.bilde_knapp, this.x, this.y, this.bredde, this.høyde);
-            }
-            else {
-                noe.fillStyle = this.farge;
-                noe.fillRect(this.x, this.y, this.bredde, this.høyde);
-            }
+        if (this.farge.startsWith("bilder")){
+            noe.drawImage(this.bilde_knapp, this.x, this.y, this.bredde, this.høyde);
+        }
+        else {
+            noe.fillStyle = this.farge;
+            noe.fillRect(this.x, this.y, this.bredde, this.høyde);
         }
     }
 
     this.oppdater_firekant_overlay = function(){
-        noe = platform.context;
         if (this.type == "overlay"){
             noe.globalAlpha = 0.8;
             //noe.globalCompositeOperation = "overlay";
@@ -586,8 +592,10 @@ function firekant(bredde, høyde, farge, x, y, type) {
 
 
     this.oppdater_firekant_bil = function(){
-        noe = platform.context;
         lys2 = platform.context;
+        sticker1 = platform.context;
+        this.bilde_sticker = new Image();
+        this.bilde_sticker.src = stickersrc1[0];
         if (this.fart !== this.kjørefart){
             lys2.save();
             lys2.translate(this.x, this.y);
@@ -602,10 +610,15 @@ function firekant(bredde, høyde, farge, x, y, type) {
         noe.drawImage(this.bilde_bil, this.bredde / -2, this.høyde / -1.4, this.bredde, this.høyde);
         //noe.fillRect(this.x, this.y, this.bredde, this.høyde);
         noe.restore();
+
+        sticker1.save();
+        sticker1.translate(this.x, this.y);
+        sticker1.rotate(this.angle);
+        sticker1.drawImage(this.bilde_sticker, -6, this.høyde / -1.7, 14, 16);
+        sticker1.restore();
     }
 
     this.oppdater_firekant_min_bil = function(){
-        noe = platform.context;
         lys1 = platform.context;
         lys2 = platform.context;
         lys3 = platform.context;
@@ -717,7 +730,7 @@ function firekant(bredde, høyde, farge, x, y, type) {
     this.dsa = 0;
     this.auto_kjør = function(){
         this.runder = 1;
-        this.kjørefart = 10;
+        this.kjørefart = 1.2;
         this.fart = this.kjørefart;
         //90 graders sving
         this.sving1 = 113;
@@ -808,13 +821,17 @@ function firekant(bredde, høyde, farge, x, y, type) {
             if (platform.keys && platform.keys[38] && this.fart == 0) {this.gir += 1;}/*Opp pil*/
             if (platform.keys && platform.keys[65]) {this.moveAngle = -2 * (this.fart / 4);}/*a*/
             if (platform.keys && platform.keys[68]) {this.moveAngle = 2 * (this.fart / 4);}/*d*/
-            if (platform.keys && platform.keys[87] || gas_pedal_active == true) {this.fart -= 0.8 / 8;}/*w*/
+            if (platform.keys && platform.keys[87] || gas_pedal_active == true) {this.fart -= 0.6 / 8;}/*w*/
             if (platform.keys && platform.keys[83] || brems_pedal_active == true) {this.fart += 0.4 / 8;}/*s*/
             if (this.fart < 0) {this.fart += 0.3 / 8} else {this.fart = 0;}
             if (this.fart < this.maksfart) {this.fart = this.maksfart;};
         }
         /*gange vinkelen bilen snur på i forholde til farta, jo saktere, desto kraftigere sving*/
-        if (this.fart * 8 < 2000) {this.moveAngle *= this.finnx(this.fart * 8)}
+        if (this.fart * 8 < -25) {this.moveAngle *= 1.2}
+        else if (this.fart * 8 < -15) {this.moveAngle *= 1.4}
+        else if (this.fart * 8 < -10) {this.moveAngle *= 1.6}
+        else if (this.fart * 8 < -5) {this.moveAngle *= 1.8}
+        else if (this.fart * 8 < 500) {this.moveAngle *= this.finnx(this.fart * 8)}
     }
 }
 
@@ -840,6 +857,9 @@ function oppdater_spill() {
 
     //bil1.kjøra()
     bil1.ny_posisjon2();
+    shop_platform.ny_posisjon2();
+    shop_platform1.ny_posisjon2();
+    shop_platform_tekst.ny_posisjon2();
     målstrek.ny_posisjon2();
     bakgrunn.kjøra()
     bakgrunn.ny_posisjon_map();
@@ -848,11 +868,13 @@ function oppdater_spill() {
     min_bil.mstand_func();
     bakgrunn.oppdater_firekant_bakgrunn();
     målstrek.oppdater_firekant_knapp();
+    shop_platform.oppdater_firekant_knapp();
+    shop_platform1.oppdater_firekant_knapp();
+    shop_platform_tekst.oppdater_firekant_tekst();
     if (typeof for_liten_vindu_advarsel !== "undefined") {
         for_liten_vindu_advarsel.tekst = "Vennligst bruk større skjerm for bedre spill-opplevelse";
         for_liten_vindu_advarsel.oppdater_firekant_tekst();
     }
-
     bil1.auto_kjør();
     bil1.oppdater_firekant_bil();
     min_bil.oppdater_firekant_min_bil();
