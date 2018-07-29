@@ -3,7 +3,7 @@
     paypal.Button.render({
       // Configure environment
       //commit: true,
-      env: 'sandbox',
+      env: 'production',
       client: {
         sandbox: 'AbvxFYEAn8lvVpGcxvhljGSifjbQOfZ0sjFSvcG7OhPwthDSzB0nlhtCLd3QzTK10vKaBmBjB2se2dh9',
         production: 'AZ8YjyJAooKY0krNvJf8nsDbsuirvypgh6KJkJvwlAdojyvRS3QnjzXlX9jhSUNYuvO4BLDga8W2Z5u4'
