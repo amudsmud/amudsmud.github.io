@@ -58,12 +58,17 @@ Car Town V0.7-beta
 
 Car Town V0.8-beta
     -The second car will now drive unlimited rounds.
-    -The second car gives you money for every time it passes the finish-line.
-    -The money will be saved as a encrypted code.
+    -Added new type of currency: Car Coins(CC)
+    -The second car gives you CC for every time it passes the finish-line.
+    -The CC will be saved as a encrypted code.
     -Added a dark grey car.
     -The loading now work even smoother.
     -Reverse acceleration and turning is now improved.
-    -Added a shop platform.
+    -Added a shop platform that opens shop when inside.
     -Added race number sticker pack.
     -Added race number "0" to our first autonomous car.
-    -Added security measures
+    -Added security measures.
+    -Added Paypal buttons to buy extra CC.
+    -Added a button that fires once, regardless of how long you press down the key.
+    -Fixed the car headlights so they wont flicker as long as you hold down the key,
+     now you can press one time to turn on and press again to turn off.
