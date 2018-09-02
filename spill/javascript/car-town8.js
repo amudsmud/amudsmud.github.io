@@ -28,7 +28,7 @@ var load_biler_list = ["bilder/kjøretøy/biler/sedan1_default.png",
 "bilder/kjøretøy/biler/sedan1_grå.png",
 "bilder/kjøretøy/biler/sedan1_svart.png",
 "bilder/kjøretøy/biler/Tesla-Model-S-mini.jpg"]
-var autobil_list = ["bil1", "bil2", "bil3", "bil4"]
+var autobil_list = ["bil1", "bil2", "bil3"]
 
 function start_spill() {
     if (/Mobi|Android/i.test(navigator.userAgent)) {
@@ -40,6 +40,11 @@ function start_spill() {
         if (load_bakgrunn.src.startsWith("https://amudsmud.github.io")){console.log(load_bakgrunn.src.substring(32) + " loaded");}
         else {console.log(load_bakgrunn.src.substring(59) + " loaded");}
     };
+    load_min_sticker = []
+    for (var i=0; i < 2; i++){
+        load_min_sticker[i] = new Image();
+        load_min_sticker[i].src = stickersrc[i]
+    }
 
     for (var i=0; i < load_biler_list.length; i++){
         load_biler[i] = new Image();
@@ -77,6 +82,11 @@ function start_spill1() {
     tuning_platform = new firekant(140, 215, "grey", container.offsetWidth * 0.5+700, container.offsetHeight * -0.083, "knapp");
     tuning_platform_tekst = new firekant ("22px", "Arial", "white", container.offsetWidth * 0.5+730, container.offsetHeight * 0.07, "tekst");
     tuning_platform_tekst.tekst = "TUNING";
+    mer_biler_platform = new firekant(170, 120, "grey", container.offsetWidth * 0.5-245, container.offsetHeight * 0, "knapp");
+    mer_biler_platform_tekst = new firekant ("20px", "Arial", "white", container.offsetWidth * 0.5-220, container.offsetHeight * 0.09, "tekst");
+    mer_biler_platform_tekst.tekst = "KJØP BILER";
+    mer_biler_platfor = new firekant(300, 200, "white", container.offsetWidth * 0.5-300, container.offsetHeight * 0.24, "knapp");
+
 
     //platform will do: shop.start(); menu.skjul_menu();
 
@@ -604,12 +614,13 @@ function firekant(bredde, høyde, farge, x, y, type) {
     this.moveAngle = 0;
     this.fart = 0;
     this.fartometer = Math.floor(this.fart * 100) / 100;
-    this.maksfart = 8;
+    this.maksfart = 10;
     this.x = x;
     this.y = y;
     this.mstand = 0;
     this.bilishop = false;
     this.bilituning = false;
+
     var noe = platform.context;
 
     this.oppdater_firekant_bakgrunn = function(){
@@ -780,7 +791,7 @@ function firekant(bredde, høyde, farge, x, y, type) {
         var y = 0.00009*x*x - 0.023*x + 2
         return y
     }
-    this.kjørefart = 2;
+    this.kjørefart = 4;
     for (var i=0; i < autobil_list.length; i++){
         //150 får jeg fra linje 70(hvor langt det er mellom hver bil)
         autobil_list[i].asd = 0 - (150/autobil_list[i].kjørefart) * i ;
@@ -918,6 +929,8 @@ function oppdater_spill() {
     shop_platform_tekst.ny_posisjon2();
     tuning_platform.ny_posisjon2();
     tuning_platform_tekst.ny_posisjon2();
+    mer_biler_platform.ny_posisjon2();
+    mer_biler_platform_tekst.ny_posisjon2();
     målstrek.ny_posisjon2();
     bakgrunn.kjøra()
     bakgrunn.ny_posisjon_map();
@@ -930,6 +943,8 @@ function oppdater_spill() {
     shop_platform_tekst.oppdater_firekant_tekst();
     tuning_platform.oppdater_firekant_knapp();
     tuning_platform_tekst.oppdater_firekant_tekst();
+    mer_biler_platform.oppdater_firekant_knapp();
+    mer_biler_platform_tekst.oppdater_firekant_tekst();
     if (typeof for_liten_vindu_advarsel !== "undefined") {
         for_liten_vindu_advarsel.tekst = "Vennligst bruk større skjerm for bedre spill-opplevelse";
         for_liten_vindu_advarsel.oppdater_firekant_tekst();
@@ -939,6 +954,11 @@ function oppdater_spill() {
 
     if (min_bil.erinni(tuning_platform) && !min_bil.bilituning){min_bil.bilituning = true; shop.start(); menu.skjul_menu()}
     else if (!min_bil.erinni(tuning_platform)){min_bil.bilituning = false}
+
+    if (min_bil.erinni(mer_biler_platform)){
+         mer_biler_platfor.oppdater_firekant_knapp();
+     }
+    else if (!min_bil.erinni(mer_biler_platform)){}
 
     //min_bil.bilde_bil.src = load_biler[localStorage.bil_nr].src
     for (var i=0; i < autobil_list.length; i++){

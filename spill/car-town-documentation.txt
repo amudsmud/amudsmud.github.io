@@ -68,7 +68,8 @@ Car Town V0.8-beta
     -Added race number sticker pack.
     -Added race number "0" to our first autonomous car.
     -Added security measures.
-    -Added Paypal buttons to buy extra CC.
+    -Added PayPal buttons to buy extra CC.
     -Added a button that fires once, regardless of how long you press down the key.
     -Fixed the car headlights so they wont flicker as long as you hold down the key,
      now you can press one time to turn on and press again to turn off.
+    -Added a platform where you can buy more cars to your track to generate more money.
