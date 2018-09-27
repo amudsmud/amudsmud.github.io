@@ -10,7 +10,7 @@ Car Town V0.2-beta
     -New menu before the actual game starts.
 
 Car Town V0.3-beta
-    -Added gearbox with gear: 1, 2, 3 and R(reverse).
+    -Added gearbox with gear: 1, 2, 3 and R (reverse).
     -The car looks like a Tesla now instead of a grey box.
     -The car won't turn when speed is zero.
     -Added a fullscreen function.
@@ -58,5 +58,18 @@ Car Town V0.7-beta
 
 Car Town V0.8-beta
     -The second car will now drive unlimited rounds.
-    -The second car gives you money for every time it passes the finish-line.
-    -The money will be saved as a encrypted code.
+    -Added new type of currency: Car Coins(CC)
+    -The second car gives you CC for every time it passes the finish-line.
+    -The CC will be saved as a encrypted code.
+    -Added a dark grey car.
+    -The loading now work even smoother.
+    -Reverse acceleration and turning is now improved.
+    -Added a shop platform that opens shop when inside.
+    -Added race number sticker pack.
+    -Added race number "0" to our first autonomous car.
+    -Added security measures.
+    -Added PayPal buttons to buy extra CC.
+    -Added a button that fires once, regardless of how long you press down the key.
+    -Fixed the car headlights so they wont flicker as long as you hold down the key,
+     now you can press one time to turn on and press again to turn off.
+    -Added a platform where you can buy more cars to your track to generate more money.

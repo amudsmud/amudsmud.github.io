@@ -7,7 +7,7 @@
     float: left;
     width: 80%;
     height: 700px;
-    margin: 50px 10% 100px 10%;
+    margin: 50px 10% 200px 10%;
     position: relative;
 }
 
@@ -18,6 +18,7 @@
     width: 100%;
     margin: 20px 0;
     -webkit-touch-callout: none;
+    -webkit-user-select: none;
 }
 
 #menudiv {
@@ -35,7 +36,7 @@
 
 #shop_menu {
     width: 30%;
-    height: 700px;
+    height: 800px;
     border-radius: 5px;
     float: left;
     background-color: rgb(100,100,100);
@@ -47,7 +48,7 @@
 
 #produktdiv {
     width: 69%;
-    height: 700px;
+    height: 800px;
     float: left;
     border-radius: 5px;
     background-color: #878787;
@@ -85,13 +86,21 @@
 .menu-overskrift{
     font-size: 40px;
     width: 40%;
-    margin: 25px 0% 50px 30%;
+    margin: 25px 0% 50px 0%;
+    float: left;
+}
+
+.shop_vis_penger{
+    width: 22%;
+    margin: 35px 4% 50px 4%;
+    font-size: 25px;
+    text-align: center;
     float: left;
 }
 
 .produkt {
     width: 60%;
-    height: 350px;
+    height: 400px;
     margin: 20px 20%;
     float: left;
     padding-top: 30px;
@@ -102,6 +111,13 @@
 .produkt_bilde {
     width: 20%;
     margin: 40px 40%;
+}
+
+.produkt_pris {
+    width: 32%;
+    margin: 60px 10% 40px 10%;
+    float: left;
+    font-size: 28px;
 }
 
 
@@ -199,7 +215,7 @@
 .velg_knapp {
     float: left;
     padding: 8px;
-    margin: 60px 15% 40px 15%;
+    margin: 60px 14% 40px 14%;
     background-color: rgb(0,126,21);
     border: 1px solid darkgreen;
     font-size: 27px;
@@ -214,6 +230,7 @@
     #menudiv {height: 600px;}
     #produktdiv {height: 750px;}
     #shop_menu {height: 750px;}
+    .produkt{height: 350px;}
 }
 
 @media only screen and (max-width:1000px) {
