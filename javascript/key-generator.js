@@ -1,4 +1,4 @@
-// kultus key scripts
+// Smudi key scripts
 // all rights served 2018
 //key generator
 function nykey(nonencrypted, jane) {

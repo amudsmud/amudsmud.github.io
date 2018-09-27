@@ -1,4 +1,4 @@
-// kultus hjem scripts
+// Smudi hjem scripts
 // all rights served 2018
 /*------------------------------start tid og dato------------------------------*/
 function myFunction() {

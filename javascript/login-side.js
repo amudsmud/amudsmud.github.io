@@ -1,4 +1,4 @@
-// kultus login-side scripts
+// Smudi login-side scripts
 // all rights served 2018function getCookie(cookienavn) {
     var navn = cookienavn + "=";
     var decodedCookie = decodeURIComponent(document.cookie);

@@ -45,7 +45,7 @@ text-shadow: 1px 1px 0 #000,
     -2px -1px 0 #000;
 }
 
-#kultus-logo {
+#Smudi-logo {
 z-index: 100;
 position: absolute; /*fixed*/
 text-decoration: none;
@@ -102,10 +102,10 @@ margin: 0 3% 40px 6%;
 box-shadow: 15px 10px 35px black;
 float: left;
 position: relative;
-align-self: flex-start; /* hvis det er to ulike ting, hvor skal denne stå iforhold til den*/
+align-self: flex-start; /* hvis det er to ulike ting, hvor skal denne stï¿½ iforhold til den*/
 }
 
-.bytte-rekkefølge{
+.bytte-rekkefï¿½lge{
 display: -webkit-flex;
 display: flex;
 -webkit-flex-flow: row wrap;
@@ -114,7 +114,7 @@ float: left;
 justify-content:flex-start;
 }
 
-#kontakt-blåboks {
+#kontakt-blï¿½boks {
 width: 40%;
 height: 870px;
 border: 0.1px solid black;
@@ -344,17 +344,17 @@ text-decoration: none;
 font-size: 20px;
 float: left;
 }
-/* hvert enkelt page når pusepekeren er over den */
+/* hvert enkelt page nï¿½r pusepekeren er over den */
 #navia:hover {
 background-color: #60f900;
 color: #424242;
 }
-/* hvordan den aktive siden du er på ser ut*/
+/* hvordan den aktive siden du er pï¿½ ser ut*/
 #navia.active {
 background-color: #07ab1a;
 color: white;
 }
-/* hvordan den aktive siden du er på ser ut når du har musepekeren på den*/
+/* hvordan den aktive siden du er pï¿½ ser ut nï¿½r du har musepekeren pï¿½ den*/
 #navia:hover.active {
 background-color: #297c33;
 color: white;
@@ -385,7 +385,7 @@ width: 90%;
 
 @media only screen and (max-width:1000px) {
     #kontakt-overskrift {font-size: 60px;}
-    #kontakt-blåboks {height: 900px;}
+    #kontakt-blï¿½boks {height: 900px;}
     #kontakt-boks1 {height: 630px;}
 }
 
@@ -405,7 +405,7 @@ margin: 0 calc(25% - 75px) 100px calc(25% - 75px);
 order: 1;
 }
 
-#kontakt-blåboks {
+#kontakt-blï¿½boks {
 box-shadow: 1px 4px 15px black;
 width: calc(50% + 150px);
 margin-left: calc(25% - 75px);
@@ -426,7 +426,7 @@ width: 60%;
 font-size: 50px;
 }
 
-#kultus-logo {
+#Smudi-logo {
 margin-left: 30%;
 margin-right: 30%;
 margin-top: 8px;
@@ -443,7 +443,7 @@ margin: 0 calc(20% - 65px) 100px calc(20% - 65px);
 order: 1;
 }
 
-#kontakt-blåboks {
+#kontakt-blï¿½boks {
 width: calc(60% + 130px);
 margin-left: calc(20% - 65px);
 margin-right: calc(20% - 65px);
@@ -478,12 +478,12 @@ margin-top: 37px;
 }
 
 
-img.antall-besøkende {
+img.antall-besï¿½kende {
 
 }
 
 
-p.antall-besøkende {
+p.antall-besï¿½kende {
 font-size: 10px;
 
 }

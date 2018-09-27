@@ -1,4 +1,4 @@
-// Kultus car town V0.4 scripts
+// Smudi car town V0.4 scripts
 // all rights served 2018
 function start_spill() {
     var er_telefon = false;

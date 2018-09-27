@@ -1,4 +1,4 @@
-// Kultus car town V0.6 scripts
+// Smudi car town V0.6 scripts
 // all rights served 2018
 var er_telefon = false;
 var gas_pedal_active = false;
@@ -15,7 +15,7 @@ function start_spill() {
     //bil = new firekant(50, 100, "grey", 1000, 900);
     //fartometer = new firekant ("25px", "Arial", "black", 1880, 980, "text");
 }
-//var stickersrc1 = ["file:///G:/kultus/spill/bilder/stickers/supreme.png", "bilder/stickers/apple.png"];
+//var stickersrc1 = ["file:///G:/Smudi/spill/bilder/stickers/supreme.png", "bilder/stickers/apple.png"];
 var stickersrc1 = ["bilder/stickers/supreme.png", "bilder/stickers/apple.png"];
 
 function start_spill1() {

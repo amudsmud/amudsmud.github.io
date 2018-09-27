@@ -1,4 +1,4 @@
-// kultus nyheter scripts
+// Smudi nyheter scripts
 // all rights served 2018
 /*------------------------------start tid og dato------------------------------*/
 function myFunction() {

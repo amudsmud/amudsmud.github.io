@@ -1,4 +1,4 @@
-// kultus scripts
+// Smudi scripts
 // all rights served 2018
 /*------------------------------start tid og dato------------------------------*/
 
@@ -9,7 +9,7 @@
 var dato = new Date("April 27, 2018");
 document.getElementById("dagensDato").innerHTML = dato.getDate() +'.'+ (dato.getMonth()+1) +'.'+ dato.getFullYear();
 
-/* Sette klokkeslett  ("April 20, 2018 17:23:00") akkurat nå så finner den deagens klokkelsett men kan gjøre sånn at jeg skriver det selv siden det er "sist oppdatert" */
+/* Sette klokkeslett  ("April 20, 2018 17:23:00") akkurat nï¿½ sï¿½ finner den deagens klokkelsett men kan gjï¿½re sï¿½nn at jeg skriver det selv siden det er "sist oppdatert" */
 var klokkeslett = new Date("April 20, 2018 17:15:00");
 document.getElementById("klokkeslett").innerHTML = klokkeslett.getHours() +':'+ klokkeslett.getMinutes();
 
@@ -25,7 +25,7 @@ if ( klokkeslett.getHours() < 10) {
 document.getElementById("klokkeslett").innerHTML = '0' + klokkeslett.getHours() +':'+ klokkeslett.getMinutes();
 }
 
-/* Hvis både timer og minutter er mindre en 10, vis en 0 foran begge */
+/* Hvis bï¿½de timer og minutter er mindre en 10, vis en 0 foran begge */
 if ( klokkeslett.getHours() && klokkeslett.getMinutes() < 10) {
 document.getElementById("klokkeslett").innerHTML = '0' + klokkeslett.getHours() +':0'+ klokkeslett.getMinutes();
 }
@@ -41,7 +41,7 @@ document.getElementById("klokkeslett").innerHTML = klokkeslett.getHours() +':0'+
 
 
 
-// Gjem header når du scroller ned
+// Gjem header nï¿½r du scroller ned
 var didScroll;
 var lastScrollTop = 0;
 var delta = 10;
@@ -61,12 +61,12 @@ setInterval(function() {
 function hasScrolled() {
     var st = $(this).scrollTop();
 
-    // pass på å scolle mer enn delta
+    // pass pï¿½ ï¿½ scolle mer enn delta
     if(Math.abs(lastScrollTop - st) <= delta)
         return;
 
-    // Når du scroller ned og er forbi header høyden, legg til classen .nav-up.
-    // Dette er viktig så du aldri saer "bak" header
+    // Nï¿½r du scroller ned og er forbi header hï¿½yden, legg til classen .nav-up.
+    // Dette er viktig sï¿½ du aldri saer "bak" header
     if (st > lastScrollTop && st > navbarHeight){
         // Scroll ned
         $('header').removeClass('nav-down').addClass('nav-opp');
