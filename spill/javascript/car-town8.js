@@ -170,6 +170,7 @@ var shop = {
     start : function() {
         this.shop.setAttribute("id", "shopdiv");
         this.shop.style.display = "block";
+        container.style.marginBottom = "100px";
         container.appendChild(this.shop);
         /*__*/
         this.shop_menu.setAttribute("id", "shop_menu");
@@ -358,6 +359,22 @@ var innstillinger = {
     }
 }
 
+function viscontrols() {
+    controlspopup = document.getElementById("controls-popup");
+    controlspopup.style.display = "block"
+    /*__få x og y koordinatene til musepekeren__*/
+    controlspopupstyle = controlspopup.currentStyle || window.getComputedStyle(controlspopup);
+    window.addEventListener('mousemove', function (e) {
+        var margin = controlspopupstyle.marginLeft;
+        var bredde = controlspopupstyle.width;
+        //MÅ FJERNE PX PÅ SLUTTEN AV MARGIN OG BREDDE
+        if (e.pageX > margin && e.pageX < 1000){console.log("YEET");}
+    });
+    window.addEventListener("click", function(){
+
+    });
+}
+
 
 
 var platform = {
@@ -372,7 +389,7 @@ var platform = {
         var menu = document.getElementById("menudiv");
         menu.appendChild(this.canvas);
         this.interval = setInterval(oppdater_spill, 20);
-        /*_______få x og y koordinatene til musepekeren_______*/
+        /*__få x og y koordinatene til musepekeren__*/
         var style = container.currentStyle || window.getComputedStyle(container);
         var overskrift = document.getElementById("overskrift")
         var style_overskrift = overskrift.currentStyle || window.getComputedStyle(overskrift);
@@ -390,11 +407,7 @@ var platform = {
             platform.y = e.pageY - 200 - 50 - margin_top;
         }
         });
-        /*______________*/
-        /*_______sjekke om du trykker på bilen_______*/
-
-
-        /*______________*/
+        /*__*/
         window.addEventListener('keydown', function (e) {
             e.preventDefault();
             platform.keys = (platform.keys || []);
