@@ -1,5 +1,5 @@
 // Smudi hjem scripts
-// all rights served 2018
+// All Rights Reserved 2018
 /*------------------------------start tid og dato------------------------------*/
 function myFunction() {
 	var id = document.getElementById("id").value;

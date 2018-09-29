@@ -1,5 +1,5 @@
 // Smudi car town V0.5 scripts
-// all rights served 2018
+// All Rights Reserved 2018
 function start_spill() {
     var er_telefon = false;
     if (/Mobi|Android/i.test(navigator.userAgent)) {

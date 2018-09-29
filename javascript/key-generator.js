@@ -1,5 +1,5 @@
-// Smudi key scripts
-// all rights served 2018
+// Smudi key-generator scripts
+// All Rights Reserved 2018
 //key generator
 function nykey(nonencrypted, jane) {
     var list_bokstaver = ["O", "9", "E", "L", "C", "1", "r", "R", "j", "q", "0", "4", "i", "æ", "t", "8", "y", "h", "c",

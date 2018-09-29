@@ -1,5 +1,5 @@
 // Smudi car town V0.3 scripts
-// all rights served 2018
+// All Rights Reserved 2018
 function start_spill() {
     menu.start();
     menu.startknapp_func();

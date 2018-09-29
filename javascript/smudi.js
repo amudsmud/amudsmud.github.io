@@ -1,5 +1,5 @@
 // Smudi scripts
-// all rights served 2018
+// All Rights Reserved 2018
 /*------------------------------start tid og dato------------------------------*/
 var år = "2018"
 var måned = "september"
