@@ -14,7 +14,7 @@ html,body {
     font-family: Arial black;
     color: #51caf2;
     text-align: center;
-    margin: 100px 30% 1000px 30%; /* bottom margin skal være 10, men er 1000 for at footer skal funke */
+    margin: 100px 30% 1000px 30%; /* bottom margin skal vï¿½re 10, men er 1000 for at footer skal funke */
     width: 40%;
     padding: 0;
     float: left;
@@ -45,7 +45,7 @@ html,body {
         -2px -1px 0 #000;
 }
 
-#kultus-logo {
+#Smudi-logo {
     z-index: 100;
     position: absolute; /*fixed*/
     text-decoration: none;
@@ -175,17 +175,17 @@ div.navi {
     font-size: 20px;
     float: left;
 }
-/* hvert enkelt page når pusepekeren er over den */
+/* hvert enkelt page nï¿½r pusepekeren er over den */
 #navia:hover {
     background-color: #60f900;
     color: #424242;
 }
-/* hvordan den aktive siden du er på ser ut*/
+/* hvordan den aktive siden du er pï¿½ ser ut*/
 #navia.active {
     background-color: #07ab1a;
     color: white;
 }
-/* hvordan den aktive siden du er på ser ut når du har musepekeren på den*/
+/* hvordan den aktive siden du er pï¿½ ser ut nï¿½r du har musepekeren pï¿½ den*/
 #navia:hover.active {
     background-color: #297c33;
     color: white;
@@ -205,7 +205,7 @@ div.navi {
 @media only screen and (max-width:620px) {
 
 
-    #kultus-logo {
+    #Smudi-logo {
         margin-left: 30%;
         margin-right: 30%;
         margin-top: 8px;

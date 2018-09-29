@@ -1,5 +1,5 @@
-// kultus login-side scripts
-// all rights served 2018function getCookie(cookienavn) {
+// Smudi login-side scripts
+// All Rights Reserved 2018function getCookie(cookienavn) {
     var navn = cookienavn + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
     var valuel = decodedCookie.split(";");

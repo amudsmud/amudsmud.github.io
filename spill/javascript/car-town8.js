@@ -1,4 +1,4 @@
-// Kultus car town V0.8 scripts
+// Smudi car town V0.8 scripts
 // all rights reserved 2018
 
 var stickersrc = ["bilder/stickers/supreme.png", "bilder/stickers/apple.png"];

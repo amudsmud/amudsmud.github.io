@@ -1,5 +1,5 @@
-// kultus nyheter scripts
-// all rights served 2018
+// Smudi nyheter scripts
+// All Rights Reserved 2018
 /*------------------------------start tid og dato------------------------------*/
 function myFunction() {
 	var id = document.getElementById("id").value;

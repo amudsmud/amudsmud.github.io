@@ -1,5 +1,5 @@
-// Kultus car town V0.7 scripts
-// all rights served 2018
+// Smudi car town V0.7 scripts
+// All Rights Reserved 2018
 var er_telefon = false;
 var gas_pedal_active = false;
 var brems_pedal_active = false;
