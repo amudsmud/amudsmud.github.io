@@ -73,3 +73,6 @@ Car Town V0.8-beta
     -Fixed the car headlights so they wont flicker as long as you hold down the key,
     -Now you can press one time to turn on and press again to turn off.
     -Added a platform where you can buy more cars to your track to generate more money.
+
+Car Town V0.9-beta
+    -The second car will now drive unlimited rounds.
