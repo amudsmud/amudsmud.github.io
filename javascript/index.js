@@ -1,7 +1,7 @@
 // Smudi hjem scripts
 // All Rights Reserved 2018
 /*------------------------------start tid og dato------------------------------*/
-function myFunction() {
+function lagmanuellboks() {
 	var id = document.getElementById("id").value;
     var ateksten = document.getElementById("ateksten").value;
     var href = document.getElementById("href").value;

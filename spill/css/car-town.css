@@ -7,7 +7,7 @@
     float: left;
     width: 80%;
     height: 700px;
-    margin: 50px 10% 10px 10%;
+    margin: 50px 10% 100px 10%;
     position: relative;
 }
 
@@ -30,8 +30,19 @@
 }
 
 
-#shopdiv {
+#shopdiv {width: 100%;}
+
+#controlsdiv {
+    /*100% bredde i forhold til container*/
     width: 100%;
+    height: 700px;
+    border-radius: 5px;
+    background-color: #878787;
+    border: 1px solid grey;
+    color: #2b2b2b;
+    font-family: arial;
+    font-size: 30px;
+    text-align: center;
 }
 
 #shop_menu {
@@ -86,9 +97,10 @@
 .menu-overskrift{
     font-size: 40px;
     width: 40%;
-    margin: 25px 0% 50px 0%;
+    margin: 25px 0 50px 0;
     float: left;
 }
+#menu-overskrift-controls{margin: 35px 10% 50px 30%;}
 
 .shop_vis_penger{
     width: 22%;
@@ -190,6 +202,7 @@
 #innstillingerknapp:hover {background-color: #be1b1b;}
 
 #shopknapp {margin: 20px 40%;}
+#controlsknapp {margin: 20px 40%;}
 
 .gå_tilbake_knapp {
     width: 15%;
@@ -233,22 +246,26 @@
 .velg_knapp:active {box-shadow: 0 1px #999; transform: translateY(2px);}
 
 
-#controls-popup {
-    position: fixed;
-    display: none;
-    width: 80%;
-    margin: 10%;
-    height: 80%;
-    background-color: rgba(0,0,0,0.75);
-    z-index: 101;
-    transition: bottom 3s;
-    -webkit-transition: bottom 3s;
-}
-
 .opp{
     bottom: 1500px !important;
     transition: all 5s;
     -webkit-transition: all 5s;
+}
+
+
+.keydiv{
+    width: 40%;
+    margin: 0 3% 0 6%;
+    font-size: 13px;
+    color: white;
+    text-align: left;
+    float: left;
+}
+
+.controls_keys {
+    width: 55px;
+    height: 55px;
+    transform: translateY(19px);
 }
 
 /*______________responsiv css start______________*/
@@ -264,9 +281,11 @@
     #menudiv {height: 500px;}
     #produktdiv {height: 650px; width: 79%;}
     #shop_menu {height: 650px;}
+    #controlsdiv {height: 650px;}
     #startknapp {font-size: 20px}
     #innstillingerknapp {font-size: 20px}
     #shopknapp {font-size: 20px}
+    #controlsknapp {font-size: 20px}
     #shop_menu {width: 20%}
     .shop_menu_list {font-size: 22px; height: 50px;}
     .produkt{height: 250px; font-size: 25px;}
@@ -278,6 +297,7 @@
     #menudiv {height: 500px;}
     #produktdiv {height: 630px;}
     #shop_menu {height: 630px;}
+    #controlsdiv {height: 630px;}
     .knapp {width: 50%;
         padding: 12px;
         margin: 60px 25% 20px 25%;
@@ -285,6 +305,7 @@
         font-size: 30px;}
     #innstillingerknapp {margin: 20px 25% 20px 25%;}
     #shopknapp {margin: 20px 25% 20px 25%;}
+    #controlsknapp {margin: 20px 25% 20px 25%;}
     .gå_tilbake_knapp{width: 20%; font-size: 20px; padding: 8px; margin: 25px 3% 60px 0%;}
     .menu-overskrift{font-size: 30px; margin: 25px 0% 50px 30%;}
 }
