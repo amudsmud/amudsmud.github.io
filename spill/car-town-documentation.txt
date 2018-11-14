@@ -75,8 +75,11 @@ Car Town V0.8-beta
     -The second car will now drive unlimited rounds.
     -Added "Controls" button in the menu to show you how to play.
     -Your car will now make CC every time you drive around the track (550meters and crossing the finish line).
-    -The maximum speed a car could drive rais from 128km/t to 311km/t (without speed limits).
+    -The maximum speed of a car increased from 128km/t to 311km/t (without speed limits).
 
 
 Car Town V0.9-beta
     -Added a platform where you can buy more cars to your track to generate more money.
+    -Added tuning platform to tune your car for better performance. The tunes is saved in the browser.
+    -The main car got downtuned so you could start from "scratch".
+    -You can obtain gold car parts when fully upgrading a part.

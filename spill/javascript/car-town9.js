@@ -33,17 +33,19 @@ var load_keys = []
 var load_keys_list = [
 "bilder/car_parts/standard-car-parts-png/png/engine.png",
 "bilder/car_parts/standard-car-parts-png/png/turbine.png",
-"bilder/car_parts/standard-car-parts-png/png/alloy-wheel-7.png",
 "bilder/car_parts/standard-car-parts-png/png/tire.png",
 "bilder/car_parts/standard-car-parts-png/png/break.png",
-"bilder/car_parts/standard-car-parts-png/png/chassis.png",
-"bilder/car_parts/standard-car-parts-png/png/damper.png",
 "bilder/car_parts/standard-car-parts-png/png/exhaust-1.png",
-"bilder/car_parts/standard-car-parts-png/png/gearshift.png",
 "bilder/car_parts/standard-car-parts-png/png/piston.png",
-"bilder/car_parts/standard-car-parts-png/png/battery.png",
-"bilder/car_parts/standard-car-parts-png/png/oil-1.png"
-
+]
+var load_goldkeys = []
+var load_goldkeys_list = [
+"bilder/car_parts/gold-car-parts-png/png/engine.png",
+"bilder/car_parts/gold-car-parts-png/png/turbine.png",
+"bilder/car_parts/gold-car-parts-png/png/tire.png",
+"bilder/car_parts/gold-car-parts-png/png/break.png",
+"bilder/car_parts/gold-car-parts-png/png/exhaust-1.png",
+"bilder/car_parts/gold-car-parts-png/png/piston.png",
 ]
 
 var autobil_list = ["bil1", "bil2", "bil3"]
@@ -73,6 +75,20 @@ function start_spill() {
         load_keys[i] = new Image();
         load_keys[i].src = load_keys_list[i];
         load_keys[i].addEventListener("load", console.log(load_keys[i].src + " loaded"));
+    }
+    for (var i=0; i < load_goldkeys_list.length; i++){
+        load_goldkeys[i] = new Image();
+        load_goldkeys[i].src = load_goldkeys_list[i];
+        load_goldkeys[i].addEventListener("load", console.log(load_goldkeys[i].src + " loaded"));
+    }
+    if (typeof(Storage) !== "undefined" && !localStorage.maxspeedtune) {
+        localStorage.setItem("maxspeedtune", nykey("1.05", 0));
+    }
+    if (typeof(Storage) !== "undefined" && !localStorage.brake) {
+        localStorage.setItem("brake", nykey("1.1", 0));
+    }
+    if (typeof(Storage) !== "undefined" && !localStorage.boost) {
+        localStorage.setItem("boost", nykey("1.1", 0));
     }
 
     menu.start();
@@ -454,7 +470,14 @@ var tuning = {
     tuning_overskrift : document.createElement("h1"),
     gå_tilbake_knapp : document.createElement("div"),
     car_parts_selectdiv : document.createElement("div"),
+    car_part_selectdiv : [],
+    car_part_img : [],
     car_parts_maindiv : document.createElement("div"),
+    car_part_maindiv : document.createElement("div"),
+    car_part_maindiv_h1 : [],
+    car_part_maindiv_stage : [],
+    car_part_maindiv_img : [],
+    car_part_maindiv_upgrade_button : [],
     start : function() {
         this.tuningdiv.setAttribute("id", "controlsdiv");
         this.tuningdiv.style.display = "block";
@@ -486,40 +509,154 @@ var tuning = {
         if (this.car_parts_maindiv.contains(this.gå_tilbake_knapp) == false){
             this.car_parts_maindiv.appendChild(this.gå_tilbake_knapp);
         };
-        tuning.ny_car_part(load_keys[0].src)
-        tuning.ny_car_part(load_keys[1].src)
-        tuning.ny_car_part(load_keys[2].src)
-        tuning.ny_car_part(load_keys[3].src)
-        tuning.ny_car_part(load_keys[4].src)
-        tuning.ny_car_part(load_keys[5].src)
-        tuning.ny_car_part(load_keys[6].src)
-        tuning.ny_car_part(load_keys[7].src)
-        tuning.ny_car_part(load_keys[8].src)
-        tuning.ny_car_part(load_keys[9].src)
-        tuning.ny_car_part(load_keys[10].src)
-        tuning.ny_car_part(load_keys[11].src)
+        if (this.car_parts_selectdiv.contains(tuning.car_part_selectdiv[0]) == false){
+            tuning.ny_car_part(load_keys.length)
+        };
 
-
+        this.car_part_maindiv.setAttribute("class", "car_part_maindiv");
+        if (this.car_parts_maindiv.contains(this.car_part_maindiv) == false){
+            this.car_parts_maindiv.appendChild(this.car_part_maindiv);
+        };
 
     },
-    ny_car_part : function(bildesrc) {
+    ny_car_part : function(numb) {
         // lage en ny div med class="car_part_selectdiv"
         //car_part_selectdiv: hver enkelt bil del
         //car_parts_selectdiv: hele diven som holder alle "car_part_selectdiv"
-        this.car_part_selectdiv = document.createElement("div");
-        this.car_part_selectdiv.setAttribute("class", "car_part_selectdiv");
-        tuning.car_parts_selectdiv.appendChild(this.car_part_selectdiv);
+        current_car_part = 0;
+        for (var i = 0; i < numb; i++){
+            this.car_part_selectdiv[i] = document.createElement("div");
+            this.car_part_selectdiv[i].setAttribute("class", "car_part_selectdiv");
+            tuning.car_parts_selectdiv.appendChild(this.car_part_selectdiv[i]);
 
-        // lage en ny img med class car_part_img
-        this.car_part_img = document.createElement("img");
-        this.car_part_img.setAttribute("class", "car_part_img");
-        this.car_part_img.src = bildesrc;
-        this.car_part_selectdiv.appendChild(this.car_part_img);
+            // lage en ny img med class car_part_img
+            this.car_part_img[i] = document.createElement("img");
+            this.car_part_img[i].setAttribute("class", "car_part_img");
+            this.car_part_img[i].src = load_keys[i].src;
+            this.car_part_selectdiv[i].appendChild(this.car_part_img[i]);
 
+            this.car_part_maindiv_h1[i] = document.createElement("h1");
+            this.car_part_maindiv_h1[i].setAttribute("class", "car_part_maindiv_h1");
+            this.car_part_maindiv.appendChild(this.car_part_maindiv_h1[i]);
+            this.car_part_maindiv_h1[i].style.display = "none";
+            this.car_part_maindiv_h1[current_car_part].style.display = "block";
+
+            this.car_part_maindiv_stage[i] = document.createElement("h1");
+            this.car_part_maindiv_stage[i].setAttribute("class", "car_part_maindiv_stage");
+            this.car_part_maindiv.appendChild(this.car_part_maindiv_stage[i]);
+            this.car_part_maindiv_stage[i].style.display = "none";
+            this.car_part_maindiv_stage[current_car_part].style.display = "block";
+
+
+            this.car_part_maindiv_img[i] = document.createElement("img");
+            this.car_part_maindiv_img[i].src = load_keys[i].src;
+            this.car_part_maindiv_img[i].setAttribute("class", "car_part_maindiv_img");
+            this.car_part_maindiv.appendChild(this.car_part_maindiv_img[i]);
+            this.car_part_maindiv_img[i].style.display = "none";
+            this.car_part_maindiv_img[current_car_part].style.display = "block";
+
+            this.car_part_maindiv_upgrade_button[i] = document.createElement("button");
+            this.car_part_maindiv_upgrade_button[i].innerHTML = "upgrade"
+            this.car_part_maindiv_upgrade_button[i].setAttribute("class", "car_part_maindiv_upgrade_button");
+            this.car_part_maindiv_upgrade_button[i].setAttribute("onclick", "tuning.upgrade_button(current_car_part)");
+            this.car_part_maindiv.appendChild(this.car_part_maindiv_upgrade_button[i]);
+            this.car_part_maindiv_upgrade_button[i].style.display = "none";
+            this.car_part_maindiv_upgrade_button[current_car_part].style.display = "block";
+
+
+            this.car_part_selectdiv[i].setAttribute("onclick", "tuning.hvilken_bildel("+i+");");
+
+        };
+        this.car_part_maindiv_h1[0].innerHTML = "Engine";
+        this.car_part_maindiv_h1[1].innerHTML = "Air intake";
+        this.car_part_maindiv_h1[2].innerHTML = "Wheels";
+        this.car_part_maindiv_h1[3].innerHTML = "Brakes";
+        this.car_part_maindiv_h1[4].innerHTML = "Exhaust";
+        this.car_part_maindiv_h1[5].innerHTML = "Piston";
+        this.car_part_maindiv_stage[0].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem("maxspeedtune"), 1) - 1) * 20) / 1);
+        this.car_part_maindiv_stage[1].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem("maxspeedtune"), 1) - 1) * 20) / 1);
+        this.car_part_maindiv_stage[2].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem("brake"), 1) - 1) * 10) / 1);
+        this.car_part_maindiv_stage[3].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem("brake"), 1) - 1) * 10) / 1);
+        this.car_part_maindiv_stage[4].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem("boost"), 1) - 1) * 10) / 1);
+        this.car_part_maindiv_stage[5].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem("boost"), 1) - 1) * 10) / 1);
+
+
+        if (nykey(localStorage.getItem("maxspeedtune"), 1) == 2){
+            this.car_part_img[0].src = load_goldkeys[0].src;
+            this.car_part_img[1].src = load_goldkeys[1].src;
+            this.car_part_maindiv_img[0].src = load_goldkeys[0].src;
+            this.car_part_maindiv_img[1].src = load_goldkeys[1].src;
+        }
+        if (nykey(localStorage.getItem("brake"), 1) == 4){
+            this.car_part_img[2].src = load_goldkeys[2].src;
+            this.car_part_img[3].src = load_goldkeys[3].src;
+            this.car_part_maindiv_img[2].src = load_goldkeys[2].src;
+            this.car_part_maindiv_img[3].src = load_goldkeys[3].src;
+        }
+        if (nykey(localStorage.getItem("boost"), 1) == 3){
+            this.car_part_img[4].src = load_goldkeys[4].src;
+            this.car_part_img[5].src = load_goldkeys[5].src;
+            this.car_part_maindiv_img[4].src = load_goldkeys[4].src;
+            this.car_part_maindiv_img[5].src = load_goldkeys[5].src;
+        }
+
+    },
+    hvilken_bildel : function(m) {
+        tuning.car_part_maindiv_img[current_car_part].style.display = "none"
+        tuning.car_part_maindiv_h1[current_car_part].style.display = "none"
+        tuning.car_part_maindiv_stage[current_car_part].style.display = "none"
+        tuning.car_part_maindiv_upgrade_button[current_car_part].style.display = "none"
+
+
+        tuning.car_part_maindiv_img[m].style.display = "block"
+        tuning.car_part_maindiv_h1[m].style.display = "block"
+        tuning.car_part_maindiv_stage[m].style.display = "block"
+        tuning.car_part_maindiv_upgrade_button[m].style.display = "block"
+
+        current_car_part = m;
     },
     gå_tilbake : function() {
         this.tuningdiv.style.display = "none"
         menu.menu.style.display = "block";
+    },
+    upgrade_button : function(m) {
+        var zmaxspeed = nykey(localStorage.getItem("maxspeedtune"), 1)
+        var zboost = nykey(localStorage.getItem("boost"), 1)
+        var zbrake = nykey(localStorage.getItem("brake"), 1)
+        zmaxspeed = Number(zmaxspeed) + 0.05;
+        zboost = Number(zboost) + 0.1;
+        zbrake = Number(zbrake) + 0.1;
+        if (zmaxspeed > 2 || zmaxspeed == 2){zmaxspeed = 2; tuning.car_part_img[0].src = load_goldkeys[0].src;
+            tuning.car_part_maindiv_img[0].src = load_goldkeys[0].src;
+            tuning.car_part_img[1].src = load_goldkeys[1].src;
+            tuning.car_part_maindiv_img[1].src = load_goldkeys[1].src;
+        }
+        if (zbrake > 4 || zbrake == 4){zbrake = 4;
+            tuning.car_part_img[2].src = load_goldkeys[2].src;
+            tuning.car_part_maindiv_img[2].src = load_goldkeys[2].src;
+            tuning.car_part_img[3].src = load_goldkeys[3].src;
+            tuning.car_part_maindiv_img[3].src = load_goldkeys[3].src;
+        }
+        if (zboost > 3 || zboost == 3){zboost = 3;
+            tuning.car_part_img[4].src = load_goldkeys[4].src;
+            tuning.car_part_maindiv_img[4].src = load_goldkeys[4].src;
+            tuning.car_part_img[5].src = load_goldkeys[5].src;
+            tuning.car_part_maindiv_img[5].src = load_goldkeys[5].src;
+        }
+        if (m == 0){localStorage.setItem("maxspeedtune", nykey(zmaxspeed.toString(), 0));};
+        if (m == 1){localStorage.setItem("maxspeedtune", nykey(zmaxspeed.toString(), 0));};
+        if (m == 2){localStorage.setItem("brake", nykey(zbrake.toString(), 0));};
+        if (m == 3){localStorage.setItem("brake", nykey(zbrake.toString(), 0));};
+        if (m == 4){localStorage.setItem("boost", nykey(zboost.toString(), 0));};
+        if (m == 5){localStorage.setItem("boost", nykey(zboost.toString(), 0));};
+
+        tuning.car_part_maindiv_stage[0].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem("maxspeedtune"), 1) - 1) * 20) / 1);
+        tuning.car_part_maindiv_stage[1].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem("maxspeedtune"), 1) - 1) * 20) / 1);
+        this.car_part_maindiv_stage[2].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem("brake"), 1) - 1) * 10) / 1);
+        this.car_part_maindiv_stage[3].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem("brake"), 1) - 1) * 10) / 1);
+        this.car_part_maindiv_stage[4].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem("boost"), 1) - 1) * 10) / 1);
+        this.car_part_maindiv_stage[5].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem("boost"), 1) - 1) * 10) / 1);
+
     }
 }
 
@@ -621,6 +758,7 @@ var platform = {
     resetalt : function() {
         bakgrunn.x = container.offsetWidth * 0.5 + 2680
         bakgrunn.y = 2688 / 3
+        bakgrunn.fart = 0;
         min_bil.fart = 0;
         min_bil.gir = 1
         min_bil.lysbool = false
@@ -1029,68 +1167,69 @@ function firekant(bredde, høyde, farge, x, y, type) {
     }
     this.kjøra = function(){
         if (this.gir == 4){
-            this.maksfart = 78 / 8;
-            if (platform.keys && platform.keys[40] && this.fart * 8 < 74) {this.gir -= 1;}/*Ned pil*/
+            this.maksfart = 70 / 8 * nykey(localStorage.getItem("maxspeedtune"), 1);
+            if (platform.keys && platform.keys[40] && this.fart * 8 < 64 * nykey(localStorage.getItem("maxspeedtune"), 1)) {this.gir -= 1;}/*Ned pil*/
             if (platform.keys && platform.keys[65]) {this.moveAngle = -3 * (this.fart / 8);}/*a*/
             if (platform.keys && platform.keys[68]) {this.moveAngle = 3 * (this.fart / 8);}/*d*/
-            if (platform.keys && platform.keys[87] && this.fart * 8 < 20 || gas_pedal_active == true && this.fart * 8 < 20 ) {this.fart += 0.27 / 8;}/*w*/
-            else if (platform.keys && platform.keys[87] && this.fart * 8 < 35 || gas_pedal_active == true && this.fart * 8 < 35) {this.fart += 0.32 / 8;}/*w*/
-            else if (platform.keys && platform.keys[87] && this.fart * 8 < 50 || gas_pedal_active == true && this.fart * 8 < 50) {this.fart += 0.4 / 8;}/*w*/
-            else if (platform.keys && platform.keys[87] || gas_pedal_active == true) {this.fart += 0.5 / 8;}/*w*/
-            if (platform.keys && platform.keys[83] || brems_pedal_active == true) {this.fart -= 0.4 / 8;}/*s*/
+            if (platform.keys && platform.keys[87] && this.fart * 8 < 20 || gas_pedal_active == true && this.fart * 8 < 20 ) {this.fart += 0.26 / 8 * nykey(localStorage.getItem("boost"), 1);}/*w*/
+            else if (platform.keys && platform.keys[87] && this.fart * 8 < 35 || gas_pedal_active == true && this.fart * 8 < 35) {this.fart += 0.3 / 8 * nykey(localStorage.getItem("boost"), 1);}/*w*/
+            else if (platform.keys && platform.keys[87] && this.fart * 8 < 50 || gas_pedal_active == true && this.fart * 8 < 50) {this.fart += 0.33 / 8 * nykey(localStorage.getItem("boost"), 1);}/*w*/
+            else if (platform.keys && platform.keys[87] || gas_pedal_active == true) {this.fart += 0.35 / 8 * nykey(localStorage.getItem("boost"), 1);}/*w*/
+            if (platform.keys && platform.keys[83] || brems_pedal_active == true) {this.fart -= 0.25 / 8 * nykey(localStorage.getItem("brake"), 1);}/*s*/
             if (this.fart > 0) {this.fart -= 0.25 / 8} else {this.fart = 0;}
         }
         if (this.gir == 3){
-            this.maksfart = 56 / 8;
-            if (platform.keys && platform.keys[38] && this.fart * 8 > 52) {this.gir += 1;}/*Opp pil*/
-            if (platform.keys && platform.keys[40] && this.fart * 8 < 45) {this.gir -= 1;}/*Ned pil*/
+            this.maksfart = 54 / 8 * nykey(localStorage.getItem("maxspeedtune"), 1);
+            if (platform.keys && platform.keys[38] && this.fart * 8 > 50 * nykey(localStorage.getItem("maxspeedtune"), 1)) {this.gir += 1;}/*Opp pil*/
+            if (platform.keys && platform.keys[40] && this.fart * 8 < 45 * nykey(localStorage.getItem("maxspeedtune"), 1)) {this.gir -= 1;}/*Ned pil*/
             if (platform.keys && platform.keys[65]) {this.moveAngle = -3 * (this.fart / 8);}/*a*/
             if (platform.keys && platform.keys[68]) {this.moveAngle = 3 * (this.fart / 8);}/*d*/
-            if (platform.keys && platform.keys[87] && this.fart * 8 < 20 || gas_pedal_active == true && this.fart * 8 < 20) {this.fart += 0.28 / 8;}/*w*/
-            else if (platform.keys && platform.keys[87] && this.fart * 8 < 35 || gas_pedal_active == true && this.fart * 8 < 35) {this.fart += 0.34 / 8;}/*w*/
-            else if (platform.keys && platform.keys[87] || gas_pedal_active == true) {this.fart += 0.5 / 8;}/*w*/
-            if (platform.keys && platform.keys[83] || brems_pedal_active == true) {this.fart -= 0.4 / 8;}/*s*/
+            if (platform.keys && platform.keys[87] && this.fart * 8 < 20 || gas_pedal_active == true && this.fart * 8 < 20) {this.fart += 0.3 / 8 * nykey(localStorage.getItem("boost"), 1);}/*w*/
+            else if (platform.keys && platform.keys[87] && this.fart * 8 < 35 || gas_pedal_active == true && this.fart * 8 < 35) {this.fart += 0.33 / 8 * nykey(localStorage.getItem("boost"), 1);}/*w*/
+            else if (platform.keys && platform.keys[87] || gas_pedal_active == true) {this.fart += 0.35 / 8 * nykey(localStorage.getItem("boost"), 1);}/*w*/
+            if (platform.keys && platform.keys[83] || brems_pedal_active == true) {this.fart -= 0.25 / 8 * nykey(localStorage.getItem("brake"), 1);}/*s*/
             if (this.fart > 0) {this.fart -= 0.25 / 8} else {this.fart = 0;}
         }
         if (this.gir == 2){
-            this.maksfart = 38 / 8;
-            if (platform.keys && platform.keys[38] && this.fart > 35 / 8) {this.gir += 1;}/*Opp pil*/
-            if (platform.keys && platform.keys[40] && this.fart < 25 / 8) {this.gir -= 1;}/*Ned pil*/
+            this.maksfart = 38 / 8 * nykey(localStorage.getItem("maxspeedtune"), 1);
+            if (platform.keys && platform.keys[38] && this.fart > 35 / 8 * nykey(localStorage.getItem("maxspeedtune"), 1)) {this.gir += 1;}/*Opp pil*/
+            if (platform.keys && platform.keys[40] && this.fart < 25 / 8 * nykey(localStorage.getItem("maxspeedtune"), 1)) {this.gir -= 1;}/*Ned pil*/
             if (platform.keys && platform.keys[65]) {this.moveAngle = -3 * (this.fart / 8);}/*a*/
             if (platform.keys && platform.keys[68]) {this.moveAngle = 3 * (this.fart / 8);}/*d*/
-            if (platform.keys && platform.keys[87] && this.fart * 8 < 18 || gas_pedal_active == true && this.fart * 8 < 18) {this.fart += 0.3 / 8;}/*w*/
-            else if (platform.keys && platform.keys[87] && this.fart * 8 < 25 || gas_pedal_active == true && this.fart * 8 < 25) {this.fart += 0.5 / 8;}/*w*/
-            else if (platform.keys && platform.keys[87] || gas_pedal_active == true) {this.fart += 0.6 / 8;}/*w*/
-            if (platform.keys && platform.keys[83] || brems_pedal_active == true) {this.fart -= 0.4 / 8;}/*s*/
+            if (platform.keys && platform.keys[87] && this.fart * 8 < 18 || gas_pedal_active == true && this.fart * 8 < 18) {this.fart += 0.3 / 8 * nykey(localStorage.getItem("boost"), 1);}/*w*/
+            else if (platform.keys && platform.keys[87] && this.fart * 8 < 25 || gas_pedal_active == true && this.fart * 8 < 25) {this.fart += 0.33 / 8 * nykey(localStorage.getItem("boost"), 1);}/*w*/
+            else if (platform.keys && platform.keys[87] || gas_pedal_active == true) {this.fart += 0.35 / 8 * nykey(localStorage.getItem("boost"), 1);}/*w*/
+            if (platform.keys && platform.keys[83] || brems_pedal_active == true) {this.fart -= 0.25 / 8 * nykey(localStorage.getItem("brake"), 1);}/*s*/
             if (this.fart > 0) {this.fart -= 0.25 / 8} else {this.fart = 0;}
         }
         if (this.gir == 1){
-            this.maksfart = 22 / 8;
-            if (platform.keys && platform.keys[38] && this.fart > 15 / 8) {this.gir += 1;}/*Opp pil*/
+            this.maksfart = 22 / 8 * nykey(localStorage.getItem("maxspeedtune"), 1);
+            if (platform.keys && platform.keys[38] && this.fart > 15 / 8  * nykey(localStorage.getItem("maxspeedtune"), 1)) {this.gir += 1;}/*Opp pil*/
             if (platform.keys && platform.keys[40] && this.fart == 0) {this.gir -= 1;}/*Ned pil*/
             if (platform.keys && platform.keys[65]) {this.moveAngle = -3 * (this.fart / 8);}/*a*/
             if (platform.keys && platform.keys[68]) {this.moveAngle = 3 * (this.fart / 8);}/*d*/
-            if (platform.keys && platform.keys[87] || gas_pedal_active == true) {this.fart += 0.7 / 8;}/*w*/
-            if (platform.keys && platform.keys[83] || brems_pedal_active == true) {this.fart -= 0.4 / 8;}/*s*/
+            if (platform.keys && platform.keys[87] || gas_pedal_active == true) {this.fart += 0.35 / 8 * nykey(localStorage.getItem("boost"), 1);}/*w*/
+            if (platform.keys && platform.keys[83] || brems_pedal_active == true) {this.fart -= 0.25 / 8 * nykey(localStorage.getItem("brake"), 1);}/*s*/
             if (this.fart > 0) {this.fart -= 0.20 / 8} else {this.fart = 0;}
         }
         if (this.fart > this.maksfart && this.gir > 0) {this.fart = this.maksfart;};
         if (this.gir == 0){
-            this.maksfart = -25 / 8;
+            this.maksfart = -20 / 8 * nykey(localStorage.getItem("maxspeedtune"), 1);
             if (platform.keys && platform.keys[38] && this.fart == 0) {this.gir += 1;}/*Opp pil*/
             if (platform.keys && platform.keys[65]) {this.moveAngle = -2 * (this.fart / 4);}/*a*/
             if (platform.keys && platform.keys[68]) {this.moveAngle = 2 * (this.fart / 4);}/*d*/
-            if (platform.keys && platform.keys[87] || gas_pedal_active == true) {this.fart -= 0.6 / 8;}/*w*/
-            if (platform.keys && platform.keys[83] || brems_pedal_active == true) {this.fart += 0.4 / 8;}/*s*/
+            if (platform.keys && platform.keys[87] || gas_pedal_active == true) {this.fart -= 0.35 / 8 * nykey(localStorage.getItem("boost"), 1);}/*w*/
+            if (platform.keys && platform.keys[83] || brems_pedal_active == true) {this.fart += 0.25 / 8 * nykey(localStorage.getItem("brake"), 1);}/*s*/
             if (this.fart < 0) {this.fart += 0.3 / 8} else {this.fart = 0;}
             if (this.fart < this.maksfart) {this.fart = this.maksfart;};
         }
-        /*gange vinkelen bilen snur på i forholde til farta, jo saktere, desto kraftigere sving*/
+        //gange vinkelen bilen snur på i forholde til farta, jo saktere, desto kraftigere sving
         if (this.fart * 8 < -25) {this.moveAngle *= 1.2}
         else if (this.fart * 8 < -15) {this.moveAngle *= 1.4}
         else if (this.fart * 8 < -10) {this.moveAngle *= 1.6}
         else if (this.fart * 8 < -5) {this.moveAngle *= 1.8}
         else if (this.fart * 8 < 500) {this.moveAngle *= this.finnx(this.fart * 8)}
+        //console.log(min_bil.fart);
     }
 }
 
@@ -1133,11 +1272,11 @@ function oppdater_spill() {
         for_liten_vindu_advarsel.tekst = "Vennligst bruk større skjerm for bedre spill-opplevelse";
         for_liten_vindu_advarsel.oppdater_firekant_tekst();
     }
-    if (min_bil.erinni(shop_platform) && !min_bil.bilishop){min_bil.bilishop = true; shop.start(); menu.skjul_menu()}
-    else if (!min_bil.erinni(shop_platform)){min_bil.bilishop = false}
+    if (min_bil.erinni(shop_platform) && !min_bil.bilishop){min_bil.bilishop = true; shop.start(); menu.skjul_menu(); min_bil.fart = 1; bakgrunn.fart = 1;}
+    else if (!min_bil.erinni(shop_platform)){min_bil.bilishop = false;}
 
-    if (min_bil.erinni(tuning_platform) && !min_bil.bilituning){min_bil.bilituning = true; tuning.start(); menu.skjul_menu()}
-    else if (!min_bil.erinni(tuning_platform)){min_bil.bilituning = false}
+    if (min_bil.erinni(tuning_platform) && !min_bil.bilituning){min_bil.bilituning = true; tuning.start(); menu.skjul_menu(); min_bil.fart = 1; bakgrunn.fart = 1;}
+    else if (!min_bil.erinni(tuning_platform)){min_bil.bilituning = false;}
 
     if (min_bil.erinni(mer_biler_platform)){
          mer_biler_platfor.oppdater_firekant_knapp();

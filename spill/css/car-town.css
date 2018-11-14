@@ -219,6 +219,29 @@
     float: left;
 }
 
+.car_part_maindiv {
+    height: 550px;
+    width: 95%;
+    margin: 10px 2.5% 0;
+    float: left;
+    background-color: #828282;
+    border-top: 3px solid #1c1c1c;
+    border-top-style: ridge;
+}
+
+.car_part_maindiv_h1 {
+    font-size: 30px;
+    width: 200px;
+    margin: 10px 10% 0 40%;
+}
+
+.car_part_maindiv_img {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin: 20px 10% 10px 40%;
+}
+
 .knapp:hover {background-color: rgba(0,255,0,.7);}
 .knapp:active {box-shadow: 0 2px rgb(70,70,70); transform: translateY(4px);}
 
@@ -303,6 +326,8 @@
     #produktdiv {height: 750px;}
     #shop_menu {height: 750px;}
     .produkt{height: 350px;}
+    .car_part_maindiv_h1 {margin: 10px 10% 0 36%;}
+    .car_part_maindiv_img {margin: 20px 10% 10px 36%;}
 }
 
 @media only screen and (max-width:1000px) {
@@ -321,6 +346,9 @@
     .produkt{height: 250px; font-size: 25px;}
     .velg_knapp {width: 25%;}
     .kjøp_knapp {width: 25%;}
+    .car_part_maindiv {height: 500px;}
+    .car_part_maindiv_h1 {margin: 10px 10% 0 33%;}
+    .car_part_maindiv_img {margin: 20px 10% 10px 33%;}
 }
 @media only screen and (max-width:700px) {
     #container{width: 100%; margin: 50px 0 1000px 0;}
@@ -344,4 +372,6 @@
 @media only screen and (max-width:500px) {
     #shop_menu {display: none;}
     #produktdiv {width: 100%;}
+    .car_part_maindiv_h1 {margin: 10px 10% 0 20%;}
+    .car_part_maindiv_img {margin: 20px 10% 10px 20%;}
 }
