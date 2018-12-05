@@ -29,6 +29,25 @@
     height: 700px;
 }
 
+.gråbar {
+    margin: 10px;
+    background-color: #ececec;
+    width: 60%;
+    margin-left: 20%;
+    text-align: center;
+    border: 2px solid rgba(40, 40, 40, 0.7);
+    border-radius: 10px;
+    color: white;
+}
+
+
+.loadingbar {
+    background-color: #525eff;
+    width: 10%;
+    text-align: center;
+    border-radius: 8px;
+}
+
 
 #shopdiv {width: 100%;}
 

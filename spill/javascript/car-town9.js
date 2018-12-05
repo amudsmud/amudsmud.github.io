@@ -47,13 +47,22 @@ var load_goldkeys_list = [
 "bilder/car_parts/gold-car-parts-png/png/exhaust-1.png",
 "bilder/car_parts/gold-car-parts-png/png/piston.png",
 ]
-
+var allloadingitems = stickersrc.length + stickersrc1.length + load_biler_list.length + load_keys_list.length + load_goldkeys_list.length;
+console.log(allloadingitems);
 var autobil_list = ["bil1", "bil2", "bil3"]
 
 function start_spill() {
     if (/Mobi|Android/i.test(navigator.userAgent)) {
         if (confirm("Du bruker telefon, rigth?")){er_telefon = true;};
     }
+
+    menu.start();
+    menu.gråbar_func();
+    menu.loadingbar_func();
+    menu.startknapp_func();
+    menu.shopknapp_func();
+    menu.controlsknapp_func();
+    menu.innstillingerknapp_func();
     //load images før spillet starter
     load_bakgrunn.src = "bilder/map_bilder/map1.png";
     load_bakgrunn.onload = function(){
@@ -70,6 +79,7 @@ function start_spill() {
         load_biler[i] = new Image();
         load_biler[i].src = load_biler_list[i];
         load_biler[i].addEventListener("load", console.log(load_biler[i].src + " loaded"));
+        menu.loadingbar.innerHTML = i + "%";
     }
     for (var i=0; i < load_keys_list.length; i++){
         load_keys[i] = new Image();
@@ -80,6 +90,7 @@ function start_spill() {
         load_goldkeys[i] = new Image();
         load_goldkeys[i].src = load_goldkeys_list[i];
         load_goldkeys[i].addEventListener("load", console.log(load_goldkeys[i].src + " loaded"));
+        menu.loadingbar.innerHTML = i + "%";
     }
     if (typeof(Storage) !== "undefined" && !localStorage.maxspeedtune) {
         localStorage.setItem("maxspeedtune", nykey("1.05", 0));
@@ -100,11 +111,6 @@ function start_spill() {
         localStorage.setItem("boost2", nykey("1.1", 0));
     }
 
-    menu.start();
-    menu.startknapp_func();
-    menu.shopknapp_func();
-    menu.controlsknapp_func();
-    menu.innstillingerknapp_func();
     //platform.start();
     //min_bil = new firekant(50, 100, "grey", 1000, 900);
     //fartometer = new firekant ("25px", "Arial", "black", 1880, 980, "text");
@@ -136,7 +142,7 @@ function start_spill1() {
     info_platform_tekst.tekst = "INFO";
     info_ramme = new firekant(300, 200, "white", container.offsetWidth * 0.5-300, container.offsetHeight * 0.24, "knapp");
     info_ramme_tekst = new firekant ("20px", "Arial", "black", container.offsetWidth * 0.5-250, container.offsetHeight * 0.28, "tekst");
-    info_ramme_tekst.tekst = "Hi";
+    info_ramme_tekst.tekst = "Hello!/brWelcome to Car Town";
 
     platform.trykketpå(min_bil);
     min_bil.mstand_func_engang();
@@ -168,6 +174,18 @@ var menu = {
     start : function() {
         this.menu.setAttribute("id", "menudiv");
         container.appendChild(this.menu);
+    },
+    //<div class="gråbar"><div class="loadingbar">10%</div></div>
+    gråbar : document.createElement("div"),
+    gråbar_func : function() {
+        this.gråbar.setAttribute("class", "gråbar");
+        this.menu.appendChild(this.gråbar);
+    },
+    loadingbar : document.createElement("div"),
+    loadingbar_func : function() {
+        this.loadingbar.innerHTML = "10%";
+        this.loadingbar.setAttribute("class", "loadingbar");
+        this.gråbar.appendChild(this.loadingbar);
     },
     startknapp : document.createElement("button"),
     startknapp_func : function() {
