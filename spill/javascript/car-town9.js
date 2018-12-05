@@ -66,8 +66,15 @@ function start_spill() {
     //load images før spillet starter
     load_bakgrunn.src = "bilder/map_bilder/map1.png";
     load_bakgrunn.onload = function(){
-        if (load_bakgrunn.src.startsWith("https://amudsmud.github.io")){console.log(load_bakgrunn.src.substring(32) + " loaded");}
-        else {console.log(load_bakgrunn.src.substring(59) + " loaded");}
+        if (load_bakgrunn.src.startsWith("https://amudsmud.github.io")){
+            console.log(load_bakgrunn.src.substring(32) + " loaded");
+            menu.loadingbar.innerHTML = "90%";
+
+    }
+        else {
+            menu.loadingbar.innerHTML = "80%";
+            console.log(load_bakgrunn.src.substring(59) + " loaded");
+    }
     };
     load_min_sticker = []
     for (var i=0; i < 2; i++){
@@ -79,7 +86,6 @@ function start_spill() {
         load_biler[i] = new Image();
         load_biler[i].src = load_biler_list[i];
         load_biler[i].addEventListener("load", console.log(load_biler[i].src + " loaded"));
-        menu.loadingbar.innerHTML = i + "%";
     }
     for (var i=0; i < load_keys_list.length; i++){
         load_keys[i] = new Image();
@@ -90,7 +96,6 @@ function start_spill() {
         load_goldkeys[i] = new Image();
         load_goldkeys[i].src = load_goldkeys_list[i];
         load_goldkeys[i].addEventListener("load", console.log(load_goldkeys[i].src + " loaded"));
-        menu.loadingbar.innerHTML = i + "%";
     }
     if (typeof(Storage) !== "undefined" && !localStorage.maxspeedtune) {
         localStorage.setItem("maxspeedtune", nykey("1.05", 0));
