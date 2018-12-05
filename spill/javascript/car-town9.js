@@ -84,11 +84,20 @@ function start_spill() {
     if (typeof(Storage) !== "undefined" && !localStorage.maxspeedtune) {
         localStorage.setItem("maxspeedtune", nykey("1.05", 0));
     }
+    if (typeof(Storage) !== "undefined" && !localStorage.maxspeedtune2) {
+        localStorage.setItem("maxspeedtune2", nykey("1.05", 0));
+    }
     if (typeof(Storage) !== "undefined" && !localStorage.brake) {
         localStorage.setItem("brake", nykey("1.1", 0));
     }
+    if (typeof(Storage) !== "undefined" && !localStorage.brake2) {
+        localStorage.setItem("brake2", nykey("1.1", 0));
+    }
     if (typeof(Storage) !== "undefined" && !localStorage.boost) {
         localStorage.setItem("boost", nykey("1.1", 0));
+    }
+    if (typeof(Storage) !== "undefined" && !localStorage.boost2) {
+        localStorage.setItem("boost2", nykey("1.1", 0));
     }
 
     menu.start();
@@ -122,13 +131,12 @@ function start_spill1() {
     tuning_platform = new firekant(140, 215, "grey", container.offsetWidth * 0.5+700, container.offsetHeight * -0.083, "knapp");
     tuning_platform_tekst = new firekant ("22px", "Arial", "white", container.offsetWidth * 0.5+730, container.offsetHeight * 0.07, "tekst");
     tuning_platform_tekst.tekst = "TUNING";
-    mer_biler_platform = new firekant(170, 120, "grey", container.offsetWidth * 0.5-245, container.offsetHeight * 0, "knapp");
-    mer_biler_platform_tekst = new firekant ("20px", "Arial", "white", container.offsetWidth * 0.5-220, container.offsetHeight * 0.09, "tekst");
-    mer_biler_platform_tekst.tekst = "KJØP BILER";
-    mer_biler_platfor = new firekant(300, 200, "white", container.offsetWidth * 0.5-300, container.offsetHeight * 0.24, "knapp");
-
-
-    //platform will do: shop.start(); menu.skjul_menu();
+    info_platform = new firekant(170, 120, "grey", container.offsetWidth * 0.5-245, container.offsetHeight * 0, "knapp");
+    info_platform_tekst = new firekant ("20px", "Arial", "white", container.offsetWidth * 0.5-185, container.offsetHeight * 0.09, "tekst");
+    info_platform_tekst.tekst = "INFO";
+    info_ramme = new firekant(300, 200, "white", container.offsetWidth * 0.5-300, container.offsetHeight * 0.24, "knapp");
+    info_ramme_tekst = new firekant ("20px", "Arial", "black", container.offsetWidth * 0.5-250, container.offsetHeight * 0.28, "tekst");
+    info_ramme_tekst.tekst = "Hi";
 
     platform.trykketpå(min_bil);
     min_bil.mstand_func_engang();
@@ -313,7 +321,7 @@ var shop = {
             this.velg_knapp[i].setAttribute("class", "velg_knapp knapp");
             this.produktdiv.appendChild(this.velg_knapp[i]);
             this.velg_knapp[i].setAttribute("onclick", "shop.kjøp_func("+i+");");
-            /*__skrive velg hvis knappen's nummer allerede er i this.eier_bil__*/
+            //skrive velg hvis knappen's nummer allerede er i this.eier_bil
             for (x = 0; x < this.eier_bil2.length; x++){
                 if (this.eier_bil2[x] == i){
                     this.velg_knapp[i].innerHTML = "Select";
@@ -414,7 +422,7 @@ var controls = {
     start : function() {
         this.controlsdiv.setAttribute("id", "controlsdiv");
         this.controlsdiv.style.display = "block";
-        /*container.style.marginBottom = "100px";*/
+        //container.style.marginBottom = "100px";
         container.appendChild(this.controlsdiv);
         /*__*/
         this.controls_overskrift.innerHTML = menu.controlsknapp.innerHTML;
@@ -481,7 +489,7 @@ var tuning = {
     start : function() {
         this.tuningdiv.setAttribute("id", "controlsdiv");
         this.tuningdiv.style.display = "block";
-        /*container.style.marginBottom = "100px";*/
+        //container.style.marginBottom = "100px";
         container.appendChild(this.tuningdiv);
         /*__*/
         this.car_parts_selectdiv.setAttribute("id", "car_parts_selectdiv");
@@ -556,8 +564,8 @@ var tuning = {
             this.car_part_maindiv_img[current_car_part].style.display = "block";
 
             this.car_part_maindiv_upgrade_button[i] = document.createElement("button");
-            this.car_part_maindiv_upgrade_button[i].innerHTML = "upgrade"
-            this.car_part_maindiv_upgrade_button[i].setAttribute("class", "car_part_maindiv_upgrade_button");
+            this.car_part_maindiv_upgrade_button[i].innerHTML = "upgrade";
+            this.car_part_maindiv_upgrade_button[i].setAttribute("class", "car_part_maindiv_upgrade_button knapp");
             this.car_part_maindiv_upgrade_button[i].setAttribute("onclick", "tuning.upgrade_button(current_car_part)");
             this.car_part_maindiv.appendChild(this.car_part_maindiv_upgrade_button[i]);
             this.car_part_maindiv_upgrade_button[i].style.display = "none";
@@ -573,32 +581,21 @@ var tuning = {
         this.car_part_maindiv_h1[3].innerHTML = "Brakes";
         this.car_part_maindiv_h1[4].innerHTML = "Exhaust";
         this.car_part_maindiv_h1[5].innerHTML = "Piston";
-        this.car_part_maindiv_stage[0].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem("maxspeedtune"), 1) - 1) * 20) / 1);
-        this.car_part_maindiv_stage[1].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem("maxspeedtune"), 1) - 1) * 20) / 1);
-        this.car_part_maindiv_stage[2].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem("brake"), 1) - 1) * 10) / 1);
-        this.car_part_maindiv_stage[3].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem("brake"), 1) - 1) * 10) / 1);
-        this.car_part_maindiv_stage[4].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem("boost"), 1) - 1) * 10) / 1);
-        this.car_part_maindiv_stage[5].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem("boost"), 1) - 1) * 10) / 1);
 
+        var tunes = ["maxspeedtune", "maxspeedtune2", "brake", "brake2", "boost", "boost2"];
 
-        if (nykey(localStorage.getItem("maxspeedtune"), 1) == 2){
-            this.car_part_img[0].src = load_goldkeys[0].src;
-            this.car_part_img[1].src = load_goldkeys[1].src;
-            this.car_part_maindiv_img[0].src = load_goldkeys[0].src;
-            this.car_part_maindiv_img[1].src = load_goldkeys[1].src;
-        }
-        if (nykey(localStorage.getItem("brake"), 1) == 4){
-            this.car_part_img[2].src = load_goldkeys[2].src;
-            this.car_part_img[3].src = load_goldkeys[3].src;
-            this.car_part_maindiv_img[2].src = load_goldkeys[2].src;
-            this.car_part_maindiv_img[3].src = load_goldkeys[3].src;
-        }
-        if (nykey(localStorage.getItem("boost"), 1) == 3){
-            this.car_part_img[4].src = load_goldkeys[4].src;
-            this.car_part_img[5].src = load_goldkeys[5].src;
-            this.car_part_maindiv_img[4].src = load_goldkeys[4].src;
-            this.car_part_maindiv_img[5].src = load_goldkeys[5].src;
-        }
+        for (var i = 0; i < tunes.length; i++){
+            var x = 2;
+            var y = 10;
+            if (i < 2){x = 1.5; y = 20;};
+
+            this.car_part_maindiv_stage[i].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem(tunes[i]), 1) - 1) * y) / 1);
+            if (nykey(localStorage.getItem(tunes[i]), 1) == x){
+                this.car_part_img[i].src = load_goldkeys[i].src;
+                this.car_part_maindiv_img[i].src = load_goldkeys[i].src;
+                this.car_part_maindiv_stage[i].innerHTML = "Stage: 10 (max)";
+            };
+        };
 
     },
     hvilken_bildel : function(m) {
@@ -615,48 +612,35 @@ var tuning = {
 
         current_car_part = m;
     },
+    upgrade_button : function(m) {
+
+        var zmaxspeed = nykey(localStorage.getItem("maxspeedtune"), 1)
+        var zmaxspeed2 = nykey(localStorage.getItem("maxspeedtune2"), 1)
+        var zbrake = nykey(localStorage.getItem("brake"), 1)
+        var zbrake2 = nykey(localStorage.getItem("brake2"), 1)
+        var zboost = nykey(localStorage.getItem("boost"), 1)
+        var zboost2 =  nykey(localStorage.getItem("boost2"), 1)
+
+
+        var tunes = ["maxspeedtune", "maxspeedtune2", "brake", "brake2", "boost", "boost2"]
+        var ztunes = [zmaxspeed, zmaxspeed2, zbrake, zbrake2, zboost, zboost2]
+
+
+        var x = 2; var y = 10; var z = 0.1;
+        if (m < 2){x = 1.5; y = 20; z = 0.05;}
+        ztunes[m] = Number(ztunes[m]) + z;
+        if (ztunes[m] > x || ztunes[m] == x){ztunes[m] = x;
+            tuning.car_part_img[m].src = load_goldkeys[m].src;
+            tuning.car_part_maindiv_img[m].src = load_goldkeys[m].src;
+        }
+        for (var i = 0; i < tunes.length; i++){if (m == i){localStorage.setItem(tunes[i], nykey(ztunes[i].toString(), 0));};}
+        tuning.car_part_maindiv_stage[m].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem(tunes[m]), 1) - 1) * y) / 1);
+        for (var i = 0; i < tunes.length; i++){if (ztunes[i] == x){tuning.car_part_maindiv_stage[i].innerHTML = "Stage: 10 (max)";}}
+
+    },
     gå_tilbake : function() {
         this.tuningdiv.style.display = "none"
         menu.menu.style.display = "block";
-    },
-    upgrade_button : function(m) {
-        var zmaxspeed = nykey(localStorage.getItem("maxspeedtune"), 1)
-        var zboost = nykey(localStorage.getItem("boost"), 1)
-        var zbrake = nykey(localStorage.getItem("brake"), 1)
-        zmaxspeed = Number(zmaxspeed) + 0.05;
-        zboost = Number(zboost) + 0.1;
-        zbrake = Number(zbrake) + 0.1;
-        if (zmaxspeed > 2 || zmaxspeed == 2){zmaxspeed = 2; tuning.car_part_img[0].src = load_goldkeys[0].src;
-            tuning.car_part_maindiv_img[0].src = load_goldkeys[0].src;
-            tuning.car_part_img[1].src = load_goldkeys[1].src;
-            tuning.car_part_maindiv_img[1].src = load_goldkeys[1].src;
-        }
-        if (zbrake > 4 || zbrake == 4){zbrake = 4;
-            tuning.car_part_img[2].src = load_goldkeys[2].src;
-            tuning.car_part_maindiv_img[2].src = load_goldkeys[2].src;
-            tuning.car_part_img[3].src = load_goldkeys[3].src;
-            tuning.car_part_maindiv_img[3].src = load_goldkeys[3].src;
-        }
-        if (zboost > 3 || zboost == 3){zboost = 3;
-            tuning.car_part_img[4].src = load_goldkeys[4].src;
-            tuning.car_part_maindiv_img[4].src = load_goldkeys[4].src;
-            tuning.car_part_img[5].src = load_goldkeys[5].src;
-            tuning.car_part_maindiv_img[5].src = load_goldkeys[5].src;
-        }
-        if (m == 0){localStorage.setItem("maxspeedtune", nykey(zmaxspeed.toString(), 0));};
-        if (m == 1){localStorage.setItem("maxspeedtune", nykey(zmaxspeed.toString(), 0));};
-        if (m == 2){localStorage.setItem("brake", nykey(zbrake.toString(), 0));};
-        if (m == 3){localStorage.setItem("brake", nykey(zbrake.toString(), 0));};
-        if (m == 4){localStorage.setItem("boost", nykey(zboost.toString(), 0));};
-        if (m == 5){localStorage.setItem("boost", nykey(zboost.toString(), 0));};
-
-        tuning.car_part_maindiv_stage[0].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem("maxspeedtune"), 1) - 1) * 20) / 1);
-        tuning.car_part_maindiv_stage[1].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem("maxspeedtune"), 1) - 1) * 20) / 1);
-        this.car_part_maindiv_stage[2].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem("brake"), 1) - 1) * 10) / 1);
-        this.car_part_maindiv_stage[3].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem("brake"), 1) - 1) * 10) / 1);
-        this.car_part_maindiv_stage[4].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem("boost"), 1) - 1) * 10) / 1);
-        this.car_part_maindiv_stage[5].innerHTML = "Stage: " + Math.floor(((nykey(localStorage.getItem("boost"), 1) - 1) * 10) / 1);
-
     }
 }
 
@@ -936,6 +920,17 @@ function firekant(bredde, høyde, farge, x, y, type) {
         noe.fillText(this.tekst, this.x, this.y);
     }
 
+    this.oppdater_firekant_langtekst = function(){
+        noe.font = this.bredde + " " + this.høyde;
+        noe.fillStyle = this.farge;
+        var splitta_tekst
+        splitta_tekst = this.tekst.split("/br");
+
+        for (var i = 0; i < splitta_tekst.length; i++){
+            noe.fillText(splitta_tekst[i], this.x, this.y + 25 * i);
+        }
+    }
+
 
     this.oppdater_firekant_knapp = function(){
         if (this.farge.startsWith("bilder")){
@@ -1167,59 +1162,76 @@ function firekant(bredde, høyde, farge, x, y, type) {
     }
     this.kjøra = function(){
         if (this.gir == 4){
-            this.maksfart = 70 / 8 * nykey(localStorage.getItem("maxspeedtune"), 1);
-            if (platform.keys && platform.keys[40] && this.fart * 8 < 64 * nykey(localStorage.getItem("maxspeedtune"), 1)) {this.gir -= 1;}/*Ned pil*/
+            this.maksfart = 70 / 8 * (Number(nykey(localStorage.getItem("maxspeedtune"), 1)) + Number(nykey(localStorage.getItem("maxspeedtune2"), 1)) - 1);
+            if (platform.keys && platform.keys[40] && this.fart * 8 < 64 * (Number(nykey(localStorage.getItem("maxspeedtune"), 1)) + Number(nykey(localStorage.getItem("maxspeedtune2"), 1)) - 1)) {this.gir -= 1;}/*Ned pil*/
             if (platform.keys && platform.keys[65]) {this.moveAngle = -3 * (this.fart / 8);}/*a*/
             if (platform.keys && platform.keys[68]) {this.moveAngle = 3 * (this.fart / 8);}/*d*/
-            if (platform.keys && platform.keys[87] && this.fart * 8 < 20 || gas_pedal_active == true && this.fart * 8 < 20 ) {this.fart += 0.26 / 8 * nykey(localStorage.getItem("boost"), 1);}/*w*/
-            else if (platform.keys && platform.keys[87] && this.fart * 8 < 35 || gas_pedal_active == true && this.fart * 8 < 35) {this.fart += 0.3 / 8 * nykey(localStorage.getItem("boost"), 1);}/*w*/
-            else if (platform.keys && platform.keys[87] && this.fart * 8 < 50 || gas_pedal_active == true && this.fart * 8 < 50) {this.fart += 0.33 / 8 * nykey(localStorage.getItem("boost"), 1);}/*w*/
-            else if (platform.keys && platform.keys[87] || gas_pedal_active == true) {this.fart += 0.35 / 8 * nykey(localStorage.getItem("boost"), 1);}/*w*/
-            if (platform.keys && platform.keys[83] || brems_pedal_active == true) {this.fart -= 0.25 / 8 * nykey(localStorage.getItem("brake"), 1);}/*s*/
+            if (platform.keys && platform.keys[87] && this.fart * 8 < 20 || gas_pedal_active == true && this.fart * 8 < 20 ) {
+                this.fart += 0.26 / 8 * (Number(nykey(localStorage.getItem("boost"), 1)) + Number(nykey(localStorage.getItem("boost2"), 1)) - 1);}/*w*/
+            else if (platform.keys && platform.keys[87] && this.fart * 8 < 35 || gas_pedal_active == true && this.fart * 8 < 35) {
+                this.fart += 0.3 / 8 * (Number(nykey(localStorage.getItem("boost"), 1)) + Number(nykey(localStorage.getItem("boost2"), 1)) - 1);}/*w*/
+            else if (platform.keys && platform.keys[87] && this.fart * 8 < 50 || gas_pedal_active == true && this.fart * 8 < 50) {
+                this.fart += 0.33 / 8 * (Number(nykey(localStorage.getItem("boost"), 1)) + Number(nykey(localStorage.getItem("boost2"), 1)) - 1);}/*w*/
+            else if (platform.keys && platform.keys[87] || gas_pedal_active == true) {
+                this.fart += 0.35 / 8 * (Number(nykey(localStorage.getItem("boost"), 1)) + Number(nykey(localStorage.getItem("boost2"), 1)) - 1);}/*w*/
+            if (platform.keys && platform.keys[83] || brems_pedal_active == true) {
+                this.fart -= 0.25 / 8 * (Number(nykey(localStorage.getItem("brake"), 1)) + Number(nykey(localStorage.getItem("brake2"), 1)) - 1);}/*s*/
             if (this.fart > 0) {this.fart -= 0.25 / 8} else {this.fart = 0;}
         }
         if (this.gir == 3){
-            this.maksfart = 54 / 8 * nykey(localStorage.getItem("maxspeedtune"), 1);
-            if (platform.keys && platform.keys[38] && this.fart * 8 > 50 * nykey(localStorage.getItem("maxspeedtune"), 1)) {this.gir += 1;}/*Opp pil*/
-            if (platform.keys && platform.keys[40] && this.fart * 8 < 45 * nykey(localStorage.getItem("maxspeedtune"), 1)) {this.gir -= 1;}/*Ned pil*/
+            this.maksfart = 54 / 8 * (Number(nykey(localStorage.getItem("maxspeedtune"), 1)) + Number(nykey(localStorage.getItem("maxspeedtune2"), 1)) - 1);
+            if (platform.keys && platform.keys[38] && this.fart * 8 > 50 * (Number(nykey(localStorage.getItem("maxspeedtune"), 1)) + Number(nykey(localStorage.getItem("maxspeedtune2"), 1)) - 1)) {this.gir += 1;}/*Opp pil*/
+            if (platform.keys && platform.keys[40] && this.fart * 8 < 45 * (Number(nykey(localStorage.getItem("maxspeedtune"), 1)) + Number(nykey(localStorage.getItem("maxspeedtune2"), 1)) - 1)) {this.gir -= 1;}/*Ned pil*/
             if (platform.keys && platform.keys[65]) {this.moveAngle = -3 * (this.fart / 8);}/*a*/
             if (platform.keys && platform.keys[68]) {this.moveAngle = 3 * (this.fart / 8);}/*d*/
-            if (platform.keys && platform.keys[87] && this.fart * 8 < 20 || gas_pedal_active == true && this.fart * 8 < 20) {this.fart += 0.3 / 8 * nykey(localStorage.getItem("boost"), 1);}/*w*/
-            else if (platform.keys && platform.keys[87] && this.fart * 8 < 35 || gas_pedal_active == true && this.fart * 8 < 35) {this.fart += 0.33 / 8 * nykey(localStorage.getItem("boost"), 1);}/*w*/
-            else if (platform.keys && platform.keys[87] || gas_pedal_active == true) {this.fart += 0.35 / 8 * nykey(localStorage.getItem("boost"), 1);}/*w*/
-            if (platform.keys && platform.keys[83] || brems_pedal_active == true) {this.fart -= 0.25 / 8 * nykey(localStorage.getItem("brake"), 1);}/*s*/
+            if (platform.keys && platform.keys[87] && this.fart * 8 < 20 || gas_pedal_active == true && this.fart * 8 < 20) {
+                this.fart += 0.3 / 8 * (Number(nykey(localStorage.getItem("boost"), 1)) + Number(nykey(localStorage.getItem("boost2"), 1)) - 1);}/*w*/
+            else if (platform.keys && platform.keys[87] && this.fart * 8 < 35 || gas_pedal_active == true && this.fart * 8 < 35) {
+                this.fart += 0.33 / 8 * (Number(nykey(localStorage.getItem("boost"), 1)) + Number(nykey(localStorage.getItem("boost2"), 1)) - 1);}/*w*/
+            else if (platform.keys && platform.keys[87] || gas_pedal_active == true) {
+                this.fart += 0.35 / 8 * (Number(nykey(localStorage.getItem("boost"), 1)) + Number(nykey(localStorage.getItem("boost2"), 1)) - 1);}/*w*/
+            if (platform.keys && platform.keys[83] || brems_pedal_active == true) {
+                this.fart -= 0.25 / 8 * (Number(nykey(localStorage.getItem("brake"), 1)) + Number(nykey(localStorage.getItem("brake2"), 1)) - 1);}/*s*/
             if (this.fart > 0) {this.fart -= 0.25 / 8} else {this.fart = 0;}
         }
         if (this.gir == 2){
-            this.maksfart = 38 / 8 * nykey(localStorage.getItem("maxspeedtune"), 1);
-            if (platform.keys && platform.keys[38] && this.fart > 35 / 8 * nykey(localStorage.getItem("maxspeedtune"), 1)) {this.gir += 1;}/*Opp pil*/
-            if (platform.keys && platform.keys[40] && this.fart < 25 / 8 * nykey(localStorage.getItem("maxspeedtune"), 1)) {this.gir -= 1;}/*Ned pil*/
+            this.maksfart = 38 / 8 * ((Number(nykey(localStorage.getItem("maxspeedtune"), 1)) + Number(nykey(localStorage.getItem("maxspeedtune2"), 1))) - 1);
+            if (platform.keys && platform.keys[38] && this.fart > 35 / 8 * (Number(nykey(localStorage.getItem("maxspeedtune"), 1)) + Number(nykey(localStorage.getItem("maxspeedtune2"), 1)) - 1)) {this.gir += 1;}/*Opp pil*/
+            if (platform.keys && platform.keys[40] && this.fart < 25 / 8 * (Number(nykey(localStorage.getItem("maxspeedtune"), 1)) + Number(nykey(localStorage.getItem("maxspeedtune2"), 1)) - 1)) {this.gir -= 1;}/*Ned pil*/
             if (platform.keys && platform.keys[65]) {this.moveAngle = -3 * (this.fart / 8);}/*a*/
             if (platform.keys && platform.keys[68]) {this.moveAngle = 3 * (this.fart / 8);}/*d*/
-            if (platform.keys && platform.keys[87] && this.fart * 8 < 18 || gas_pedal_active == true && this.fart * 8 < 18) {this.fart += 0.3 / 8 * nykey(localStorage.getItem("boost"), 1);}/*w*/
-            else if (platform.keys && platform.keys[87] && this.fart * 8 < 25 || gas_pedal_active == true && this.fart * 8 < 25) {this.fart += 0.33 / 8 * nykey(localStorage.getItem("boost"), 1);}/*w*/
-            else if (platform.keys && platform.keys[87] || gas_pedal_active == true) {this.fart += 0.35 / 8 * nykey(localStorage.getItem("boost"), 1);}/*w*/
-            if (platform.keys && platform.keys[83] || brems_pedal_active == true) {this.fart -= 0.25 / 8 * nykey(localStorage.getItem("brake"), 1);}/*s*/
+            if (platform.keys && platform.keys[87] && this.fart * 8 < 18 || gas_pedal_active == true && this.fart * 8 < 18) {
+                this.fart += 0.3 / 8 * (Number(nykey(localStorage.getItem("boost"), 1)) + Number(nykey(localStorage.getItem("boost2"), 1)) - 1);}/*w*/
+            else if (platform.keys && platform.keys[87] && this.fart * 8 < 25 || gas_pedal_active == true && this.fart * 8 < 25) {
+                this.fart += 0.33 / 8 * (Number(nykey(localStorage.getItem("boost"), 1)) + Number(nykey(localStorage.getItem("boost2"), 1)) - 1);}/*w*/
+            else if (platform.keys && platform.keys[87] || gas_pedal_active == true) {
+                this.fart += 0.35 / 8 * (Number(nykey(localStorage.getItem("boost"), 1)) + Number(nykey(localStorage.getItem("boost2"), 1)) - 1);}/*w*/
+            if (platform.keys && platform.keys[83] || brems_pedal_active == true) {
+                this.fart -= 0.25 / 8 * (Number(nykey(localStorage.getItem("brake"), 1)) + Number(nykey(localStorage.getItem("brake2"), 1)) - 1);}/*s*/
             if (this.fart > 0) {this.fart -= 0.25 / 8} else {this.fart = 0;}
         }
         if (this.gir == 1){
-            this.maksfart = 22 / 8 * nykey(localStorage.getItem("maxspeedtune"), 1);
-            if (platform.keys && platform.keys[38] && this.fart > 15 / 8  * nykey(localStorage.getItem("maxspeedtune"), 1)) {this.gir += 1;}/*Opp pil*/
+            this.maksfart = (22 / 8) * (Number(nykey(localStorage.getItem("maxspeedtune"), 1)) + Number(nykey(localStorage.getItem("maxspeedtune2"), 1)) - 1);
+            if (platform.keys && platform.keys[38] && this.fart > 15 / 8  * (Number(nykey(localStorage.getItem("maxspeedtune"), 1)) + Number(nykey(localStorage.getItem("maxspeedtune2"), 1)) - 1)) {this.gir += 1;}/*Opp pil*/
             if (platform.keys && platform.keys[40] && this.fart == 0) {this.gir -= 1;}/*Ned pil*/
             if (platform.keys && platform.keys[65]) {this.moveAngle = -3 * (this.fart / 8);}/*a*/
             if (platform.keys && platform.keys[68]) {this.moveAngle = 3 * (this.fart / 8);}/*d*/
-            if (platform.keys && platform.keys[87] || gas_pedal_active == true) {this.fart += 0.35 / 8 * nykey(localStorage.getItem("boost"), 1);}/*w*/
-            if (platform.keys && platform.keys[83] || brems_pedal_active == true) {this.fart -= 0.25 / 8 * nykey(localStorage.getItem("brake"), 1);}/*s*/
+            if (platform.keys && platform.keys[87] || gas_pedal_active == true) {
+                this.fart += 0.35 / 8 * (Number(nykey(localStorage.getItem("boost"), 1)) + Number(nykey(localStorage.getItem("boost2"), 1)) - 1);}/*w*/
+            if (platform.keys && platform.keys[83] || brems_pedal_active == true) {
+                this.fart -= 0.25 / 8 * (Number(nykey(localStorage.getItem("brake"), 1)) + Number(nykey(localStorage.getItem("brake2"), 1)) - 1);}/*s*/
             if (this.fart > 0) {this.fart -= 0.20 / 8} else {this.fart = 0;}
         }
         if (this.fart > this.maksfart && this.gir > 0) {this.fart = this.maksfart;};
         if (this.gir == 0){
-            this.maksfart = -20 / 8 * nykey(localStorage.getItem("maxspeedtune"), 1);
+            this.maksfart = -20 / 8 * (Number(nykey(localStorage.getItem("maxspeedtune"), 1)) + Number(nykey(localStorage.getItem("maxspeedtune2"), 1)) - 1);
             if (platform.keys && platform.keys[38] && this.fart == 0) {this.gir += 1;}/*Opp pil*/
             if (platform.keys && platform.keys[65]) {this.moveAngle = -2 * (this.fart / 4);}/*a*/
             if (platform.keys && platform.keys[68]) {this.moveAngle = 2 * (this.fart / 4);}/*d*/
-            if (platform.keys && platform.keys[87] || gas_pedal_active == true) {this.fart -= 0.35 / 8 * nykey(localStorage.getItem("boost"), 1);}/*w*/
-            if (platform.keys && platform.keys[83] || brems_pedal_active == true) {this.fart += 0.25 / 8 * nykey(localStorage.getItem("brake"), 1);}/*s*/
+            if (platform.keys && platform.keys[87] || gas_pedal_active == true) {
+                this.fart -= 0.35 / 8 * (Number(nykey(localStorage.getItem("boost"), 1)) + Number(nykey(localStorage.getItem("boost2"), 1)) - 1);}/*w*/
+            if (platform.keys && platform.keys[83] || brems_pedal_active == true) {
+                this.fart += 0.25 / 8 * (Number(nykey(localStorage.getItem("brake"), 1)) + Number(nykey(localStorage.getItem("brake2"), 1)) - 1);}/*s*/
             if (this.fart < 0) {this.fart += 0.3 / 8} else {this.fart = 0;}
             if (this.fart < this.maksfart) {this.fart = this.maksfart;};
         }
@@ -1235,7 +1247,7 @@ function firekant(bredde, høyde, farge, x, y, type) {
 
 
 
-function stop_bil() {min_bil.fart = 0;}
+
 function få_hele_tall(x) {var y = Math.floor((x * 10) / 10); return y}
 
 function oppdater_spill() {
@@ -1252,8 +1264,8 @@ function oppdater_spill() {
     shop_platform_tekst.ny_posisjon2();
     tuning_platform.ny_posisjon2();
     tuning_platform_tekst.ny_posisjon2();
-    mer_biler_platform.ny_posisjon2();
-    mer_biler_platform_tekst.ny_posisjon2();
+    info_platform.ny_posisjon2();
+    info_platform_tekst.ny_posisjon2();
     målstrek.ny_posisjon2();
     bakgrunn.kjøra()
     bakgrunn.ny_posisjon_map();
@@ -1266,8 +1278,9 @@ function oppdater_spill() {
     shop_platform_tekst.oppdater_firekant_tekst();
     tuning_platform.oppdater_firekant_knapp();
     tuning_platform_tekst.oppdater_firekant_tekst();
-    mer_biler_platform.oppdater_firekant_knapp();
-    mer_biler_platform_tekst.oppdater_firekant_tekst();
+    info_platform.oppdater_firekant_knapp();
+    info_platform_tekst.oppdater_firekant_tekst();
+
     if (typeof for_liten_vindu_advarsel !== "undefined") {
         for_liten_vindu_advarsel.tekst = "Vennligst bruk større skjerm for bedre spill-opplevelse";
         for_liten_vindu_advarsel.oppdater_firekant_tekst();
@@ -1278,10 +1291,11 @@ function oppdater_spill() {
     if (min_bil.erinni(tuning_platform) && !min_bil.bilituning){min_bil.bilituning = true; tuning.start(); menu.skjul_menu(); min_bil.fart = 1; bakgrunn.fart = 1;}
     else if (!min_bil.erinni(tuning_platform)){min_bil.bilituning = false;}
 
-    if (min_bil.erinni(mer_biler_platform)){
-         mer_biler_platfor.oppdater_firekant_knapp();
+    if (min_bil.erinni(info_platform)){
+         info_ramme.oppdater_firekant_knapp();
+         info_ramme_tekst.oppdater_firekant_langtekst();
      }
-    else if (!min_bil.erinni(mer_biler_platform)){}
+    else if (!min_bil.erinni(info_platform)){}
 
     //min_bil.bilde_bil.src = load_biler[localStorage.bil_nr].src
     for (var i=0; i < autobil_list.length; i++){

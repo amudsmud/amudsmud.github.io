@@ -1,5 +1,6 @@
 // Smudi login-side scripts
-// All Rights Reserved 2018function getCookie(cookienavn) {
+// All Rights Reserved 2018
+function getCookie(cookienavn) {
     var navn = cookienavn + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
     var valuel = decodedCookie.split(";");
