@@ -47,7 +47,7 @@ var load_goldkeys_list = [
 "bilder/car_parts/gold-car-parts-png/png/exhaust-1.png",
 "bilder/car_parts/gold-car-parts-png/png/piston.png",
 ]
-var allloadingitems = stickersrc.length + stickersrc1.length + load_biler_list.length + load_keys_list.length + load_goldkeys_list.length;
+var allloadingitems = 100 / (stickersrc.length + stickersrc1.length + load_biler_list.length + load_keys_list.length + load_goldkeys_list.length);
 console.log(allloadingitems);
 var autobil_list = ["bil1", "bil2", "bil3"]
 
@@ -64,38 +64,48 @@ function start_spill() {
     menu.controlsknapp_func();
     menu.innstillingerknapp_func();
     //load images før spillet starter
+    var loadingbarprogress = 0
     load_bakgrunn.src = "bilder/map_bilder/map1.png";
     load_bakgrunn.onload = function(){
         if (load_bakgrunn.src.startsWith("https://amudsmud.github.io")){
             console.log(load_bakgrunn.src.substring(32) + " loaded");
-            menu.loadingbar.innerHTML = "90%";
-
+            loadingbarprogress += 3
+            menu.loadingbar.innerHTML = loadingbarprogress + "%";
     }
         else {
-            menu.loadingbar.innerHTML = "80%";
             console.log(load_bakgrunn.src.substring(59) + " loaded");
+            loadingbarprogress += 3
+            menu.loadingbar.innerHTML = loadingbarprogress + "%";
     }
     };
     load_min_sticker = []
     for (var i=0; i < 2; i++){
         load_min_sticker[i] = new Image();
         load_min_sticker[i].src = stickersrc[i]
+        loadingbarprogress += 3
+        menu.loadingbar.innerHTML = loadingbarprogress + "%";
     }
 
     for (var i=0; i < load_biler_list.length; i++){
         load_biler[i] = new Image();
         load_biler[i].src = load_biler_list[i];
         load_biler[i].addEventListener("load", console.log(load_biler[i].src + " loaded"));
+        loadingbarprogress += 3
+        menu.loadingbar.innerHTML = loadingbarprogress + "%";
     }
     for (var i=0; i < load_keys_list.length; i++){
         load_keys[i] = new Image();
         load_keys[i].src = load_keys_list[i];
         load_keys[i].addEventListener("load", console.log(load_keys[i].src + " loaded"));
+        loadingbarprogress += 3
+        menu.loadingbar.innerHTML = loadingbarprogress + "%";
     }
     for (var i=0; i < load_goldkeys_list.length; i++){
         load_goldkeys[i] = new Image();
         load_goldkeys[i].src = load_goldkeys_list[i];
         load_goldkeys[i].addEventListener("load", console.log(load_goldkeys[i].src + " loaded"));
+        loadingbarprogress += 3
+        menu.loadingbar.innerHTML = loadingbarprogress + "%";
     }
     if (typeof(Storage) !== "undefined" && !localStorage.maxspeedtune) {
         localStorage.setItem("maxspeedtune", nykey("1.05", 0));
