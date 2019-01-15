@@ -55,7 +55,7 @@ function start_spill() {
     if (/Mobi|Android/i.test(navigator.userAgent)) {
         if (confirm("Du bruker telefon, rigth?")){er_telefon = true;};
     }
-
+    
     menu.start();
     menu.gråbar_func();
     menu.loadingbar_func();
