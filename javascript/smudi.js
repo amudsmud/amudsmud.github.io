@@ -1,11 +1,11 @@
 // Smudi scripts
 // All Rights Reserved 2018
 /*------------------------------start tid og dato------------------------------*/
-var år = "2018"
-var måned = "september"
-var datonummer = "27"
-var time = "21"
-var minutt = "46"
+var år = "2019"
+var måned = "january"
+var datonummer = "15"
+var time = "10"
+var minutt = "42"
 /* Sette Dagens dato */
 var dato = new Date(måned + datonummer + "," + år);
 document.getElementById("dagensDato").innerHTML = dato.getDate() + "." + (dato.getMonth()+1) + "." + dato.getFullYear();

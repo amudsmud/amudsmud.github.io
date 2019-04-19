@@ -1,2 +1,2 @@
-// Kultus om scripts
+// Smudi om scripts
 // All Rights Reserved 2018

@@ -58,7 +58,7 @@ Car Town V0.7-beta
 
 Car Town V0.8-beta
     -The second car will now drive unlimited rounds.
-    -Added new type of currency: Car Coins(CC)
+    -Added new type of currency: Car Coins(CC).
     -The second car gives you CC for every time it passes the finish-line.
     -The CC will be saved as a encrypted code.
     -Added a dark grey car.
@@ -71,8 +71,15 @@ Car Town V0.8-beta
     -Added PayPal buttons to buy extra CC.
     -Added a button that fires once, regardless of how long you press down the key.
     -Fixed the car headlights so they wont flicker as long as you hold down the key,
-    -Now you can press one time to turn on and press again to turn off.
-    -Added a platform where you can buy more cars to your track to generate more money.
+        now you can press one time to turn on and press again to turn off.
+    -The second car will now drive unlimited rounds.
+    -Added "Controls" button in the menu to show you how to play.
+    -Your car will now make CC every time you drive around the track (550meters and crossing the finish line).
+    -The maximum speed of a car increased from 128km/t to 311km/t (without speed limits).
+
 
 Car Town V0.9-beta
-    -The second car will now drive unlimited rounds.
+    -Added a platform where you can buy more cars to your track to generate more money.
+    -Added tuning platform to tune your car for better performance. The tunes is saved in the browser.
+    -The main car got downtuned so you could start from "scratch".
+    -You can obtain gold car parts when fully upgrading a part.

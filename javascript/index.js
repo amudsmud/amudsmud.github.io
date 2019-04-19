@@ -1,7 +1,7 @@
 // Smudi hjem scripts
 // All Rights Reserved 2018
 /*------------------------------start tid og dato------------------------------*/
-function myFunction() {
+function lagmanuellboks() {
 	var id = document.getElementById("id").value;
     var ateksten = document.getElementById("ateksten").value;
     var href = document.getElementById("href").value;
@@ -57,7 +57,7 @@ function mangebokser() {
     nyboks("a", "Klikk her", "https://github.com/amudsmud/amudsmud.github.io/releases/download/V1.0-beta/SHUMPEXE.EXE", "for å laste ned spillet mitt", "Noen Virus-program vil se på dette som et virus, men det er det ikke.", "<i> V 0.1.0-beta <br> Sist oppdatert: 23. April 2018 </i>")
     nyboks("a", "Klikk her", "kenneth2.0.html", "for å åpne noing's fete sirkler", "Laget til: Noing", "laget av: en random kar")
 	nyboks("a", "Klikk her", "noings-fete-klokke.html", "for å åpne noing's fete stoppeklokke", "Laget til: Gymlærern", "laget av: Kenneth Noing")
-	nyboks("a", "Klikk her", "spill/car-town.html", "for å åpne Car Town", "", "<i> V 0.8-beta <br> Sist oppdatert: 29. September 2018 </i>")
+	nyboks("a", "Klikk her", "spill/car-town.html", "for å åpne Car Town", "", "<i> V 0.9-beta <br> Sist oppdatert: 13. November 2018 </i>")
 	nyboks("a", "Klikk her", "key-generator.html", "for å åpne encryption siden", "encrypt et ord", "eller decrypt en kode")
 
 }

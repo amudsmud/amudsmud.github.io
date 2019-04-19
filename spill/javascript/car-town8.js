@@ -55,6 +55,7 @@ function start_spill() {
     menu.start();
     menu.startknapp_func();
     menu.shopknapp_func();
+    menu.controlsknapp_func();
     menu.innstillingerknapp_func();
     //platform.start();
     //min_bil = new firekant(50, 100, "grey", 1000, 900);
@@ -136,6 +137,14 @@ var menu = {
         this.shopknapp.setAttribute("class", "knapp");
         this.shopknapp.setAttribute("onclick", "shop.start(); menu.skjul_menu();");
         this.menu.appendChild(this.shopknapp);
+    },
+    controlsknapp : document.createElement("button"),
+    controlsknapp_func : function() {
+        this.controlsknapp.innerHTML = "Controls";
+        this.controlsknapp.setAttribute("id", "controlsknapp");
+        this.controlsknapp.setAttribute("class", "knapp");
+        this.controlsknapp.setAttribute("onclick", "controls.start(); menu.skjul_menu();");
+        this.menu.appendChild(this.controlsknapp);
     },
     innstillingerknapp : document.createElement("button"),
     innstillingerknapp_func : function() {
@@ -359,21 +368,107 @@ var innstillinger = {
     }
 }
 
+var controls = {
+    controlsdiv : document.createElement("div"),
+    controls_overskrift : document.createElement("h1"),
+    gå_tilbake_knapp : document.createElement("div"),
+    start : function() {
+        this.controlsdiv.setAttribute("id", "controlsdiv");
+        this.controlsdiv.style.display = "block";
+        /*container.style.marginBottom = "100px";*/
+        container.appendChild(this.controlsdiv);
+        /*__*/
+        this.controls_overskrift.innerHTML = menu.controlsknapp.innerHTML;
+        this.controls_overskrift.setAttribute("class", "menu-overskrift");
+        this.controls_overskrift.setAttribute("id", "menu-overskrift-controls");
+        if (this.controlsdiv.contains(this.controls_overskrift) == false){
+            this.controlsdiv.appendChild(this.controls_overskrift);
+        };
+        /*__*/
+        this.gå_tilbake_knapp.innerHTML = "Return";
+        this.gå_tilbake_knapp.setAttribute("class", "gå_tilbake_knapp knapp");
+        this.gå_tilbake_knapp.style.width = "10%";
+        this.gå_tilbake_knapp.style.marginTop = "35px";
+        this.gå_tilbake_knapp.setAttribute("onclick", "controls.gå_tilbake();");
+        if (this.controlsdiv.contains(this.gå_tilbake_knapp) == false){
+            this.controlsdiv.appendChild(this.gå_tilbake_knapp);
+        };
+        /*__*/
+        //kilde til bildet https://www.iconexperience.com/v_collection/icons/?icon=keyboard_key_empty
+        if (this.controlsdiv.contains(controls.keydiv) == false){
+            controls.nykeydef("bilder/car_controls/W-key.png", " = Drive forward")
+            controls.nykeydef("bilder/car_controls/Up-key.png", " = Shift up")
+            controls.nykeydef("bilder/car_controls/S-key.png", " = Brake")
+            controls.nykeydef("bilder/car_controls/Down-key.png", " = Shift down")
+            controls.nykeydef("bilder/car_controls/A-key.png", " = Turn left")
+            controls.nykeydef("bilder/car_controls/X-key.png", " = Toggle Headlights")
+            controls.nykeydef("bilder/car_controls/D-key.png", " = Turn right")
+        };
+
+    },
+    nykeydef : function(bildesrc, h1teksten) {
+        // lage en ny div med class="keydiv"
+        this.keydiv = document.createElement("div");
+        this.keydiv.setAttribute("class", "keydiv");
+        controls.controlsdiv.appendChild(this.keydiv);
+
+        // lage en ny h1 med class boks
+        this.keyh1 = document.createElement("h1");
+        this.keyh1.setAttribute("class", "boks");
+        this.keyh1.innerHTML = "<img src='" + bildesrc + "' class='controls_keys'>" + h1teksten;
+        this.keydiv.appendChild(this.keyh1);
+
+    },
+    gå_tilbake : function() {
+        this.controlsdiv.style.display = "none"
+        menu.menu.style.display = "block";
+    }
+}
+
+/*
 function viscontrols() {
     controlspopup = document.getElementById("controls-popup");
     controlspopup.style.display = "block"
-    /*__få x og y koordinatene til musepekeren__*/
+    keydiv = document.getElementById("keydiv");
+
+    // Hvis keydiv ikke er inni controlspopup diven, vil den oprette nye keydiv
+    if (controlspopup.contains(keydiv) == false){
+        function nykeydef(h1teksten) {
+            // lage en ny div med class="keydiv"
+            var keydiv = document.createElement("div");
+            keydiv.setAttribute("class", "keydiv");
+            keydiv.setAttribute("id", "keydiv");
+            controlspopup.appendChild(keydiv);
+
+            // lage en ny h1 med class boks
+            var h1 = document.createElement("h1");
+            h1.setAttribute("class", "boks");
+            var h1tekst = document.createTextNode(h1teksten);
+            h1.appendChild(h1tekst);
+            keydiv.appendChild(h1);
+        }
+        nykeydef("W = Drive forward")
+        nykeydef("A = Turn left")
+        nykeydef("S = Drive backward")
+        nykeydef("D = Turn right")
+    }
+}
+
+function skjulcontrols() {
+    controlspopup = document.getElementById("controls-popup");
+
     controlspopupstyle = controlspopup.currentStyle || window.getComputedStyle(controlspopup);
     window.addEventListener('mousemove', function (e) {
         var margin = controlspopupstyle.marginLeft;
         var bredde = controlspopupstyle.width;
-        //MÅ FJERNE PX PÅ SLUTTEN AV MARGIN OG BREDDE
-        if (e.pageX > margin && e.pageX < 1000){console.log("YEET");}
-    });
-    window.addEventListener("click", function(){
+        margin = margin.replace("px", "");
+        bredde = bredde.replace("px", "");
+        if (e.pageX > margin && e.pageX - margin < bredde){controlspopup.style.display = "none"}
 
     });
 }
+
+*/
 
 
 
@@ -493,6 +588,7 @@ var platform = {
         this.canvas.style.display = "block";
         startknapp.style.display = "none";
         shopknapp.style.display = "none";
+        controlsknapp.style.display = "none"
         innstillingerknapp.style.display = "none";
     },
     fullskjerm : function() {
@@ -761,6 +857,14 @@ function firekant(bredde, høyde, farge, x, y, type) {
                 return true;
             }
     }
+    this.rørtemålstrek = function(ting){
+        if (this.x > ting.x
+            && this.x < ting.x + ting.bredde
+            && this.y > ting.y
+            && this.y + 30< ting.y + ting.høyde + 70){
+                return true;
+            }
+    }
     this.erinni = function(ting){
         if (this.x < ting.x + ting.bredde
             && this.x > ting.x
@@ -787,13 +891,25 @@ function firekant(bredde, høyde, farge, x, y, type) {
         if (localStorage.mstand){this.mstand = Number(localStorage.mstand);}
         else {localStorage.setItem("mstand", 0); this.mstand = Number(localStorage.mstand);}
     }
+    var mstand_temp = 0
     this.mstand_func = function(){
-        if (this.fart > 0){this.mstand +=  this.fart/10;}
-        else {this.mstand -=  this.fart/10;}
+        //når fart er positiv
+        if (this.fart > 0){this.mstand +=  this.fart/10; mstand_temp +=  this.fart/10;}
+        //når fart er negativ
+        else {this.mstand -=  this.fart/10;  mstand_temp -=  this.fart/10;}
 
 
         if (typeof(Storage) !== "undefined" && localStorage.mstand) {
             localStorage.mstand = få_hele_tall(this.mstand)
+        }
+
+        // for CC til min_bil
+        if (mstand_temp > 550 && this.rørtemålstrek(målstrek)) {
+            mstand_temp = 0;
+            this.CCperrunde = 100;
+            var z = nykey(localStorage.getItem("kroner"), 1)
+            z += this.CCperrunde;
+            localStorage.setItem("kroner", nykey(z.toString(), 0));
         }
     }
     this.ny_posisjon_map = function(){
@@ -801,7 +917,10 @@ function firekant(bredde, høyde, farge, x, y, type) {
         this.y += min_bil.fart * Math.cos(min_bil.angle);
     }
     this.finnx = function(x){
-        var y = 0.00009*x*x - 0.023*x + 2
+        //maks fart 128
+        //0.00009*x*x - 0.023*x + 2
+        //maks fart 311 (230)
+        var y = 0.000000000918546*x*x*x*x - 0.000000778869179*x*x*x + 0.000239225998386*x*x - 0.033386551744491*x + 2.22260804529812;
         return y
     }
     this.kjørefart = 4;
@@ -838,7 +957,7 @@ function firekant(bredde, høyde, farge, x, y, type) {
     this.auto_kjør_restart = function(){
         for (var i=0; i < autobil_list.length; i++){
             if (this.asd == autobil_list[i].asd){
-                this.lønnperrunde = 30;
+                this.CCperrunde = 30;
                 if (bakgrunn.y - this.y !== 616){
                     this.y = bakgrunn.y - 616
                 }
@@ -853,7 +972,7 @@ function firekant(bredde, høyde, farge, x, y, type) {
         }
 
         var z = nykey(localStorage.getItem("kroner"), 1)
-        z += this.lønnperrunde;
+        z += this.CCperrunde;
         localStorage.setItem("kroner", nykey(z.toString(), 0));
     }
     this.kjøra = function(){
@@ -981,7 +1100,7 @@ function oppdater_spill() {
         autobil_list[i].oppdater_firekant_bil();
     }
     min_bil.oppdater_firekant_min_bil();
-    min_bil.rørte(autobil_list[0])
+    min_bil.rørte(autobil_list[0]);
     //overlag.oppdater_firekant()
     if (er_telefon){
         gas_pedal.oppdater_firekant_knapp();
