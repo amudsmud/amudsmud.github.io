@@ -50,7 +50,7 @@ var load_goldkeys_list = [
 ]
 var allloadingitems = 100 / (stickersrc.length + load_stickersrc1_list.length + load_biler_list.length + load_keys_list.length + load_goldkeys_list.length);
 console.log(allloadingitems);
-var autobil_list = ["bil1", "bil2", "bil3", "bil4", "2", "4", "1","3","6","7"]
+var autobil_list = ["bil1", "bil2", "bil3"]
 
 function start_spill() {
     if (/Mobi|Android/i.test(navigator.userAgent)) {
@@ -70,12 +70,12 @@ function start_spill() {
     load_bakgrunn.onload = function(){
         if (load_bakgrunn.src.startsWith("https://amudsmud.github.io")){
             console.log(load_bakgrunn.src.substring(32) + " loaded");
-            loadingbarprogress += 3.448
+            loadingbarprogress += 0
             menu.loadingbar.innerHTML = loadingbarprogress + "%";
     }
         else {
             console.log(load_bakgrunn.src.substring(59) + " loaded");
-            loadingbarprogress += 3.448
+            loadingbarprogress += 0
             menu.loadingbar.innerHTML = loadingbarprogress + "%";
     }
     };
@@ -83,7 +83,7 @@ function start_spill() {
     for (var i=0; i < 2; i++){
         load_min_sticker[i] = new Image();
         load_min_sticker[i].src = stickersrc[i]
-        loadingbarprogress += 3.448
+        loadingbarprogress += 2.6315789473684212
         menu.loadingbar.innerHTML = loadingbarprogress + "%";
     }
 
@@ -91,28 +91,28 @@ function start_spill() {
         load_stickersrc1[i] = new Image();
         load_stickersrc1[i].src = load_stickersrc1_list[i];
         load_stickersrc1[i].addEventListener("load", console.log(load_stickersrc1[i].src + " loaded"));
-        loadingbarprogress += 3.448
+        loadingbarprogress += 2.6315789473684212
         menu.loadingbar.innerHTML = loadingbarprogress + "%";
     }
     for (var i=0; i < load_biler_list.length; i++){
         load_biler[i] = new Image();
         load_biler[i].src = load_biler_list[i];
         load_biler[i].addEventListener("load", console.log(load_biler[i].src + " loaded"));
-        loadingbarprogress += 3.448
+        loadingbarprogress += 2.6315789473684212
         menu.loadingbar.innerHTML = loadingbarprogress + "%";
     }
     for (var i=0; i < load_keys_list.length; i++){
         load_keys[i] = new Image();
         load_keys[i].src = load_keys_list[i];
         load_keys[i].addEventListener("load", console.log(load_keys[i].src + " loaded"));
-        loadingbarprogress += 3.448
+        loadingbarprogress += 2.6315789473684212
         menu.loadingbar.innerHTML = loadingbarprogress + "%";
     }
     for (var i=0; i < load_goldkeys_list.length; i++){
         load_goldkeys[i] = new Image();
         load_goldkeys[i].src = load_goldkeys_list[i];
         load_goldkeys[i].addEventListener("load", console.log(load_goldkeys[i].src + " loaded"));
-        loadingbarprogress += 3.448
+        loadingbarprogress += 2.6315789473684212
         menu.loadingbar.innerHTML = loadingbarprogress + "%";
     }
     if (typeof(Storage) !== "undefined" && !localStorage.maxspeedtune) {
