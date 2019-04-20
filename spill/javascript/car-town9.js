@@ -66,12 +66,6 @@ function start_spill() {
     //load images før spillet starter
     var loadingbarprogress = 0
     load_min_sticker = []
-    function myFunctionn(liste_loaded) {
-        console.log(liste_loaded.src + " loaded")
-        loadingbarprogress += allloadingitems;
-        console.log(loadingbarprogress);
-        menu.loadingbar.innerHTML = loadingbarprogress + "%";
-    };
     for (var i=0; i < stickersrc.length; i++){
         load_min_sticker[i] = new Image();
         load_min_sticker[i].onload = myFunctionn(load_min_sticker[i]);
@@ -97,6 +91,13 @@ function start_spill() {
         load_goldkeys[i].onload = myFunctionn(load_goldkeys[i]);
         load_goldkeys[i].src = load_goldkeys_list[i];
     };
+    function myFunctionn(liste_loaded) {
+        console.log(liste_loaded.src + " loaded")
+        loadingbarprogress += allloadingitems;
+        console.log(loadingbarprogress);
+        menu.loadingbar.innerHTML = loadingbarprogress + "%";
+    };
+    load_bakgrunn.src = "bilder/map_bilder/map1.png";
     load_bakgrunn.onload = function(){
         if (load_bakgrunn.src.startsWith("https://amudsmud.github.io")){
             console.log(load_bakgrunn.src.substring(32) + " loaded");
@@ -109,7 +110,6 @@ function start_spill() {
             menu.loadingbar.innerHTML = loadingbarprogress + "%";
         }
     };
-    load_bakgrunn.src = "bilder/map_bilder/map1.png";
     if (typeof(Storage) !== "undefined" && !localStorage.maxspeedtune) {
         localStorage.setItem("maxspeedtune", nykey("1.05", 0));
     }
