@@ -65,6 +65,38 @@ function start_spill() {
     menu.innstillingerknapp_func();
     //load images før spillet starter
     var loadingbarprogress = 0
+    load_min_sticker = []
+    function myFunctionn(liste_loaded) {
+        console.log(liste_loaded.src + " loaded")
+        loadingbarprogress += allloadingitems;
+        console.log(loadingbarprogress);
+        menu.loadingbar.innerHTML = loadingbarprogress + "%";
+    };
+    for (var i=0; i < stickersrc.length; i++){
+        load_min_sticker[i] = new Image();
+        load_min_sticker[i].src = stickersrc[i]
+        load_min_sticker[i].onload = myFunctionn(load_min_sticker[i]);
+    };
+    for (var i=0; i < load_stickersrc1_list.length; i++){
+        load_stickersrc1[i] = new Image();
+        load_stickersrc1[i].src = load_stickersrc1_list[i];
+        load_stickersrc1[i].onload = myFunctionn(load_stickersrc1[i]);
+    };
+    for (var i=0; i < load_biler_list.length; i++){
+        load_biler[i] = new Image();
+        load_biler[i].src = load_biler_list[i];
+        load_biler[i].onload = myFunctionn(load_biler[i]);
+    };
+    for (var i=0; i < load_keys_list.length; i++){
+        load_keys[i] = new Image();
+        load_keys[i].src = load_keys_list[i];
+        load_keys[i].onload = myFunctionn(load_keys[i]);
+    };
+    for (var i=0; i < load_goldkeys_list.length; i++){
+        load_goldkeys[i] = new Image();
+        load_goldkeys[i].src = load_goldkeys_list[i];
+        load_goldkeys[i].onload = myFunctionn(load_goldkeys[i]);
+    };
     load_bakgrunn.src = "bilder/map_bilder/map1.png";
     load_bakgrunn.onload = function(){
         if (load_bakgrunn.src.startsWith("https://amudsmud.github.io")){
@@ -76,40 +108,8 @@ function start_spill() {
             console.log(load_bakgrunn.src.substring(59) + " loaded");
             loadingbarprogress += allloadingitems;
             menu.loadingbar.innerHTML = loadingbarprogress + "%";
-    }
+        }
     };
-    load_min_sticker = []
-    function myFunctionn(liste_loaded) {
-        console.log(liste_loaded.src + " loaded")
-        loadingbarprogress += allloadingitems;
-        menu.loadingbar.innerHTML = loadingbarprogress + "%";
-    }
-    for (var i=0; i < stickersrc.length; i++){
-        load_min_sticker[i] = new Image();
-        load_min_sticker[i].src = stickersrc[i]
-        load_min_sticker[i].onload = myFunctionn(load_min_sticker[i]);
-    }
-
-    for (var i=0; i < load_stickersrc1_list.length; i++){
-        load_stickersrc1[i] = new Image();
-        load_stickersrc1[i].src = load_stickersrc1_list[i];
-        load_stickersrc1[i].onload = myFunctionn(load_stickersrc1[i]);
-    }
-    for (var i=0; i < load_biler_list.length; i++){
-        load_biler[i] = new Image();
-        load_biler[i].src = load_biler_list[i];
-        load_biler[i].onload = myFunctionn(load_biler[i]);
-    }
-    for (var i=0; i < load_keys_list.length; i++){
-        load_keys[i] = new Image();
-        load_keys[i].src = load_keys_list[i];
-        load_keys[i].onload = myFunctionn(load_keys[i]);
-    }
-    for (var i=0; i < load_goldkeys_list.length; i++){
-        load_goldkeys[i] = new Image();
-        load_goldkeys[i].src = load_goldkeys_list[i];
-        load_goldkeys[i].onload = myFunctionn(load_goldkeys[i]);
-    }
     if (typeof(Storage) !== "undefined" && !localStorage.maxspeedtune) {
         localStorage.setItem("maxspeedtune", nykey("1.05", 0));
     }
