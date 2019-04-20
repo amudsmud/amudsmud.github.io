@@ -66,36 +66,61 @@ function start_spill() {
     //load images før spillet starter
     var loadingbarprogress = 0
     load_min_sticker = []
-    for (var i=0; i < stickersrc.length; i++){
-        load_min_sticker[i] = new Image();
-        load_min_sticker[i].onload = myFunctionn(load_min_sticker[i]);
-        load_min_sticker[i].src = stickersrc[i]
-    };
-    for (var i=0; i < load_stickersrc1_list.length; i++){
-        load_stickersrc1[i] = new Image();
-        load_stickersrc1[i].onload = myFunctionn(load_stickersrc1[i]);
-        load_stickersrc1[i].src = load_stickersrc1_list[i];
-    };
-    for (var i=0; i < load_biler_list.length; i++){
-        load_biler[i] = new Image();
-        load_biler[i].onload = myFunctionn(load_biler[i]);
-        load_biler[i].src = load_biler_list[i];
-    };
-    for (var i=0; i < load_keys_list.length; i++){
-        load_keys[i] = new Image();
-        load_keys[i].onload = myFunctionn(load_keys[i]);
-        load_keys[i].src = load_keys_list[i];
-    };
-    for (var i=0; i < load_goldkeys_list.length; i++){
-        load_goldkeys[i] = new Image();
-        load_goldkeys[i].onload = myFunctionn(load_goldkeys[i]);
-        load_goldkeys[i].src = load_goldkeys_list[i];
-    };
     function myFunctionn(liste_loaded) {
         console.log(liste_loaded.src + " loaded")
         loadingbarprogress += allloadingitems;
         console.log(loadingbarprogress);
         menu.loadingbar.innerHTML = loadingbarprogress + "%";
+    };
+    for (var i=0; i < stickersrc.length; i++){
+        load_min_sticker[i] = new Image();
+        load_min_sticker[i].onload = function () {
+            console.log(load_min_sticker.src + " loaded")
+            loadingbarprogress += allloadingitems;
+            console.log(loadingbarprogress);
+            menu.loadingbar.innerHTML = loadingbarprogress + "%";
+        };
+        load_min_sticker[i].src = stickersrc[i]
+    };
+    for (var i=0; i < load_stickersrc1_list.length; i++){
+        load_stickersrc1[i] = new Image();
+        load_stickersrc1[i].onload = function () {
+            console.log(load_stickersrc1.src + " loaded")
+            loadingbarprogress += allloadingitems;
+            console.log(loadingbarprogress);
+            menu.loadingbar.innerHTML = loadingbarprogress + "%";
+        };
+        load_stickersrc1[i].src = load_stickersrc1_list[i];
+    };
+    for (var i=0; i < load_biler_list.length; i++){
+        load_biler[i] = new Image();
+        load_biler[i].onload = function () {
+            console.log(load_biler.src + " loaded")
+            loadingbarprogress += allloadingitems;
+            console.log(loadingbarprogress);
+            menu.loadingbar.innerHTML = loadingbarprogress + "%";
+        };
+        load_biler[i].src = load_biler_list[i];
+    };
+    for (var i=0; i < load_keys_list.length; i++){
+        load_keys[i] = new Image();
+        load_keys[i].onload = function () {
+            console.log(load_keys.src + " loaded")
+            loadingbarprogress += allloadingitems;
+            console.log(loadingbarprogress);
+            menu.loadingbar.innerHTML = loadingbarprogress + "%";
+        };
+        load_keys[i].src = load_keys_list[i];
+    };
+    for (var i=0; i < load_goldkeys_list.length; i++){
+        load_goldkeys[i] = new Image();
+        load_goldkeys[i].onload = function () {
+            console.log(load_goldkeys.src + " loaded")
+            loadingbarprogress += allloadingitems;
+            console.log(loadingbarprogress);
+            menu.loadingbar.innerHTML = loadingbarprogress + "%";
+        };
+        load_goldkeys[i].src = load_goldkeys_list[i];
     };
     load_bakgrunn.src = "bilder/map_bilder/map1.png";
     load_bakgrunn.onload = function(){
