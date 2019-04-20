@@ -48,7 +48,7 @@ var load_goldkeys_list = [
 "bilder/car_parts/gold-car-parts-png/png/exhaust-1.png",
 "bilder/car_parts/gold-car-parts-png/png/piston.png",
 ]
-var allloadingitems = 100 / (stickersrc.length + load_stickersrc1_list.length + load_biler_list.length + load_keys_list.length + load_goldkeys_list.length);
+var allloadingitems = 100 / (1 + stickersrc.length + load_stickersrc1_list.length + load_biler_list.length + load_keys_list.length + load_goldkeys_list.length);
 var autobil_list = ["bil1", "bil2", "bil3"]
 
 function start_spill() {
@@ -69,50 +69,46 @@ function start_spill() {
     load_bakgrunn.onload = function(){
         if (load_bakgrunn.src.startsWith("https://amudsmud.github.io")){
             console.log(load_bakgrunn.src.substring(32) + " loaded");
-            loadingbarprogress += 0;
+            loadingbarprogress += allloadingitems;
             menu.loadingbar.innerHTML = loadingbarprogress + "%";
     }
         else {
             console.log(load_bakgrunn.src.substring(59) + " loaded");
-            loadingbarprogress += 0;
+            loadingbarprogress += allloadingitems;
             menu.loadingbar.innerHTML = loadingbarprogress + "%";
     }
     };
     load_min_sticker = []
-    for (var i=0; i < 2; i++){
-        load_min_sticker[i] = new Image();
-        load_min_sticker[i].src = stickersrc[i]
+    function myFunctionn(liste_loaded) {
+        console.log(liste_loaded.src + " loaded")
         loadingbarprogress += allloadingitems;
         menu.loadingbar.innerHTML = loadingbarprogress + "%";
+    }
+    for (var i=0; i < stickersrc.length; i++){
+        load_min_sticker[i] = new Image();
+        load_min_sticker[i].src = stickersrc[i]
+        load_min_sticker[i].addEventListener("load", myFunctionn(load_min_sticker[i]));
     }
 
     for (var i=0; i < load_stickersrc1_list.length; i++){
         load_stickersrc1[i] = new Image();
         load_stickersrc1[i].src = load_stickersrc1_list[i];
-        load_stickersrc1[i].addEventListener("load", console.log(load_stickersrc1[i].src + " loaded"));
-        loadingbarprogress += allloadingitems;
-        menu.loadingbar.innerHTML = loadingbarprogress + "%";
+        load_stickersrc1[i].addEventListener("load", myFunctionn(load_stickersrc1[i]));
     }
     for (var i=0; i < load_biler_list.length; i++){
         load_biler[i] = new Image();
         load_biler[i].src = load_biler_list[i];
-        load_biler[i].addEventListener("load", console.log(load_biler[i].src + " loaded"));
-        loadingbarprogress += allloadingitems;
-        menu.loadingbar.innerHTML = loadingbarprogress + "%";
+        load_biler[i].addEventListener("load", myFunctionn(load_biler[i]));
     }
     for (var i=0; i < load_keys_list.length; i++){
         load_keys[i] = new Image();
         load_keys[i].src = load_keys_list[i];
-        load_keys[i].addEventListener("load", console.log(load_keys[i].src + " loaded"));
-        loadingbarprogress += allloadingitems;
-        menu.loadingbar.innerHTML = loadingbarprogress + "%";
+        load_keys[i].addEventListener("load", myFunctionn(load_keys[i]));
     }
     for (var i=0; i < load_goldkeys_list.length; i++){
         load_goldkeys[i] = new Image();
         load_goldkeys[i].src = load_goldkeys_list[i];
-        load_goldkeys[i].addEventListener("load", console.log(load_goldkeys[i].src + " loaded"));
-        loadingbarprogress += allloadingitems;
-        menu.loadingbar.innerHTML = loadingbarprogress + "%";
+        load_goldkeys[i].addEventListener("load", myFunctionn(load_goldkeys[i]));
     }
     if (typeof(Storage) !== "undefined" && !localStorage.maxspeedtune) {
         localStorage.setItem("maxspeedtune", nykey("1.05", 0));
