@@ -97,7 +97,6 @@ function start_spill() {
         load_goldkeys[i].onload = myFunctionn(load_goldkeys[i]);
         load_goldkeys[i].src = load_goldkeys_list[i];
     };
-    load_bakgrunn.src = "bilder/map_bilder/map1.png";
     load_bakgrunn.onload = function(){
         if (load_bakgrunn.src.startsWith("https://amudsmud.github.io")){
             console.log(load_bakgrunn.src.substring(32) + " loaded");
@@ -110,6 +109,7 @@ function start_spill() {
             menu.loadingbar.innerHTML = loadingbarprogress + "%";
         }
     };
+    load_bakgrunn.src = "bilder/map_bilder/map1.png";
     if (typeof(Storage) !== "undefined" && !localStorage.maxspeedtune) {
         localStorage.setItem("maxspeedtune", nykey("1.05", 0));
     }
