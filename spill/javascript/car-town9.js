@@ -804,16 +804,30 @@ var platform = {
         bakgrunn.x = container.offsetWidth * 0.5 + 2680
         bakgrunn.y = 2688 / 3
         bakgrunn.fart = 0;
+        målstrek.x = container.offsetWidth * 0.5-55;
+        målstrek.y = container.offsetHeight * 0.28;
+        shop_platform.x = container.offsetWidth * 0.5+400;
+        shop_platform.y = container.offsetHeight * -0.083;
+        shop_platform_tekst.x = container.offsetWidth * 0.5+440;
+        shop_platform_tekst.y = container.offsetHeight * 0.07;
+        tuning_platform.x = container.offsetWidth * 0.5+700;
+        tuning_platform.y = container.offsetHeight * -0.083;
+        tuning_platform_tekst.x = container.offsetWidth * 0.5+730;
+        tuning_platform_tekst.y = container.offsetHeight * 0.07;
+        info_platform.x = container.offsetWidth * 0.5-245;
+        info_platform.y = container.offsetHeight * 0;
+        info_platform_tekst.x = container.offsetWidth * 0.5-185;
+        info_platform_tekst.y = container.offsetHeight * 0.09;
         min_bil.fart = 0;
         min_bil.gir = 1
         min_bil.lysbool = false
         min_bil.angle = 0;
         for (var i=0; i < autobil_list.length; i++){
             autobil_list[i].angle = 0;
-            autobil_list[i].x = 480
-            autobil_list[i].y = 400
-            autobil_list[i].asd = 0
-            autobil_list[i].dsa = 0
+            autobil_list[i].x = container.offsetWidth * 0.52;
+            autobil_list[i].y = container.offsetHeight * 0.4 + 150*i;
+            autobil_list[i].asd = 0 - (150/autobil_list[i].kjørefart) * i;
+            autobil_list[i].dsa = 0;
         }
     },
     tøm : function() {
@@ -1171,7 +1185,7 @@ function firekant(bredde, høyde, farge, x, y, type) {
     this.kjørefart = 4;
     for (var i=0; i < autobil_list.length; i++){
         //150 får jeg fra linje 70(hvor langt det er mellom hver bil)
-        autobil_list[i].asd = 0 - (150/autobil_list[i].kjørefart) * i ;
+        autobil_list[i].asd = 0 - (150/autobil_list[i].kjørefart) * i;
         autobil_list[i].dsa = 0;
     }
     this.auto_kjør = function(){
