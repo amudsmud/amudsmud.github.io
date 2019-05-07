@@ -142,6 +142,7 @@ function start_spill() {
             loadingbarprogress += allloadingitems;
             menu.loadingbar.innerHTML = Math.floor((loadingbarprogress * 100) / 100) + "%";
             menu.loadingbar.style.width = Math.floor((loadingbarprogress * 100) / 100) + "%";
+
         }
     };
     if (typeof(Storage) !== "undefined" && !localStorage.maxspeedtune) {
@@ -235,7 +236,7 @@ var menu = {
     },
     loadingbar : document.createElement("div"),
     loadingbar_func : function() {
-        this.loadingbar.innerHTML = "10%";
+        this.loadingbar.innerHTML = "0%";
         this.loadingbar.setAttribute("class", "loadingbar");
         this.gråbar.appendChild(this.loadingbar);
     },

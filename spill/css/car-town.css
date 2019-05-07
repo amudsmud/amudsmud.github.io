@@ -43,7 +43,7 @@
 
 .loadingbar {
     background-color: #525eff;
-    width: 10%;
+    width: 0;
     text-align: center;
     border-radius: 8px;
 }
