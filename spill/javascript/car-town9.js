@@ -70,7 +70,9 @@ function start_spill() {
         console.log(liste_loaded.src + " loaded")
         loadingbarprogress += allloadingitems;
         console.log(loadingbarprogress);
-        menu.loadingbar.innerHTML = loadingbarprogress + "%";
+        menu.loadingbar.innerHTML = Math.floor((loadingbarprogress * 100) / 100) + "%";
+        menu.loadingbar.style.width = Math.floor((loadingbarprogress * 100) / 100) + "%";
+
     };
     for (var i=0; i < stickersrc.length; i++){
         load_min_sticker[i] = new Image();
@@ -78,7 +80,8 @@ function start_spill() {
             console.log(load_min_sticker.src + " loaded")
             loadingbarprogress += allloadingitems;
             console.log(loadingbarprogress);
-            menu.loadingbar.innerHTML = loadingbarprogress + "%";
+            menu.loadingbar.innerHTML = Math.floor((loadingbarprogress * 100) / 100) + "%";
+            menu.loadingbar.style.width = Math.floor((loadingbarprogress * 100) / 100) + "%";
         };
         load_min_sticker[i].src = stickersrc[i]
     };
@@ -88,7 +91,8 @@ function start_spill() {
             console.log(load_stickersrc1.src + " loaded")
             loadingbarprogress += allloadingitems;
             console.log(loadingbarprogress);
-            menu.loadingbar.innerHTML = loadingbarprogress + "%";
+            menu.loadingbar.innerHTML = Math.floor((loadingbarprogress * 100) / 100) + "%";
+            menu.loadingbar.style.width = Math.floor((loadingbarprogress * 100) / 100) + "%";
         };
         load_stickersrc1[i].src = load_stickersrc1_list[i];
     };
@@ -98,7 +102,8 @@ function start_spill() {
             console.log(load_biler.src + " loaded")
             loadingbarprogress += allloadingitems;
             console.log(loadingbarprogress);
-            menu.loadingbar.innerHTML = loadingbarprogress + "%";
+            menu.loadingbar.innerHTML = Math.floor((loadingbarprogress * 100) / 100) + "%";
+            menu.loadingbar.style.width = Math.floor((loadingbarprogress * 100) / 100) + "%";
         };
         load_biler[i].src = load_biler_list[i];
     };
@@ -108,7 +113,8 @@ function start_spill() {
             console.log(load_keys.src + " loaded")
             loadingbarprogress += allloadingitems;
             console.log(loadingbarprogress);
-            menu.loadingbar.innerHTML = loadingbarprogress + "%";
+            menu.loadingbar.innerHTML = Math.floor((loadingbarprogress * 100) / 100) + "%";
+            menu.loadingbar.style.width = Math.floor((loadingbarprogress * 100) / 100) + "%";
         };
         load_keys[i].src = load_keys_list[i];
     };
@@ -118,7 +124,8 @@ function start_spill() {
             console.log(load_goldkeys.src + " loaded")
             loadingbarprogress += allloadingitems;
             console.log(loadingbarprogress);
-            menu.loadingbar.innerHTML = loadingbarprogress + "%";
+            menu.loadingbar.innerHTML = Math.floor((loadingbarprogress * 100) / 100) + "%";
+            menu.loadingbar.style.width = Math.floor((loadingbarprogress * 100) / 100) + "%";
         };
         load_goldkeys[i].src = load_goldkeys_list[i];
     };
@@ -127,12 +134,14 @@ function start_spill() {
         if (load_bakgrunn.src.startsWith("https://amudsmud.github.io")){
             console.log(load_bakgrunn.src.substring(32) + " loaded");
             loadingbarprogress += allloadingitems;
-            menu.loadingbar.innerHTML = loadingbarprogress + "%";
+            menu.loadingbar.innerHTML = Math.floor((loadingbarprogress * 100) / 100) + "%";
+            menu.loadingbar.style.width = Math.floor((loadingbarprogress * 100) / 100) + "%";
     }
         else {
             console.log(load_bakgrunn.src.substring(59) + " loaded");
             loadingbarprogress += allloadingitems;
-            menu.loadingbar.innerHTML = loadingbarprogress + "%";
+            menu.loadingbar.innerHTML = Math.floor((loadingbarprogress * 100) / 100) + "%";
+            menu.loadingbar.style.width = Math.floor((loadingbarprogress * 100) / 100) + "%";
         }
     };
     if (typeof(Storage) !== "undefined" && !localStorage.maxspeedtune) {
