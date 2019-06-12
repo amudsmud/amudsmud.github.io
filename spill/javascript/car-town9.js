@@ -231,6 +231,7 @@ var menu = {
     //<div class="gråbar"><div class="loadingbar">10%</div></div>
     gråbar : document.createElement("div"),
     gråbar_func : function() {
+        this.gråbar.setAttribute("id", "gråbar");
         this.gråbar.setAttribute("class", "gråbar");
         this.menu.appendChild(this.gråbar);
     },
@@ -845,10 +846,13 @@ var platform = {
     },
     vis : function() {
         this.canvas.style.display = "block";
+        gråbar.style.display = "none";
         startknapp.style.display = "none";
         shopknapp.style.display = "none";
         controlsknapp.style.display = "none"
         innstillingerknapp.style.display = "none";
+
+
     },
     fullskjerm : function() {
         if (er_telefon){
