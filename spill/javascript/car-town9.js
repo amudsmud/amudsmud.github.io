@@ -474,7 +474,7 @@ var innstillinger = {
         this.gå_tilbake_knapp.setAttribute("onclick", "innstillinger.gå_tilbake();");
         this.innstillinger.appendChild(this.gå_tilbake_knapp);
         /*__*/
-        this.innstillinger_mstand_h1.innerHTML = "meter kjørt totalt: " + localStorage.mstand;
+        this.innstillinger_mstand_h1.innerHTML = "Meter kjørt totalt: " + localStorage.mstand;
         this.innstillinger_mstand_h1.setAttribute("class", "instillinger_h1");
         this.innstillinger.appendChild(this.innstillinger_mstand_h1);
         /*__*/
