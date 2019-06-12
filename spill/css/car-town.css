@@ -118,6 +118,7 @@
     margin: 25px 0 50px 0;
     float: left;
 }
+
 #menu-overskrift-controls{margin: 35px 10% 50px 30%;}
 
 .shop_vis_penger{
@@ -352,6 +353,13 @@
     width: 55px;
     height: 55px;
     transform: translateY(19px);
+}
+
+.instillinger_h1{
+    font-size: 30px;
+    width: 40%;
+    margin: 35px 0 50px 0;
+    float: left;
 }
 
 /*______________responsiv css start______________*/

@@ -270,7 +270,7 @@ var menu = {
         this.innstillingerknapp.innerHTML = "Settings";
         this.innstillingerknapp.setAttribute("id", "innstillingerknapp");
         this.innstillingerknapp.setAttribute("class", "knapp");
-        this.innstillingerknapp.setAttribute("onclick", "tuning.start(); menu.skjul_menu()");/*innstillinger.start(); menu.skjul_menu();*/
+        this.innstillingerknapp.setAttribute("onclick", "innstillinger.start(); menu.skjul_menu()");/*innstillinger.start(); menu.skjul_menu();*/
         this.menu.appendChild(this.innstillingerknapp);
     },
     skjul_menu : function() {
@@ -454,31 +454,30 @@ var shop = {
 
 var innstillinger = {
     innstillinger : document.createElement("div"),
-    innstillinger_menu : document.createElement("div"),
     innstillinger_overskrift : document.createElement("h1"),
-    innstillinger_menu_list1 : document.createElement("button"),
     gå_tilbake_knapp : document.createElement("div"),
+    innstillinger_mstand_h1 : document.createElement("h1"),
     start : function() {
-        this.innstillinger.setAttribute("id", "innstillingerdiv");
+        this.innstillinger.setAttribute("id", "controlsdiv");
         this.innstillinger.style.display = "block";
         container.appendChild(this.innstillinger);
         /*__*/
-        this.innstillinger_menu.setAttribute("id", "shop_menu");
-        this.innstillinger.appendChild(this.innstillinger_menu);
-        /*__*/
-        this.innstillinger_menu_list1.innerHTML = "Cars";
-        this.innstillinger_menu_list1.setAttribute("class", "shop_menu_list");
-        this.innstillinger_menu_list1.setAttribute("onclick", "");
-        this.innstillinger_menu.appendChild(this.innstillinger_menu_list1);
-        /*__*/
         this.innstillinger_overskrift.innerHTML = menu.innstillingerknapp.innerHTML;
         this.innstillinger_overskrift.setAttribute("class", "menu-overskrift");
-        this.innstillinger_menu.appendChild(this.innstillinger_overskrift);
+        this.innstillinger_overskrift.setAttribute("id", "menu-overskrift-controls");
+        this.innstillinger.appendChild(this.innstillinger_overskrift);
         /*__*/
         this.gå_tilbake_knapp.innerHTML = "Return";
         this.gå_tilbake_knapp.setAttribute("class", "gå_tilbake_knapp knapp");
+        this.gå_tilbake_knapp.style.width = "10%";
+        this.gå_tilbake_knapp.style.marginTop = "35px";
         this.gå_tilbake_knapp.setAttribute("onclick", "innstillinger.gå_tilbake();");
-        this.innstillinger_menu.appendChild(this.gå_tilbake_knapp);
+        this.innstillinger.appendChild(this.gå_tilbake_knapp);
+        /*__*/
+        this.innstillinger_mstand_h1.innerHTML = "meter kjørt totalt: " + localStorage.mstand;
+        this.innstillinger_mstand_h1.setAttribute("class", "instillinger_h1");
+        this.innstillinger.appendChild(this.innstillinger_mstand_h1);
+        /*__*/
 
     },
     gå_tilbake : function() {
