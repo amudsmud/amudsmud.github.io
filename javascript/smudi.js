@@ -2,10 +2,10 @@
 // All Rights Reserved 2018
 /*------------------------------start tid og dato------------------------------*/
 var år = "2019"
-var måned = "january"
-var datonummer = "15"
-var time = "10"
-var minutt = "42"
+var måned = "juli"
+var datonummer = "18"
+var time = "14"
+var minutt = "30"
 /* Sette Dagens dato */
 var dato = new Date(måned + datonummer + "," + år);
 document.getElementById("dagensDato").innerHTML = dato.getDate() + "." + (dato.getMonth()+1) + "." + dato.getFullYear();

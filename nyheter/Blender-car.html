@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> Test - Smudi </title>
+    <title> Første Blender Modell - Smudi </title>
     <link rel="stylesheet" type="text/css" href="../css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/car-town.css">
+    <link rel="stylesheet" type="text/css" href="css/main-nyheter.css">
+    <link rel="stylesheet" type="text/css" href="css/blender-car.css">
     <link href="https://fonts.googleapis.com/css?family=Bangers|Damion|Exo" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="../bilder/smud.ico" type="image/x-icon">
     <meta name="keywords" content="amud, smud, de som vet de vet">
-    <meta name="description" content="Tilfeldig setegenerator - Smudi">
+    <meta name="description" content="Første Blender Modell - Smudi">
     <meta name="author" content="Smud productions">
     <meta name="viewport" content="initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -20,7 +21,6 @@
       });
     </script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109185175-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -31,7 +31,7 @@
     </script>
 
 </head>
-<body onload="start_spill()">
+<body>
     <header class="nav-down">
         <div class="navi" style="font-family: arial;">
             <ul id="naviul" class="primary-nav">
@@ -52,11 +52,36 @@
         </div>
     </header>
 
-    <h1 id="overskrift">Car Town</h1>
-    <div id="container">
-    </div>
 
-    <div id="paypal-button" class="center"></div>
+    <div class="lay-out">
+        <h1 class="tittel">Mitt Første Blender Prosjekt</h1>
+        <img src="bilder/blender-car.jpg" class="bilde" alt="Hovedbilde | Tilfeldig setegenerator">
+        <i class="nyhet-dato">18.07.2019 14:29</i>
+        <div class="hovedinnhold">
+            <i class="nyhet-innledning">Dette er mitt første prosjekt i Blender. Blender er en programvare som brukes til å skape 3D-modeller som blir brukt til mange forskjellige ting, som for eksempel 3D-printing, videospill, film, animasjoner og kommersiell reklame.</i>
+            <p class="nyhet-hovedtekst">jeg bestemte meg for å lage en bil som første 3D-modell.
+                Bilen er en vanlig sedan, uten hjul og textures(farger) foreløpig. Det bilen derimot har, er en stor
+                supercharger blower som stikker ut av panseret på bilen, Dette er sånn man ser på gamle amerikanske biler.
+
+                <i style="font-size: 16px;">(Se bildene under)</i>.
+            </p>
+            <p class="nyhet-hovedtekst ht2">
+                Grunnen til at jeg lagde denne bilen var for å lære mer om 3d-modellering.
+                Jeg brukte over 3 timer på hele bilen, og filmet hele prosessen for å lage en timelapse video, der klippa jeg mye unødvendig og skrudde opp farten på videoen, i og med at jeg filmet med 1 bilde i sekundet.
+                Til slutt klarte jeg å gjøre den 3 timers lange videoen, så kort som ett minutt lang.
+                <i style="font-size: 16px;">(Se video under)</i>.
+            </p>
+            <div class="youtube-video">
+                <iframe width="655" height="369" src="https://www.youtube.com/embed/Irx8V5hoWUc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p class="nyhet-hovedtekst ht2">
+                I fremtiden har jeg tenkt til å lage 3D-modeller til videospill-utvikling.
+                Der må modellene ha minst mulig polygoner, altså flater, samtidig som det må se ut som modellen har høy oppløsning og mange detaljer.
+                For å få til dette kan man bruke ulike teknikker for å manipulere modellen. Denne bilen består av nesten 3’000 polygoner,
+                som er veldig lavt og funker bra for «<a href="https://unity3d.com/real-time-rendering-3d" target="_blank">real-time rendering</a>»
+            </p>
+        </div>
+    </div>
 
 
     <div class="footer">
@@ -69,10 +94,5 @@
         <!-- <p>DDD oppdatering: <br> 1/<span id="dag">error</span></p> -->
     </div>
     <script src="../javascript/smudi.js"></script>
-    <script src="../javascript/key-generator.js"></script>
-    <script src="../javascript/bootstrap/js/bootstrap.API.js"></script>
-    <script src="javascript/car-town9.js"></script>
-    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
-    <script src="javascript/paypal-button.js"></script>
 </body>
 </html>

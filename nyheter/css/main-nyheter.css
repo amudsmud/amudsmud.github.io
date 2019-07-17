@@ -61,19 +61,6 @@
     line-height: 24px;
 }
 
-.bilde-utklipp {
-    float: left;
-    width: 25%;
-    margin: 5px 2% 10px 2%;
-    border: 1px solid black
-}
-
-.nyhet-hovedtekst.ht2 {margin: 30px 0 30px 0;}
-.bilde-utklipp.b1 {margin: 5px 2% 10px 8%;}
-.bilde-utklipp.b2 {margin: 5px 8% 10px 2%;}
-.bilde-utklipp.b3 {width: 70%; margin: 20px 15% 20px 15%;}
-
-
 /*-------------------responsiv css start-------------------*/
 @media only screen and (max-width:620px) {
     .lay-out {
