@@ -27,7 +27,7 @@ function nyboks(id, ateksten, href, h1teksten, ptekstenover, ptekstenunder) {
     h1.appendChild(h1tekst);
     divboks.appendChild(h1);
 
-    // lage en ny a med class="boks", href="kenneth2.0.html", target="_blank" og style="padding: 0"
+    // lage en ny a med class="boks", href="kenneth.html", target="_blank" og style="padding: 0"
     var a = document.createElement("a");
     a.setAttribute("class", "boks");
     a.setAttribute("href", href);
@@ -55,7 +55,7 @@ function mangebokser() {
     nyboks("b", "Klikk her", "login-side.html", "for å logge inn på Hellerasten siden", "Hellerasten siden er ikke oppe for øyeblikket. ", "Kommer i løpet av våren 2018")
     nyboks("a", "Klikk her", "https://github.com/amudsmud/amudsmud.github.io/releases/download/V0.4.0-beta/Tilfeldig.setegenerator.V0.4.0-beta.exe", "for å laste ned programmet mitt", "Tilfeldig setegenerator®.", "<i> V 0.3.0-beta <br> Sist oppdatert: 24. April 2018 </i>")
     nyboks("a", "Klikk her", "https://github.com/amudsmud/amudsmud.github.io/releases/download/V1.0-beta/SHUMPEXE.EXE", "for å laste ned spillet mitt", "Noen Virus-program vil se på dette som et virus, men det er det ikke.", "<i> V 0.1.0-beta <br> Sist oppdatert: 23. April 2018 </i>")
-    nyboks("a", "Klikk her", "kenneth2.0.html", "for å åpne noing's fete sirkler", "Laget til: Noing", "laget av: en random kar")
+    nyboks("a", "Klikk her", "kenneth.html", "for å åpne noing's fete sirkler", "Laget til: Noing", "laget av: en random kar")
 	nyboks("a", "Klikk her", "noings-fete-klokke.html", "for å åpne noing's fete stoppeklokke", "Laget til: Gymlærern", "laget av: Kenneth Noing")
 	nyboks("a", "Klikk her", "spill/car-town.html", "for å åpne Car Town", "", "<i> V 0.9-beta <br> Sist oppdatert: 13. November 2018 </i>")
 	nyboks("a", "Klikk her", "key-generator.html", "for å åpne encryption siden", "encrypt et ord", "eller decrypt en kode")
