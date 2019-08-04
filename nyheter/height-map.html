@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> ##tittel på et innlegg - Smudi## </title>
+    <title> Height Map - Smudi </title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/nyheter-layout 1.css">
     <link href="https://fonts.googleapis.com/css?family=Bangers|Damion|Exo" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="bilder/smud.ico" type="image/x-icon">
     <meta name="keywords" content="amud, smud, de som vet de vet">
-    <meta name="description" content="##tittel på et innlegg - Smudi##">
+    <meta name="description" content="Height Map - Smudi">
     <meta name="author" content="Smud productions">
     <meta name="viewport" content="initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -54,24 +54,29 @@
 
 
     <div class="lay-out">
-        <h1 class="tittel"> ##TITTEL## </h1>
+        <h1 class="tittel">Height Map</h1>
         <img src=" SOURCE TIL BILDE" class="bilde" alt="##NAVN PÅ BILDE##">
-        <i class="nyhet-dato"> ##DATO## </i>
+        <i class="nyhet-dato">24.07.2019</i>
         <div class="hovedinnhold">
-            <i class="nyhet-innledning"> ##INNLEDENING## </i>
+            <i class="nyhet-innledning">
+                For å vise detaljer som bulker, dype riper og andre ting, må man lage de på modellen.
+                Dette gjør modellen mye mer komplisert for datamaskinen å tegne, og datamaskinen bruker dermed mer tid for hvert bilde den lager.
+                I spill er det viktig at datamaskinen bruker minst mulig tid på å tegne noe på skjermen fordi jo mindre tid datamaskinen bruker per bilde, desto fler bilder vises det per sekund.
+                Det er her "Height map" kommer inn.
+            </i>
             <p class="nyhet-hovedtekst">
-                ##PARAGRAF##
-                <i style="font-size: 16px;">(Se bildene under)</i>.
+                For å vise detaljer på en modell uten å gjøre det vanskelig for datamaskinen, kan man vise den originale modellen, så tegne på hakkene og ripene.
+                Det man tegner på modellen lagres på et bilde, og da kan man bruke det bildet til å fortelle datamaskinen hvor på modellen hakken og ripene skal være.
+                Datamaskinen tar da og endrer høyden av overflaten etter bildet.
+                Dette krever mindre tid for maskinen enn hvis du hadde endre hele modellen, fordi da hadde den blitt mye mer komplisert og antallet overflater (som skal tegnes) hadde økt betraktelig.
             </p>
             <img class="bilde-utklipp" src="">
             <p class="nyhet-hovedtekst ht2">
-                ##PARAGRAF##
-            </p>
-            <p class="nyhet-hovedtekst ht2">
-                ##PARAGRAF##
-            </p>
-            <p class="nyhet-hovedtekst ht2">
-                ##PARAGRAF##
+                Bildet skal være et bilde uten farger, bare verdier mellom svart og hvitt.
+                Svart er der høyden på overflaten går innover, og hvitt er der det går utover.
+                Under kan du se et eksempel på en ambolt som jeg har modellert i programmet Blender, og deretter flyttet over til spillmotoren Unity.
+                Du kan se forskjellen på modellen med og uten height map.
+                Nederst kan du også se Height mappet som ble brukt på ambolten.
             </p>
         </div>
     </div>
