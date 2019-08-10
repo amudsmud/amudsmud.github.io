@@ -29,6 +29,7 @@
 
       gtag('config', 'UA-109185175-1');
     </script>
+    <script src="../javascript/to-bilder.js"></script>
 
 </head>
 <body>
@@ -56,7 +57,7 @@
     <div class="lay-out">
         <h1 class="tittel">Height Map</h1>
         <img src="bilder/med-height-map.png" class="bilde" alt="Ambolt med height map">
-        <i class="nyhet-dato">24.07.2019</i>
+        <i class="nyhet-dato">04.08.2019</i>
         <div class="hovedinnhold">
             <i class="nyhet-innledning">
                 For å vise detaljer som bulker, dype riper og andre ting, må man lage de på modellen.
@@ -77,6 +78,19 @@
                 Du kan se forskjellen på modellen med og uten height map.
                 Nederst kan du også se Height mappet som ble brukt på ambolten.
             </p>
+            <div class="img-comp-container">
+                <div class="img-comp-img">
+                    <img src="bilder/med-height-map.png" width="300" height="200">
+                </div>
+                <div class="img-comp-img img-comp-overlay">
+                    <img src="bilder/uten-height-map.png" width="300" height="200">
+                </div>
+            </div>
+
+            <script>
+            /*Execute a function that will execute an image compare function for each element with the img-comp-overlay class:*/
+            initComparisons();
+            </script>
             <img class="bilde-artikkel" src="bilder/med-height-map.png">
             <img class="bilde-artikkel" src="bilder/uten-height-map.png">
             <img class="bilde-artikkel" src="bilder/scratches-and-damage.png">
@@ -100,6 +114,6 @@
         <p><a href="privacypolicy-amudsmud.htm" style="color:#000072;" target="_blank">Klikk her</a> <br>for å lese privacy policy</p>
         <!-- <p>DDD oppdatering: <br> 1/<span id="dag">error</span></p> -->
     </div>
-    <script src="javascript/smudi.js"></script>
+    <script src="../javascript/smudi.js"></script>
 </body>
 </html>
