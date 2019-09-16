@@ -2,7 +2,7 @@
 // All Rights Reserved 2018
 /*------------------------------start tid og dato------------------------------*/
 var år = "2019"
-var måned = "semptember"
+var måned = "september"
 var datonummer = "14"
 var time = "18"
 var minutt = "11"
