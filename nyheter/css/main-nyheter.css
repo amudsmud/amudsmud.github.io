@@ -62,7 +62,6 @@
 }
 
 .bilde-artikkel {
-
     float: left;
     width: 100%;
     margin: 30px 0;
@@ -72,11 +71,13 @@
 
 
 /*#########################################################*/
-* {box-sizing: border-box;}
+*.not(.footer) {box-sizing: border-box;}
 
 .img-comp-container {
+  float: left;
   position: relative;
-  height: 200px; /*should be the same height as the images*/
+  height: 200px;
+  margin: 1px;
 }
 
 .img-comp-img {
@@ -101,6 +102,15 @@
   background-color: black;
   opacity: 0.7;
   border-radius: 1%;
+}
+
+.text-pa-bilde{
+    position: absolute;
+    left: 70%;
+    top: 180px;
+    font-size: 16px;
+    font-weight: 600;
+    width:200px;
 }
 
 /*#########################################################*/

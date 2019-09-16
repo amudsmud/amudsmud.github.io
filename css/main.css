@@ -110,8 +110,6 @@ html,body {
     background-image: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,.4));
 }
 
-/*#444444*/
-
 ::-webkit-scrollbar-thumb:hover {
     background: #2d2d2d;
 }
@@ -139,7 +137,6 @@ html,body {
     float: left;
     display: inline;
     margin: 0;
-     /* border: 2px solid #313131; */
     width: 15%;
     padding: 20px 5% 20px 5%;
     height: 50px;
@@ -185,7 +182,7 @@ div.navi {
     background-color: #444444;
     padding: 0;
     margin: 0;
-    position: absolute; /*fixed*/
+    position: absolute;
     top: 0;
     right: 0;
     width: 100%;
@@ -236,7 +233,7 @@ div.navi {
     }
 }
 
-/* 620  */
+
 @media only screen and (max-width:620px) {
     #Smudi-logo {
         margin: 8px 30% 0 30%;
@@ -245,12 +242,10 @@ div.navi {
         height: 70px;
         top: 0;
     }
-
     #overskrift {
         margin: 60px 10% 10px 10%;
         width: 80%;
     }
-
 
     /*______________Header og footer______________*/
     .primary-nav {
@@ -261,7 +256,7 @@ div.navi {
         height: 80px;
         overflow: hidden;
         position: absolute;
-        z-index: 98; /**********/
+        z-index: 98;
         clear: both;
     }
 
@@ -275,10 +270,8 @@ div.navi {
         background-color: rgba(0,0,0,.4);
         color: white;
     }
-
     .primary-nav.open { height: auto;}
     .primary-nav.open li { display: block;}
-
     #navia {
         display: block;
         width: 88%;
@@ -291,15 +284,12 @@ div.navi {
         border-top: 1px solid rgba(255,255,255,.1);
         margin-left: 2%;
     }
-
-
     #navia.A {
         display: block;
         text-indent: -9999px;
         border-top: 0;
         background-color: transparent;
     }
-
     .menu-button-mobile {
         display: block;
         color: white;
@@ -311,6 +301,7 @@ div.navi {
         background-position: center center;
         background-repeat: no-repeat;
         background-size: 36px, 100%;
+        border-radius: 30px;
         text-indent: -9999px;
         border-radius: 2px;
         cursor: pointer;
@@ -319,12 +310,10 @@ div.navi {
         animation-name: snu-menu;
         animation-duration: 0.5s;
     }
-
     @keyframes snu-menu{
         0% { background-size: 0;}
         100% { background-size: 36px;}
     }
-
     .menu-button-mobile:hover { background-color: rgba(0,0,0,.1);}
     .menu-button-mobile.open:hover { background-color: rgba(0,0,0,.2);}
     .menu-button-mobile.open {
@@ -335,20 +324,16 @@ div.navi {
         animation-name: snu;
         animation-duration: 0.5;
     }
-
     @keyframes snu{
         0% { background-size: 0;  }
         100% { background-size: 40px;   }
     }
-
-
     .primary-nav li.parent > a:hover { background-color: rgba(0,0,0,.2); }
     .primary-nav li ul {
         display: none;
         background: rgba(0,0,0,.5);
         border-top: 0;
     }
-
     .primary-nav li ul a {
         margin-left: 15%;
         margin-right: 20%;
@@ -363,17 +348,14 @@ div.navi {
         border-bottom: 1px solid rgba(0,0,0,.2);
         border-top: 1px solid rgba(255,255,255,.1);
     }
-
     .primary-nav li:hover ul {display: block;}
     .primary-nav li a:hover {background-color: rgba(0,0,0,.2);}
     #navia i.material-icons {display: inline; margin-right: 0;}
-
     .footer {height: 250px;}
     .footer p:not(.copyright) {
         float: left;
         display: inline;
         margin: 0;
-         /* border: 2px solid #313131; */
         width: 40%;
         padding: 20px 5% 20px 5%;
         height: 50px;
