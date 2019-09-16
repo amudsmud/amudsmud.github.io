@@ -92,6 +92,33 @@ html,body {
     margin: auto;
 }
 
+/*______________new design alert start______________*/
+#divv{
+    background-color: red;
+    font-size: 40px;
+    text-align: center;
+    height: auto;
+    width: 40%;
+    position: fixed;
+    left: 30%;
+    top: 20%;
+    z-index: 100;
+    border: solid black 2px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#divvknapp{
+    background-color: red;
+    font-size: 20px;
+    text-align: center;
+    height: auto;
+    width: 20%;
+    position: relative;
+    margin: 10px;
+    z-index: 100;
+}
+/*______________new design alert slutt______________*/
 
 /*______________scrollbar start______________*/
 
