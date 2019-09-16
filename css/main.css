@@ -112,11 +112,9 @@ html,body {
     background-color: red;
     font-size: 20px;
     text-align: center;
-    height: auto;
     width: 20%;
     position: relative;
     margin: 10px;
-    z-index: 100;
 }
 /*______________new design alert slutt______________*/
 
