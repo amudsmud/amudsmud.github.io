@@ -35,7 +35,6 @@ img.antall-besøkende {
     box-shadow: 3px 3px 30px black;
     float: left;
     width: 40%;
-    float: left;
     z-index: 3;
 }
 
@@ -51,7 +50,6 @@ p.antall-besøkende {
     width: 100%;
     float: left;
     z-index: 3;
-    float: left;
 }
 
 
