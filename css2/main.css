@@ -1,5 +1,5 @@
 html,body {
-    background-color: #c9c9c9;
+    background-color: #201c1c;
     background-repeat: repeat;
     float: left;
     width: 100%;
@@ -149,7 +149,7 @@ html,body {
     margin: 100px 0 0 0;
     padding: 20px 0 20px 0;
     width: 100%;
-    background-color: #5e5e5e;
+    background-color: #0d0c0c;
     color: white;
     text-align: center;
     overflow: hidden;

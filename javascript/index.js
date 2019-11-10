@@ -63,12 +63,15 @@ function mangebokser() {
 
 }
 
+/*______________new design alert start______________*/
+divv = document.createElement("div");
+divv.innerHTML = "New design <br> under development <br>";
+divv.setAttribute("id", "divv");;
+document.body.appendChild(divv);
 
-/*
-var divboks = document.querySelectorAll("div.boks");
-document.getElementById("");
-document.getElementsByClassName("")
-h1.innerHTML = "bruh";
-h1.setAttribute("class", "boks");
-divrekkefølge.appendChild(divboks);
-*/
+divvknapp = document.createElement("button");
+divvknapp.innerHTML = "OK";
+divvknapp.setAttribute("id", "divvknapp");
+divvknapp.setAttribute("onclick", "divv.style.display = 'none';");
+divv.appendChild(divvknapp);
+/*______________new design alert slutt______________*/

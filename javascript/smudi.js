@@ -2,7 +2,7 @@
 // All Rights Reserved 2018
 /*------------------------------start tid og dato------------------------------*/
 var år = "2019"
-var måned = "sempetber"
+var måned = "september"
 var datonummer = "14"
 var time = "18"
 var minutt = "11"
@@ -63,9 +63,7 @@ var lastScrollTop = 0;
 var delta = 10;
 var navbarHeight = $('header').outerHeight();
 
-$(window).scroll(function(event){
-    didScroll = true;
-});
+
 
 setInterval(function() {
     if (didScroll) {
