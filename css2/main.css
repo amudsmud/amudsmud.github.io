@@ -1,11 +1,17 @@
 html,body {
     background-color: #201c1c;
+    background-image: linear-gradient(to right, #201c1c, #333, #201c1c);
     background-repeat: repeat;
     float: left;
     width: 100%;
     font-family: arial;
     padding: 0;
     margin: 0;
+}
+
+.text {
+    font-family: Arial;
+    color: lightgrey;
 }
 
 
@@ -229,18 +235,18 @@ div.navi {
 }
 /* hvert enkelt page når pusepekeren er over den */
 #navia:hover {
-    background-color: #60f900;
+    background-color: #4ae9f6;
     color: #424242;
 }
 /* hvordan den aktive siden du er på ser ut*/
 #navia.active {
-    background-color: #07ab1a;
-    color: white;
+    background-color: #51caf2;
+    color: #424242;
 }
 /* hvordan den aktive siden du er på ser ut når du har musepekeren på den*/
 #navia:hover.active {
-    background-color: #297c33;
-    color: white;
+    background-color: #4a9bf6;
+    color: #424242;
 }
 .menu-button-mobile, #navia.A { display: none; }
 .primary-nav li ul, #navia i.material-icons { display: none; }
