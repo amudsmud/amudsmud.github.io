@@ -240,7 +240,7 @@ div.navi {
 }
 /* hvordan den aktive siden du er på ser ut*/
 #navia.active {
-    background-color: #51caf2; 
+    background-color: #51caf2;
     color: #424242;
 }
 /* hvordan den aktive siden du er på ser ut når du har musepekeren på den*/
