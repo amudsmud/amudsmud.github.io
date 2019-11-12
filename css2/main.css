@@ -14,7 +14,6 @@ html,body {
     color: lightgrey;
 }
 
-
 @font-face {font-family: arialblack; src: url(arial-black/ArialBlack.ttf);}
 #overskrift {
     position: relative;
