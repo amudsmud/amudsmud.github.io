@@ -11,6 +11,7 @@
     <meta name="description" content="Kontakt - Smudi">
     <meta name="author" content="Smud productions">
     <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
       $(document).ready(function(){
@@ -60,11 +61,11 @@
             <h1 id="kontakt-oss-overskrift">Kontakt oss</h1>
             <form action="mailto: amudsmud@gmail.com" method="post" enctype="text/plain">
                 <span>Navn:</span><br>
-                <input id="navn-felt" type="text" name="Navn " size="20" style="margin-bottom:10px; margin-top: 3px;"><br>
+                <input id="navn-felt" class="felt" type="text" name="Navn " size="20" style="margin-bottom:10px; margin-top: 3px;"><br>
                 <span>E-mail:</span><br>
-                <input id="epost-felt" type="text" name="E-mail " size="25" style="margin-bottom:10px; margin-top: 3px;"><br>
+                <input id="epost-felt" class="felt" type="text" name="E-mail " size="25" style="margin-bottom:10px; margin-top: 3px;"><br>
                 <span>Kommentar:</span><br>
-                <textarea id="Kommentar-felt" type="text" name="Kommentar "></textarea><br><br> <!-- rows="5" cols="40" -->
+                <textarea id="Kommentar-felt" class="felt" type="text" name="Kommentar "></textarea><br><br> <!-- rows="5" cols="40" -->
 
                 <button id="knapp" type="submit"><span>Send</span></button>
                 <button id="knapp" class="reset" type="reset"><span>Reset</span></button>

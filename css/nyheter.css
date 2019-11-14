@@ -1,3 +1,8 @@
+#overskrift {
+    font-size: 4vw;
+    margin: 100px 10% 80px 10%;
+}
+
 #Nyhet-vindu {
     /*background-color: #e0e0e0;
     box-shadow: 0 0 2px 2px #e0e0e0; */
@@ -10,11 +15,11 @@
 .nyhet-boks {
     float: left;
     position: relative;
-    background-color: white;
+    background-color: #ccc;
     width: 27%;
     height: 700px;
     margin: 60px 3% 0 3%;
-    box-shadow: 0 0 1px 1px #c9c9c9; /* #e0e0e0 */
+    box-shadow: 0 0 1px 1px #000; /* #e0e0e0 */
     border-radius: 5px;
     border: 2px solid black;
 }

@@ -1,6 +1,5 @@
 html,body {
-    background-color: #201c1c;
-    background-image: linear-gradient(to right, #201c1c, #333, #201c1c);
+    background-color: #c9c9c9;
     background-repeat: repeat;
     float: left;
     width: 100%;
@@ -9,20 +8,16 @@ html,body {
     margin: 0;
 }
 
-.text {
-    font-family: Arial;
-    color: lightgrey;
-}
 
 @font-face {font-family: arialblack; src: url(arial-black/ArialBlack.ttf);}
 #overskrift {
     position: relative;
-    margin: 60px 10% 10px 10%;
+    font-size: 4vw;
+    margin: 100px 10% 80px 10%;
     width: 80%;
     padding: 0;
     float: left;
     z-index: 1;
-    font-size: 5vw;
     font-family: Arial black, arialblack, Arial;
     color: #51caf2;
     text-align: center;
@@ -154,7 +149,7 @@ html,body {
     margin: 100px 0 0 0;
     padding: 20px 0 20px 0;
     width: 100%;
-    background-color: #0d0c0c;
+    background-color: #5e5e5e;
     color: white;
     text-align: center;
     overflow: hidden;
@@ -234,18 +229,18 @@ div.navi {
 }
 /* hvert enkelt page når pusepekeren er over den */
 #navia:hover {
-    background-color: #4ae9f6;
+    background-color: #60f900;
     color: #424242;
 }
 /* hvordan den aktive siden du er på ser ut*/
 #navia.active {
-    background-color: #51caf2;
-    color: #424242;
+    background-color: #07ab1a;
+    color: white;
 }
 /* hvordan den aktive siden du er på ser ut når du har musepekeren på den*/
 #navia:hover.active {
-    background-color: #4a9bf6;
-    color: #424242;
+    background-color: #297c33;
+    color: white;
 }
 .menu-button-mobile, #navia.A { display: none; }
 .primary-nav li ul, #navia i.material-icons { display: none; }
