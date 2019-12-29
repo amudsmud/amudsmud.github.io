@@ -2,7 +2,7 @@
 <html>
 <head>
     <title> Smudi </title>
-    <link rel="stylesheet" type="text/css" href="css2/main.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link href="https://fonts.googleapis.com/css?family=Bangers|Damion|Exo" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -11,6 +11,7 @@
     <meta name="description" content="hjemmeside - Smudi">
     <meta name="author" content="Smud productions">
     <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
       $(document).ready(function(){
@@ -48,9 +49,9 @@
                 <li><a id="navia" class="active" href="/">Hjem</a></li>
                 <li><a id="navia" class="parent" href="nyheter.html">Nyheter</a>
                     <ul>
-                        <li class="child"><a href="nyheter.html#biler">biler</a></li>
-                        <li class="child"><a href="nyheter.html#båter">båter</a></li>
-                        <li class="child"><a href="nyheter.html#fly">fly</a></li>
+                        <li class="child"><a href="nyheter.html#programmering">Programmering</a></li>
+                        <li class="child"><a href="nyheter.html#biler">Biler</a></li>
+                        <li class="child"><a href="nyheter.html#fly">Fly</a></li>
                     </ul>
                 </li>
                 <li><a id="navia" href="kontakt.html">Kontakt</a></li>
@@ -62,12 +63,12 @@
 
     <div id="Smudi-div">
         <h1 id="overskrift">Smudi</h1>
-        <h3 id="Smudi-slagord">- Alt som er smud</h3>
+        <h3 class="text" id="Smudi-slagord">- Alt som er smud</h3>
     </div>
 
     <div id="antall-besøkende-div">
-        <p class="antall-besøkende">Antall besøkende</p>
-        <img class="antall-besøkende" src="http://www.reliablecounter.com/count.php?page=amudsmud.github.io/&digit=style/big/3/&reloads=0" alt="Antall besøkende" title="Smudi">
+        <p class="text antall-besøkende">Antall besøkende</p>
+        <img class="antall-besøkende" src="https://www.reliablecounter.com/count.php?page=amudsmud.github.io3083872&digit=style/big/3/&reloads=0" alt="Antall besøkende" title="Smudi">
     </div>
 
     <div class="bytte-rekkefølge" id="idbytte-rekkefølge">
@@ -79,35 +80,19 @@
     // nyboks(id, ateksten, href, h1teksten, ptekstenover, ptekstenunder) legg til en boks
     </script>
 
-    <div>
-        Id: <input type="text" id="id">
-        Redirect teksten: <input type="text" id="ateksten">
-        Redirect til: <input type="text" id="href" value="http://">
-        resten av overskriften: <input type="text" id="h1teksten">
-        Liten tekst: <input type="text" id="ptekstenover">
-        Liten tekst under: <input type="text" id="ptekstenunder">
+    <div class="text">
+        Id: <input type="text" id="id" class="nyboksfelt text">
+        Redirect teksten: <input type="text" id="ateksten" class="nyboksfelt text">
+        Redirect til: <input type="text" id="href" class="nyboksfelt text" value="http://">
+        resten av overskriften: <input type="text" id="h1teksten" class="nyboksfelt text">
+        Liten tekst: <input type="text" id="ptekstenover" class="nyboksfelt text">
+        Liten tekst under: <input type="text" id="ptekstenunder" class="nyboksfelt text">
         <br>
-        <button onclick="lagmanuellboks()"> Lag boks </button>
-        <button onclick="nyboks()"> Ny boks </button>
-        <button onclick="mangebokser()"> Ny bokser </button>
+        <button onclick="lagmanuellboks()" class="nyboksfelt text"> Lag boks </button>
+        <button onclick="nyboks()" class="nyboksfelt text"> Ny boks </button>
+        <button onclick="mangebokser()" class="nyboksfelt text"> Ny bokser </button>
     </div>
 
-    <frame>
-        <body>
-
-        farge: <input type="text" id="aa" value="valg farge">
-        <br>
-        <button onclick="qmyFunction()">bytt farge</button>
-
-
-        <script>
-        function qmyFunction() {
-        	var farge = document.getElementById("aa").value;
-            document.getElementById("aa").style.color = farge;
-        }
-        </script>
-        </body>
-    </frame>
 
     <div class="footer">
         <p class="copyright">&copy; Smud Productions 2017</p>
@@ -116,7 +101,6 @@
         <p>Kontakt informasjon: <a href="mailto:Amudsmud@gmail.com">
             Amudsmud@gmail.com</a></p>
         <p><a href="privacypolicy-amudsmud.htm" style="color:#000072;" target="_blank">Klikk her</a> <br>for å lese privacy policy</p>
-        <!-- <p>DDD oppdatering: <br> 1/<span id="dag">error</span></p> -->
     </div>
     <script src="javascript/smudi.js"></script>
 

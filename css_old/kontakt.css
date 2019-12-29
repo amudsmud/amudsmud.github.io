@@ -34,7 +34,7 @@
     margin-left: 10%;
     box-shadow: 7px 5px 25px black;
     float: left;
-    background-color: #5a5a5a;
+    background-color: #51caf2;
     margin-top: 20px;
     margin-bottom: 100px;
 }
@@ -45,7 +45,7 @@
     margin: 5% 5% 2% 5%;
     box-shadow: 2px 2px 10px black;
     float: left;
-    background-color: #ccc;
+    background-color: white;
     border: 1px solid black;
     position: relative;
 }
@@ -56,7 +56,7 @@
     margin: 1% 5% 2% 5%;
     box-shadow: 2px 2px 10px black;
     float: left;
-    background-color: #ccc;
+    background-color: white;
     border: 1px solid black;
     position: relative;
 }
@@ -68,24 +68,35 @@ form {
     margin-left: 30px;
 }
 
-.felt {
-    background-color: #ddd;
+#navn-felt {
     border: 1px solid black;
+    padding: 4px;
     font-family: arial;
     font-size: 15px;
     line-height: 20px;
     border-radius: 5px;
-    padding: 4px;
 }
 
-#navn-felt {}
-#epost-felt {}
+#epost-felt {
+    border: 1px solid black;
+    padding: 4px;
+    font-family: arial;
+    font-size: 15px;
+    line-height: 20px;
+    border-radius: 5px;
+}
+
 #Kommentar-felt {
+    border: 1px solid black;
     resize: none;
     width: 400px;
     height: 100px;
     margin-top: 6px;
     padding: 6px;
+    font-family: arial;
+    font-size: 15px;
+    line-height: 20px;
+    border-radius: 5px;
 }
 
 #knapp {

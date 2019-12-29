@@ -13,7 +13,7 @@
     border: 0.1px solid black;
     box-shadow: 7px 5px 25px black;
     float: left;
-    background-color: #5a5a5a;
+    background-color: #51caf2;
 }
 
 #om-meg-boks2 {
@@ -21,9 +21,10 @@
     height: 94%;
     margin: 3%;
     box-shadow: 1px 1px 5px black;
-    background-color: #ccc;
+    background-color: white;
     border: 1px solid black;
 }
+
 
 #mitt-bilde {
     width: 40%;

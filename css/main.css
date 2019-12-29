@@ -1,5 +1,6 @@
 html,body {
-    background-color: #c9c9c9;
+    background-color: #201c1c;
+    background-image: linear-gradient(to right, #201c1c, #333, #201c1c);
     background-repeat: repeat;
     float: left;
     width: 100%;
@@ -8,6 +9,10 @@ html,body {
     margin: 0;
 }
 
+.text {
+    font-family: Arial;
+    color: lightgrey;
+}
 
 @font-face {font-family: arialblack; src: url(arial-black/ArialBlack.ttf);}
 #overskrift {
@@ -145,18 +150,14 @@ html,body {
 /*______________footer start______________*/
 .footer {
     position: relative;
+    float: left;
     height: 100px;
     margin: 100px 0 0 0;
     padding: 20px 0 20px 0;
     width: 100%;
-    background-color: #5e5e5e;
+    background-color: #0d0c0c;
     color: white;
     text-align: center;
-    overflow: hidden;
-    transform: translateY(20px);
-     -webkit-transform: translateY(20px);
-     -moz-transform: translateY(20px);
-     -o-transform: translateY(20px);
 }
 
 .footer p:not(.copyright) {
@@ -164,9 +165,9 @@ html,body {
     display: inline;
     margin: 0;
     width: 15%;
-    padding: 20px 5% 20px 5%;
+    padding: 20px 5%;
     height: 50px;
-    font-size: 1.0em;
+    font-size: 1em;
 }
 
 .footer p.copyright {
@@ -229,18 +230,18 @@ div.navi {
 }
 /* hvert enkelt page når pusepekeren er over den */
 #navia:hover {
-    background-color: #60f900;
+    background-color: #4ae9f6;
     color: #424242;
 }
 /* hvordan den aktive siden du er på ser ut*/
 #navia.active {
-    background-color: #07ab1a;
-    color: white;
+    background-color: #51caf2;
+    color: #424242;
 }
 /* hvordan den aktive siden du er på ser ut når du har musepekeren på den*/
 #navia:hover.active {
-    background-color: #297c33;
-    color: white;
+    background-color: #4a9bf6;
+    color: #424242;
 }
 .menu-button-mobile, #navia.A { display: none; }
 .primary-nav li ul, #navia i.material-icons { display: none; }

@@ -11,6 +11,7 @@
     <meta name="description" content="Kontakt - Smudi">
     <meta name="author" content="Smud productions">
     <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
       $(document).ready(function(){
@@ -40,9 +41,9 @@
                 <li><a id="navia" href="/">Hjem</a></li>
                 <li><a id="navia" class="parent" href="nyheter.html">Nyheter</a>
                     <ul>
-                        <li class="child"><a href="nyheter.html#biler">biler</a></li>
-                        <li class="child"><a href="nyheter.html#båter">båter</a></li>
-                        <li class="child"><a href="nyheter.html#fly">fly</a></li>
+                        <li class="child"><a href="nyheter.html#programmering">Programmering</a></li>
+                        <li class="child"><a href="nyheter.html#biler">Biler</a></li>
+                        <li class="child"><a href="nyheter.html#fly">Fly</a></li>
                     </ul>
                 </li>
                 <li><a id="navia" class="active" href="kontakt.html">Kontakt</a></li>
@@ -60,11 +61,11 @@
             <h1 id="kontakt-oss-overskrift">Kontakt oss</h1>
             <form action="mailto: amudsmud@gmail.com" method="post" enctype="text/plain">
                 <span>Navn:</span><br>
-                <input id="navn-felt" type="text" name="Navn " size="20" style="margin-bottom:10px; margin-top: 3px;"><br>
+                <input id="navn-felt" class="felt" type="text" name="Navn " size="20" style="margin-bottom:10px; margin-top: 3px;"><br>
                 <span>E-mail:</span><br>
-                <input id="epost-felt" type="text" name="E-mail " size="25" style="margin-bottom:10px; margin-top: 3px;"><br>
+                <input id="epost-felt" class="felt" type="text" name="E-mail " size="25" style="margin-bottom:10px; margin-top: 3px;"><br>
                 <span>Kommentar:</span><br>
-                <textarea id="Kommentar-felt" type="text" name="Kommentar "></textarea><br><br> <!-- rows="5" cols="40" -->
+                <textarea id="Kommentar-felt" class="felt" type="text" name="Kommentar "></textarea><br><br> <!-- rows="5" cols="40" -->
 
                 <button id="knapp" type="submit"><span>Send</span></button>
                 <button id="knapp" class="reset" type="reset"><span>Reset</span></button>
@@ -91,7 +92,6 @@
         <p>Kontakt informasjon: <a href="mailto:Amudsmud@gmail.com">
             Amudsmud@gmail.com</a></p>
         <p><a href="privacypolicy-amudsmud.htm" style="color:#000072;" target="_blank">Klikk her</a> <br>for å lese privacy policy</p>
-        <!-- <p>DDD oppdatering: <br> 1/<span id="dag">error</span></p> -->
     </div>
     <script src="javascript/smudi.js"></script>
     <script src="javascript/kontakt.js"></script>

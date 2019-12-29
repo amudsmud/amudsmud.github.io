@@ -60,10 +60,10 @@ function mangebokser() {
 	nyboks("a", "Klikk her", "spill/car-town.html", "for å åpne Car Town", "", "<i> V 0.9-beta <br> Sist oppdatert: 13. November 2018 </i>")
 	nyboks("a", "Klikk her", "key-generator.html", "for å åpne encryption siden", "Encrypt et ord", "eller decrypt en kode")
 	nyboks("a", "Klikk her", "login-side.html", "for å logge inn på Hellerasten siden", "Her kan du logge inn for å laste ned utfylt klassekart over klassen.")
-
 }
 
 /*______________new design alert start______________*/
+/*
 divv = document.createElement("div");
 divv.innerHTML = "New design <br> under development <br>";
 divv.setAttribute("id", "divv");;
@@ -74,4 +74,5 @@ divvknapp.innerHTML = "OK";
 divvknapp.setAttribute("id", "divvknapp");
 divvknapp.setAttribute("onclick", "divv.style.display = 'none';");
 divv.appendChild(divvknapp);
+*/
 /*______________new design alert slutt______________*/
