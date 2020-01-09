@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Smudi - Booster </title>
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/skeleton.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Damion|Exo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="bilder/smud.ico" type="image/x-icon">
+    <meta name="keywords" content="Webgame, Booster, project boost, udemy, unity, unity3d, WebGl">
+    <meta name="description" content="Booster - Smudi">
+    <meta name="author" content="Smud productions">
+    <meta name="viewport" content="initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+    	  $(".menu-button-mobile").click(function () {
+    	  $(".menu-button-mobile, .primary-nav").toggleClass("open");
+    	  });
+      });
+    </script>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/AHMAD.json", {onProgress: UnityProgress});
+    </script>
+</head>
+<body>
+    <header class="nav-down">
+        <div class="navi" style="font-family: arial;">
+            <ul id="naviul" class="primary-nav">
+                <button class="menu-button-mobile">Toggle Navigation</button>
+                <li><a id="navia" class="A" style="">A</a></li>
+                <li><a id="navia" href="/">Hjem</a></li>
+                <li><a id="navia" class="parent" href="nyheter.html">Nyheter</a>
+                    <ul>
+                        <li class="child"><a href="nyheter.html#programmering">Programmering</a></li>
+                        <li class="child"><a href="nyheter.html#biler">Biler</a></li>
+                        <li class="child"><a href="nyheter.html#fly">Fly</a></li>
+                    </ul>
+                </li>
+                <li><a id="navia" href="kontakt.html">Kontakt</a></li>
+                <li style="float:right"><a id="navia" href="om.html">Om</a></li>
+            </ul>
+            <a href="index.html" id="Smudi-logo" title="Klikk for å gå hjem">Smudi</a>
+        </div>
+    </header>
+
+
+
+    <h1 id="overskrift">Booster</h1>
+
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">Udemy-3_Project_Boost</div>
+      </div>
+    </div>
+
+
+    <div class="footer">
+        <p class="copyright">&copy; Smud Productions 2017</p>
+        <p>Smudi - Alt som er smud</p>
+        <p>Sist oppdatert: <br> <span id="dagensDato">error</span><br><i><time id="klokkeslett">error</time></i></p>
+        <p>Kontakt informasjon: <a href="mailto:Amudsmud@gmail.com">
+            Amudsmud@gmail.com</a></p>
+        <p><a href="privacypolicy-amudsmud.htm" style="color:#000072;" target="_blank">Klikk her</a> <br>for å lese privacy policy</p>
+    </div>
+    <script src="../javascript/smudi.js"></script>
+</body>
+</html>

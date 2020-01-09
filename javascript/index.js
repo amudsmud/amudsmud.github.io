@@ -52,13 +52,13 @@ function nyboks(id, ateksten, href, h1teksten, ptekstenover, ptekstenunder) {
 
 function mangebokser() {
     // nyboks(id, ateksten, href, h1teksten, ptekstenover, ptekstenunder)
-	// id bestememr rekkefølge på boksene. fra  a - d
+	// id bestememr rekkefølge på boksene. fra  a - d på telefon-view
     nyboks("a", "Klikk her", "https://github.com/amudsmud/amudsmud.github.io/releases/download/V0.4.0-beta/Tilfeldig.setegenerator.V0.4.0-beta.exe", "for å laste ned programmet mitt", "Tilfeldig setegenerator®.", "<i> V 0.3.0-beta <br> Sist oppdatert: 24. April 2018 </i>")
     nyboks("a", "Klikk her", "https://github.com/amudsmud/amudsmud.github.io/releases/download/V1.0-beta/SHUMPEXE.EXE", "for å laste ned spillet mitt", "Noen Virus-program vil se på dette som et virus, men det er det ikke.", "<i> V 0.1.0-beta <br> Sist oppdatert: 23. April 2018 </i>")
-    nyboks("a", "Klikk her", "kenneth.html", "for å åpne noing's fete sirkler", "Laget til: Noing", "laget av: en random kar")
-	nyboks("a", "Klikk her", "noings-fete-klokke.html", "for å åpne noing's fete stoppeklokke", "Laget til: Gymlærern", "laget av: Kenneth Noing")
+    nyboks("a", "Klikk her", "kenneth.html", "for å åpne Noing's fete sirkler", "Laget til: Noing", "Laget av: en random kar")
+	nyboks("a", "Klikk her", "noings-fete-klokke.html", "for å åpne Noing's fete stoppeklokke", "Laget til: Gymlærern", "laget av: Kenneth Noing")
 	nyboks("a", "Klikk her", "spill/car-town.html", "for å åpne Car Town", "", "<i> V 0.9-beta <br> Sist oppdatert: 13. November 2018 </i>")
-	nyboks("a", "Klikk her", "key-generator.html", "for å åpne encryption siden", "encrypt et ord", "eller decrypt en kode")
+	nyboks("a", "Klikk her", "key-generator.html", "for å åpne encryption siden", "Encrypt et ord", "eller decrypt en kode")
 	nyboks("a", "Klikk her", "login-side.html", "for å logge inn på Hellerasten siden", "Her kan du logge inn for å laste ned utfylt klassekart over klassen.")
 }
 
