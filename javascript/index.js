@@ -53,6 +53,7 @@ function nyboks(id, ateksten, href, h1teksten, ptekstenover, ptekstenunder) {
 function mangebokser() {
     // nyboks(id, ateksten, href, h1teksten, ptekstenover, ptekstenunder)
 	// id bestememr rekkefølge på boksene. fra  a - d på telefon-view
+	nyboks("a", "Klikk her", "booster/booster.html", "for å gå til nye spillet mitt: BOOSTER!🚀", "Booster®", "<i> V 1.1 <br> Sist oppdatert: 11. Januar 2020 </i>")
     nyboks("a", "Klikk her", "https://github.com/amudsmud/amudsmud.github.io/releases/download/V0.4.0-beta/Tilfeldig.setegenerator.V0.4.0-beta.exe", "for å laste ned programmet mitt", "Tilfeldig setegenerator®.", "<i> V 0.3.0-beta <br> Sist oppdatert: 24. April 2018 </i>")
     nyboks("a", "Klikk her", "https://github.com/amudsmud/amudsmud.github.io/releases/download/V1.0-beta/SHUMPEXE.EXE", "for å laste ned spillet mitt", "Noen Virus-program vil se på dette som et virus, men det er det ikke.", "<i> V 0.1.0-beta <br> Sist oppdatert: 23. April 2018 </i>")
     nyboks("a", "Klikk her", "kenneth.html", "for å åpne Noing's fete sirkler", "Laget til: Noing", "Laget av: en random kar")
