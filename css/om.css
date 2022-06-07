@@ -76,28 +76,28 @@
 
 .htmlbar {
     background-color: #525eff;
-    width: 90%;
+    width: 30%;
     text-align: center;
     border-radius: 8px;
 }
 
 .cssbar {
     background-color: #ffc81f;
-    width: 100%;
+    width: 30%;
     text-align: center;
     border-radius: 8px;
 }
 
 .pybar {
     background-color: #ff37ce;
-    width: 80%;
+    width: 40%;
     text-align: center;
     border-radius: 8px;
 }
 
 .jsbar {
     background-color: #ff2626;
-    width: 80%;
+    width: 30%;
     text-align: center;
     border-radius: 8px;
 }
